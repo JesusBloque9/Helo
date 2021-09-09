@@ -4,12 +4,12 @@
 	padding: 0;
 }
 
+.white_background{
+  background: #FFF;
+}
+
 .no-scroll-y {
 	overflow-y: hidden;
-}
-.prueba{
-    height: 150vh;
-    background-color: #000000;
 }
 
 /* Preloader */
@@ -182,8 +182,6 @@ html, body {
   
   body {
     perspective: 600px;
-    background: #111;
-    font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
     overflow-x: hidden;
   }
   @media screen and (max-width: 768px) {
