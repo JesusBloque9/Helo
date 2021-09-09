@@ -4,6 +4,10 @@
 	padding: 0;
 }
 
+.white_background{
+  background: #FFF;
+}
+
 .no-scroll-y {
 	overflow-y: hidden;
 }
@@ -178,7 +182,10 @@ html, body {
   
   body {
     perspective: 600px;
+<<<<<<< HEAD
     font-family: 'Montserrat', sans-serif;
+=======
+>>>>>>> efce7545b9e9043506f066856f5f934995852bbf
     overflow-x: hidden;
   }
   @media screen and (max-width: 768px) {
