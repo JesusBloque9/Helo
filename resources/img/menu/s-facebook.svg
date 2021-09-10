@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.736" height="27.736" viewBox="0 0 27.736 27.736">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="27.736" height="27.736" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_70" data-name="Grupo 70" transform="translate(-423.367 -803.5)">
+    <g id="Cuadrícula_de_repetición_1" data-name="Cuadrícula de repetición 1" transform="translate(423.367 803.5)" clip-path="url(#clip-path)">
+      <g id="Grupo_69" data-name="Grupo 69" transform="translate(-423.368 -803.5)">
+        <g id="soical" transform="translate(423.367 803.5)">
+          <g id="social" transform="translate(0)">
+            <g id="square-flat">
+              <path id="square-2" d="M101.385,0h24.966a1.384,1.384,0,0,1,1.385,1.385V26.351a1.384,1.384,0,0,1-1.385,1.385H101.385A1.384,1.384,0,0,1,100,26.351V1.385A1.384,1.384,0,0,1,101.385,0Z" transform="translate(-100)" fill="#346da6" fill-rule="evenodd"/>
+            </g>
+            <g id="icon" transform="translate(10.143 5.885)">
+              <path id="facebook" d="M114.57,16.717v-8h-1.627V6.06h1.627v-1.6c0-2.164.647-3.725,3.017-3.725h2.819V3.378H118.42c-.994,0-1.22.661-1.22,1.352V6.06h3.059l-.417,2.653H117.2v8Z" transform="translate(-112.943 -0.731)" fill="#fff" fill-rule="evenodd"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

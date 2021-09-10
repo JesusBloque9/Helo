@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="resources/css/seccion_experiencies.css">
 
 </head>
-<body>
     <body class="no-scroll-y">
         <!-- Preloader    -->
        
@@ -142,74 +141,113 @@
         </div>
                 
 
-        <div class="container-fluid px-0 mx-0 white_background" id="experiences">
+        <div class="container-fluid px-0 mx-0">
+            <div id="experiences" class="white_background">
                 <div class="row py-5">
                     <div class="col-12 text-center py-5">
-                        <h2 class="subtitle">Moving Experiences</h2>
-                        <h1 class="title">We make work that is</h1>
+                        <h1 class="title mb-5 mt-1">We make work that is</h1>
                     </div>
                 </div>
                 <div class="row " >
-                    <div class="col p-0">
+                    <div class="col p-0 one_img background_default">
                         <div class="container-experience" >
-                            <div class="image one">
+                            <div class="image one text-center">
+                                <!--div-- id="video-holder">
+                                    <video id="video1" loop preload="1">
+                                        <source src="https://www.youtube.com/embed/xB7MnEuoZlE" type="video/mp4">
+                                    </video>
+                                </!--div-->
                                 <img src="resources/img/experience/1.jpg"/ class="img-fluid">
                                 <div class="details-window up yellow_cover">
-                                <p id="sec">This is a slide-up animation</p>
+                                </div>
+                                <div class="details-window up">
+                                    <h3>Original</h3>
+                                    <hr>
+                                    <p>Inspiring and creative original well thought</p>
                                 </div>
                             </div>
-                            
+                            <div class="yellow_cover pie_image"></div>
                         </div>
                     </div>
-                    <div class="col p-0">
+                    <div class="col p-0 two_img background_default">
                         <div class="container-experience">
-                            <div class="image one">
+                            <div class="image one text-center">
                                 <img src="resources/img/experience/2.jpg"/ class="img-fluid">
-                                <div class="details-window up orange_cover">
-                                <p id="sec">This is a slide-up animation</p>
+                                <div class="details-window up orange_cover"></div>
+                                <div class="details-window up">
+                                    <h3>At Scale</h3>
+                                    <hr>
+                                    <p>Inspiring and creative original well thought</p>
                                 </div>
                             </div>
+                            <div class="orange_cover pie_image"></div>
                         </div>
                     </div>
-                    <div class="col p-0">
+                    <div class="col p-0 three_img background_default">
                         <div class="container-experience">
-                            <div class="image one">
+                            <div class="image one text-center">
                                 <img src="resources/img/experience/3.jpg"/ class="img-fluid">
-                                <div class="details-window up red_cover">
-                                <p id="sec">This is a slide-up animation</p>
+                                <div class="details-window up red_cover"></div>
+                                <div class="details-window up">
+                                    <h3>Complex</h3>
+                                    <hr>
+                                    <p>Inspiring and creative original well thought</p>
                                 </div>
                             </div>
+                            <div class="red_cover pie_image"></div>
                         </div>
                     </div>
-                    <div class="col p-0">
+                    <div class="col p-0 four_img background_default">
                         <div class="container-experience">
-                            <div class="image one">
+                            <div class="image one text-center">
                                 <img src="resources/img/experience/4.jpg"/ class="img-fluid">
-                                <div class="details-window up purple_cover">
-                                <p id="sec">This is a slide-up animation</p>
+                                <div class="details-window up purple_cover"></div>
+                                <div class="details-window up">
+                                    <h3>Multi-Platform</h3>
+                                    <hr>
+                                    <p>Inspiring and creative original well thought</p>
                                 </div>
                             </div>
+                            <div class="purple_cover pie_image"></div>
                         </div>
                     </div>
-                    <div class="col p-0">
+                    <div class="col p-0 five_img background_default">
                         <div class="container-experience">
-                            <div class="image one">
+                            <div class="image one text-center">
                                 <img src="resources/img/experience/5.jpg"/ class="img-fluid">
-                                <div class="details-window up blue_cover">
-                                <p id="sec">This is a slide-up animation</p>
+                                <div class="details-window up blue_cover"></div>
+                                <div class="details-window up">
+                                    <h3>Extensible</h3>
+                                    <hr>
+                                    <p>Inspiring and creative original well thought</p>
                                 </div>
                             </div>
+                            <div class="blue_cover pie_image"></div>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
 <!--contenido-->
-      
-    </body>
 
     <script src="resources/js/preloader.js"></script>
     <script src="resources/js/scroll-out.min.js" ></script>
     <script src="resources/js/plugin_secunce.js" ></script>
     <script src="resources/js/main.js" ></script>
+    <script>
+function rep_mov(){ 
+    document.getElementById('video1').muted = true; 
+    $('#video-holder').addClass('add-video');
+    $('#video1').trigger('play');
+}
+function rep_mov2(){ 
+    $('#video-holder').removeClass('add-video');
+    $('#video1').trigger('reset');
+}
+
+$('.one_img').hover( rep_mov , rep_mov2);
+
+     
+    </script>
 </body>
 </html>
