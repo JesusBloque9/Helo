@@ -183,7 +183,7 @@ html, body {
   }
   
   body {
-    perspective: 600px;
+    /**perspective: 600px;**/
     overflow-x: hidden;
   }
   @media screen and (max-width: 768px) {
@@ -462,8 +462,8 @@ footer{
   text-align: center;
 }
 .footer-menu{
-  margin-top: 20vh;
-  margin-bottom: 30vh;
+  padding-top: 20vh;
+  padding-bottom: 30vh;
 }
 .logo-footer{
   width: 220px;

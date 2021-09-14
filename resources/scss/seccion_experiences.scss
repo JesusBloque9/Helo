@@ -80,12 +80,16 @@ a:hover{cursor:pointer;}
 
 
       
-      .details-window {
+      .details-window, .details-window-cover {
         height: 100%;
         width: 100%;
         opacity: 0;
         padding-top: 145%;
         position: absolute;
+      }
+
+      .details-window-cover{
+        padding-top: 0%;
       }
       
       .up {
@@ -159,6 +163,7 @@ a:hover{cursor:pointer;}
         height: 750px;
         background-repeat: no-repeat !important;
         background-size: cover !important;
+        margin-top: 10px;
     }
 
     .one_img{
@@ -180,5 +185,53 @@ a:hover{cursor:pointer;}
     .five_img{
         background: url('../img/experience/5.jpg');
     }
+
+    .col-xs-5-12,
+    .col-sm-5-12,
+    .col-md-5-12,
+    .col-lg-5-12 {
+      position: relative;
+      min-height: 1px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .col-xs-5-12 {
+      width: 20%;
+      float: left;
+    }
+
+    @media (max-width: 525px) {
+      
+      .details-window {
+        padding-top: 100%;
+      }
+    }
+    @media (min-width: 768px) {
+      .col-sm-5-12 {
+        width: 20%;
+        float: left;
+      }
+    }
+    @media (min-width: 992px) {
+      .col-md-5-12 {
+        width: 20%;
+        float: left;
+      }
+      .details-window {
+        padding-top: 100%;
+      }
+    }
+    @media (min-width: 1200px) {
+      .col-lg-5-12 {
+        width: 20%;
+        float: left;
+      }
+    }
+    .realColumn {
+      height: 50px;
+      background: red;
+      margin: 15px;
+    }
 }
   
+
