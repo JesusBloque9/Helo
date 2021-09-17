@@ -284,14 +284,20 @@
                 </div>
             </div>
         </div>
+
         <!--Footer Contact Us-->
-        <div class="container-fluid px-0 mx-0 mt-2">
-            <section class="contact-home">
+        <div class="container-fluid px-0 mx-0 mt-2" id="contact-home">
+            <section class="contact-home pb-0">
                 <p>Start your experience now!</p>
                 <h3 class="dubstep-effect"><span>Contact Us</span></h3>    
             </section>
         </div>
         <!--Footer-->
+
+        <div>
+            <canvas id="canvas"></canvas>
+        </div>
+
         <!--Footer--> 
         <footer class="footer-menu row white_background"> 
             <div class="footer-social col-3"> 
@@ -589,7 +595,7 @@
         function cycle(value, total) {
         return (value % total + total) % total;
         }
-
     </script>
+    <script src="resources/js/effect_waves-compile.js"></script>
 </body>
 </html>
