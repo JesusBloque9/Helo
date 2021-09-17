@@ -467,7 +467,7 @@ class PolyWave extends Entity {
 const ELASTICITY = 0.05; // elastic force toward the origin
 const DAMPING = 0.4;
 const MASS = 10;
-const ADJACENT_SPRING_CONSTANT = 0.12;
+const ADJACENT_SPRING_CONSTANT = 0.01;
 
 const DPR = window.devicePixelRatio || 1;
 
