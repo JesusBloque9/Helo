@@ -8,6 +8,16 @@ body {
   text-align: right;
 }
 
+.scroll-container {
+  color: white !important;
+  margin-bottom: 26vh!important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .scroll-sequence__container{
   background: #00000045 0% 0% no-repeat padding-box;
   opacity: 1;
@@ -41,14 +51,7 @@ body {
       -webkit-text-fill-color: transparent;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
-    }
-
-
-
-    .scroll-container {
-      color: white !important;
-    }
-    
+    }    
 
     .speak {
       text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);

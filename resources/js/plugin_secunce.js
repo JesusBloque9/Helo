@@ -88,7 +88,7 @@ class Canvas {
   
   drawImage(e) {
     this.displayIndex = e,
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height+250);
     const x = Math.floor((this.canvas.width - this.images[this.displayIndex].naturalWidth) / 2);
     const y = Math.floor((this.canvas.height - this.images[this.displayIndex].naturalHeight) / 2);
     if (this.cover) {
@@ -101,7 +101,7 @@ class Canvas {
   
   resize() {
     const w = this.container.clientWidth;
-    const h = this.container.clientHeight;
+    const h = this.container.clientHeight+250;
     this.canvas.style.height = `${h}px`;
     this.canvas.style.width = `${w}px`;
     this.canvas.height = h;
