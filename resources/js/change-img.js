@@ -2,3 +2,7 @@ $(".list li a").hover( function() { // Changes the .image-holder's img src to th
     var value=$(this).attr('data-src');
     $(".image-holder img").attr("src", value);
 });
+
+$("#menu-text").hover( function(){
+    var texto=$(this).attr('value');
+})

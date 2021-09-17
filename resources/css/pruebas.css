@@ -3,6 +3,9 @@
 	margin: 0;
 	padding: 0;
 }
+nav{
+    height: 12vh;
+}
 /*MENU*/
 body {
     perspective: 600px;
@@ -28,7 +31,7 @@ body {
   .menu {
     position: absolute;
     right: 10vw;
-    top: 5vh;
+    top: 3vh;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -45,10 +48,58 @@ body {
     left: 14px;
     height: 2px;
     width: 20px;
-    background: rgb(255, 255, 255);
+    background: rgb(20, 20, 20);
     pointer-events: none;
     transition: all 0.2s linear;
   }
+  .menu2::before, .menu2::after {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 14px;
+    height: 2px;
+    width: 20px;
+    background: rgb(0, 0, 0);
+    pointer-events: none;
+    transition: all 0.2s linear;
+  }
+  .menu2 {
+    position: absolute;
+    right: 10vw;
+    top: 3vh;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+    cursor: pointer;
+  }
+  .menu2.crossed{
+    background: #FFCA30;
+  }
+  .menu2::before {
+    transform: translateY(-3px);
+  }
+  .menu2::after {
+    transform: translateY(3px);
+  }
+  .menu2.crossed::before {
+    transform: rotate(45deg);
+  }
+  .menu2.crossed::after {
+    transform: rotate(135deg);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
   .menu.crossed{
     background: #FFCA30;
   }
@@ -106,31 +157,31 @@ body {
     }
   }
 
-
-   /*Mi programacion*/
-.logo-home{
-  width: 150px;
-  margin-top: 7vh;
-  margin-left: 10vw;
-}
+/*Mi programacion*/
 .logo-home2{
-  width: 50px;
-  margin-top:3vh;
-  margin-left: 10vw;
+    width: 50px;
+    margin-top:3vh;
+    margin-left: 10vw;
+}
+.logo-home-back{
+    width: 150px;
+    margin-top:3vh;
+    margin-left: 10vw;
 }
 /*Menu home*/
 .menu-home{
-  display: inline-block;
-  position: absolute;
-  margin-top: 4.6vh;
-  right: 15vw;
+    display: inline-block;
+    position: absolute;
+    margin-top: 4.6vh;
+    right: 15vw;
 }
 .menu-home li{
-  display: inline-block;
-  list-style: none;
-  margin-left: 1vw;
-  margin-right: 1vw;    
+    display: inline-block;
+    list-style: none;
+    margin-left: 1vw;
+    margin-right: 1vw;    
 }
+
 /*menu imagen lateral*/
 .imagen-fondo{
   width: 30vw;
@@ -247,41 +298,4 @@ font-weight: bold;
       display: none;
       visibility: hidden;
     }
-  }
-
-   .menu2::before, .menu2::after {
-    content: "";
-    position: absolute;
-    top: 23px;
-    left: 14px;
-    height: 2px;
-    width: 20px;
-    background: rgb(0, 0, 0);
-    pointer-events: none;
-    transition: all 0.2s linear;
-  }
-  .menu2 {
-    position: absolute;
-    right: 10vw;
-    top: 3vh;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    transition: all 0.2s linear;
-    cursor: pointer;
-  }
-  .menu2.crossed{
-    background: #FFCA30;
-  }
-  .menu2::before {
-    transform: translateY(-3px);
-  }
-  .menu2::after {
-    transform: translateY(3px);
-  }
-  .menu2.crossed::before {
-    transform: rotate(45deg);
-  }
-  .menu2.crossed::after {
-    transform: rotate(135deg);
   }

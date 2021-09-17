@@ -146,12 +146,12 @@
       }
   }
   
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
       /* Prelaoder */
       /* Spinner cargando */
       .ctn-preloader .animation-preloader .spinner {
-          height: 7em;
-          width: 7em;
+          height: 4em;
+          width: 4em;
       }
   
       /* Texto cargando */

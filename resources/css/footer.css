@@ -98,24 +98,28 @@
     font-size: 1rem;
     margin-bottom: 50px;
   }
-  .title-footer{
+  .title-footer{    
     font-weight: bold;
     font-size: 1.45rem;
     margin-bottom: 20px;  
   }
   .footer-contact h6{
+    margin-left: -5px;
+    text-align: left;
     font-size: 1rem;
-    margin-bottom: 0px;
+    margin-bottom: 7px;
     font-weight: bold;
     margin-top: 30px;    
   }
   .footer-contact p{  
+    text-align: left;
     font-size: .85rem;
     margin: -5px;
   }
   .footer-contact hr{
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: -5px; 
     width: 50%;
   }
   .footer-social{
@@ -132,6 +136,13 @@
   }
   .menu-footers{
     margin: 0;
+    margin-top: 5vh;
+  }
+  .menu-footers a{
+    color:#6A6969 !important;
+  }
+  .contac-section1{
+    margin-left: 6vw;
   }
   
    .footer {
@@ -245,5 +256,17 @@
     }
     100% {
       bottom: var(--distance, 50rem);
+    }
+  }
+
+  /*Adaptacion movil*/
+  
+  @media (max-width: 700px) {
+    .footer-menu{
+      overflow-x: hidden;
+    }
+    .footer-navmenu{
+      display: none;
+      visibility: hidden;
     }
   }

@@ -200,3 +200,16 @@ a:hover {
   background: red;
   margin: 15px;
 }
+
+
+  /*Adaptacion movil*/
+  
+  @media (max-width: 700px) {
+    .title {
+      font-size: 3.209rem;
+    }
+  }
+
+
+
+
