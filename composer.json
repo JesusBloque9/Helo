@@ -1,0 +1,21 @@
+{
+  "name": "yinblack/easypage",
+  "description": "Micro framework para la creación paginas web integrado con twig",
+  "type": "project",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Arvizu",
+      "homepage": "http://www.zedaya.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3"
+  },
+  "autoload": {
+    "psr-4": {
+        "yinblack\\easypage\\": "/"
+    }
+  }
+}
