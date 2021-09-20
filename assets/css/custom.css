@@ -7994,12 +7994,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .h1, .h2, .h3, .h4, .h5, .
   padding-bottom: 4.5rem !important; }
 
 html {
-  overflow-x: hidden;
   max-width: 100vw; }
   html body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    overflow-x: hidden;
     max-width: 100vw;
     font-weight: 500;
     color: #4C545C;
@@ -8789,7 +8787,7 @@ footer {
 
 .footer-menu {
   margin-top: 5vh;
-  margin-bottom: 25vh;
+  margin-bottom: 35vh;
   z-index: 2;
   position: relative; }
   .footer-menu.negative {
