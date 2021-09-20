@@ -12,47 +12,12 @@ HELO
 {% endblock %}
 
 {% block extraJS %}
-    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
-    <script src="{{ const.BASE_URL }}assets/js/main.js" ></script>
-    <script>
-        document.addEventListener("mousemove", function(event) {
-        const x = event.pageX - 10;
-        const y = event.pageY - 10;
-        const cursor = document.querySelector("#cursor");
-        cursor.style.left = x + "px";
-        cursor.style.top = y + "px";
-        });
-        $('a').on("mouseover", function(){
-        $('#cursor').css({'transform': 'scale(2)'});
-        });
-        $('a').on("mouseleave", function(){
-        $('#cursor').css({'transform': 'scale(1)'});
-        });
-        $('span').on("mouseover", function(){
-        $('#cursor').css({'transform': 'scale(2)'});
-        });
-        $('span').on("mouseleave", function(){
-        $('#cursor').css({'transform': 'scale(1)'});
-        });
-        // sayHello
-        var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
-        window.console.log.apply(console, Helo);
-    </script>
-    <script>
-        function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
-          return Math.random() * (max - min) + min;
-        }
-        function getRandomInt(min, max) {
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        function cycle(value, total) {
-          return (value % total + total) % total;
-        }
-    </script>
-
 {% endblock %}
 
 {% block content %}
+
+    {% include 'modules/menu_secciones.html' %}
+
     <div class="py-5" id="creators">
         <div class="container">
             <div class="row">
