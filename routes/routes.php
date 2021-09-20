@@ -16,6 +16,11 @@ class routes extends Controller
         /*CONSTANTS*/$const=$this->_const;
         echo $this->_twig->render('sections/creators.html', compact('const'));
     }
+    public function sustainability()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/sustainability.html', compact('const'));
+    }
 
 }
 ?>
