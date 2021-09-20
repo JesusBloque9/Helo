@@ -92,10 +92,13 @@
     overflow-y: hidden;
   }
   .footer-menu{
-    margin-top: -25vh;
+    margin-top: 5vh;
     margin-bottom: 25vh;
     z-index: 2;
     position: relative;
+    &.negative{
+      margin-top: -25vh;
+    }
   }
   .logo-footer{
     width: 220px;
