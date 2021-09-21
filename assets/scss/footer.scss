@@ -35,10 +35,6 @@
     -webkit-animation: dubstep 1.3958s infinite ease;
             animation: dubstep 1.3958s infinite ease;
   }
-  p {
-    font-size: 18px;
-    line-height: 30px;
-  }
   @-webkit-keyframes dubstep {
     0% {
       text-shadow: 0 0 0 #fff;
@@ -93,7 +89,7 @@
   }
   .footer-menu{
     margin-top: 5vh;
-    margin-bottom: 25vh;
+    margin-bottom: 35vh;
     z-index: 2;
     position: relative;
     &.negative{

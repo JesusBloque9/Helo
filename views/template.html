@@ -45,45 +45,6 @@
             </div>
         </div>
     </section>
-    <nav> 
-        <div class="full page"> 
-            <img class="logo-home" src="{{ const.BASE_URL }}assets/img/logo-helo.svg" alt=""> 
-            <div class="menu" id="openNav"></div> 
-        </div> 
-        <div class="full nav menu-interior"> 
-            <img class="logo-home" src="{{ const.BASE_URL }}assets/img/logob-helo.svg" alt="">                 
-            <div class="menu crossed" id="closeNav"></div> 
-            <div class="principal-menu row"> 
-                <div class="col"> 
-                    <div class="subrayado"> 
-                        <ul class="list"> 
-                            <li id="menu-text" class="hollow-text-black"><a data-src="assets/img/menu/menu-img1.jpg" value="Home">Home</a></li>                                
-                            <li id="menu-text" class="hollow-text-black"><a data-src="assets/img/menu/menu-img3.jpg" value="Approach">Approach</a></li> 
-                            <li class="hollow-text-black"><a data-src="assets/img/menu/menu-img4.jpg">Sustainability</a></li> 
-                            <li class="hollow-text-black"><a data-src="assets/img/menu/menu-img5.jpg">Work</a></li> 
-                            <li class="hollow-text-black"><a data-src="assets/img/menu/menu-img6.jpg">News</a></li> 
-                            <li class="hollow-text-black"><a data-src="assets/img/menu/menu-img7.jpg">Contact</a></li> 
-                        </ul>                          
-                    </div> 
-                    <hr> 
-                    <div class="social-media"> 
-                        <a href=""><img src="{{ const.BASE_URL }}assets/img/footer/s-linkedin.svg" alt=""></a>
-                        <a href=""><img src="{{ const.BASE_URL }}assets/img/footer/s-instagram.svg" alt=""></a> 
-                    </div> 
-                    <p>justin@helo.tv</p>                         
-                </div> 
-                <div class="col imagen-menu"> 
-                    <img class="elipse-fondo" src="{{ const.BASE_URL }}assets/img/menu/menu-fondo.svg" alt=""> 
-                    <div class="image-holder"> 
-                        <img class="imagen-fondo" src="{{ const.BASE_URL }}assets/img/menu/menu-img2.jpg" alt=""> 
-                    </div>
-                    <div class="change-text">
-                        <h3 class="textchange-1" >Home</h3>  
-                    </div>                         
-                </div>                         
-            </div>  
-        </div> 
-    </nav>
 
 	{% block content %}{% endblock %}
         
@@ -228,8 +189,43 @@
 
 </body>
 
-  <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
-	{% block extraJS %}
-    {% endblock %}
+    <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
+    <script>
+        document.addEventListener("mousemove", function(event) {
+        const x = event.pageX - 10;
+        const y = event.pageY - 10;
+        const cursor = document.querySelector("#cursor");
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+        });
+        $('a').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('a').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        $('span').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('span').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        // sayHello
+        var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
+        window.console.log.apply(console, Helo);
+    </script>
+    <script>
+        function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function cycle(value, total) {
+          return (value % total + total) % total;
+        }
+    </script>
+	{% block extraJS %}{% endblock %}
 
 </html>

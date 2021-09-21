@@ -12,10 +12,8 @@ HELO
 {% endblock %}
 
 {% block extraJS %}
-    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/scroll-out.min.js" ></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
-    <script src="{{ const.BASE_URL }}assets/js/main.js" ></script>
     <script>
         const firstSequenceImages = [];
         const twoSequenceImages = [];
@@ -202,6 +200,8 @@ HELO
 {% endblock %}
 
 {% block content %}
+
+{% include 'modules/menu_home.html' %}
 
 <div class="container-fluid scroll-container menu-nav2">
     <section class="scroll-sequence__container first-container">
