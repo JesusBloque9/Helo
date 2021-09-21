@@ -9014,6 +9014,146 @@ body .footer .content > div .image {
       #creators .item_creator > a:hover:after {
         width: 100%; }
 
+/*Titulo*/
+.sustainability-section {
+  text-align: center;
+  background-image: url("../img/sustainability/wallpaper-sustainability.jpg");
+  background-size: contain;
+  height: 160vh; }
+
+.sustainability-title {
+  padding-top: 18vh; }
+  .sustainability-title h1, .sustainability-title .h1 {
+    font-size: 21px;
+    color: #008351; }
+  .sustainability-title p {
+    font-weight: bold;
+    font-size: 2.7rem;
+    margin-top: 15px;
+    width: 620px;
+    line-height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #62A00E;
+    background: -webkit-linear-gradient(to top, #62A00E 0%, #0FBDDA 95%);
+    background: -moz-linear-gradient(to top, #62A00E 0%, #0FBDDA 95%);
+    background: linear-gradient(to top, #62A00E 0%, #0FBDDA 95%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
+/*Ancla con flecha*/
+[data-ca3_icon]::before {
+  content: attr(data-ca3_icon); }
+
+.ca3-scroll-down-arrow {
+  background-image: url("../img/sustainability/arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.ca3-scroll-down-link {
+  cursor: pointer;
+  height: 60px;
+  width: 40px;
+  margin: 0px 0 0 -20px;
+  line-height: 60px;
+  position: absolute;
+  left: 50%;
+  color: black !important;
+  text-align: center;
+  font-size: 70px;
+  z-index: 100;
+  text-decoration: none;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+  -webkit-animation: ca3_fade_move_down 2s ease-in-out infinite;
+  -moz-animation: ca3_fade_move_down 2s ease-in-out infinite;
+  animation: ca3_fade_move_down 2s ease-in-out infinite; }
+
+/*animated scroll arrow animation*/
+@-webkit-keyframes ca3_fade_move_down {
+  0% {
+    -webkit-transform: translate(0, -20px);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(0, 20px);
+    opacity: 0; } }
+@-moz-keyframes ca3_fade_move_down {
+  0% {
+    -moz-transform: translate(0, -20px);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -moz-transform: translate(0, 20px);
+    opacity: 0; } }
+@keyframes ca3_fade_move_down {
+  0% {
+    transform: translate(0, -20px);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: translate(0, 20px);
+    opacity: 0; } }
+/*Pasos*/
+.sustainability-steps {
+  text-align: left;
+  margin-top: 55vh;
+  margin-right: 5vw;
+  margin-left: 5vw; }
+  .sustainability-steps h3, .sustainability-steps .h3 {
+    color: #ffd209;
+    font-size: 80px;
+    font-weight: bold; }
+  .sustainability-steps p {
+    color: #FFFFFF;
+    font-size: 29px;
+    line-height: 32px; }
+
+/*Video*/
+.sustainability-video {
+  background: #000000;
+  height: 50vh;
+  text-align: center; }
+  .sustainability-video h3, .sustainability-video .h3 {
+    color: #ffd209;
+    text-align: left;
+    margin-left: 11vw;
+    font-size: 29px; }
+  .sustainability-video iframe {
+    margin: 30px auto 0px auto;
+    height: 85vh;
+    width: 90vw; }
+
+.sustainability-reportd-cart {
+  margin-top: 45vh;
+  text-align: center; }
+  .sustainability-reportd-cart h3, .sustainability-reportd-cart .h3 {
+    font-size: 19px;
+    color: #008351;
+    font-weight: 500; }
+  .sustainability-reportd-cart p {
+    font-size: 27px;
+    font-weight: 700;
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto; }
+  .sustainability-reportd-cart .metrics {
+    margin-top: 15vh;
+    margin-right: 15vw;
+    margin-left: 15vw;
+    margin-bottom: 15vh; }
+    .sustainability-reportd-cart .metrics img {
+      width: 150px; }
+    .sustainability-reportd-cart .metrics h6, .sustainability-reportd-cart .metrics .h6 {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 21px;
+      font-weight: 600; }
+    .sustainability-reportd-cart .metrics .metrics-fila2 {
+      margin-top: 10vh; }
+
 #cursor {
   position: absolute;
   width: 20px;
