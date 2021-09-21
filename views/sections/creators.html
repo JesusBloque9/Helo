@@ -12,47 +12,12 @@ HELO
 {% endblock %}
 
 {% block extraJS %}
-    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
-    <script src="{{ const.BASE_URL }}assets/js/main.js" ></script>
-    <script>
-        document.addEventListener("mousemove", function(event) {
-        const x = event.pageX - 10;
-        const y = event.pageY - 10;
-        const cursor = document.querySelector("#cursor");
-        cursor.style.left = x + "px";
-        cursor.style.top = y + "px";
-        });
-        $('a').on("mouseover", function(){
-        $('#cursor').css({'transform': 'scale(2)'});
-        });
-        $('a').on("mouseleave", function(){
-        $('#cursor').css({'transform': 'scale(1)'});
-        });
-        $('span').on("mouseover", function(){
-        $('#cursor').css({'transform': 'scale(2)'});
-        });
-        $('span').on("mouseleave", function(){
-        $('#cursor').css({'transform': 'scale(1)'});
-        });
-        // sayHello
-        var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
-        window.console.log.apply(console, Helo);
-    </script>
-    <script>
-        function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
-          return Math.random() * (max - min) + min;
-        }
-        function getRandomInt(min, max) {
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        function cycle(value, total) {
-          return (value % total + total) % total;
-        }
-    </script>
-
 {% endblock %}
 
 {% block content %}
+
+    {% include 'modules/menu_secciones.html' %}
+
     <div class="py-5" id="creators">
         <div class="container">
             <div class="row">
@@ -63,76 +28,76 @@ HELO
             <div class="row justify-content-center">
                 <div class="col-12 col-md-11 col-lg-10 py-5">
                     <div class="row m-0 w-100 justify-content-center">
-                        <div class="col-12 col-md-10 col-lg-9 col-xl-8 px-0 pt-3 text-left">
+                        <div class="col-12 col-md-10 col-lg-9 px-0 pt-3 text-left">
                             <div class="row w-100 m-0">
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Anthony Nikolchev</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Anthony Nikolchev</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Bobbi Rich</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Bobbi Rich</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Christine Ng </a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Christine Ng </a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Compound</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Compound</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Craig Winslow</a> 
+                                    <a href="{{ const.BASE_URL }}creator-detail">Craig Winslow</a> 
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Daniel Junge</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Daniel Junge</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Ethan Tobman</a> 
+                                    <a href="{{ const.BASE_URL }}creator-detail">Ethan Tobman</a> 
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Glenn Kitson</a> 
+                                    <a href="{{ const.BASE_URL }}creator-detail">Glenn Kitson</a> 
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Jeff Tremaine</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Jeff Tremaine</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Joseph Bennett</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Joseph Bennett</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">KK Barrett</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">KK Barrett</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Kyle Ruddick</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Kyle Ruddick</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Les Enfants Terribles</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Les Enfants Terribles</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Lola Tango</a> 
+                                    <a href="{{ const.BASE_URL }}creator-detail">Lola Tango</a> 
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Mike Marshall</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Mike Marshall</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Mike Young</a> 
+                                    <a href="{{ const.BASE_URL }}creator-detail">Mike Young</a> 
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Nathan Crowley</a> 
+                                    <a href="{{ const.BASE_URL }}creator-detail">Nathan Crowley</a> 
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Nepyru</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Nepyru</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Remember I Love You</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Remember I Love You</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Roz</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Roz</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Sara Nesson</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Sara Nesson</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">Sebastian Kite</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">Sebastian Kite</a>
                                 </div>
                                 <div class="item_creator col-6 col-md-4 px-3 ps-md-2 ps-lg-3 ps-xl-5">
-                                    <a href="">William Maher</a>
+                                    <a href="{{ const.BASE_URL }}creator-detail">William Maher</a>
                                 </div>
                             </div>
                         </div>

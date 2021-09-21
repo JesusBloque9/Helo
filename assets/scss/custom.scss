@@ -1,5 +1,6 @@
 $primary: #FF2A1B;;
 $back_text: #1D1D1D;
+$grey_text: #7A7A7A;
 $theme-colors: (
   "primary": $primary
 );
@@ -13,9 +14,13 @@ html{
 		font-family: 'Montserrat', sans-serif;
 	    font-size: 1rem;
     	max-width: 100vw;
-    	font-weight: 500;
-    	color: #4C545C;
+    	font-weight: 400;
+    	color: #363636;
     	line-height: 2;
+        display: block;
+        width: 100%;
+        height: auto !important;
+        position: relative;
 	}
 }
 
@@ -24,9 +29,12 @@ html{
 @import "./scroll_secuence";
 @import "./preloader";
 @import "./principal-menu";
+@import "./menu-alternativo";
 @import "./footer";
 @import "./home";
 @import "./creators";
+@import "./sustainability";
+@import "./works";
 @import "./news";
 
 #cursor {
@@ -42,6 +50,58 @@ html{
     z-index: 10000
 }
 
+.title_section{
+    display: inline-block;
+    width: auto;
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: 800;
+    margin-bottom: 0px;
+    >small{
+        display: block;
+        position: relative;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 5px 0px;
+    }
+    &:after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        bottom: -5px;
+        left: 0px;
+        right: 0px;
+        width: 100%;
+        height: 2px;
+        background-color: $primary;
+    }
+}
+
+.title_leftline{
+    @include block_ctrl();
+    font-weight: 900;
+    padding-left: 20px;
+    >small{
+        @include block_ctrl();
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: $grey_text;
+        padding-top: 5px;
+    }
+    &:before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        height: 80%;
+        width: 3px;
+        background-color: $primary;
+        margin: auto 0px;
+        border-radius: 1px;
+    }
+}
 
 div.multicolor{
     >div{
