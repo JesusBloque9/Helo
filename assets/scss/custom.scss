@@ -14,9 +14,13 @@ html{
 		font-family: 'Montserrat', sans-serif;
 	    font-size: 1rem;
     	max-width: 100vw;
-    	font-weight: 500;
-    	color: #4C545C;
+    	font-weight: 400;
+    	color: #363636;
     	line-height: 2;
+        display: block;
+        width: 100%;
+        height: auto !important;
+        position: relative;
 	}
 }
 
@@ -25,6 +29,7 @@ html{
 @import "./scroll_secuence";
 @import "./preloader";
 @import "./principal-menu";
+@import "./menu-alternativo";
 @import "./footer";
 @import "./home";
 @import "./creators";
@@ -77,8 +82,9 @@ html{
     >small{
         @include block_ctrl();
         font-size: 1.1rem;
-        font-size: 600;
+        font-weight: 500;
         color: $grey_text;
+        padding-top: 5px;
     }
     &:before{
         content: '';
@@ -87,7 +93,7 @@ html{
         left: 0px;
         top: 0px;
         bottom: 0px;
-        height: 75%;
+        height: 80%;
         width: 3px;
         background-color: $primary;
         margin: auto 0px;

@@ -21,6 +21,10 @@ video {
   justify-content: center;
   align-items: center;
   width: 100%;
+  >div{
+    padding: 0px 15px;
+    margin-bottom: 25px;
+  }
 }
 #works .color video {
   position: fixed;
@@ -123,10 +127,8 @@ video {
 }
 
 #works .up {
-  height: 100vh;
   overflow: hidden;
   position: relative;
-  max-height: 50vh;
 }
 #works .up .text, #works .up .text_overlay {
   bottom: -100vh;
@@ -135,14 +137,51 @@ video {
   position: sticky;
   transition: 0.7s ease;
 }
-#works .up:hover .text, #works .up:hover .text_overlay {
-  bottom: 20%;
-  transition: 0.7s ease;
+
+#works{
+  >.up{
+    &.col-12{
+      &:hover{
+        .text{
+          transition: 0.7s ease;
+          bottom: 185px;
+        }
+      }
+    }
+    &.col-md-6{
+      &:hover{
+        .text{
+          transition: 0.7s ease;
+          bottom: 35px;
+        }
+      }
+    }
+    &:hover{
+      .text_overlay{
+        bottom: 20%;
+        transition: 0.7s ease;
+      }
+    }
+  }
 }
+
+
+
+
 #works .color {
   padding: 0;
   height: 100%;
   position: relative;
+  &:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 4px;
+  }
 }
 #works .color div {
   height: 100%;
@@ -201,12 +240,22 @@ video {
   background: #FFCA30 0% 0% no-repeat padding-box;
   mix-blend-mode: multiply;
 }
+#works .yellow_cover > .color{
+  &:after{
+    background-color: #FFCA30;
+  }
+}
 #works .yellow_cover.b-bottom {
   border-color: #FFCA30;
 }
 #works .orange_cover > .color, #works .orange_cover .text_overlay {
   background: #DE5307 0% 0% no-repeat padding-box;
   mix-blend-mode: multiply;
+}
+#works .orange_cover > .color{
+  &:after{
+    background-color: #DE5307;
+  }
 }
 #works .orange_cover.b-bottom {
   border-color: #DE5307;
@@ -215,12 +264,22 @@ video {
   background: #FF2A1B 0% 0% no-repeat padding-box;
   mix-blend-mode: multiply;
 }
+#works .red_cover > .color{
+  &:after{
+    background-color: #FF2A1B;
+  }
+}
 #works .red_cover.b-bottom {
   border-color: #FF2A1B;
 }
 #works .purple_cover > .color, #works .purple_cover .text_overlay {
   background: #6049F8 0% 0% no-repeat padding-box;
   mix-blend-mode: multiply;
+}
+#works .purple_cover > .color{
+  &:after{
+    background-color: #6049F8;
+  }
 }
 #works .purple_cover.b-bottom {
   border-color: #6049F8;
@@ -229,12 +288,22 @@ video {
   background: #007CB0 0% 0% no-repeat padding-box;
   mix-blend-mode: multiply;
 }
+#works .blue_cover > .color{
+  &:after{
+    background-color: #007CB0;
+  }
+}
 #works .blue_cover.b-bottom {
   border-color: #007CB0;
 }
 #works .green_cover > .color, #works .green_cover .text_overlay {
   background: #008351 0% 0% no-repeat padding-box;
   mix-blend-mode: multiply;
+}
+#works .green_cover > .color{
+  &:after{
+    background-color: #008351;
+  }
 }
 #works .green_cover.b-bottom {
   border-color: #008351;
@@ -267,24 +336,22 @@ video {
 }
 #vimeo-pop-container div {
   height: 100%;
-  width: 87%;
+  width: 100%;
+  padding: 15px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 #vimeo-pop-container .vimeo-close {
-  background-color: transparent;
-  border: 3px solid white;
-  cursor: pointer;
-  margin-bottom: -30px;
-  margin-right: -30px;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  transition: 200ms background-color;
+    background-color: transparent;
+    border: 3px solid white;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 15px;
+    transition: 200ms background-color;
 }
 #vimeo-pop-container .vimeo-close:before, #vimeo-pop-container .vimeo-close:after {
   content: "";
@@ -349,4 +416,16 @@ video {
 }
 .multicolor :nth-child(6) {
   background: #008351;
+}
+
+
+@include media-breakpoint-down(lg) {
+  #works .up .text, #works .up .text_overlay {
+      bottom: 0px;
+      top: 0px;
+      left: 15px;
+      right: 15px;
+      height: 100%;
+      position: absolute;
+  }
 }
