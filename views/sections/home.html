@@ -15,6 +15,15 @@ HELO
     <script src="{{ const.BASE_URL }}assets/js/scroll-out.min.js" ></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
     <script>
+        function mobile_functions() {
+            
+            if(window.matchMedia("(max-width: 767px)").matches){
+                alert();
+                $(".container-experience").addClass('moblie_experiences');  
+            }
+        }
+    </script>
+    <script>
         const firstSequenceImages = [];
         const twoSequenceImages = [];
         const treeSequenceImages = [];
@@ -39,16 +48,43 @@ HELO
         for (let i = 814; i <= 847; i ++) {
           sixSequenceImages.push(`${`000${i}`.slice(-5)}.jpg`);
         }
-        const firstSequence = new ScrollSequence({
-            container: '.first-sequence',
-            scrollWith: '.first-container',
-            images: firstSequenceImages,
-            imagesRoot: 'assets/img/secuencia/1/',
-            priorityFrames: [0, 20, 40, 60, 90],
-            cover: true,
-            starts: 'out',
-            ends: 'in'
-          });
+
+        function scroll_secuence_initialize(){
+            if(window.matchMedia("(max-width: 767px)").matches){
+                const firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/movil/',
+                    priorityFrames: [0, 20, 40, 60, 90],
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+            } else{
+                const firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/1/',
+                    priorityFrames: [0, 20, 40, 60, 90],
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+            }
+        }
+
+        $(document).ready(function(){
+            scroll_secuence_initialize();      
+            mobile_functions();      
+        });
+
+        $( window ).resize(function() {
+            scroll_secuence_initialize();
+            mobile_functions();
+        });
+
         const twoSequence = new ScrollSequence({
             container: '.two-sequence',
             scrollWith: '.two-container',
@@ -282,7 +318,7 @@ HELO
 </nav>
 
 <!--We make Section-->    
-<div class="container-fluid px-0 mx-0">
+<div class="container-fluid px-0 mx-0 white_background">
     <div id="experiences" class="white_background">
         <div class="row py-5">
             <div class="col-12 text-center py-5">

@@ -100,7 +100,7 @@ a:hover{cursor:pointer;}
       .pie_image{
           height: 10px;
       }
-      
+
       hr{
         height: 2px;
         color: #FFF;
@@ -110,7 +110,7 @@ a:hover{cursor:pointer;}
         margin-right: auto;
       }
 
-    .one:hover .up {
+    .one:hover .up , .moblie_experiences .one .up{
         transform: translateY(-100%);
         opacity: 0.7;
         transition: 0.7s ease;

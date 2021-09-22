@@ -45,10 +45,10 @@ $form-floating-label-transform:   scale(.85) translateY(-1rem) translateX(.15rem
 //@import "../../node_modules/bootstrap/scss/button-group";
 //@import "../../node_modules/bootstrap/scss/nav";
 //@import "../../node_modules/bootstrap/scss/navbar";
-//@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/card";
 //@import "../../node_modules/bootstrap/scss/accordion";
 //@import "../../node_modules/bootstrap/scss/breadcrumb";
-//@import "../../node_modules/bootstrap/scss/pagination";
+@import "../../node_modules/bootstrap/scss/pagination";
 //@import "../../node_modules/bootstrap/scss/badge";
 //@import "../../node_modules/bootstrap/scss/alert";
 //@import "../../node_modules/bootstrap/scss/progress";
@@ -76,8 +76,9 @@ $form-floating-label-transform:   scale(.85) translateY(-1rem) translateX(.15rem
 
 html{
     max-width: 100vw;
+    background: #FFF;
 	body{
-		font-family: 'Montserrat', sans-serif;
+        font-family: 'Montserrat', sans-serif;
 	    font-size: 1rem;
     	max-width: 100vw;
     	font-weight: 400;
@@ -87,6 +88,7 @@ html{
         width: 100%;
         height: auto !important;
         position: relative;
+        background: #FFF;
 	}
 }
 
@@ -168,6 +170,10 @@ html{
         margin: auto 0px;
         border-radius: 1px;
     }
+}
+
+.white_background{
+    background: #FFF;
 }
 
 div.multicolor{
