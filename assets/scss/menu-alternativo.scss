@@ -13,8 +13,11 @@ body {
       perspective: 300px;
     }
   }
+  .menu-nav2{
+    padding-bottom: 10px;
+  }
   
-  .full {
+  .menu-nav2 .full {
     position: fixed;
     top: 0;
     left: 0;
@@ -25,7 +28,7 @@ body {
     background:  transparent;
   }
   
-  .menu {
+  .menu-nav2 .menu {
     position: absolute;
     right: 10vw;
     top: 5vh;
@@ -35,10 +38,10 @@ body {
     transition: all 0.2s linear;
     cursor: pointer;
   }
-  .menu:active {
+  .menu-nav2 .menu:active {
     background: #FFCA30;
   }
-  .menu::before, .menu::after {
+  .menu-nav2 .menu::before, .menu::after {
     content: "";
     position: absolute;
     top: 23px;
@@ -49,47 +52,47 @@ body {
     pointer-events: none;
     transition: all 0.2s linear;
   }
-  .menu.crossed{
+  .menu-nav2 .menu.crossed{
     background: #FFCA30;
   }
-  .menu::before {
+  .menu-nav2 .menu::before {
     transform: translateY(-3px);
   }
-  .menu::after {
+  .menu-nav2 .menu::after {
     transform: translateY(3px);
   }
-  .menu.crossed::before {
+  .menu-nav2 .menu.crossed::before {
     transform: rotate(45deg);
   }
-  .menu.crossed::after {
+  .menu-nav2 .menu.crossed::after {
     transform: rotate(135deg);
   }
   
-  .page {
+  .menu-nav2 .page {
     transform-origin: right center;
     transform: translateX(0) rotateY(0);
     z-index: 1;
     opacity: 1;
   }
-  .page.swipe-lft {
+  .menu-nav2 .page.swipe-lft {
     opacity: 0.5;
     z-index: 0;
     transform: translateX(-100%) rotateY(-35deg);
   }
   
-  .nav {
+  .menu-nav2 .nav {
     transform-origin: left center;
     transform: translateX(100%) rotateY(35deg);
     z-index: 0;
     opacity: 0;
   }
-  .nav.open {
+  .menu-nav2 .nav.open {
     opacity: 1;
     z-index: 1;
     transform: translateX(0) rotateY(0deg);
   }
   
-  .cube {
+  .menu-nav2 .cube {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -100,7 +103,7 @@ body {
     pointer-events: none;
   }
   @media screen and (max-width: 768px) {
-    .cube {
+    .menu-nav2 .cube {
       font-size: 24px;
       white-space: nowrap;
     }
@@ -108,14 +111,14 @@ body {
 
 
    /*Mi programacion*/
-   .logo-home{
+   .menu-nav2 .logo-home{
     width: 150px;
     margin-top: 7vh;
     margin-left: 10vw;
 }
 
 /*menu imagen lateral*/
-.imagen-fondo{
+.menu-nav2 .imagen-fondo{
   width: 30vw;
   position: relative;
   right: 10vw;
@@ -123,13 +126,13 @@ body {
   z-index: 100;
 }
 
-.elipse-fondo{
+.menu-nav2 .elipse-fondo{
   position: absolute;
   right: 13vw;
   top: 10vh;
   z-index: -50;
 }
-.imagen-menu h3{
+.menu-nav2 .imagen-menu h3{
   position: relative;
   right: 10vw;
   top: -1vh;
@@ -139,38 +142,31 @@ body {
   font-weight: 300;
 }
 
-.open{
+.menu-nav2 .open{
 background: #fff;
 }
 /*menu texto lateral*/
-.principal-menu{
+.menu-nav2 .principal-menu{
 font-size: 2rem;
 margin-left: 16vw !important;
 margin-top: 5vw !important;
 }
-.hollow-text-black{
--moz-text-stroke: .7px rgb(0, 0, 0);
--webkit-text-stroke: .7px rgb(0, 0, 0);
--webkit-text-fill-color: transparent;
--webkit-text-fill-color: transparent;
-text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
-}
-.principal-menu a {
+.menu-nav2 .principal-menu a {
 position: relative;  
 width: fit-content;
 }
-.menu-footers a{
+.menu-nav2 .menu-footers a{
 position: relative;  
 width: fit-content;  
 }
-.principal-menu li {
+.menu-nav2 .principal-menu li {
 list-style: none;
 margin-bottom:1.5vh;
 }
-.menu-footers li{
+.menu-nav2 .menu-footers li{
 margin-bottom: 1.5vh;
 }
-.subrayado a:after {    
+.menu-nav2 .subrayado a:after {    
 background: none repeat scroll 0 0 transparent;
 bottom: 0;
 content: "";
@@ -182,17 +178,17 @@ background: #FFCA30;
 transition: width 0.3s ease 0s, left 0.3s ease 0s;
 width: 0;
 }
-.subrayado a:hover:after { 
+.menu-nav2 .subrayado a:hover:after { 
 width: 100%; 
 left: 0; 
 }
-.principal-menu hr{
+.menu-nav2 .principal-menu hr{
 width: 50%;
 height: 3px;
 background-color: #000000;
 margin-bottom: 0;
 }
-.principal-menu p{  
+.menu-nav2 .principal-menu p{  
 font-size: 1rem;
 font-weight: bold;
 }

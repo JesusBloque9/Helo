@@ -8620,7 +8620,7 @@ body {
   font-size: 2.3rem;
   font-weight: 600;
   margin-left: 16vw !important;
-  margin-top: 6.5vw !important; }
+  margin-top: 5.5vw !important; }
 
 .hollow-text-black {
   -moz-text-stroke: 0.7px black; }
@@ -8642,7 +8642,7 @@ body {
 
 .principal-menu li {
   list-style: none;
-  margin-bottom: 1.5vh; }
+  margin-bottom: .7vh; }
 
 .menu-footers li {
   margin-bottom: 1.5vh; }
@@ -8737,7 +8737,8 @@ body {
 
 /*Cambio de texto*/
 .change-text {
-  display: block;
+  display: none;
+  visibility: hidden;
   position: absolute;
   z-index: 150;
   left: 48.5vw;
@@ -8746,9 +8747,209 @@ body {
     color: #E6E6E6;
     font-size: 67px; }
 
-#menu-tex1:hover + .change-text1 {
+.menu-tex1:hover + .textchange-1 {
   display: block;
   visibility: visible; }
+
+.menu-tex2:hover + .textchange-2 {
+  display: block;
+  visibility: visible; }
+
+.menu-tex3:hover + .textchange-3 {
+  display: block;
+  visibility: visible; }
+
+.menu-tex4:hover + .textchange-4 {
+  display: block;
+  visibility: visible; }
+
+.menu-tex5:hover + .textchange-5 {
+  display: block;
+  visibility: visible; }
+
+.menu-tex6:hover + .textchange-6 {
+  display: block;
+  visibility: visible; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+/*MENU*/
+body {
+  perspective: 600px;
+  overflow-x: hidden; }
+
+@media screen and (max-width: 768px) {
+  body {
+    perspective: 300px; } }
+.menu-nav2 {
+  padding-bottom: 10px; }
+
+.menu-nav2 .full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s linear;
+  background: transparent; }
+
+.menu-nav2 .menu {
+  position: absolute;
+  right: 10vw;
+  top: 5vh;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+  cursor: pointer; }
+
+.menu-nav2 .menu:active {
+  background: #FFCA30; }
+
+.menu-nav2 .menu::before, .menu::after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 14px;
+  height: 2px;
+  width: 20px;
+  background: white;
+  pointer-events: none;
+  transition: all 0.2s linear; }
+
+.menu-nav2 .menu.crossed {
+  background: #FFCA30; }
+
+.menu-nav2 .menu::before {
+  transform: translateY(-3px); }
+
+.menu-nav2 .menu::after {
+  transform: translateY(3px); }
+
+.menu-nav2 .menu.crossed::before {
+  transform: rotate(45deg); }
+
+.menu-nav2 .menu.crossed::after {
+  transform: rotate(135deg); }
+
+.menu-nav2 .page {
+  transform-origin: right center;
+  transform: translateX(0) rotateY(0);
+  z-index: 1;
+  opacity: 1; }
+
+.menu-nav2 .page.swipe-lft {
+  opacity: 0.5;
+  z-index: 0;
+  transform: translateX(-100%) rotateY(-35deg); }
+
+.menu-nav2 .nav {
+  transform-origin: left center;
+  transform: translateX(100%) rotateY(35deg);
+  z-index: 0;
+  opacity: 0; }
+
+.menu-nav2 .nav.open {
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(0) rotateY(0deg); }
+
+.menu-nav2 .cube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+  font-weight: 600;
+  color: #2368a8;
+  pointer-events: none; }
+
+@media screen and (max-width: 768px) {
+  .menu-nav2 .cube {
+    font-size: 24px;
+    white-space: nowrap; } }
+/*Mi programacion*/
+.menu-nav2 .logo-home {
+  width: 150px;
+  margin-top: 7vh;
+  margin-left: 10vw; }
+
+/*menu imagen lateral*/
+.menu-nav2 .imagen-fondo {
+  width: 30vw;
+  position: relative;
+  right: 10vw;
+  top: -3vh;
+  z-index: 100; }
+
+.menu-nav2 .elipse-fondo {
+  position: absolute;
+  right: 13vw;
+  top: 10vh;
+  z-index: -50; }
+
+.menu-nav2 .imagen-menu h3, .menu-nav2 .imagen-menu .h3 {
+  position: relative;
+  right: 10vw;
+  top: -1vh;
+  text-align: left;
+  color: #E6E6E6;
+  font-size: 4.5rem;
+  font-weight: 300; }
+
+.menu-nav2 .open {
+  background: #fff; }
+
+/*menu texto lateral*/
+.menu-nav2 .principal-menu {
+  font-size: 2rem;
+  margin-left: 16vw !important;
+  margin-top: 5vw !important; }
+
+.menu-nav2 .principal-menu a {
+  position: relative;
+  width: fit-content; }
+
+.menu-nav2 .menu-footers a {
+  position: relative;
+  width: fit-content; }
+
+.menu-nav2 .principal-menu li {
+  list-style: none;
+  margin-bottom: 1.5vh; }
+
+.menu-nav2 .menu-footers li {
+  margin-bottom: 1.5vh; }
+
+.menu-nav2 .subrayado a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  background: #FFCA30;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0; }
+
+.menu-nav2 .subrayado a:hover:after {
+  width: 100%;
+  left: 0; }
+
+.menu-nav2 .principal-menu hr {
+  width: 50%;
+  height: 3px;
+  background-color: #000000;
+  margin-bottom: 0; }
+
+.menu-nav2 .principal-menu p {
+  font-size: 1rem;
+  font-weight: bold; }
 
 /*CONTACT SECTION*/
 #contact-home {
