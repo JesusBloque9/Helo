@@ -94,25 +94,15 @@ HELO
 {% endblock %}
 
 {% block content %}
-<!-- MENU  -->  
-<nav class=""> 
-    <div class="page"> 
-        <img class="logo-home2" src="{{ const.BASE_URL }}assets/img/logo-s-helo.svg" alt="">
-        <div class="menu-home">
-            <li><a>WORK</a></li>
-            <li><a href="creators_2.html">CREATORS</a></li>
-            <li><a>CONTACT</a></li>                    
-        </div>                
-        <div class="menu2" id="openNav"></div> 
-    </div>
-</nav>
+
+{% include 'modules/menu_secciones.html' %}
 
 <div class="py-5" id="title">
     <div class="container-fluid px-md-5">
         <div class="row px-md-5">
             <div class="col-12 col-sm-9 col-md-6 col-xl-3 pb-2">
-                <h1>News</h1>
-                <p>when you have to deliver something that is exceptional, call us.</p>
+                <h1 class="title_h1">News</h1>
+                <p class="title_p">when you have to deliver something that is exceptional, call us.</p>
                 <div class="color green"></div>
             </div>
             <div class="col" id="search-box">
@@ -122,181 +112,182 @@ HELO
             </div>
         </div>
     </div>
+</div>
     
-    <div class="py-5" id="news">
-        <div class="container-fluid px-0">
-            <div class="row justify-content-center">
-                <div class="col pb-2">
-                    <div class="splide">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n2.jpg" alt="">
-                                    <div class="content_slide">
-                                        <div>
-                                            <h5>DRIVEWAY</h5>
-                                            <h3>Mitsubishi</h3>
-                                            <h6>SEPTEMBER 15, 2021</h6>
-                                        </div>
+<div class="py-5" id="news">
+    <div class="container-fluid px-0">
+        <div class="row justify-content-center">
+            <div class="col pb-2">
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n2.jpg" alt="">
+                                <div class="content_slide">
+                                    <div>
+                                        <h5 class="slide_h5">DRIVEWAY</h5>
+                                        <h3 class="slide_h3">Mitsubishi</h3>
+                                        <h6 class="slide_h6">SEPTEMBER 15, 2021</h6>
                                     </div>
-                                </li>
-                                <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n3.jpg" alt="">
-                                    <div class="content_slide">
-                                        <div>
-                                            <h5>DRIVEWAY</h5>
-                                            <h3>Mitsubishi</h3>
-                                            <h6>SEPTEMBER 15, 2021</h6>
-                                        </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n3.jpg" alt="">
+                                <div class="content_slide">
+                                    <div>
+                                        <h5 class="slide_h5">DRIVEWAY</h5>
+                                        <h3 class="slide_h3">Mitsubishi</h3>
+                                        <h6 class="slide_h6">SEPTEMBER 15, 2021</h6>
                                     </div>
-                                </li>
-                                <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n4.jpg" alt="">
-                                    <div class="content_slide">
-                                        <div>
-                                            <h5>DRIVEWAY</h5>
-                                            <h3>Mitsubishi</h3>
-                                            <h6>SEPTEMBER 15, 2021</h6>
-                                        </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n4.jpg" alt="">
+                                <div class="content_slide">
+                                    <div>
+                                        <h5 class="slide_h5">DRIVEWAY</h5>
+                                        <h3 class="slide_h3">Mitsubishi</h3>
+                                        <h6 class="slide_h6">SEPTEMBER 15, 2021</h6>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="progress col-4 px-0 mt-5" style="height: 2px;">
-                    <div class="progress-bar" id="carrousel_progress" role="progressbar" style="width: 25%;" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3"></div>
-                </div>
+            </div>
+            <div class="progress col-4 px-0 mt-5" style="height: 2px;">
+                <div class="progress-bar" id="carrousel_progress" role="progressbar" style="width: 25%;" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3"></div>
             </div>
         </div>
     </div>
+</div>
     
-    <div class="py-6" id="news_content">
-        <div class="container-fluid px-md-5">
-            <div class="row px-md-5">
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <img src="assets/img/news/n1.jpg" class="card-img-top" alt="img_news">
-                        <div class="color yellow"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Deloitte. Description of project</h5>
-                            <p class="date">SEPTEMBER 15, 2021</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+<div class="py-6" id="news_content">
+    <div class="container-fluid px-md-5">
+        <div class="row px-md-5">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="assets/img/news/n1.jpg" class="card-img-top" alt="img_news">
+                    <div class="color yellow"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Deloitte. Description of project</h5>
+                        <p class="date">SEPTEMBER 15, 2021</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <img src="assets/img/news/n2.jpg" class="card-img-top" alt="img_news">
-                        <div class="color orange"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Deloitte. Description of project</h5>
-                            <p class="date">SEPTEMBER 15, 2021</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="assets/img/news/n2.jpg" class="card-img-top" alt="img_news">
+                    <div class="color orange"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mitsubishi. Description of project</h5>
+                        <p class="date">SEPTEMBER 15, 2021</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <img src="assets/img/news/n3.jpg" class="card-img-top" alt="img_news">
-                        <div class="color red"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Deloitte. Description of project</h5>
-                            <p class="date">SEPTEMBER 15, 2021</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="assets/img/news/n3.jpg" class="card-img-top" alt="img_news">
+                    <div class="color red"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mini Copper. Description of project</h5>
+                        <p class="date">SEPTEMBER 15, 2021</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <img src="assets/img/news/n4.jpg" class="card-img-top" alt="img_news">
-                        <div class="color purple"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Deloitte. Description of project</h5>
-                            <p class="date">SEPTEMBER 15, 2021</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="assets/img/news/n4.jpg" class="card-img-top" alt="img_news">
+                    <div class="color purple"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Santander. Description of project</h5>
+                        <p class="date">SEPTEMBER 15, 2021</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <img src="assets/img/news/n5.jpg" class="card-img-top" alt="img_news">
-                        <div class="color blue"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Deloitte. Description of project</h5>
-                            <p class="date">SEPTEMBER 15, 2021</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="assets/img/news/n5.jpg" class="card-img-top" alt="img_news">
+                    <div class="color blue"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Xfinity. Description of project</h5>
+                        <p class="date">SEPTEMBER 15, 2021</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <img src="assets/img/news/n6.jpg" class="card-img-top" alt="img_news">
-                        <div class="color green"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Deloitte. Description of project</h5>
-                            <p class="date">SEPTEMBER 15, 2021</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="assets/img/news/n6.jpg" class="card-img-top" alt="img_news">
+                    <div class="color green"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Amazon. Description of project</h5>
+                        <p class="date">SEPTEMBER 15, 2021</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <img src="assets/img/news/n7.jpg" class="card-img-top" alt="img_news">
-                        <div class="color yellow"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Deloitte. Description of project</h5>
-                            <p class="date">SEPTEMBER 15, 2021</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="assets/img/news/n7.jpg" class="card-img-top" alt="img_news">
+                    <div class="color yellow"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Headspace. Description of project</h5>
+                        <p class="date">SEPTEMBER 15, 2021</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="card">
-                        <img src="assets/img/news/n8.jpg" class="card-img-top" alt="img_news">
-                        <div class="color orange"></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Deloitte. Description of project</h5>
-                            <p class="date">SEPTEMBER 15, 2021</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="assets/img/news/n8.jpg" class="card-img-top" alt="img_news">
+                    <div class="color orange"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Puma. Description of project</h5>
+                        <p class="date">SEPTEMBER 15, 2021</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container" id="paginator">
-        <div class="row py-5 justify-content-center">
-            <div class="col-12">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item"><a class="page-link" href="#"><</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">></a></li>
-                    </ul>
-                  </nav>
-            </div>
+<div class="container-fluid" id="paginator">
+    <div class="row py-5 justify-content-center">
+        <div class="col-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#"><</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                </ul>
+                </nav>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid">
-        <div class="row multicolor">
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-            <div class="col-2"></div>
-        </div>
+<div class="container-fluid">
+    <div class="row multicolor">
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
     </div>
-    {% include 'modules/footer.html' %}
-
+</div>
+    
+{% include 'modules/footer.html' %}
 
 {% endblock %}

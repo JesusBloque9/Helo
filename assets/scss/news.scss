@@ -19,19 +19,19 @@
                     margin-bottom: -150px;
                     text-align: center;
 
-                    h5{
+                    h5.slide_h5{
                         font-weight: normal;
                         letter-spacing: 0px;
                         font-size: 1.333rem;
                     }
 
-                    h3{
+                    h3.slide_h3{
                         font-weight: normal;
                         letter-spacing: 0px;
                         font-size: 3.157rem;
                     }
 
-                    h6{
+                    h6.slide_h6{
                         font-weight: normal;
                         letter-spacing: 0px;
                         font-size: 0.9375rem;
@@ -83,7 +83,7 @@
 #title{
     background-color: #FFF;
 
-    h1{
+    h1.title_h1{
         font-size: 2.369rem;
         font-weight: bold;
         letter-spacing: 0px;
@@ -91,10 +91,10 @@
         margin-bottom: 5px;
     }
 
-    p{
+    p.title_p{
         letter-spacing: 0px;
         color: #6A6969;
-        font-size: 1.333rem;
+        font-size: 1.312rem;
     }
 }
 
@@ -107,7 +107,7 @@
         margin-top: 15px;
     }
 
-    h5{
+    h5.card-title{
         font-size: 1.8133rem;
         letter-spacing: 0px;
         color: #1D1D1D;
@@ -188,4 +188,9 @@ body
       width:50px;
       height:5px;
     }
+}
+
+
+#paginator{
+    background-color: #FFF;
 }

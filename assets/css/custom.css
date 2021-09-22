@@ -12400,17 +12400,17 @@ video {
   margin-bottom: -150px;
   text-align: center;
 }
-#news .splide .splide__slide .content_slide > div h5, #news .splide .splide__slide .content_slide > div .h5 {
+#news .splide .splide__slide .content_slide > div h5.slide_h5, #news .splide .splide__slide .content_slide > div .slide_h5.h5 {
   font-weight: normal;
   letter-spacing: 0px;
   font-size: 1.333rem;
 }
-#news .splide .splide__slide .content_slide > div h3, #news .splide .splide__slide .content_slide > div .h3 {
+#news .splide .splide__slide .content_slide > div h3.slide_h3, #news .splide .splide__slide .content_slide > div .slide_h3.h3 {
   font-weight: normal;
   letter-spacing: 0px;
   font-size: 3.157rem;
 }
-#news .splide .splide__slide .content_slide > div h6, #news .splide .splide__slide .content_slide > div .h6 {
+#news .splide .splide__slide .content_slide > div h6.slide_h6, #news .splide .splide__slide .content_slide > div .slide_h6.h6 {
   font-weight: normal;
   letter-spacing: 0px;
   font-size: 0.9375rem;
@@ -12446,17 +12446,17 @@ video {
 #title {
   background-color: #FFF;
 }
-#title h1, #title .h1 {
+#title h1.title_h1, #title .title_h1.h1 {
   font-size: 2.369rem;
   font-weight: bold;
   letter-spacing: 0px;
   color: #1D1D1D;
   margin-bottom: 5px;
 }
-#title p {
+#title p.title_p {
   letter-spacing: 0px;
   color: #6A6969;
-  font-size: 1.333rem;
+  font-size: 1.312rem;
 }
 
 #news_content {
@@ -12467,7 +12467,7 @@ video {
   margin-bottom: 50px;
   margin-top: 15px;
 }
-#news_content h5, #news_content .h5 {
+#news_content h5.card-title, #news_content .card-title.h5 {
   font-size: 1.8133rem;
   letter-spacing: 0px;
   color: #1D1D1D;
@@ -12538,6 +12538,10 @@ body {
   top: 45px;
   width: 50px;
   height: 5px;
+}
+
+#paginator {
+  background-color: #FFF;
 }
 
 #cursor {
