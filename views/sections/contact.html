@@ -1,0 +1,119 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+{% endblock %}
+
+{% block extraJS %}
+    <script src="{{ const.BASE_URL }}node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script>
+        $('#contact').validate({ // initialize the plugin
+            errorElement: 'span'
+        });
+        $('form#contact').submit(function(e) {
+            e.preventDefault();
+            if ($(this).valid()) {
+                sendContacto($(this));
+            }
+        });
+        function sendContacto(form){
+            $(form).addClass('sending');
+            var formData = new FormData($(form)[0]);
+            $.ajax({
+                url: window.base_url+'/assets/library/EnviarCorreo.php',
+                type: 'POST',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function(){
+                },
+                success: function(data){
+                    if (data=='1') {
+                        $(form)[0].reset();
+                        window.location.replace(window.base_url+'/thankyou');
+                    }else{
+                        $(form).addClass('error');
+                    }
+                    console.log(data);
+                },
+                error: function(data){
+                    $(form).addClass('error');
+                },
+                complete: function() {
+                    $(form).removeClass('sending','error');
+                    $(form).removeClass('disabled');
+                }
+            });
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    {% include 'modules/menu_secciones.html' %}
+
+    <div class="py-6" id="contacto">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <h3>Contact Justin</h3>
+                    <p>Justin is the co-founder and President of HELO. But don’t let his fancy title deter you, he’s friendly and he’d love to hear from you. </p>
+                    <p>If you find yourself picturing an Irishman wearing lime green while you talk to him, you’re not wrong. But through his robust accent he can sort out just what you need, how we can help, and who you should talk to next in the company. Give him a ring, he’s standing by with some blarney.</p>
+                    <hr size="5" style="opacity: 1;" class="bg-secondary">
+                </div>
+                <div class="col-12 ps-md-5 col-md-5">
+                    <form id="contact" class="block_ctrl">
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" placeholder="name@example.com" id="name" name="name" data-rule-required="true">
+                          <label for="name">NAME</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="email" class="form-control" placeholder="name@example.com" id="email" name="email" data-rule-required="true">
+                          <label for="email">EMAIL</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" placeholder="name@example.com" id="subject" name="subject">
+                          <label for="subject">SUBJECT</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <textarea class="form-control" placeholder="name@example.com" id="message" name="message" style="height: 250px"></textarea>
+                          <label for="message">MESSAGE</label>
+                        </div>
+                        <button type="submit">
+                            <span>SEND</span>
+                        </button>
+                        <div class="msgs">
+                            <div class="row h-100 justify-content-center align-items-center">
+                                <div class="col-auto">
+                                    <span class="sending">
+                                        <div class="spinner-border text-primary" role="status">
+                                          <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </span>
+                                    <span class="error_">
+                                        <img src="{{ const.BASE_URL }}assets/img/error.svg" alt="">
+                                        <p class="block_ctrl">An error has occurred, please try again later</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <img src="{{ const.BASE_URL }}assets/img/logo-s-helo.svg" alt="">
+    </div>
+
+{% include 'modules/line_colors.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}
