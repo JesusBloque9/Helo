@@ -107,7 +107,7 @@ body {
   }
 
 
-   /*Mi programacion*/
+/*Mi programacion*/
 .logo-home{
   width: 150px;
   margin-top: 7vh;
@@ -192,7 +192,7 @@ background: #fff;
 font-size: 2.3rem;
 font-weight: 600;
 margin-left: 16vw !important;
-margin-top: 6.5vw !important;
+margin-top: 5.5vw !important;
 }
 .hollow-text-black{
 -moz-text-stroke: .7px rgb(0, 0, 0);
@@ -214,7 +214,7 @@ width: fit-content;
 }
 .principal-menu li {
 list-style: none;
-margin-bottom:1.5vh;
+margin-bottom:.7vh;
 }
 .menu-footers li{
 margin-bottom: 1.5vh;
@@ -312,4 +312,42 @@ font-weight: bold;
   }
   .menu2.crossed::after {
     transform: rotate(135deg);
-  } 
+  }
+
+  /*Cambio de texto*/
+  .change-text{
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    z-index: 150;
+    left: 48.5vw;
+    top: 79.6vh;
+    h3{
+      color: #E6E6E6;
+      font-size: 67px;
+    }
+  }
+  .menu-tex1:hover + .textchange-1{
+    display: block;
+    visibility: visible;
+  }
+  .menu-tex2:hover + .textchange-2{
+    display: block;
+    visibility: visible;
+  }
+  .menu-tex3:hover + .textchange-3{
+    display: block;
+    visibility: visible;
+  }
+  .menu-tex4:hover + .textchange-4{
+    display: block;
+    visibility: visible;
+  }
+  .menu-tex5:hover + .textchange-5{
+    display: block;
+    visibility: visible;
+  }
+  .menu-tex6:hover + .textchange-6{
+    display: block;
+    visibility: visible;
+  }

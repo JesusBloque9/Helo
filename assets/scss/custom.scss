@@ -102,6 +102,7 @@ html{
 @import "./sustainability";
 @import "./works";
 @import "./contact";
+@import "./news";
 
 #cursor {
     position: absolute;
@@ -168,6 +169,33 @@ html{
         border-radius: 1px;
     }
 }
+
+div.multicolor{
+    >div{
+        height: 3px;
+    }
+    :first-child{
+        background: #FFCA30;
+    }
+    :nth-child(2){
+        background: #DE5307;
+    }
+    :nth-child(3){
+        background: #FF2A1B;
+    }
+    :nth-child(4){
+        background: #6049F8;
+    }
+    :nth-child(5){
+        background: #007CB0;
+    }
+    :nth-child(6){
+        background: #008351;
+    }
+  
+  }
+  
+
 
 /*Mobile first*/
 @include media-breakpoint-down(xl) {

@@ -28,6 +28,7 @@ class routes extends Controller
         echo $this->_twig->render('sections/creator_detail.html', compact('const'));
     }
 
+<<<<<<< HEAD
     public function contact()
     {
         /*CONSTANTS*/$const=$this->_const;
@@ -38,6 +39,12 @@ class routes extends Controller
     {
         /*CONSTANTS*/$const=$this->_const;
         echo $this->_twig->render('sections/thankyou.html', compact('const'));
+=======
+    public function news()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news.html', compact('const'));
+>>>>>>> 5956c0a9bfdecf1198d8fd5aba2d17169a169a21
     }
 
 }
