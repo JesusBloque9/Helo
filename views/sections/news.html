@@ -1,0 +1,302 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+<link rel="stylesheet" href="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/css/splide.min.css">
+{% endblock %}
+
+{% block extraJS %}
+    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
+    <script>
+        document.addEventListener("mousemove", function(event) {
+        const x = event.pageX - 10;
+        const y = event.pageY - 10;
+        const cursor = document.querySelector("#cursor");
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+        });
+        $('a').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('a').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        $('span').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('span').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        // sayHello
+        var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
+        window.console.log.apply(console, Helo);
+    </script>
+    <script>
+        function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function cycle(value, total) {
+          return (value % total + total) % total;
+        }
+    </script>
+    <script src="{{ const.BASE_URL }}node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+    <script>
+       var  splide = new Splide( '.splide', {
+            cover  : true,
+            type: 'loop',
+            height: '65vh',
+            drag: true,
+            arrows: false,
+            pagination: false,
+            start: 0,
+            padding: {
+                right: '20rem',
+                left : '20rem',
+            },
+            breakpoints: {
+                1270:{
+                    padding: {
+                        right: '10rem',
+                        left : '10rem',
+                    },
+                },
+                900:{
+                    padding: {
+                        right: '0rem',
+                        left : '0rem',
+                    },
+                },
+	        },
+        } ).mount();
+        
+        // Listen to the "moved" event
+        splide.on( 'move.splide01', function(index) {
+            if(index+1 == splide.length){
+                $('#carrousel_progress').css('width','100%');
+                
+            }else{
+                $('#carrousel_progress').css('width', (100/splide.length)*(index+1)+'%');
+            }
+        } );
+        
+        </script>
+
+{% endblock %}
+
+{% block content %}
+<!-- MENU  -->  
+<nav class=""> 
+    <div class="page"> 
+        <img class="logo-home2" src="{{ const.BASE_URL }}assets/img/logo-s-helo.svg" alt="">
+        <div class="menu-home">
+            <li><a>WORK</a></li>
+            <li><a href="creators_2.html">CREATORS</a></li>
+            <li><a>CONTACT</a></li>                    
+        </div>                
+        <div class="menu2" id="openNav"></div> 
+    </div>
+</nav>
+
+<div class="py-5" id="title">
+    <div class="container-fluid px-md-5">
+        <div class="row px-md-5">
+            <div class="col-12 col-sm-9 col-md-6 col-xl-3 pb-2">
+                <h1>News</h1>
+                <p>when you have to deliver something that is exceptional, call us.</p>
+                <div class="color green"></div>
+            </div>
+            <div class="col" id="search-box">
+                <div class="p_auto">
+                    SEARCH <input><div class="div1"></div></input>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="py-5" id="news">
+        <div class="container-fluid px-0">
+            <div class="row justify-content-center">
+                <div class="col pb-2">
+                    <div class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n2.jpg" alt="">
+                                    <div class="content_slide">
+                                        <div>
+                                            <h5>DRIVEWAY</h5>
+                                            <h3>Mitsubishi</h3>
+                                            <h6>SEPTEMBER 15, 2021</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n3.jpg" alt="">
+                                    <div class="content_slide">
+                                        <div>
+                                            <h5>DRIVEWAY</h5>
+                                            <h3>Mitsubishi</h3>
+                                            <h6>SEPTEMBER 15, 2021</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="splide__slide"><img src="{{ const.BASE_URL }}assets/img/news/n4.jpg" alt="">
+                                    <div class="content_slide">
+                                        <div>
+                                            <h5>DRIVEWAY</h5>
+                                            <h3>Mitsubishi</h3>
+                                            <h6>SEPTEMBER 15, 2021</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress col-4 px-0 mt-5" style="height: 2px;">
+                    <div class="progress-bar" id="carrousel_progress" role="progressbar" style="width: 25%;" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="py-6" id="news_content">
+        <div class="container-fluid px-md-5">
+            <div class="row px-md-5">
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="assets/img/news/n1.jpg" class="card-img-top" alt="img_news">
+                        <div class="color yellow"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deloitte. Description of project</h5>
+                            <p class="date">SEPTEMBER 15, 2021</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="assets/img/news/n2.jpg" class="card-img-top" alt="img_news">
+                        <div class="color orange"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deloitte. Description of project</h5>
+                            <p class="date">SEPTEMBER 15, 2021</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="assets/img/news/n3.jpg" class="card-img-top" alt="img_news">
+                        <div class="color red"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deloitte. Description of project</h5>
+                            <p class="date">SEPTEMBER 15, 2021</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="assets/img/news/n4.jpg" class="card-img-top" alt="img_news">
+                        <div class="color purple"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deloitte. Description of project</h5>
+                            <p class="date">SEPTEMBER 15, 2021</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="assets/img/news/n5.jpg" class="card-img-top" alt="img_news">
+                        <div class="color blue"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deloitte. Description of project</h5>
+                            <p class="date">SEPTEMBER 15, 2021</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="assets/img/news/n6.jpg" class="card-img-top" alt="img_news">
+                        <div class="color green"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deloitte. Description of project</h5>
+                            <p class="date">SEPTEMBER 15, 2021</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="assets/img/news/n7.jpg" class="card-img-top" alt="img_news">
+                        <div class="color yellow"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deloitte. Description of project</h5>
+                            <p class="date">SEPTEMBER 15, 2021</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="assets/img/news/n8.jpg" class="card-img-top" alt="img_news">
+                        <div class="color orange"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deloitte. Description of project</h5>
+                            <p class="date">SEPTEMBER 15, 2021</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="paginator">
+        <div class="row py-5 justify-content-center">
+            <div class="col-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#"><</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">></a></li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row multicolor">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    {% include 'modules/footer.html' %}
+
+
+{% endblock %}
