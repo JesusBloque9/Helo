@@ -8735,189 +8735,20 @@ body {
 .menu2.crossed::after {
   transform: rotate(135deg); }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
-
-/*MENU*/
-body {
-  perspective: 600px;
-  overflow-x: hidden; }
-
-@media screen and (max-width: 768px) {
-  body {
-    perspective: 300px; } }
-.full {
-  position: fixed;
-  top: 0;
-  left: 0;
+/*Cambio de texto*/
+.change-text {
   display: block;
-  width: 100%;
-  height: 100%;
-  transition: all 0.6s linear;
-  background: transparent; }
-
-.menu {
   position: absolute;
-  right: 10vw;
-  top: 5vh;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  transition: all 0.2s linear;
-  cursor: pointer; }
+  z-index: 150;
+  left: 48.5vw;
+  top: 79.6vh; }
+  .change-text h3, .change-text .h3 {
+    color: #E6E6E6;
+    font-size: 67px; }
 
-.menu:active {
-  background: #FFCA30; }
-
-.menu::before, .menu::after {
-  content: "";
-  position: absolute;
-  top: 23px;
-  left: 14px;
-  height: 2px;
-  width: 20px;
-  background: white;
-  pointer-events: none;
-  transition: all 0.2s linear; }
-
-.menu.crossed {
-  background: #FFCA30; }
-
-.menu::before {
-  transform: translateY(-3px); }
-
-.menu::after {
-  transform: translateY(3px); }
-
-.menu.crossed::before {
-  transform: rotate(45deg); }
-
-.menu.crossed::after {
-  transform: rotate(135deg); }
-
-.page {
-  transform-origin: right center;
-  transform: translateX(0) rotateY(0);
-  z-index: 1;
-  opacity: 1; }
-
-.page.swipe-lft {
-  opacity: 0.5;
-  z-index: 0;
-  transform: translateX(-100%) rotateY(-35deg); }
-
-.nav {
-  transform-origin: left center;
-  transform: translateX(100%) rotateY(35deg);
-  z-index: 0;
-  opacity: 0; }
-
-.nav.open {
-  opacity: 1;
-  z-index: 1;
-  transform: translateX(0) rotateY(0deg); }
-
-.cube {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5vw;
-  font-weight: 600;
-  color: #2368a8;
-  pointer-events: none; }
-
-@media screen and (max-width: 768px) {
-  .cube {
-    font-size: 24px;
-    white-space: nowrap; } }
-/*Mi programacion*/
-.logo-home {
-  width: 150px;
-  margin-top: 7vh;
-  margin-left: 10vw; }
-
-/*menu imagen lateral*/
-.imagen-fondo {
-  width: 30vw;
-  position: relative;
-  right: 10vw;
-  top: -3vh;
-  z-index: 100; }
-
-.elipse-fondo {
-  position: absolute;
-  right: 13vw;
-  top: 10vh;
-  z-index: -50; }
-
-.imagen-menu h3, .imagen-menu .h3 {
-  position: relative;
-  right: 10vw;
-  top: -1vh;
-  text-align: left;
-  color: #E6E6E6;
-  font-size: 4.5rem;
-  font-weight: 300; }
-
-.open {
-  background: #fff; }
-
-/*menu texto lateral*/
-.principal-menu {
-  font-size: 2rem;
-  margin-left: 16vw !important;
-  margin-top: 5vw !important; }
-
-.hollow-text-black {
-  -moz-text-stroke: 0.7px black;
-  -webkit-text-stroke: 0.7px black;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15); }
-
-.principal-menu a {
-  position: relative;
-  width: fit-content; }
-
-.menu-footers a {
-  position: relative;
-  width: fit-content; }
-
-.principal-menu li {
-  list-style: none;
-  margin-bottom: 1.5vh; }
-
-.menu-footers li {
-  margin-bottom: 1.5vh; }
-
-.subrayado a:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: "";
+#menu-tex1:hover + .change-text1 {
   display: block;
-  height: 4px;
-  left: 50%;
-  position: absolute;
-  background: #FFCA30;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0; }
-
-.subrayado a:hover:after {
-  width: 100%;
-  left: 0; }
-
-.principal-menu hr {
-  width: 50%;
-  height: 3px;
-  background-color: #000000;
-  margin-bottom: 0; }
-
-.principal-menu p {
-  font-size: 1rem;
-  font-weight: bold; }
+  visibility: visible; }
 
 /*CONTACT SECTION*/
 #contact-home {
@@ -9309,7 +9140,7 @@ body .footer .content > div .image {
     width: 90vw; }
 
 .sustainability-reportd-cart {
-  margin-top: 45vh;
+  margin-top: 55vh;
   text-align: center; }
   .sustainability-reportd-cart h3, .sustainability-reportd-cart .h3 {
     font-size: 19px;
@@ -9317,6 +9148,7 @@ body .footer .content > div .image {
     font-weight: 500; }
   .sustainability-reportd-cart p {
     font-size: 27px;
+    line-height: 32px;
     font-weight: 700;
     width: 600px;
     margin-right: auto;
