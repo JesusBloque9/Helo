@@ -107,7 +107,7 @@ body {
   }
 
 
-   /*Mi programacion*/
+/*Mi programacion*/
 .logo-home{
   width: 150px;
   margin-top: 7vh;
@@ -312,4 +312,21 @@ font-weight: bold;
   }
   .menu2.crossed::after {
     transform: rotate(135deg);
-  } 
+  }
+
+  /*Cambio de texto*/
+  .change-text{
+    display: block;
+    position: absolute;
+    z-index: 150;
+    left: 48.5vw;
+    top: 79.6vh;
+    h3{
+      color: #E6E6E6;
+      font-size: 67px;
+    }
+  }
+  #menu-tex1:hover + .change-text1{
+    display: block;
+    visibility: visible;
+  }
