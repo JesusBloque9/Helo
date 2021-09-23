@@ -9,16 +9,16 @@ HELO
 {% endblock %}
 
 {% block extraCSS %}
+    <link href="{{ const.BASE_URL }}node_modules/aos/dist/aos.css" rel="stylesheet">
 {% endblock %}
 
 {% block extraJS %}
-    <script src="{{ const.BASE_URL }}assets/js/scroll-out.min.js" ></script>
+    <script src="{{ const.BASE_URL }}node_modules/aos/dist/aos.js" ></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
     <script>
         function mobile_functions() {
             
             if(window.matchMedia("(max-width: 767px)").matches){
-                alert();
                 $(".container-experience").addClass('moblie_experiences');  
             }
         }
@@ -136,13 +136,7 @@ HELO
             ends: 'in'
         });
         // END SCROLL_SEQUENCE CODE
-        ScrollOut({
-            targets: '.speak',
-            cssProps: {
-                viewportY: true,
-                visibleY: true
-            }
-        });
+        AOS.init();
     </script>       
     <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
     <script>
@@ -243,12 +237,12 @@ HELO
     <section class="scroll-sequence__container first-container">
         <div class="scroll-sequence first-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row">
+            <div class="speak row" data-aos="fade-right">
                 <div class="col-12 col-md-7">
                     <h1 class="scroll-sequence-title">Insight Inspired, Story Led</h1>
                 </div>
             </div>
-            <div class="speak row justify-content-end">
+            <div class="speak row justify-content-end" data-aos="fade-left">
                 <div class="col-12 col-md-7">
                     <h1 class="scroll-sequence-title right-text hollow-text">Design Moving Experiences</h1>
                 </div>
@@ -258,7 +252,7 @@ HELO
     <section class="scroll-sequence__container two-container">
         <div class="scroll-sequence two-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row col-12 col-md-6">   
+            <div class="speak row col-12 col-md-6" data-aos="fade-right">   
                 <p class="scroll-sequence-text">We aren’t right for every (even most) projects but</p>
                 <h1 class="scroll-sequence-title-tiny">When you have to deliver something that is exceptional, call us.</h1>
             </div>
@@ -267,7 +261,7 @@ HELO
     <section class="scroll-sequence__container tree-container">
         <div class="scroll-sequence tree-sequence"></div>
             <div class="scroll-sequence__content container">
-                <div class="speak row justify-content-end">
+                <div class="speak row justify-content-end" data-aos="fade-left">
                     <div class="col-12 col-md-5 ">
                         <p class="scroll-sequence-text right-text">Oh, I have people that do that already. Actually, you don’t.</p>
                         <h1 class="scroll-sequence-title-tiny right-text">We are different, here is WHY</h1>
@@ -278,7 +272,7 @@ HELO
     <section class="scroll-sequence__container four-container">
         <div class="scroll-sequence four-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row col-12 col-md-7">
+            <div class="speak row col-12 col-md-7" data-aos="fade-right">
                 <p class="scroll-sequence-text">We are not an experiential agency or a traditional production company.</p>
                 <h1 class="scroll-sequence-title-tiny">We are a creative problem solving studio</h1>
             </div>
@@ -287,7 +281,7 @@ HELO
     <section class="scroll-sequence__container five-container">
         <div class="scroll-sequence five-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row justify-content-end">
+            <div class="speak row justify-content-end" data-aos="fade-left">
                 <div class="col-12 col-md-7">
                     <h1 class="scroll-sequence-title-tiny right-text">Creators whose diverse portfolios and points of view range from narrative storytelling to immersive experience</h1>  
                 </div>
@@ -297,7 +291,7 @@ HELO
     <section class="scroll-sequence__container six-container">
         <div class="scroll-sequence six-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row col-12 col-md-7">
+            <div class="speak row col-12 col-md-7" data-aos="fade-right">
                 <h1 class="scroll-sequence-title-tiny">From designing some of the most iconic worlds in film to designing and building real buildings in the real world.</h1>
             </div>
         </div>
