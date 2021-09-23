@@ -20,6 +20,7 @@ $(document).ready(function() {
     $(".nav").addClass("open");
   });
   $("#closeNav").click(function() {
+    alert("hola");
     $(".page").removeClass("swipe-lft");
     $(".nav").removeClass("open");
   });

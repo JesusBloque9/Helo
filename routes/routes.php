@@ -34,5 +34,17 @@ class routes extends Controller
         echo $this->_twig->render('sections/news.html', compact('const'));
     }
 
+    public function new_mitsubishi()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/new-mitsubishi.html', compact('const'));
+    }
+
+    public function e404()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/404.html', compact('const'));
+    }
+
 }
 ?>

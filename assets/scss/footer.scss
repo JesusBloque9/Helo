@@ -89,7 +89,7 @@
   }
   .footer-menu{
     margin-top: 5vh;
-    margin-bottom: 35vh;
+    margin-bottom: 22vh;
     z-index: 2;
     position: relative;
     &.negative{
@@ -157,12 +157,11 @@
     display: grid;
     position: relative;
     grid-area: footer;
-    min-height: 12rem;
     color:#FFF
   }
   body .footer .bubbles {
     position: absolute;
-    top: -10px;
+    top: -60px;
     left: 0;
     right: 0;
     height: 0.3rem;
@@ -213,7 +212,7 @@
   body .footer .content > div .image {
     align-self: center;
     width: 8rem;
-    height: 4rem;
+    height: 110px;
     margin: 0.25rem 0;
     background-size: cover;
     background-position: center;

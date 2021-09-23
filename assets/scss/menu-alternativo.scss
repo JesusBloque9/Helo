@@ -13,10 +13,6 @@ body {
       perspective: 300px;
     }
   }
-  .menu-nav2{
-    padding-bottom: 10px;
-  }
-  
   .menu-nav2 .full {
     position: fixed;
     top: 0;
@@ -25,7 +21,7 @@ body {
     width: 100%;
     height: 100%;
     transition: all 0.6s linear;
-    background:  transparent;
+    background:  transparent;    
   }
   
   .menu-nav2 .menu {
@@ -36,7 +32,7 @@ body {
     height: 48px;
     border-radius: 50%;
     transition: all 0.2s linear;
-    cursor: pointer;
+    cursor: pointer;    
   }
   .menu-nav2 .menu:active {
     background: #FFCA30;
@@ -90,6 +86,7 @@ body {
     opacity: 1;
     z-index: 1;
     transform: translateX(0) rotateY(0deg);
+    z-index: 150;
   }
   
   .menu-nav2 .cube {
