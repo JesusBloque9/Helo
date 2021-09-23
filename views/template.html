@@ -17,7 +17,8 @@
   {% block preloads %}{% endblock %}
 
 	<link href="{{ const.BASE_URL }}assets/css/custom.css" rel="stylesheet">
-	<script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="{{ const.BASE_URL }}node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 	<title>{% block title %} {% endblock %}</title>
 
@@ -188,7 +189,10 @@
     </svg>
 
 </body>
-
+    <script>
+        var base_url;
+        window.base_url = "{{ const.BASE_URL }}";
+    </script>
     <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
     <script>

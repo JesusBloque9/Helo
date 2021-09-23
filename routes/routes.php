@@ -28,11 +28,24 @@ class routes extends Controller
         echo $this->_twig->render('sections/creator_detail.html', compact('const'));
     }
 
+    public function contact()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/contact.html', compact('const'));
+    }
+
+    public function thankyou()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/thankyou.html', compact('const'));
+    }
+    
     public function news()
     {
         /*CONSTANTS*/$const=$this->_const;
         echo $this->_twig->render('sections/news.html', compact('const'));
     }
+<<<<<<< HEAD
 
     public function new_mitsubishi()
     {
@@ -46,5 +59,13 @@ class routes extends Controller
         echo $this->_twig->render('sections/404.html', compact('const'));
     }
 
+=======
+    
+    public function works()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/works.html', compact('const'));
+    }
+>>>>>>> 1ce7a135c8c12a3460e9d0802ce60c040edba44c
 }
 ?>

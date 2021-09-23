@@ -8017,7 +8017,6 @@ body {
 
 .scroll-container {
   color: white !important;
-  margin-bottom: 26vh !important;
   margin-top: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -8056,9 +8055,6 @@ body {
     margin: 100vh 0; }
   .scroll-sequence__container .speak:first-child {
     margin-top: -50vh; }
-  .scroll-sequence__container .speak[data-scroll] {
-    transform: translatey(calc(var(--viewport-y) * 30vh));
-    opacity: calc(var(--visible-y)); }
   .scroll-sequence__container .scroll-sequence__content {
     padding: 4em; }
   .scroll-sequence__container .scroll-sequence {
@@ -8078,8 +8074,14 @@ body {
     margin-bottom: 10px; }
   @media screen and (max-width: 600px) {
     .scroll-sequence__container h1, .scroll-sequence__container .h1 {
-      font-size: 2em;
+      font-size: 1em;
       width: 100%; } }
+
+[data-scroll] {
+  transition: opacity 1s; }
+
+[data-scroll="in"] {
+  opacity: 1; }
 
 /** GENERALES **/
 .subtitle {
@@ -8162,7 +8164,7 @@ a:hover {
   width: 50%;
   margin-left: auto;
   margin-right: auto; }
-#experiences .one:hover .up {
+#experiences .one:hover .up, #experiences .moblie_experiences .one .up {
   transform: translateY(-100%);
   opacity: 0.7;
   transition: 0.7s ease;
@@ -8249,7 +8251,6 @@ body {
 
 .scroll-container {
   color: white !important;
-  margin-bottom: 26vh !important;
   margin-top: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -8288,9 +8289,6 @@ body {
     margin: 100vh 0; }
   .scroll-sequence__container .speak:first-child {
     margin-top: -50vh; }
-  .scroll-sequence__container .speak[data-scroll] {
-    transform: translatey(calc(var(--viewport-y) * 30vh));
-    opacity: calc(var(--visible-y)); }
   .scroll-sequence__container .scroll-sequence__content {
     padding: 4em; }
   .scroll-sequence__container .scroll-sequence {
@@ -8310,8 +8308,14 @@ body {
     margin-bottom: 10px; }
   @media screen and (max-width: 600px) {
     .scroll-sequence__container h1, .scroll-sequence__container .h1 {
-      font-size: 2em;
+      font-size: 1em;
       width: 100%; } }
+
+[data-scroll] {
+  transition: opacity 1s; }
+
+[data-scroll="in"] {
+  opacity: 1; }
 
 /* Preloader */
 .ctn-preloader {
@@ -9367,6 +9371,76 @@ body .footer .content > div .image {
     .sustainability-reportd-cart .metrics .metrics-fila2 {
       margin-top: 10vh; }
 
+#vimeo-pop-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999;
+  background: rgba(0, 0, 0, 0.75); }
+
+#vimeo-pop-container div {
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
+#vimeo-pop-container .vimeo-close {
+  background-color: transparent;
+  border: 3px solid white;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 15px;
+  transition: 200ms background-color; }
+
+#vimeo-pop-container .vimeo-close:before, #vimeo-pop-container .vimeo-close:after {
+  content: "";
+  background: white;
+  border-radius: 3px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: rotate(45deg);
+  transition: 500ms all; }
+
+#vimeo-pop-container .vimeo-close:before {
+  height: 20px;
+  width: 2px;
+  margin-left: -1px;
+  margin-top: -10px; }
+
+#vimeo-pop-container .vimeo-close:after {
+  height: 2px;
+  width: 20px;
+  margin-left: -10px;
+  margin-top: -1px; }
+
+#vimeo-pop-container .vimeo-close:hover {
+  background-color: rgba(0, 0, 0, 0.25); }
+
+#vimeo-pop-container .vimeo-close.closing:before {
+  transform: rotate(450deg);
+  margin-left: -2px;
+  margin-top: 0;
+  animation: close-before 500ms ease 500ms 1 forwards; }
+
+#vimeo-pop-container .vimeo-close.closing:after {
+  transform: rotate(540deg);
+  margin-left: -11px;
+  margin-top: -10px;
+  animation: close-after 500ms ease 500ms 1 forwards; }
+
+#vimeo-pop-container iframe {
+  border: 0px solid #000;
+  height: 100%;
+  width: 100%; }
+
 body {
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
@@ -9649,76 +9723,6 @@ video {
     margin-top: -10px; }
   100% {
     margin-top: 0; } }
-#vimeo-pop-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9999999;
-  background: rgba(0, 0, 0, 0.75); }
-
-#vimeo-pop-container div {
-  height: 100%;
-  width: 100%;
-  padding: 15px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); }
-
-#vimeo-pop-container .vimeo-close {
-  background-color: transparent;
-  border: 3px solid white;
-  cursor: pointer;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  right: 15px;
-  transition: 200ms background-color; }
-
-#vimeo-pop-container .vimeo-close:before, #vimeo-pop-container .vimeo-close:after {
-  content: "";
-  background: white;
-  border-radius: 3px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: rotate(45deg);
-  transition: 500ms all; }
-
-#vimeo-pop-container .vimeo-close:before {
-  height: 20px;
-  width: 2px;
-  margin-left: -1px;
-  margin-top: -10px; }
-
-#vimeo-pop-container .vimeo-close:after {
-  height: 2px;
-  width: 20px;
-  margin-left: -10px;
-  margin-top: -1px; }
-
-#vimeo-pop-container .vimeo-close:hover {
-  background-color: rgba(0, 0, 0, 0.25); }
-
-#vimeo-pop-container .vimeo-close.closing:before {
-  transform: rotate(450deg);
-  margin-left: -2px;
-  margin-top: 0;
-  animation: close-before 500ms ease 500ms 1 forwards; }
-
-#vimeo-pop-container .vimeo-close.closing:after {
-  transform: rotate(540deg);
-  margin-left: -11px;
-  margin-top: -10px;
-  animation: close-after 500ms ease 500ms 1 forwards; }
-
-#vimeo-pop-container iframe {
-  border: 0px solid #000;
-  height: 100%;
-  width: 100%; }
-
 .multicolor > div {
   height: 5px; }
 
@@ -9881,6 +9885,9 @@ body {
 
 #paginator {
   background-color: #FFF; }
+  #paginator .page-link {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important; }
 
 .portada {
   background: white; }

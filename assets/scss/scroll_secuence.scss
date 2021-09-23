@@ -10,7 +10,7 @@ body {
 
 .scroll-container {
   color: white !important;
-  margin-bottom: 26vh!important;
+  //margin-bottom: 26vh!important;
   margin-top: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -61,10 +61,7 @@ body {
       margin-top: -50vh;
     }
 
-    .speak[data-scroll] {
-      transform: translatey(calc(var(--viewport-y) * 30vh));
-      opacity: calc(var(--visible-y));
-    }
+    
 
     .scroll-sequence__content {
       padding: 4em;
@@ -92,7 +89,7 @@ body {
     }
     @media screen and (max-width: 600px) {
       h1 {
-        font-size: 2em;
+        font-size: 1em;
         width: 100%;
       }
     }
@@ -100,4 +97,11 @@ body {
 
 /*# sourceMappingURL=scroll_secuence.css.map */
 
+}
+
+[data-scroll] {
+  transition: opacity 1s;
+}
+[data-scroll="in"] {
+  opacity: 1;
 }
