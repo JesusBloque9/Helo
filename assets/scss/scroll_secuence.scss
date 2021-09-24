@@ -16,7 +16,13 @@ body {
   margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  perspective: 600px;
+  >div.row{
+    >section.scroll-sequence__container{
+      padding-right: 0px;
+      padding-left: 0px;
+      perspective: 600px;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {

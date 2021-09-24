@@ -254,7 +254,9 @@ $( document ).ready(function() {
 
 {% include 'modules/menu_home.html' %}
 
-<div class="container-fluid scroll-container menu-nav2">
+<div class="container-fluid p-0 m-0 scroll-container">
+    <div class="row m-0">
+
     <section class="scroll-sequence__container first-container">
         <div class="scroll-sequence first-sequence"></div>
         <div class="scroll-sequence__content container">
@@ -319,19 +321,20 @@ $( document ).ready(function() {
     </section>
 </div>
 
+</div>
+
 <!-- MENU  -->  
 <br><br><br><br>
 {% include 'modules/menu_secciones.html' %}
 
 <!--We make Section-->    
-<div class="container-fluid px-0 mx-0">
-    <div id="experiences" class="white_background">
+<div class="container-fluid bg-white" id="experiences">
         <div class="row py-5">
             <div class="col-12 text-center py-5">
                 <h1 class="title mb-5 mt-1">We make work that is</h1>
             </div>
         </div>
-        <div class="row " >
+        <div class="row" >
             <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 one_img background_default">
                 <div class="container-experience" >
                     <div class="image one text-center">
@@ -424,7 +427,6 @@ $( document ).ready(function() {
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 {% set contactUs = 'true' %}
