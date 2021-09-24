@@ -12,9 +12,8 @@ class Bootstrap
             
             if(is_callable(array($controller, $metodo))){
                 $metodo = $peticion->getMetodo();
-            }
-            else{
-                $metodo = 'index';
+            }else{
+                $metodo = 'e404';
             }
             call_user_func(array($controller, $metodo));
         } else {
