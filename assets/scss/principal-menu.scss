@@ -3,17 +3,7 @@
 	margin: 0;
 	padding: 0;
 }
-/*MENU*/
-body {
-    perspective: 600px;
-    overflow-x: hidden;
-  }
-  @media screen and (max-width: 768px) {
-    body {
-      perspective: 300px;
-    }
-  }
-  
+/*MENU*/  
   .full {
     position: fixed;
     top: 0;
@@ -27,7 +17,7 @@ body {
   
   .menu {
     position: absolute;
-    right: 10vw;
+    left: 90vw;
     top: 5vh;
     width: 48px;
     height: 48px;
@@ -66,6 +56,7 @@ body {
   }
   
   .page {
+    position: absolute;
     transform-origin: right center;
     transform: translateX(0) rotateY(0);
     z-index: 1;
@@ -115,14 +106,15 @@ body {
 }
 .logo-home2{
   width: 50px;
-  margin-top:3vh;
+  margin-top:1.5vh;
+  margin-bottom: 1.5vh;
   margin-left: 10vw;
 }
 /*Menu home*/
 .menu-home{
   display: inline-block;
   position: absolute;
-  margin-top: 4.6vh;
+  margin-top: 25px;
   right: 15vw;
 }
 .menu-home li{
@@ -291,7 +283,7 @@ font-weight: bold;
   .menu2 {
     position: absolute;
     right: 10vw;
-    top: 3vh;
+    top: 16px;
     width: 48px;
     height: 48px;
     border-radius: 50%;

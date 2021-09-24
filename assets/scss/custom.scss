@@ -2,6 +2,7 @@ $primary: #FF2A1B;;
 $back_text: #1D1D1D;
 $grey_text: #7A7A7A;
 $blue: #1994FF;
+$light: #FFFFFF;
 
 $yellow: #FFCA30;
 $orange: #DE5307;
@@ -18,7 +19,8 @@ $theme-colors: (
   "red": $red,
   "blueOne": $blueOne,
   "blueTwo": $blueTwo,
-  "green": $green
+  "green": $green,
+  "light": $light
 );
 //@import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -40,13 +42,13 @@ $form-floating-label-transform:   scale(.85) translateY(-1rem) translateX(.15rem
 //@import "../../node_modules/bootstrap/scss/tables";
 @import "../../node_modules/bootstrap/scss/forms";
 //@import "../../node_modules/bootstrap/scss/buttons";
-//@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/transitions";
 //@import "../../node_modules/bootstrap/scss/dropdown";
 //@import "../../node_modules/bootstrap/scss/button-group";
 //@import "../../node_modules/bootstrap/scss/nav";
 //@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/accordion";
 @import "../../node_modules/bootstrap/scss/card";
-//@import "../../node_modules/bootstrap/scss/accordion";
 //@import "../../node_modules/bootstrap/scss/breadcrumb";
 @import "../../node_modules/bootstrap/scss/pagination";
 //@import "../../node_modules/bootstrap/scss/badge";
@@ -85,10 +87,11 @@ html{
     	color: #363636;
     	line-height: 2;
         display: block;
-        width: 100%;
+        width: 100vw;
         height: auto !important;
         position: relative;
         background: #FFF;
+        overflow-x: hidden;
 	}
 }
 
@@ -103,9 +106,12 @@ html{
 @import "./creators";
 @import "./sustainability";
 @import "./works";
+@import "./works_2";
 @import "./contact";
 @import "./news";
 @import "./approach";
+@import "./interior-news";
+@import "./404";
 
 #cursor {
     position: absolute;
@@ -212,8 +218,10 @@ div.multicolor{
 @include media-breakpoint-down(md) {
 }
 @include media-breakpoint-down(sm) {
+
 }
 @include media-breakpoint-down(xs) {
+
 }
 
 /**/

@@ -9,20 +9,42 @@ HELO
 {% endblock %}
 
 {% block extraCSS %}
-    <link href="{{ const.BASE_URL }}node_modules/aos/dist/aos.css" rel="stylesheet">
+    <style>
+        nav#menu_home{
+            display: inline-block;
+            position: fixed;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+        }
+        nav.menu-nav2{
+            display: inline-block;
+            position: relative;
+            float: left;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            left: 0px;
+            top: 0px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, 0);
+            -webkit-transition: all .25s ease;
+               -moz-transition: all .25s ease;
+                -ms-transition: all .25s ease;
+                 -o-transition: all .25s ease;
+                    transition: all .25s ease;
+        }
+        nav.menu-nav2.fixed_menu{
+            position: fixed;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, .89);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+        }
+    </style>
 {% endblock %}
 
 {% block extraJS %}
-    <script src="{{ const.BASE_URL }}node_modules/aos/dist/aos.js" ></script>
+    <script src="{{ const.BASE_URL }}assets/js/scroll-out.min.js" ></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
-    <script>
-        function mobile_functions() {
-            
-            if(window.matchMedia("(max-width: 767px)").matches){
-                $(".container-experience").addClass('moblie_experiences');  
-            }
-        }
-    </script>
     <script>
         const firstSequenceImages = [];
         const twoSequenceImages = [];
@@ -48,43 +70,16 @@ HELO
         for (let i = 814; i <= 847; i ++) {
           sixSequenceImages.push(`${`000${i}`.slice(-5)}.jpg`);
         }
-
-        function scroll_secuence_initialize(){
-            if(window.matchMedia("(max-width: 767px)").matches){
-                const firstSequence = new ScrollSequence({
-                    container: '.first-sequence',
-                    scrollWith: '.first-container',
-                    images: firstSequenceImages,
-                    imagesRoot: 'assets/img/secuencia/movil/',
-                    priorityFrames: [0, 20, 40, 60, 90],
-                    cover: true,
-                    starts: 'out',
-                    ends: 'in'
-                });
-            } else{
-                const firstSequence = new ScrollSequence({
-                    container: '.first-sequence',
-                    scrollWith: '.first-container',
-                    images: firstSequenceImages,
-                    imagesRoot: 'assets/img/secuencia/1/',
-                    priorityFrames: [0, 20, 40, 60, 90],
-                    cover: true,
-                    starts: 'out',
-                    ends: 'in'
-                });
-            }
-        }
-
-        $(document).ready(function(){
-            scroll_secuence_initialize();      
-            mobile_functions();      
-        });
-
-        $( window ).resize(function() {
-            scroll_secuence_initialize();
-            mobile_functions();
-        });
-
+        const firstSequence = new ScrollSequence({
+            container: '.first-sequence',
+            scrollWith: '.first-container',
+            images: firstSequenceImages,
+            imagesRoot: 'assets/img/secuencia/1/',
+            priorityFrames: [0, 20, 40, 60, 90],
+            cover: true,
+            starts: 'out',
+            ends: 'in'
+          });
         const twoSequence = new ScrollSequence({
             container: '.two-sequence',
             scrollWith: '.two-container',
@@ -136,7 +131,13 @@ HELO
             ends: 'in'
         });
         // END SCROLL_SEQUENCE CODE
-        AOS.init();
+        ScrollOut({
+            targets: '.speak',
+            cssProps: {
+                viewportY: true,
+                visibleY: true
+            }
+        });
     </script>       
     <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
     <script>
@@ -227,6 +228,31 @@ HELO
         }
     </script>
     <script src="{{ const.BASE_URL }}assets/js/effect_waves-compile.js"></script>
+    <script>
+
+$( document ).ready(function() {
+    const second_menu = $('nav.menu-nav2');
+    const first_menu = $('nav#menu_home');
+    const YpositionPrincipal=second_menu.offset().top;
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        console.log('YpositionPrincipal: '+YpositionPrincipal);
+        console.log('scroll: '+scroll);
+        if (YpositionPrincipal<scroll) {
+            first_menu.addClass('d-none');
+            second_menu.addClass('fixed_menu');
+        }else{
+            first_menu.removeClass('d-none');
+            second_menu.removeClass('fixed_menu');
+        }
+    });
+});
+
+
+//var p = $( "p" ).last();
+//var offset = p.offset();
+
+    </script>   
 {% endblock %}
 
 {% block content %}
@@ -237,12 +263,12 @@ HELO
     <section class="scroll-sequence__container first-container">
         <div class="scroll-sequence first-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row" data-aos="fade-right">
+            <div class="speak row">
                 <div class="col-12 col-md-7">
                     <h1 class="scroll-sequence-title">Insight Inspired, Story Led</h1>
                 </div>
             </div>
-            <div class="speak row justify-content-end" data-aos="fade-left">
+            <div class="speak row justify-content-end">
                 <div class="col-12 col-md-7">
                     <h1 class="scroll-sequence-title right-text hollow-text">Design Moving Experiences</h1>
                 </div>
@@ -252,7 +278,7 @@ HELO
     <section class="scroll-sequence__container two-container">
         <div class="scroll-sequence two-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row col-12 col-md-6" data-aos="fade-right">   
+            <div class="speak row col-12 col-md-6">   
                 <p class="scroll-sequence-text">We aren’t right for every (even most) projects but</p>
                 <h1 class="scroll-sequence-title-tiny">When you have to deliver something that is exceptional, call us.</h1>
             </div>
@@ -261,7 +287,7 @@ HELO
     <section class="scroll-sequence__container tree-container">
         <div class="scroll-sequence tree-sequence"></div>
             <div class="scroll-sequence__content container">
-                <div class="speak row justify-content-end" data-aos="fade-left">
+                <div class="speak row justify-content-end">
                     <div class="col-12 col-md-5 ">
                         <p class="scroll-sequence-text right-text">Oh, I have people that do that already. Actually, you don’t.</p>
                         <h1 class="scroll-sequence-title-tiny right-text">We are different, here is WHY</h1>
@@ -272,7 +298,7 @@ HELO
     <section class="scroll-sequence__container four-container">
         <div class="scroll-sequence four-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row col-12 col-md-7" data-aos="fade-right">
+            <div class="speak row col-12 col-md-7">
                 <p class="scroll-sequence-text">We are not an experiential agency or a traditional production company.</p>
                 <h1 class="scroll-sequence-title-tiny">We are a creative problem solving studio</h1>
             </div>
@@ -281,7 +307,7 @@ HELO
     <section class="scroll-sequence__container five-container">
         <div class="scroll-sequence five-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row justify-content-end" data-aos="fade-left">
+            <div class="speak row justify-content-end">
                 <div class="col-12 col-md-7">
                     <h1 class="scroll-sequence-title-tiny right-text">Creators whose diverse portfolios and points of view range from narrative storytelling to immersive experience</h1>  
                 </div>
@@ -291,7 +317,7 @@ HELO
     <section class="scroll-sequence__container six-container">
         <div class="scroll-sequence six-sequence"></div>
         <div class="scroll-sequence__content container">
-            <div class="speak row col-12 col-md-7" data-aos="fade-right">
+            <div class="speak row col-12 col-md-7">
                 <h1 class="scroll-sequence-title-tiny">From designing some of the most iconic worlds in film to designing and building real buildings in the real world.</h1>
             </div>
         </div>
@@ -299,20 +325,11 @@ HELO
 </div>
 
 <!-- MENU  -->  
-<nav class=""> 
-    <div class="page"> 
-        <img class="logo-home2" src="{{ const.BASE_URL }}assets/img/logo-s-helo.svg" alt="">
-        <div class="menu-home">
-            <li><a>WORK</a></li>
-            <li><a href="creators_2.html">CREATORS</a></li>
-            <li><a>CONTACT</a></li>                    
-        </div>                
-        <div class="menu2" id="openNav"></div> 
-    </div>
-</nav>
+<br><br><br><br>
+{% include 'modules/menu_secciones.html' %}
 
 <!--We make Section-->    
-<div class="container-fluid px-0 mx-0 white_background">
+<div class="container-fluid px-0 mx-0">
     <div id="experiences" class="white_background">
         <div class="row py-5">
             <div class="col-12 text-center py-5">

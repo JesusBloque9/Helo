@@ -10,12 +10,19 @@ body {
 
 .scroll-container {
   color: white !important;
-  //margin-bottom: 26vh!important;
+  margin-bottom: 130px !important;  
   margin-top: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  perspective: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .scroll-container {
+    perspective: 300px;
+  }
 }
 
 .scroll-sequence__container{
