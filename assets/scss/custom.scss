@@ -1,6 +1,9 @@
 $primary: #FF2A1B;;
-$back_text: #1D1D1D;
-$grey_text: #7A7A7A;
+$grey_dark: #1D1D1D;
+$grey_dark_02: #363636;
+$grey_dark_03: #6A6969;
+$grey_dark_04: #313131;
+$grey: #7A7A7A;
 $blue: #1994FF;
 $light: #FFFFFF;
 
@@ -20,7 +23,11 @@ $theme-colors: (
   "blueOne": $blueOne,
   "blueTwo": $blueTwo,
   "green": $green,
-  "light": $light
+  "light": $light,
+  "grey": $grey,
+  "grey_dark": $grey_dark,
+  "grey_dark_03": $grey_dark_03,
+  "grey_dark_04": $grey_dark_04
 );
 //@import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -84,7 +91,7 @@ html{
 	    font-size: 1rem;
     	max-width: 100vw;
     	font-weight: 400;
-    	color: #363636;
+    	color: $grey_dark_02;
     	line-height: 2;
         display: block;
         width: 100%;
@@ -133,6 +140,7 @@ html{
     padding-bottom: 8px;
     font-weight: 800;
     margin-bottom: 0px;
+    line-height: 1.5;
     >small{
         display: block;
         position: relative;
@@ -149,9 +157,12 @@ html{
         right: 0px;
         width: 100%;
         height: 2px;
-        background-color: $primary;
     }
-
+    &.primary{
+        &:after{
+            background-color: $primary;
+        }
+    }
     &.yellow{
         &:after{
             background-color: $yellow;
@@ -163,11 +174,12 @@ html{
     @include block_ctrl();
     font-weight: 900;
     padding-left: 20px;
+    line-height: 1.5;
     >small{
         @include block_ctrl();
         font-size: 1.1rem;
         font-weight: 500;
-        color: $grey_text;
+        color: $grey;
         padding-top: 5px;
     }
     &:before{
@@ -179,9 +191,24 @@ html{
         bottom: 0px;
         height: 80%;
         width: 3px;
-        background-color: $primary;
+        
         margin: auto 0px;
         border-radius: 1px;
+    }
+    &.primary{
+        &:before{
+            background-color: $primary;
+        }
+    }
+    &.secondary{
+        &:before{
+            background-color: $secondary;
+        }
+    }
+    &.yellow{
+        &:before{
+            background-color: $yellow;
+        }
     }
 }
 
