@@ -3,17 +3,7 @@
 	margin: 0;
 	padding: 0;
 }
-/*MENU*/
-body {
-    perspective: 600px;
-    overflow-x: hidden;
-  }
-  @media screen and (max-width: 768px) {
-    body {
-      perspective: 300px;
-    }
-  }
-  
+/*MENU*/  
   .full {
     position: fixed;
     top: 0;
@@ -124,7 +114,7 @@ body {
 .menu-home{
   display: inline-block;
   position: absolute;
-  margin-top: 3vh;
+  margin-top: 25px;
   right: 15vw;
 }
 .menu-home li{
@@ -293,7 +283,7 @@ font-weight: bold;
   .menu2 {
     position: absolute;
     right: 10vw;
-    top: 2vh;
+    top: 16px;
     width: 48px;
     height: 48px;
     border-radius: 50%;

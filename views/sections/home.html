@@ -9,6 +9,37 @@ HELO
 {% endblock %}
 
 {% block extraCSS %}
+    <style>
+        nav#menu_home{
+            display: inline-block;
+            position: fixed;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+        }
+        nav.menu-nav2{
+            display: inline-block;
+            position: relative;
+            float: left;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            left: 0px;
+            top: 0px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, 0);
+            -webkit-transition: all .25s ease;
+               -moz-transition: all .25s ease;
+                -ms-transition: all .25s ease;
+                 -o-transition: all .25s ease;
+                    transition: all .25s ease;
+        }
+        nav.menu-nav2.fixed_menu{
+            position: fixed;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, .89);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+        }
+    </style>
 {% endblock %}
 
 {% block extraJS %}
@@ -197,6 +228,31 @@ HELO
         }
     </script>
     <script src="{{ const.BASE_URL }}assets/js/effect_waves-compile.js"></script>
+    <script>
+
+$( document ).ready(function() {
+    const second_menu = $('nav.menu-nav2');
+    const first_menu = $('nav#menu_home');
+    const YpositionPrincipal=second_menu.offset().top;
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        console.log('YpositionPrincipal: '+YpositionPrincipal);
+        console.log('scroll: '+scroll);
+        if (YpositionPrincipal<scroll) {
+            first_menu.addClass('d-none');
+            second_menu.addClass('fixed_menu');
+        }else{
+            first_menu.removeClass('d-none');
+            second_menu.removeClass('fixed_menu');
+        }
+    });
+});
+
+
+//var p = $( "p" ).last();
+//var offset = p.offset();
+
+    </script>   
 {% endblock %}
 
 {% block content %}
