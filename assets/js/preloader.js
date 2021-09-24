@@ -15,8 +15,15 @@ $("#openNav").click(function() {
   $(".page").addClass("swipe-lft");
   $(".nav").addClass("open");
 });
-$("#closeNav").click(function() {
-  alert("hola");
+$("#closeNav").click(function() {  
+  $(".page").removeClass("swipe-lft");
+  $(".nav").removeClass("open");
+});
+$("#openNav2").click(function() {
+  $(".page").addClass("swipe-lft");
+  $(".nav").addClass("open");
+});
+$("#closeNav2").click(function() {  
   $(".page").removeClass("swipe-lft");
   $(".nav").removeClass("open");
 });

@@ -26,6 +26,7 @@ body {
   }
   
   .menu {
+    z-index: 500;
     position: absolute;
     left: 90vw;
     top: 5vh;
@@ -69,7 +70,7 @@ body {
     position: absolute;
     transform-origin: right center;
     transform: translateX(0) rotateY(0);
-    z-index: 1;
+    z-index: 500;
     opacity: 1;
   }
   .page.swipe-lft {
@@ -116,15 +117,15 @@ body {
 }
 .logo-home2{
   width: 50px;
-  margin-top:1.5vh;
-  margin-bottom: 1.5vh;
+  margin-top:3vh;
+  margin-bottom: 3vh;
   margin-left: 10vw;
 }
 /*Menu home*/
 .menu-home{
   display: inline-block;
   position: absolute;
-  margin-top: 3vh;
+  margin-top: 4vh;
   right: 15vw;
 }
 .menu-home li{
@@ -293,7 +294,7 @@ font-weight: bold;
   .menu2 {
     position: absolute;
     right: 10vw;
-    top: 2vh;
+    top: 3vh;
     width: 48px;
     height: 48px;
     border-radius: 50%;
