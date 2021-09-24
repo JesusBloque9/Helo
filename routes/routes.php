@@ -46,6 +46,13 @@ class routes extends Controller
         echo $this->_twig->render('sections/news.html', compact('const'));
     }
 
+    
+    public function approach()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/approach.html', compact('const'));
+    }
+
     public function new_mitsubishi()
     {
         /*CONSTANTS*/$const=$this->_const;
@@ -61,6 +68,7 @@ class routes extends Controller
     {
         /*CONSTANTS*/$const=$this->_const;
         echo $this->_twig->render('sections/works.html', compact('const'));
+
     }
 }
 ?>

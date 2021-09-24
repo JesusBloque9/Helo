@@ -3,17 +3,7 @@
 	margin: 0;
 	padding: 0;
 }
-/*MENU*/
-body {
-    perspective: 600px;
-    overflow-x: hidden;
-  }
-  @media screen and (max-width: 768px) {
-    body {
-      perspective: 300px;
-    }
-  }
-  
+/*MENU*/  
   .full {
     position: fixed;
     top: 0;
@@ -125,7 +115,11 @@ body {
 .menu-home{
   display: inline-block;
   position: absolute;
+<<<<<<< HEAD
   margin-top: 4vh;
+=======
+  margin-top: 25px;
+>>>>>>> 6910a7d7ed48ded21ecb6df32f9cf6c563c2ad15
   right: 15vw;
 }
 .menu-home li{
@@ -294,7 +288,11 @@ font-weight: bold;
   .menu2 {
     position: absolute;
     right: 10vw;
+<<<<<<< HEAD
     top: 3vh;
+=======
+    top: 16px;
+>>>>>>> 6910a7d7ed48ded21ecb6df32f9cf6c563c2ad15
     width: 48px;
     height: 48px;
     border-radius: 50%;

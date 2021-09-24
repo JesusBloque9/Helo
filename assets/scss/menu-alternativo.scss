@@ -4,15 +4,6 @@
 	padding: 0;
 }
 /*MENU*/
-body {
-    perspective: 600px;
-    overflow-x: hidden;
-  }
-  @media screen and (max-width: 768px) {
-    body {
-      perspective: 300px;
-    }
-  }
   .menu-nav2 .full {
     position: fixed;
     top: 0;

@@ -91,6 +91,7 @@ html{
         height: auto !important;
         position: relative;
         background: #FFF;
+        overflow-x: hidden;
 	}
 }
 
@@ -108,6 +109,7 @@ html{
 @import "./works_2";
 @import "./contact";
 @import "./news";
+@import "./approach";
 @import "./interior-news";
 @import "./404";
 

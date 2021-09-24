@@ -16,6 +16,13 @@ body {
   margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  perspective: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .scroll-container {
+    perspective: 300px;
+  }
 }
 
 .scroll-sequence__container{
@@ -97,11 +104,4 @@ body {
 
 /*# sourceMappingURL=scroll_secuence.css.map */
 
-}
-
-[data-scroll] {
-  transition: opacity 1s;
-}
-[data-scroll="in"] {
-  opacity: 1;
 }
