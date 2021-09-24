@@ -18,56 +18,7 @@ HELO
 
 
 <!-- MENU  -->  
-<nav class="menu-nav2">
-    <div class="page"> 
-        <img class="logo-home2" src="{{ const.BASE_URL }}assets/img/logo-s-helo.svg" alt="">
-        <div class="menu-home">
-            <li><a href="{{ const.BASE_URL }}">WORK</a></li>
-            <li><a href="{{ const.BASE_URL }}creators">CREATORS</a></li>
-            <li><a href="{{ const.BASE_URL }}">CONTACT</a></li>                    
-        </div>                
-        <div class="menu2" id="openNav"></div> 
-    </div>
-
-
-    <div class="full nav menu-interior"> 
-        <img class="logo-home" src="{{ const.BASE_URL }}assets/img/logob-helo.svg" alt="">                 
-        <div class="menu crossed" id="closeNav"></div> 
-        <div class="principal-menu row"> 
-            <div class="col"> 
-                <div class="subrayado"> 
-                    <ul class="list"> 
-                        <li class="hollow-text-black menu-tex1"><a data-src="{{ const.BASE_URL }}assets/img/menu/menu-img1.jpg" value="Home">Home</a></li>
-                        <div class="change-text textchange-1"><h3>Home</h3></div>                                 
-                        <li id="menu-text" class="hollow-text-black menu-tex2"><a data-src="{{ const.BASE_URL }}assets/img/menu/menu-img3.jpg" value="Approach">Approach</a></li>
-                        <div class="change-text textchange-2"><h3>Approach</h3></div>
-                        <li class="hollow-text-black menu-tex3"><a data-src="{{ const.BASE_URL }}assets/img/menu/menu-img4.jpg">Sustainability</a></li>
-                        <div class="change-text textchange-3"><h3>Sustainability</h3></div> 
-                        <li class="hollow-text-black menu-tex4"><a data-src="{{ const.BASE_URL }}assets/img/menu/menu-img5.jpg">Work</a></li>
-                        <div class="change-text textchange-4"><h3>Work</h3></div>
-                        <li class="hollow-text-black menu-tex5"><a data-src="{{ const.BASE_URL }}assets/img/menu/menu-img6.jpg">News</a></li>
-                        <div class="change-text textchange-5 "><h3>News</h3></div> 
-                        <li class="hollow-text-black menu-tex6"><a data-src="{{ const.BASE_URL }}assets/img/menu/menu-img7.jpg">Contact</a></li>
-                        <div class="change-text textchange-6"><h3>Contact</h3></div>
-                    </ul>                          
-                </div> 
-                <hr>
-                <div class="social-media"> 
-                    <a href=""><img src="{{ const.BASE_URL }}assets/img/footer/s-linkedin.svg" alt=""></a>
-                    <a href=""><img src="{{ const.BASE_URL }}assets/img/footer/s-instagram.svg" alt=""></a> 
-                </div> 
-                <p>justin@helo.tv</p>                         
-            </div> 
-            <div class="col imagen-menu"> 
-                <img class="elipse-fondo" src="{{ const.BASE_URL }}assets/img/menu/menu-fondo.svg" alt=""> 
-                <div class="image-holder"> 
-                    <img class="imagen-fondo" src="{{ const.BASE_URL }}assets/img/menu/menu-img2.jpg" alt=""> 
-                </div>                        
-            </div>                         
-        </div>  
-    </div> 
-</nav>
-
+{% include 'modules/menu_home.html' %}
 <body>
     <div class="bg-video-wrap">
       <video class="video404" src="{{ const.BASE_URL }}assets/img/e404/confused.mp4" loop muted autoplay>
@@ -79,6 +30,7 @@ HELO
         <h4>Oops, the page you're looking for does not exist</h4>
         <p>You may want to head back to the homepage.
           If you think something is broken, report a problem.</p>
+          <a href=""><button>RETURN HOME</button></a>
       </div>
 
     </div>
