@@ -13,19 +13,7 @@ $(".openNav").click(function() {
   $(".page").addClass("swipe-lft");
   $(".nav").addClass("open");
 });
-<<<<<<< HEAD
-$("#closeNav").click(function() {  
-  $(".page").removeClass("swipe-lft");
-  $(".nav").removeClass("open");
-});
-$("#openNav2").click(function() {
-  $(".page").addClass("swipe-lft");
-  $(".nav").addClass("open");
-});
-$("#closeNav2").click(function() {  
-=======
 $(".closeNav").click(function() {
->>>>>>> 6910a7d7ed48ded21ecb6df32f9cf6c563c2ad15
   $(".page").removeClass("swipe-lft");
   $(".nav").removeClass("open");
 });

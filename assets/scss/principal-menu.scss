@@ -16,7 +16,6 @@
   }
   
   .menu {
-    z-index: 500;
     position: absolute;
     left: 90vw;
     top: 5vh;
@@ -60,7 +59,7 @@
     position: absolute;
     transform-origin: right center;
     transform: translateX(0) rotateY(0);
-    z-index: 500;
+    z-index: 1;
     opacity: 1;
   }
   .page.swipe-lft {
@@ -107,19 +106,15 @@
 }
 .logo-home2{
   width: 50px;
-  margin-top:3vh;
-  margin-bottom: 3vh;
+  margin-top:1.5vh;
+  margin-bottom: 1.5vh;
   margin-left: 10vw;
 }
 /*Menu home*/
 .menu-home{
   display: inline-block;
   position: absolute;
-<<<<<<< HEAD
-  margin-top: 4vh;
-=======
   margin-top: 25px;
->>>>>>> 6910a7d7ed48ded21ecb6df32f9cf6c563c2ad15
   right: 15vw;
 }
 .menu-home li{
@@ -288,11 +283,7 @@ font-weight: bold;
   .menu2 {
     position: absolute;
     right: 10vw;
-<<<<<<< HEAD
-    top: 3vh;
-=======
     top: 16px;
->>>>>>> 6910a7d7ed48ded21ecb6df32f9cf6c563c2ad15
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -351,4 +342,8 @@ font-weight: bold;
   .menu-tex6:hover + .textchange-6{
     display: block;
     visibility: visible;
+  }
+  #atext-menu{
+    color: #000000;
+    text-decoration: none;
   }
