@@ -64,16 +64,22 @@ body {
     transform: rotate(135deg);
   }
   
-  .menu-nav2 .page {
+  .menu-nav2 .page-msecciones {
     transform-origin: right center;
     transform: translateX(0) rotateY(0);
     z-index: 1;
     opacity: 1;
   }
-  .menu-nav2 .page.swipe-lft {
+  .menu-nav2 .page-msecciones.swipe-lft {
     opacity: 0.5;
     z-index: 0;
     transform: translateX(-100%) rotateY(-35deg);
+  }
+  .page-msecciones {
+    transform-origin: right center;
+    transform: translateX(0) rotateY(0);
+    z-index: 1;
+    opacity: 1;
   }
   
   .menu-nav2 .nav {
