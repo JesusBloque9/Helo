@@ -147,7 +147,36 @@
       &:after{
         width: 100%;
       }
+
       color: $primary;
+      
+      &.yellow{
+        color: $yellow;
+        &:after{
+          background-color: $yellow;
+        }
+      }
+      
+      &.blue{
+        color: $blueTwo;
+        &:after{
+          background-color: $blueTwo;
+        }
+      }
+      
+      &.orange{
+        color: $orange;
+        &:after{
+          background-color: $orange;
+        }
+      }
+      
+      &.green{
+        color: $green;
+        &:after{
+          background-color: $green;
+        }
+      }
     }
   }
 }
