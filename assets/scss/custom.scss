@@ -2,6 +2,7 @@ $primary: #FF2A1B;;
 $back_text: #1D1D1D;
 $grey_text: #7A7A7A;
 $blue: #1994FF;
+$light: #FFFFFF;
 
 $yellow: #FFCA30;
 $orange: #DE5307;
@@ -18,7 +19,8 @@ $theme-colors: (
   "red": $red,
   "blueOne": $blueOne,
   "blueTwo": $blueTwo,
-  "green": $green
+  "green": $green,
+  "light": $light
 );
 //@import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -85,7 +87,7 @@ html{
     	color: #363636;
     	line-height: 2;
         display: block;
-        width: 100%;
+        width: 100vw;
         height: auto !important;
         position: relative;
         background: #FFF;
