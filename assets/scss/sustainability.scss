@@ -1,0 +1,200 @@
+/*Titulo*/
+.sustainability-section{
+    text-align: center;
+    background-image: url('../img/sustainability/wallpaper-sustainability.jpg');
+    background-size: cover;     
+}
+.sustainability-title{
+    padding-top: 18vh;    
+    h1{
+        font-size: 21px;
+        color:#008351;
+        font-weight: 700;
+    }
+    p{
+        font-weight: bold;
+        font-size: 2.7rem;
+        margin-top: 15px;
+        width: 620px;
+        line-height : 60px;
+        margin-right: auto;
+        margin-left: auto;
+        background: #62A00E;
+        background: -webkit-linear-gradient(to top, #62A00E 0%, #0FBDDA 95%);
+        background: -moz-linear-gradient(to top, #62A00E 0%, #0FBDDA 95%);
+        background: linear-gradient(to top, #62A00E 0%, #0FBDDA 95%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/*Ancla con flecha*/
+[data-ca3_icon]::before {  
+    content: attr(data-ca3_icon);
+}
+
+.ca3-scroll-down-arrow {
+	background-image: url('../img/sustainability/arrow.svg');
+	background-size: contain;
+	background-repeat: no-repeat;    
+}
+
+.ca3-scroll-down-link {
+  cursor:pointer;
+	height: 60px;
+	width: 40px;
+	margin: 0px 0 0 -20px;
+	line-height: 60px;
+	position: absolute;
+	left: 50%;	
+	color: rgb(0, 0, 0) !important;
+	text-align: center;
+	font-size: 70px;
+	z-index: 100;
+	text-decoration: none;
+	text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+	-webkit-animation: ca3_fade_move_down 2s ease-in-out infinite;
+	-moz-animation:    ca3_fade_move_down 2s ease-in-out infinite;
+	animation:         ca3_fade_move_down 2s ease-in-out infinite;
+}
+
+
+/*animated scroll arrow animation*/
+@-webkit-keyframes ca3_fade_move_down {
+  0%   { -webkit-transform:translate(0,-20px); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -webkit-transform:translate(0,20px); opacity: 0; }
+}
+@-moz-keyframes ca3_fade_move_down {
+  0%   { -moz-transform:translate(0,-20px); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { -moz-transform:translate(0,20px); opacity: 0; }
+}
+@keyframes ca3_fade_move_down {
+  0%   { transform:translate(0,-20px); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { transform:translate(0,20px); opacity: 0; }
+}
+
+/*Pasos*/
+
+.sustainability-steps{
+    text-align: left;
+    margin-top: 55vh;
+    padding-bottom: 50vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    h3{
+        color: rgb(255, 210, 9);
+        font-size: 80px;
+        font-weight: bold;
+    }
+    p{
+        color: #FFFFFF;
+        font-size: 29px;
+        line-height: 32px;
+    }
+}
+
+/*Video*/
+.sustainability-video{
+    background: #000000;    
+    height: 50vh;
+    text-align: center;
+    
+    h3{
+        color: rgb(255, 210, 9);
+        text-align: left;
+        margin-left: 11vw;
+        font-size: 29px;
+        font-weight: 500;
+    }
+    iframe{
+        margin: 30px auto 0px auto;
+        height: 85vh;
+        width: 90vw;        
+    }
+}
+
+.sustainability-reportd-cart{
+    margin-top: 55vh;
+     text-align: center;
+     h3{
+         font-size: 19px;
+         color: #008351;
+         font-weight: 500;
+     }
+     p{
+         font-size: 27px;
+         line-height: 32px;
+         font-weight: 700;
+         width: 600px;
+         margin-right: auto;
+         margin-left: auto;
+     }
+     .metrics{
+        margin-top: 8vh;
+        margin-right: 15vw;
+        margin-left: 15vw;
+        margin-bottom: 15vh;         
+        img{
+            margin-top: 7vh;
+            width: 150px;
+        }
+        h6{
+            margin-top: 30px;
+            text-align: center;
+            font-size: 21px;
+            font-weight: 600;
+        }
+        .metrics-fila2{
+            margin-top: 10vh;
+        } 
+     }    
+}
+
+/*Diseño responsivo*/
+@media(max-width: 700px){
+    .sustainability-section{
+        background-size: cover;
+        height: 170vh; 
+    }
+    .sustainability-title {
+        padding-top: 6vh
+    }
+    .sustainability-title p{
+        font-size: 1.7rem;
+        width: 350px;
+        line-height: 32px;
+    }
+    .sustainability-steps{
+        margin-top: 70vw;
+
+        h3{
+            font-size: 60px;            
+        }
+        p{
+            font-size: 22px;
+        }
+    }
+    .sustainability-video{
+        height: 34vh;
+    }
+    .sustainability-video iframe{
+        height: 33vh;
+    }
+    .sustainability-reportd-cart{
+        margin-top: 20vh;
+
+        p{
+            width: 350px;
+            font-size: 22px;
+        }
+        .metrics img{
+            width: 100px;
+        }
+        .metrics h6{
+            font-size: 18px;
+        }
+    }    
+}

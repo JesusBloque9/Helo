@@ -1,0 +1,120 @@
+.pb-6, .py-6 {
+    padding-bottom: 4.5rem !important;
+}
+.pt-6, .py-6 {
+    padding-top: 4.5rem !important;
+}
+.pb-0, .py-0 {
+    padding-bottom: 0 !important;
+}
+.pt-0, .py-0 {
+    padding-top: 0 !important;
+}
+.disabled{
+	opacity: .75 !important;
+	pointer-events: none !important;
+}
+
+@mixin block_ctrl() {
+	display: inline-block;
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+@mixin ease($time) {
+	-webkit-transition: all $time ease;
+	   -moz-transition: all $time ease;
+	    -ms-transition: all $time ease;
+	     -o-transition: all $time ease;
+	        transition: all $time ease;
+}
+.block_ctrl{
+	@include block_ctrl();
+}
+
+.br_0{
+	border-radius: 0px !important;
+}
+.br_3{
+	border-radius: 3px !important;
+}
+.br_5{
+	border-radius: 5px !important;
+}
+.br_10{
+	border-radius: 10px !important;
+}
+.br_15{
+	border-radius: 15px !important;
+}
+.br_20{
+	border-radius: 20px !important;
+}
+.br_25{
+	border-radius: 25px !important;
+}
+.br_30{
+	border-radius: 30px !important;
+}
+
+@include media-breakpoint-up(xl) {
+	.py-xl-6{
+		padding-top: 4.5rem !important;
+		padding-bottom: 4.5rem !important;
+	}
+	.pt-xl-6{
+		padding-top: 4.5rem !important;
+	}
+	.pb-xl-6{
+		padding-bottom: 4.5rem !important;
+	}
+}
+@include media-breakpoint-up(lg) {
+	.py-lg-6{
+		padding-top: 4.5rem !important;
+		padding-bottom: 4.5rem !important;
+	}
+	.pt-lg-6{
+		padding-top: 4.5rem !important;
+	}
+	.pb-lg-6{
+		padding-bottom: 4.5rem !important;
+	}
+}
+@include media-breakpoint-up(md) {
+	.py-md-6{
+		padding-top: 4.5rem !important;
+		padding-bottom: 4.5rem !important;
+	}
+	.pt-md-6{
+		padding-top: 4.5rem !important;
+	}
+	.pb-md-6{
+		padding-bottom: 4.5rem !important;
+	}
+}
+@include media-breakpoint-up(sm) {
+	.py-sm-6{
+		padding-top: 4.5rem !important;
+		padding-bottom: 4.5rem !important;
+	}
+	.pt-sm-6{
+		padding-top: 4.5rem !important;
+	}
+	.pb-sm-6{
+		padding-bottom: 4.5rem !important;
+	}
+}
+@include media-breakpoint-up(xs) {
+	.py-xs-6{
+		padding-top: 4.5rem !important;
+		padding-bottom: 4.5rem !important;
+	}
+	.pt-xs-6{
+		padding-top: 4.5rem !important;
+	}
+	.pb-xs-6{
+		padding-bottom: 4.5rem !important;
+	}
+}

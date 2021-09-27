@@ -1,0 +1,52 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+{% endblock %}
+
+{% block extraJS %}
+{% endblock %}
+
+{% block content %}
+
+
+<!-- MENU  -->  
+{% include 'modules/menu_home.html' %}
+<body>
+    <div class="bg-video-wrap">
+      <video class="video404" src="{{ const.BASE_URL }}assets/img/e404/confused.mp4" loop muted autoplay>
+      </video>
+      <div class="overlay">
+      </div>
+      <div class="content404">
+        <h1>404</h1>
+        <h4>Oops, the page you're looking for does not exist</h4>
+        <p>You may want to head back to the homepage.
+          If you think something is broken, report a problem.</p>
+          <a href=""><button>RETURN HOME</button></a>
+      </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row multicolor">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+  </body>
+
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}

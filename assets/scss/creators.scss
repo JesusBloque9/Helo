@@ -1,0 +1,41 @@
+#creators{
+	.item_creator{
+	    padding: 5px 0px;
+		>a{
+    		display: inline-block;
+    		width: auto;
+    		position: relative;
+    		font-weight: 600;
+    		color: $grey_dark;
+    		text-decoration: none;
+			-webkit-transition: all .25s ease;
+			   -moz-transition: all .25s ease;
+			    -ms-transition: all .25s ease;
+			     -o-transition: all .25s ease;
+			        transition: all .25s ease;
+    		&:after{
+				-webkit-transition: all .25s ease;
+				   -moz-transition: all .25s ease;
+				    -ms-transition: all .25s ease;
+				     -o-transition: all .25s ease;
+				        transition: all .25s ease;
+    			content: '';
+    			display: inline-block;
+    			position: absolute;
+    			bottom: 0px;
+    			left: 0px;
+    			right: 0px;
+    			width: 0%;
+    			margin: 0px auto;
+    			height: 2px;
+    			background-color: $primary;
+    		}
+    		&:hover{
+    			&:after{
+    				width: 100%;
+    			}
+    			color: $primary;
+    		}
+		}
+	}
+}

@@ -1,0 +1,195 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+  <style>
+    footer.footer-menu{
+        margin-top: 0px;
+    }
+  </style>
+{% endblock %}
+
+{% block extraJS %}
+    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
+    <script>
+        document.addEventListener("mousemove", function(event) {
+        const x = event.pageX - 10;
+        const y = event.pageY - 10;
+        const cursor = document.querySelector("#cursor");
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+        });
+        $('a').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('a').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        $('span').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('span').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        // sayHello
+        var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
+        window.console.log.apply(console, Helo);
+    </script>
+    <script>
+        function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function cycle(value, total) {
+          return (value % total + total) % total;
+        }
+    </script>
+    <script src="{{ const.BASE_URL }}assets/js/effect_waves-compile.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{% include 'modules/menu_secciones.html' %}
+
+<div class="py-5" id="title">
+    <div class="container-fluid px-md-5">
+        <div class="row px-md-5">
+            <div class="col-12 col-sm-9 col-md-6 col-xl-3 pb-2">
+                <h1 class="title_h1">Our approach</h1>
+                <div class="color blue"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="strategy">
+    <div class="container-fluid py-6">
+        <div class="row pt-5 justify-content-center">
+            <div class=" py-0 neon">
+                <h2 class="text" data-text="We Speak Strategy">We Speak Strategy</h2>
+                <span class="gradient"></span>
+                <span class="spotlight"></span>
+            </div>
+
+            <div class="col-12 py-6">
+                <div class="tabs row">
+                    <input type="radio" name="tabs" id="tab1" checked >
+                    <label for="tab1">
+                        <i class="icono icon-insight"></i>
+                        <br>
+                        <span class="red">INSIGHT INSPIRED</span>
+                    </label>
+                    <input type="radio" name="tabs" id="tab2">
+                    <label for="tab2">
+                        <i class="icono icon-story"></i>
+                        <br>
+                        <span class="orange">STORY LED</span>
+                    </label>
+                    <input type="radio" name="tabs" id="tab3">
+                    <label for="tab3">
+                        <i class="icono icon-design"></i>
+                        <br>
+                        <span class="yellow">DESIGN DRIVEN</span>
+                    </label>
+            
+                    <div id="tab-content1" class="tab-content pt-6">
+                       <div class="row ">
+                           <div class="col-12 col-md-4 pt-6">
+                               <h3 class="red">Insight Inspired</h3>
+                               <p>We speak strategy. Our ability to understand business strategy across internal audiences, B2B, B2B2C, and consumer marketing communications allows us to work directly from insight to concept.</p>
+                           </div>
+                           <div class="col-23 col-md-2"></div>
+                           <div class="col-12 col-md-6 pt-6">
+                               <img src="{{ const.BASE_URL }}assets/img/approach/insight.png" alt="Insight Inspired" class="img-fluid">
+                           </div>
+                       </div>
+                    </div>
+                    <div id="tab-content2" class="tab-content pt-6">
+                       <div class="row ">
+                           <div class="col-12 col-md-4 pt-6">
+                               <h3 class="orange">Story Led</h3>
+                               <p>We are not only storytellers, but story makers. We know how to craft stories across multiple platforms - making sure we work to each platform’s opportunities and limitations - all the while maintaining an overall coherency of narrative.</p>
+                           </div>
+                           <div class="col-23 col-md-2"></div>
+                           <div class="col-12 col-md-6 pt-6">
+                               <img src="{{ const.BASE_URL }}assets/img/approach/story.png" alt="Story Led" class="img-fluid">
+                           </div>
+                       </div>
+                    </div> 
+                    <div id="tab-content3" class="tab-content pt-6">
+                       <div class="row ">
+                           <div class="col-12 col-md-4 pt-6">
+                               <h3 class="yellow">Design Driven</h3>
+                               <p>Design determines experience and experience drives outcome. We believe in the power of intentional design and we have the design know-how to deliver exceptional design across all elements of the project.</p>
+                           </div>
+                           <div class="col-23 col-md-2"></div>
+                           <div class="col-12 col-md-6 pt-6">
+                               <img src="{{ const.BASE_URL }}assets/img/approach/design.png" alt="Design Driven" class="img-fluid">
+                           </div>
+                       </div>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clients">
+    <div class="container-fluid py-6">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5 col-xl-4 py-6">
+                <h2>Our Clients</h2>
+                <p>Brave Brands And The World’s Best Agencies.</p>
+                <hr>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center text-center">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/pfizer.svg" alt="pfizer" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/amazonstudios.svg" alt="amazonstudios" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/blizzard.svg" alt="blizzard" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/virgin.svg" alt="virgin" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/ogilvy.svg" alt="ogilvy" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/carls_jr.svg" alt="carls_jr" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/mcdonalds.svg" alt="mcdonalds" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/bacardi.svg" alt="bacardi" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/asics.svg" alt="asics" class="img-fluid">
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-5-12 py-5">
+                <img src="{{ const.BASE_URL }}assets/img/approach/riot.svg" alt="riot" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'modules/line_colors.html' %}
+
+{% include 'modules/contact_us.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}

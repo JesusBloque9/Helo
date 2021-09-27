@@ -1,0 +1,181 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+{% endblock %}
+
+{% block extraJS %}
+    <script>
+        function resize_withAspectRadio(){
+            $( "#works>div" ).each(function( index ) {
+                var width = $( this ).width();
+                var height = width/2;
+                $( this ).css("height", height);
+            });
+        }
+        resize_withAspectRadio();
+        $(window).on('resize', function(){
+            resize_withAspectRadio();
+        });
+    </script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>        
+        function videos_vimeo(videoId="", divId="", overlayId="", textId=""){
+            var options = {
+                id: videoId,
+                duration: 5,
+            };
+            var videoPlayer = new Vimeo.Player(divId, options);
+            videoPlayer.pause();
+            videoPlayer.setCurrentTime(2);
+            if (divId==='deloitte') {
+                videoPlayer.play();
+            }
+            $('#'+overlayId).on("mouseover", function(){
+                videoPlayer.play();
+            });
+            $('#'+overlayId).on("mouseleave", function(){
+                videoPlayer.pause().then(function(){
+                    videoPlayer.setCurrentTime(2);
+                });
+            });
+            $('#'+textId).on("mouseover", function(){
+                videoPlayer.play();
+            });
+            $('#'+textId).on("mouseleave", function(){
+                videoPlayer.pause().then(function(){
+                    videoPlayer.setCurrentTime(2);
+                });
+            });
+            if (divId!=='deloitte') {
+                videoPlayer.on('timeupdate', function(data) {
+                    if (data.seconds > 6) {
+                        videoPlayer.setCurrentTime(2);
+                    }
+                });
+            }
+            $('html')
+                .on('click', '#'+textId+' .vimeo-launch', function () {
+                    var videoID = videoId,
+                        $video = '<div id="vimeo-pop-container"><div><span class="vimeo-close"></span><iframe src="https://player.vimeo.com/video/' + videoID + '/?autoplay=1&loop=1&autopause=0&controls=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>';
+                    $('html').append($video);
+                } )
+                .on('click', '.vimeo-close', function () {
+                    $(this).addClass('closing');
+                    $('#vimeo-pop-container').delay(700).animate({
+                        height: 0,
+                        top: '50%'
+                    }, 'fast', function () {
+                        $('#vimeo-pop-container').remove();
+                    });
+                } );
+        }
+        videos_vimeo('527635790','deloitte','deloitte_overlay','deloitte_text');
+        videos_vimeo('527634114','deloitte2','deloitte2_overlay','deloitte2_text');
+        videos_vimeo('527634652','deloitte3','deloitte3_overlay','deloitte3_text');
+        videos_vimeo('527633959','deloitte4','deloitte4_overlay','deloitte4_text');
+        videos_vimeo('527635790','deloitte5','deloitte5_overlay','deloitte5_text');
+    </script>
+
+{% endblock %}
+
+{% block content %}
+
+    {% include 'modules/menu_secciones.html' %}
+
+    <div class="py-6" id="creators" style="z-index: 10;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4 pb-4">
+                    <h3 class="title_leftline primary">Bobbi Rich <small>A fresh voice for Fearless Storytelling.</small></h3>
+                </div>
+            </div>
+            <div class="row mx-0" id="works">
+
+                <div class="col-12 yellow_cover up">
+                    <div class="color"><div id="deloitte" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay" id="deloitte_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte_text">
+                        <p>Investor day</p>
+                        <h1>Deloitte</h1>
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 orange_cover up">
+                    <div class="color"><div id="deloitte2" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay" id="deloitte2_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte2_text">
+                        <p>Investor day</p>
+                        <h1>Deloitte</h1>
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 red_cover up">
+                    <div class="color"><div id="deloitte3" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay" id="deloitte3_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte3_text">
+                        <p>Investor day</p>
+                        <h1>Deloitte</h1>
+                        <input type="checkbox">
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 purple_cover up">
+                    <div class="color"><div id="deloitte4" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay" id="deloitte4_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte4_text">
+                        <p>Investor day</p>
+                        <h1>Deloitte</h1>
+                        <input type="checkbox">
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 green_cover up">
+                    <div class="color"><div id="deloitte5" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay" id="deloitte5_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte5_text">
+                        <p>Investor day</p>
+                        <h1>Deloitte</h1>
+                        <input type="checkbox">
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 pt-3">
+                    <h3 class="fw_700">Biography</h3>
+                    <p class="text-grey_dark">Bobbi is a creative chameleon, a true product of the Nostalgia Generation, somewhere between analog and dial up. From her days as a story and field producer for TV series such as American Pickers and Going Cambo to her own journey’s she’s not afraid to go the literal extra mile. She’s currently working alongside the team at Gorilla Flicks on a behind the music rock doc to end all rock docs on the life and fast times of the infamous Phil Kaufman, the one and only “Road Mangler”.</p>
+                    <p class="text-grey_dark">As a director of music videos, live performances, creative direction, album art, and other promotional content, Bobbi has worked with artists including The Pixies, Grammy award winner Brittany Howard, Margo Price, Yelawolf, Enrique Iglesias, Elton John, Nathaniel Rateliff, Nikki Lane, Dani Miller (Surfbort), Jayme Wyatt, Bully, The War and Treaty, Pearl Charles and San Holo and the Broods. She is also a photographer creating surreal and cinematic worlds through her work.</p>
+                    <p class="text-grey_dark"> As an Production Designer and Art Director some of her work includes the YouTube + Google Power On series, “Andy’s Song” (directed by Nikki Reed and starred Rosario Dawson and Gina Rodriguez), the new Christian Coppola film “Daddy” (starring Ron Rifkin and Dylan Spouse), and Elton John’s title track music video for the movie Rocketman “I’m Gonna Love Me Again”. Recently, she was the art director for the Joe Berlinger Netflix series “Crime Scene” and the production designer for the Vimeo Staff pick “Assholes”.</p>
+                    <p class="text-grey_dark"> Additionally, she spent the better part of the past year on the Creative Direction & Interior Design of Nashville’s new experiential 70’s inspired hotspot “The Dive Motel & Swim Club”. It has been featured in Condé Nast’s top experiential hotels of 2020 and Architectural Digest.</p>
+                    <p class="text-grey_dark">Bobbi’s creative direction in her commercial, film, photography, design and writing work can best be described as a surrealistic lens of Psychedelia meets Americana, Mysticism meets Escapism, the unapologetic praise to the wild women archetype, and an ode to the gritty and cinematic worlds in which she’s been a full on battle cry to the free-spirited.</p>
+                    <div class="row m-0 w-100">
+                        <div class="col-12 px-0 pt-2">
+                            <a href="{{ const.BASE_URL }}creators" class="back_">
+                                <img src="{{ const.BASE_URL }}assets/img/back.svg" alt="">
+                                BACK TO CREATORS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% include 'modules/line_colors.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}

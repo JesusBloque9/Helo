@@ -1,0 +1,136 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+{% endblock %}
+
+{% block extraJS %}
+    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
+    <script src="{{ const.BASE_URL }}assets/js/main.js" ></script>
+    <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
+    <script>
+        document.addEventListener("mousemove", function(event) {
+        const x = event.pageX - 10;
+        const y = event.pageY - 10;
+        const cursor = document.querySelector("#cursor");
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+        });
+        $('a').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('a').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        $('span').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('span').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        // sayHello
+        var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
+        window.console.log.apply(console, Helo);
+    </script>
+    <script>
+        function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function cycle(value, total) {
+          return (value % total + total) % total;
+        }
+    </script>
+
+{% endblock %}
+
+{% block content %}
+{% include 'modules/menu_secciones.html' %}
+      <main class="title-">
+          <section class="sustainability-section">
+            <section class="sustainability-title">
+                <h1>THE HELO GREEN INITIATIVE</h1>
+                <p>Accountable to ourselves, our clients, and world.</p>
+                <a href="#ancla" class="ca3-scroll-down-link ca3-scroll-down-arrow" data-ca3_iconfont="ETmodules" data-ca3_icon=""></a>
+            </section>
+            <section id="ancla" class="sustainability-steps row">
+                <div class="col-12 col-lg-3">
+                    <h3>01</h3>
+                    <p>By being environmentally conscious, we make our messages more precise and less wasteful.</p>                   
+                </div>
+                <div class="col-12 col-lg-3">
+                    <h3>02</h3>
+                    <p>Whether we like it or not, the environmental impact is one of the things we’re communicating.</p>                   
+                </div>  
+                <div class="col-12 col-lg-3">
+                    <h3>03</h3>
+                    <p>Environmentally efficient is more cost-efficient.</p>                   
+                </div>  
+                <div class="col-12 col-lg-3">
+                    <h3>04</h3>
+                    <p>Even if it didn’t make business sense (which it does), it’s just the right thing to do.</p>                   
+                </div>                
+            </section>              
+          </section>
+
+          <section class="sustainability-video">
+            <h3>SUSTAINABILITY CASE STUDY</h3>
+            <iframe src="https://player.vimeo.com/video/387747106?h=fbbc02d1b9" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </section>
+
+          <section class="sustainability-reportd-cart">
+              <h3>GREEN REPORT CARD</h3>
+              <p>HELO has committed to becoming a carbon-neutral enterprise by the end of 2021. We will track our progress towards this goal based on the following metrics:</p>
+              <div class="metrics">
+                  <div class="metrics-fila1 row">
+                    <div class="col-6 col-lg-4">
+                        <img src="{{ const.BASE_URL }}assets/img/sustainability/metric1.svg" alt="">
+                        <h6>Resource Conservation</h6>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                      <img src="{{ const.BASE_URL }}assets/img/sustainability/metric2.svg" alt="">
+                      <h6>Food Rescue</h6>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                      <img src="{{ const.BASE_URL }}assets/img/sustainability/metric3.svg" alt="">
+                      <h6>Landfill Diversion</h6>
+                  </div>                
+               
+                    <div class="col-6 col-lg-4">
+                        <img src="{{ const.BASE_URL }}assets/img/sustainability/metric4.svg" alt="">
+                        <h6>Carbon Capture</h6>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="{{ const.BASE_URL }}assets/img/sustainability/metric5.svg" alt="">
+                        <h6>Water Conservation</h6>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="{{ const.BASE_URL }}assets/img/sustainability/metric6.svg" alt="">
+                        <h6>Energy Conservation</h6>
+                    </div>
+                </div>
+
+              </div>
+          </section>
+      </main>
+      <div class="container-fluid">
+        <div class="row multicolor">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+      {% include 'modules/footer.html' %}
+{% endblock %}
