@@ -44,14 +44,12 @@ div#bg_colors_{
 		>div{
 			@include block_ctrl();
 	    	overflow: hidden;
-	    	//height: 350px;
-	    	height: 18vw;
+	    	height: 350px;
 	    	>div{
 	    		margin: 0px;
 	    		&:before,&:after{
 	    			@include block_ctrl();
-	    			//height: 175px;
-	    			height: 9vw;
+	    			height: 175px;
 	    		}
 	    		&:before{
 	    			background-color: #000000;
