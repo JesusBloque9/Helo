@@ -63,7 +63,47 @@ HELO
     <script>
         const firstSequenceImages = [];
         
-        for (let i = 1; i <= 750; i++) {//126
+        for (let i = 1; i <= 70; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 71; i <= 140; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 141; i <= 210; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 211; i <= 290; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 291; i <= 360; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 430; i <= 500; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 501; i <= 570; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 571; i <= 640; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 641; i <= 710; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 711; i <= 780; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 781; i <= 830; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
@@ -72,7 +112,6 @@ HELO
             scrollWith: '.first-container',
             images: firstSequenceImages,
             imagesRoot: 'assets/img/secuencia/desktop/',
-            priorityFrames: [0, 750],
             cover: true,
             starts: 'out',
             ends: 'in'
