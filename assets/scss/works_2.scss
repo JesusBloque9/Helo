@@ -9,14 +9,14 @@ div.item_work{
     	font-weight: 700;
     	padding: 15px 0px;
 	    text-decoration: none;
-		-moz-text-stroke: 0.7px black;
-    	-webkit-text-stroke: 0.7px black;
+		-moz-text-stroke: 0.7px $grey_dark_04;
+    	-webkit-text-stroke: 0.7px $grey_dark_04;
     	-webkit-text-fill-color: transparent;
     	-webkit-text-fill-color: transparent;
     	text-shadow: 0 0 8px rgba(255, 255, 255, .15);
     	&.active{
-        	-webkit-text-fill-color: black;
-    		-webkit-text-fill-color: black;
+        	-webkit-text-fill-color: $grey_dark_04;
+    		-webkit-text-fill-color: $grey_dark_04;
     	}
 	}
 	>div.video_container{
@@ -79,6 +79,7 @@ div.video_layout{
     			-webkit-text-fill-color: transparent;
     			-webkit-text-fill-color: transparent;
     			text-shadow: 0 0 8px rgba(255, 255, 255, .15);
+   			    cursor: pointer;
 				>small{
 
 				}
