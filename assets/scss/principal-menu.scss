@@ -376,3 +376,43 @@ font-weight: bold;
     color: #000000;
     text-decoration: none;
   }
+  .creators-movil{
+    display: none;
+    visibility: hidden;
+  }
+
+  /*Adaptacion en movil*/
+  @media(max-width: 700px){
+    .menu{
+      top: 6vh;
+      left: 80vw;
+    }
+    .creators-movil{
+      display: list-item;
+      visibility: visible;
+    }
+    .menu-tex1:hover + .textchange-1{
+      display: none;
+      visibility: hidden;
+    }
+    .menu-tex2:hover + .textchange-2{
+      display: none;
+      visibility: hidden;
+    }
+    .menu-tex3:hover + .textchange-3{
+      display: none;
+      visibility: hidden;
+    }
+    .menu-tex4:hover + .textchange-4{
+      display: none;
+      visibility: hidden;
+    }
+    .menu-tex5:hover + .textchange-5{
+      display: none;
+      visibility: hidden;
+    }
+    .menu-tex6:hover + .textchange-6{
+      display: none;
+      visibility: hidden;
+    }
+  }

@@ -272,8 +272,26 @@
   @media (max-width: 700px) {
     .footer-menu{
       overflow-x: hidden;
+      margin-bottom: 6vh;
     }
     .footer-navmenu{
+      display: none;
+      visibility: hidden;
+    }
+    .logo-footer{
+      width: 150px;
+    }
+    .footer-social p{
+      margin-bottom: 20px;
+    }
+    .contac-section2{
+      margin-left: 6vw;
+      margin-right: 6vw;
+    }
+    .contac-section1{
+      margin-right: 6vw;
+    }
+    .bubbles{
       display: none;
       visibility: hidden;
     }
