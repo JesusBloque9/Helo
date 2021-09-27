@@ -284,7 +284,7 @@ class ScrollSequence {
   }
   
   changeOnWindowScroll() {
-    const step = 100 / ((this.images.length - 1)*1.2);
+    const step = 100 / ((this.images.length - 1)*1);
     const mapToIndex = Math.floor(this.percentScrolled / step);
     requestAnimationFrame(() => this.canvas.renderIndex(mapToIndex));
   }
