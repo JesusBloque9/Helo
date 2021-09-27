@@ -94,17 +94,9 @@
         left: -100%;
         right: 0;
         bottom: 0;
-        background: 
-            radial-gradient(
-                circle,
-                white,
-                transparent 25%
-            ) center / 25% 25%,
-            radial-gradient(
-                circle,
-                white,
-                black 25%
-            ) center / 12.5% 12.5%;
+        background: radial-gradient(
+          circle, white, black 15%) center/25% 25%, 
+          radial-gradient(circle, white, black 0%) center/12.5% 12.5%;
         animation: light 5s linear infinite;
         mix-blend-mode: color-dodge;
     }
