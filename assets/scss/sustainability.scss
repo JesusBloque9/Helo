@@ -149,3 +149,49 @@
         } 
      }    
 }
+
+/*Diseño responsivo*/
+@media(max-width: 700px){
+    .sustainability-section{
+        background-size: cover;
+        height: 170vh; 
+    }
+    .sustainability-title {
+        padding-top: 6vh
+    }
+    .sustainability-title p{
+        font-size: 1.7rem;
+        width: 350px;
+        line-height: 32px;
+    }
+    .sustainability-steps{
+        margin-top: 70vw;
+
+        h3{
+            font-size: 60px;            
+        }
+        p{
+            font-size: 22px;
+        }
+    }
+    .sustainability-video{
+        height: 34vh;
+    }
+    .sustainability-video iframe{
+        height: 33vh;
+    }
+    .sustainability-reportd-cart{
+        margin-top: 20vh;
+
+        p{
+            width: 350px;
+            font-size: 22px;
+        }
+        .metrics img{
+            width: 100px;
+        }
+        .metrics h6{
+            font-size: 18px;
+        }
+    }    
+}

@@ -225,9 +225,7 @@ class ImgLoader extends EventEmitter {
   }
   
   createLoadingQueue() {
-    return this.imageNames.map((s, i) => i).sort((e, n) => {
-       return Math.abs(e - this.sequenceLength / 2) - Math.abs(n - this.sequenceLength / 2)
-    });
+    return this.imageNames.map((s, i) => i);
   }
 }
 class ScrollSequence {
