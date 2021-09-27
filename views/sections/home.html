@@ -53,6 +53,9 @@ HELO
         .fixSpaceEffect{
             height: 78.5px;
         }
+        footer.footer-menu{
+            margin-top: 0px;
+        }
     </style>
     <link href="{{ const.BASE_URL }}node_modules/aos/dist/aos.css" rel="stylesheet">
 {% endblock %}
@@ -173,34 +176,26 @@ HELO
     </script>
     <script src="{{ const.BASE_URL }}assets/js/effect_waves-compile.js"></script>
     <script>
-
-$( document ).ready(function() {
-    const second_menu = $('nav.menu-nav2');
-    const first_menu = $('nav#menu_home');
-    const YpositionPrincipal=second_menu.offset().top;
-    $(window).scroll(function (event) {
-        var scroll = $(window).scrollTop();
-        console.log('YpositionPrincipal: '+YpositionPrincipal);
-        console.log('scroll: '+scroll);
-        if ((YpositionPrincipal-300)<=scroll) {
-            first_menu.addClass('hide_');
-            
-        }else{
-            first_menu.removeClass('hide_');
-            
-        }
-        if (YpositionPrincipal<=scroll) {
-            second_menu.addClass('fixed_menu');
-        }else{
-            second_menu.removeClass('fixed_menu');
-        }
-    });
-});
-
-
-//var p = $( "p" ).last();
-//var offset = p.offset();
-
+        $( document ).ready(function() {
+            const second_menu = $('nav.menu-nav2');
+            const first_menu = $('nav#menu_home');
+            const YpositionPrincipal=second_menu.offset().top;
+            $(window).scroll(function (event) {
+                var scroll = $(window).scrollTop();
+                console.log('YpositionPrincipal: '+YpositionPrincipal);
+                console.log('scroll: '+scroll);
+                if ((YpositionPrincipal-300)<=scroll) {
+                    first_menu.addClass('hide_');
+                }else{
+                    first_menu.removeClass('hide_');
+                }
+                if (YpositionPrincipal<=scroll) {
+                    second_menu.addClass('fixed_menu');
+                }else{
+                    second_menu.removeClass('fixed_menu');
+                }
+            });
+        });
     </script>   
 {% endblock %}
 
@@ -297,7 +292,6 @@ $( document ).ready(function() {
                             <hr>
                         </div>
                     </div>
-                    <div class="yellow_cover pie_image"></div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 two_img background_default">
@@ -315,7 +309,6 @@ $( document ).ready(function() {
                             <hr>
                         </div>
                     </div>
-                    <div class="orange_cover pie_image"></div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 three_img background_default">
@@ -333,7 +326,6 @@ $( document ).ready(function() {
                             <hr>
                         </div>
                     </div>
-                    <div class="red_cover pie_image"></div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-5-12 p-0 four_img background_default">
@@ -351,7 +343,6 @@ $( document ).ready(function() {
                             <hr>
                         </div>
                     </div>
-                    <div class="purple_cover pie_image"></div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-5-12 p-0 five_img background_default">
@@ -369,14 +360,16 @@ $( document ).ready(function() {
                             <hr>
                         </div>
                     </div>
-                    <div class="blue_cover pie_image"></div>
                 </div>
             </div>
         </div>
 </div>
 
-{% set contactUs = 'true' %}
+{% set NoColors = 5 %}
+{% include 'modules/line_colors.html' %}
+
 {% include 'modules/contact_us.html' %}
+
 {% include 'modules/footer.html' %}
 
 {% endblock %}

@@ -9,6 +9,11 @@ HELO
 {% endblock %}
 
 {% block extraCSS %}
+  <style>
+    footer.footer-menu{
+        margin-top: 0px;
+    }
+  </style>
 {% endblock %}
 
 {% block extraJS %}
@@ -48,8 +53,7 @@ HELO
           return (value % total + total) % total;
         }
     </script>
- 
-
+    <script src="{{ const.BASE_URL }}assets/js/effect_waves-compile.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -182,18 +186,7 @@ HELO
         </div>
     </div>
 </div>
-
-<div class="container-fluid">
-    <div class="row multicolor">
-        <div class="col-2"></div>
-        <div class="col-2"></div>
-        <div class="col-2"></div>
-        <div class="col-2"></div>
-        <div class="col-2"></div>
-        <div class="col-2"></div>
-    </div>
-</div>
-
+{% include 'modules/line_colors.html' %}
 
 {% include 'modules/contact_us.html' %}
 

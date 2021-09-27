@@ -118,6 +118,7 @@ html{
 @import "./news";
 @import "./approach";
 @import "./interior-news";
+@import "./canvas";
 @import "./404";
 
 #cursor {
@@ -241,7 +242,31 @@ div.multicolor{
   
   }
   
-
+a.back_{
+    @include block_ctrl();
+    width: auto;
+    padding: 0px 0px 0px 30px;
+    color: $red;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    >img{
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        margin: auto 0px;
+        height: 23px;
+        width: auto;
+        @include ease(.25s);
+    }
+    &:hover{
+        >img{
+            left: 7px;
+        }
+    }
+}
 
 /*Mobile first*/
 @include media-breakpoint-down(xl) {

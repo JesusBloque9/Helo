@@ -15,7 +15,7 @@ function cycle(value, total) {
 
 class Entity {
   dpr = window.devicePixelRatio || 1;
-  toValue = value => value * this.dpr;
+  toValue = value => value * (this.dpr / 2);
   draw = () => {};
   update = () => {};
 } //*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡/
@@ -442,7 +442,7 @@ class PolyWave extends Entity {
 // defaults and constants
 
 
-const ELASTICITY = 0.05; // elastic force toward the origin
+const ELASTICITY = 5; // elastic force toward the origin
 
 const DAMPING = 0.4;
 const MASS = 10;
@@ -582,7 +582,7 @@ class Spring extends Point {
   };
 }
 
-const MOUSE_STRENGTH = 1; // 0 - 1
+const MOUSE_STRENGTH = 0.4; // 0 - 1
 
 const MOUSE_RADIUS = 200 * DPR;
 const colors = ['#FFFFFF', '#FFFFFF', '#FFCA30', '#DE5307', '#FF2A1B', '#6049F8', '#007CB0'];
