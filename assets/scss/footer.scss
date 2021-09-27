@@ -80,6 +80,9 @@
       text-shadow: 0 0 0 #fff;
     }
   }
+  .footer-yellow{
+    color: #ffaa22;
+  }
   
   /*FOTTER*/
   footer{
@@ -88,7 +91,7 @@
   }
   .footer-menu{
     margin-top: 5vh;
-    margin-bottom: 32vh;
+    margin-bottom: 28vh;
     z-index: 2;
     position: relative;
     &.negative{
