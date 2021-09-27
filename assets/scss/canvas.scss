@@ -3,13 +3,15 @@ div#canvas_{
 	>div{
 		@include block_ctrl();
     	overflow: hidden;
-    	height: 350px;
+    	//height: 350px;
+    	height: 18vw;
     	>div{
     		&:before,&:after{
     			content: '';
     		}
     		@include block_ctrl();
-    		margin: -300px 0px;
+    		//margin: -300px 0px;
+   		    margin: -15vw 0vw;
     		>canvas{
 
     		}
@@ -42,12 +44,14 @@ div#bg_colors_{
 		>div{
 			@include block_ctrl();
 	    	overflow: hidden;
-	    	height: 350px;
+	    	//height: 350px;
+	    	height: 18vw;
 	    	>div{
 	    		margin: 0px;
 	    		&:before,&:after{
 	    			@include block_ctrl();
-	    			height: 175px;
+	    			//height: 175px;
+	    			height: 9vw;
 	    		}
 	    		&:before{
 	    			background-color: #000000;
