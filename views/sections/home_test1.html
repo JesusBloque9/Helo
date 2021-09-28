@@ -66,7 +66,7 @@ HELO
     <script>
         const firstSequenceImages = [];
         
-        for (let i = 1; i <= 70; i++) {//126
+       /* for (let i = 1; i <= 70; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
@@ -112,15 +112,25 @@ HELO
 
         for (let i = 781; i <= 830; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }*/
+
+        for (let i = 0; i <= 9; i++) {//126
+            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
         }
 
-      
+        for (let i = 10; i <= 99; i++) {//126
+            firstSequenceImages.push(`${`helo_0${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 100; i <= 110; i++) {//126
+            firstSequenceImages.push(`${`helo_${i}`.slice(-8)}.jpg`);
+        }
 
         const firstSequence = new ScrollSequence({
             container: '.first-sequence',
             scrollWith: '.first-container',
             images: firstSequenceImages,
-            imagesRoot: 'assets/img/secuencia/desktop/',
+            imagesRoot: 'assets/img/secuencia/desktop_test1/',
             cover: true,
             starts: 'out',
             ends: 'in'
