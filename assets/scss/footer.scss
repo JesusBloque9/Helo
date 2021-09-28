@@ -1,39 +1,32 @@
 /*CONTACT SECTION*/
 #contact-home{
-    z-index: 2;
-    position: relative;
-}
-.contact-home {
-    background: #000000;
-    padding: 15vh 0;
-    color: #f1f1f1; 
-    display: flex;
-    flex-direction: column;  
-    align-items: center;
-    justify-content: center;
-  }
-  .contact-home p{
-    color: #7E7E7E;
-    margin-bottom: -1vh;
-  }
-  .dubstep-effect {
+  background: #000000;
+  height: 45vh;
+  max-height: 500px;
+  min-height: 200px;
+  h3{
+    color: #f1f1f1;
     font-weight: 600;
-    font-size: 62px;
+    font-size: 4rem;
     line-height: 90px;
     cursor: pointer;
+    &:hover{
+      span{
+        -webkit-animation: dubstep 1.2858s infinite ease;
+                animation: dubstep 1.2858s infinite ease;
+      }
+      span + span {
+        -webkit-animation: dubstep 1.318s infinite ease;
+                animation: dubstep 1.318s infinite ease;
+      }
+      span + span + span {
+        -webkit-animation: dubstep 1.3958s infinite ease;
+                animation: dubstep 1.3958s infinite ease;
+      }
+    }
   }
-  .dubstep-effect:hover span {
-    -webkit-animation: dubstep 1.2858s infinite ease;
-            animation: dubstep 1.2858s infinite ease;
-  }
-  .dubstep-effect:hover span + span {
-    -webkit-animation: dubstep 1.318s infinite ease;
-            animation: dubstep 1.318s infinite ease;
-  }
-  .dubstep-effect:hover span + span + span {
-    -webkit-animation: dubstep 1.3958s infinite ease;
-            animation: dubstep 1.3958s infinite ease;
-  }
+}
+
   @-webkit-keyframes dubstep {
     0% {
       text-shadow: 0 0 0 #fff;
@@ -87,16 +80,9 @@
   /*FOTTER*/
   footer{
     text-align: center;
-    overflow-y: hidden;
   }
   .footer-menu{
-    margin-top: 5vh;
-    margin-bottom: 28vh;
-    z-index: 2;
     position: relative;
-    &.negative{
-      margin-top: -25vh;
-    }
   }
   .logo-footer{
     width: 220px;
@@ -164,26 +150,7 @@
     grid-area: footer;
     color:#FFF
   }
-  body .footer .bubbles {
-    position: absolute;
-    top: -60px;
-    left: 0;
-    right: 0;
-    height: 0.3rem;
-    background: var(--footer-background);
-    -webkit-filter: url("#blob");
-            filter: url("#blob");
-  }
-  body .footer .bubbles .bubble {
-    position: absolute;
-    left: var(--position, 50%);
-    background: var(--footer-background);
-    border-radius: 100%;
-    -webkit-animation: bubble-size var(--time, 8s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 8s) ease-in infinite var(--delay, 0s);
-            animation: bubble-size var(--time, 8s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 8s) ease-in infinite var(--delay, 0s);
-    -webkit-transform: translate(-50%, 100%);
-            transform: translate(-50%, 100%);
-  }
+
   body .footer .content {
     z-index: 2;
     display: grid;
@@ -230,56 +197,21 @@
       margin-bottom: 0px;
       font-size: 1rem!important;
   }
-  
-  @-webkit-keyframes bubble-size {
-    0%, 75% {
-      width: var(--size, 4rem);
-      height: var(--size, 4rem);
-    }
-    100% {
-      width: 0rem;
-      height: 0rem;
-    }
-  }
-  
-  @keyframes bubble-size {
-    0%, 75% {
-      width: var(--size, 4rem);
-      height: var(--size, 4rem);
-    }
-    100% {
-      width: 0rem;
-      height: 0rem;
-    }
-  }
-  @-webkit-keyframes bubble-move {
-    0% {
-      bottom: -4rem;
-    }
-    100% {
-      bottom: var(--distance, 50rem);
-    }
-  }
-  @keyframes bubble-move {
-    0% {
-      bottom: -4rem;
-    }
-    100% {
-      bottom: var(--distance, 50rem);
-    }
-  }
 
   /*Adaptacion movil*/
-  
-  @media (max-width: 700px) {
-    .footer-menu{
-      overflow-x: hidden;
-      margin-bottom: 6vh;
-    }
+
+@media (max-width: 700px) {
+
+}
+
+@include media-breakpoint-down(lg) {
     .footer-navmenu{
       display: none;
-      visibility: hidden;
     }
+}
+@include media-breakpoint-down(md) {
+}
+@include media-breakpoint-down(sm) {
     .logo-footer{
       width: 150px;
     }
@@ -293,8 +225,4 @@
     .contac-section1{
       margin-right: 6vw;
     }
-    .bubbles{
-      display: none;
-      visibility: hidden;
-    }
-  }
+}
