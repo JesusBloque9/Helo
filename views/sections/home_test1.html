@@ -68,6 +68,8 @@ HELO
 
             if(window.matchMedia("(max-width: 767px)").matches){
                 $(".container-experience").addClass('moblie_experiences');  
+            }else{
+                $(".container-experience").removeClass('moblie_experiences');
             }
         }
     </script>
@@ -124,20 +126,24 @@ HELO
         }*/
 
         for (let i = 0; i <= 9; i++) {//126
-            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
+            firstSequenceImages.push(`${`helo00${i}`.slice(-8)}.jpg`);
         }
 
         for (let i = 10; i <= 99; i++) {//126
-            firstSequenceImages.push(`${`helo_0${i}`.slice(-8)}.jpg`);
+            firstSequenceImages.push(`${`helo0${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 100; i <= 110; i++) {//126
-            firstSequenceImages.push(`${`helo_${i}`.slice(-8)}.jpg`);
+        for (let i = 100; i <= 199; i++) {//126
+            firstSequenceImages.push(`${`helo${i}`.slice(-8)}.jpg`);
         }
 
-        function scroll_secuence_initialize(){
+        var firstSequence=null;
+
+        
+        /*function scroll_secuence_initialize(){
             if(window.matchMedia("(max-width: 767px)").matches && is_loaded[1]==false){
-                const firstSequence = new ScrollSequence({
+                $(".scroll-sequence").empty();
+                firstSequence = new ScrollSequence({
                     container: '.first-sequence',
                     scrollWith: '.first-container',
                     images: firstSequenceImages,
@@ -146,9 +152,11 @@ HELO
                     starts: 'out',
                     ends: 'in'
                 });
+
                 is_loaded=[false,true];
             }else if(is_loaded[0]==false){
-                const firstSequence = new ScrollSequence({
+                $(".scroll-sequence").empty();*/
+                firstSequence = new ScrollSequence({
                     container: '.first-sequence',
                     scrollWith: '.first-container',
                     images: firstSequenceImages,
@@ -157,17 +165,17 @@ HELO
                     starts: 'out',
                     ends: 'in'
                 });
-                is_loaded[0]=[true,false];
+                /*is_loaded[0]=[true,false];
             }
-        }
-
+        }*/
+        
         $(document).ready(function(){
-            scroll_secuence_initialize();      
+            /*scroll_secuence_initialize(); */     
             mobile_functions();      
         });
-
+        
         $( window ).resize(function() {
-            scroll_secuence_initialize();
+            /*scroll_secuence_initialize();*/
             mobile_functions();
         });
         
@@ -303,7 +311,7 @@ HELO
                 </div>
                 <div class="speak row justify-content-end" data-aos="fade-left">
                     <div class="col-12 col-md-7">
-                        <h1 class="scroll-sequence-title right-text hollow-text">Moving ExperiencesTM</h1>
+                        <h1 class="scroll-sequence-title right-text hollow-text">Moving Experiences<small>TM</small></h1>
                     </div>
                 </div>
                 <div class="speak row" data-aos="fade-right">
