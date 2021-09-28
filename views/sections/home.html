@@ -64,17 +64,28 @@ HELO
     <script src="{{ const.BASE_URL }}node_modules/aos/dist/aos.js" ></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
     <script>
+        function mobile_functions() {
+
+            if(window.matchMedia("(max-width: 767px)").matches){
+                $(".container-experience").addClass('moblie_experiences');  
+            }
+        }
+    </script>
+    <script>
         const firstSequenceImages = [];
+        var is_loaded = [false, false];
         
-        for (let i = 1; i <= 70; i++) {//126
+ 
+        for (let i = 1; i <= 90; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+        
+        for (let i = 91; i <= 158; i=i+2) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-        for (let i = 71; i <= 140; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
 
-        for (let i = 141; i <= 210; i++) {//126
+        for (let i = 159; i <= 210; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
@@ -98,27 +109,52 @@ HELO
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-        for (let i = 641; i <= 710; i++) {//126
+        for (let i = 641; i <= 683; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-        for (let i = 711; i <= 780; i++) {//126
+        for (let i = 684; i <= 800; i=i+2) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
-
-        for (let i = 781; i <= 830; i++) {//126
+        for (let i = 801; i <= 815; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
+      
+        function scroll_secuence_initialize(){
+            if(window.matchMedia("(max-width: 767px)").matches && is_loaded[1]==false){
+                const firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/movil/',
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+                is_loaded=[false,true];
+            }else if(is_loaded[0]==false){
+                const firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/desktop/',
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+                is_loaded[0]=[true,false];
+            }
+        }
 
-        const firstSequence = new ScrollSequence({
-            container: '.first-sequence',
-            scrollWith: '.first-container',
-            images: firstSequenceImages,
-            imagesRoot: 'assets/img/secuencia/desktop/',
-            cover: true,
-            starts: 'out',
-            ends: 'in'
-          });
+        $(document).ready(function(){
+            scroll_secuence_initialize();      
+            mobile_functions();      
+        });
+
+        $( window ).resize(function() {
+            scroll_secuence_initialize();
+            mobile_functions();
+        });
         
         // END SCROLL_SEQUENCE CODE
         AOS.init();
