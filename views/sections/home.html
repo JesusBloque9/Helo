@@ -64,9 +64,18 @@ HELO
     <script src="{{ const.BASE_URL }}node_modules/aos/dist/aos.js" ></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
     <script>
+        function mobile_functions() {
+
+            if(window.matchMedia("(max-width: 767px)").matches){
+                $(".container-experience").addClass('moblie_experiences');  
+            }
+        }
+    </script>
+    <script>
         const firstSequenceImages = [];
+        var is_loaded = [false, false];
         
-        for (let i = 1; i <= 70; i++) {//126
+        for (let i = 1; i <= 70; i=i+2) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
@@ -115,16 +124,41 @@ HELO
         }
 
       
+        function scroll_secuence_initialize(){
+            if(window.matchMedia("(max-width: 767px)").matches && is_loaded[1]==false){
+                const firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/movil/',
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+                is_loaded=[false,true];
+            }else if(is_loaded[0]==false){
+                const firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/desktop/',
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+                is_loaded[0]=[true,false];
+            }
+        }
 
-        const firstSequence = new ScrollSequence({
-            container: '.first-sequence',
-            scrollWith: '.first-container',
-            images: firstSequenceImages,
-            imagesRoot: 'assets/img/secuencia/desktop/',
-            cover: true,
-            starts: 'out',
-            ends: 'in'
-          });
+        $(document).ready(function(){
+            scroll_secuence_initialize();      
+            mobile_functions();      
+        });
+
+        $( window ).resize(function() {
+            scroll_secuence_initialize();
+            mobile_functions();
+        });
         
         // END SCROLL_SEQUENCE CODE
         AOS.init();
