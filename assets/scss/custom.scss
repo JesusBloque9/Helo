@@ -12,6 +12,7 @@ $orange: #DE5307;
 $red: #FF2A1B;
 $blueOne: #6049F8;
 $blueTwo: #1994FF;
+$blueThree: #007CB0;
 $green: #008351;
 
 $theme-colors: (
@@ -27,7 +28,8 @@ $theme-colors: (
   "grey": $grey,
   "grey_dark": $grey_dark,
   "grey_dark_03": $grey_dark_03,
-  "grey_dark_04": $grey_dark_04
+  "grey_dark_04": $grey_dark_04,
+  "blueThree": $blueThree
 );
 //@import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -146,7 +148,7 @@ html{
     >small{
         display: block;
         position: relative;
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 500;
         margin: 5px 0px;
     }
@@ -158,7 +160,7 @@ html{
         left: 0px;
         right: 0px;
         width: 100%;
-        height: 2px;
+        height: 3px;
     }
     &.primary{
         &:after{
@@ -168,6 +170,16 @@ html{
     &.yellow{
         &:after{
             background-color: $yellow;
+        }
+    }
+    &.green{
+        &:after{
+            background-color: $green;
+        }
+    }
+    &.blueThree{
+        &:after{
+            background-color: $blueThree;
         }
     }
 }
