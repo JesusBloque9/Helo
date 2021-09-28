@@ -76,15 +76,15 @@ HELO
         var is_loaded = [false, false];
         
  
-        for (let i = 1; i <= 90; i++) {//126
+        /*for (let i = 1; i <= 90; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
+        }*/
         
-        for (let i = 91; i <= 158; i=i+2) {//126
+        for (let i = 1; i <= 815; i=i+6) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-
+/*
         for (let i = 159; i <= 210; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
@@ -118,7 +118,7 @@ HELO
         }
         for (let i = 801; i <= 815; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
+        }*/
       
         function scroll_secuence_initialize(){
             if(window.matchMedia("(max-width: 767px)").matches && is_loaded[1]==false){
@@ -137,7 +137,7 @@ HELO
                     container: '.first-sequence',
                     scrollWith: '.first-container',
                     images: firstSequenceImages,
-                    imagesRoot: 'assets/img/secuencia/desktop/',
+                    imagesRoot: 'https://helotv.s3.us-west-2.amazonaws.com/high/',
                     cover: true,
                     starts: 'out',
                     ends: 'in'

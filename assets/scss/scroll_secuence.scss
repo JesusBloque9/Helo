@@ -26,7 +26,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .scroll-container {
-    perspective: 300px;
+    perspective: 10px;
   }
 }
 
@@ -58,12 +58,21 @@ body {
     }
 
     .hollow-text {
-      -moz-text-stroke: 3px #FFF;
-      -webkit-text-stroke: 3px #FFF;
+      -moz-text-stroke: 2px #FFF;
+      -webkit-text-stroke: 2px #FFF;
       -webkit-text-fill-color: transparent;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
-    }    
+    }
+    
+    small{
+      -moz-text-stroke: 1px #FFF;
+      -webkit-text-stroke: 1px #FFF;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+      font-size:20px;
+    }
 
     .speak {
       text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
