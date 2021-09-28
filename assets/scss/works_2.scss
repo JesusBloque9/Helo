@@ -40,6 +40,7 @@ div.video_layout{
 		margin: auto;
 		z-index: 1;
 		background-blend-mode: multiply;
+		cursor: pointer;
 		&.bg_yellow{
 			background-color: rgba($yellow, .4);
 		}
