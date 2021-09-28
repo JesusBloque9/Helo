@@ -176,6 +176,7 @@ class ImgLoader extends EventEmitter {
     this.complete = false;
     this.loadIndex = 0;
     
+    //this.priorityQueue = this.createPriorityQueue();
     this.priorityQueue = this.createPriorityQueue();
     this.loadingQueue = this.createLoadingQueue();
     
