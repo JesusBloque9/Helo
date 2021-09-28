@@ -1,0 +1,463 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+    <style>
+        nav#menu_home{
+            display: inline-block;
+            position: fixed;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+            opacity: 1;
+            pointer-events: auto;
+            -webkit-transition: all .25s ease;
+               -moz-transition: all .25s ease;
+                -ms-transition: all .25s ease;
+                 -o-transition: all .25s ease;
+                    transition: all .25s ease;
+        }
+        nav#menu_home.hide_{
+            opacity: 0;
+            pointer-events: none;
+        }
+        nav.menu-nav2{
+            display: inline-block;
+            position: relative;
+            float: left;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            left: 0px;
+            top: 0px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, 0);
+            -webkit-transition: all .25s ease;
+               -moz-transition: all .25s ease;
+                -ms-transition: all .25s ease;
+                 -o-transition: all .25s ease;
+                    transition: all .25s ease;
+        }
+        nav.menu-nav2.fixed_menu{
+            position: fixed;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, .89);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+        }
+        .fixSpaceEffect{
+            height: 78.5px;
+        }
+        footer.footer-menu{
+            margin-top: 0px;
+        }
+    </style>
+    <link href="{{ const.BASE_URL }}node_modules/aos/dist/aos.css" rel="stylesheet">
+{% endblock %}
+
+{% block extraJS %}
+    <script src="{{ const.BASE_URL }}node_modules/aos/dist/aos.js" ></script>
+    <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
+    <script>
+        function mobile_functions() {
+
+            if(window.matchMedia("(max-width: 767px)").matches){
+                $(".container-experience").addClass('moblie_experiences');  
+            }
+        }
+    </script>
+    <script>
+        const firstSequenceImages = [];
+        var is_loaded = [false, false];
+        
+       /* for (let i = 1; i <= 70; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 71; i <= 158; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 158; i <= 140; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 141; i <= 210; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 211; i <= 290; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 291; i <= 360; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 430; i <= 500; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 501; i <= 570; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 571; i <= 640; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 641; i <= 710; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 711; i <= 780; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 781; i <= 830; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }*/
+
+        for (let i = 0; i <= 9; i++) {//126
+            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 10; i <= 99; i++) {//126
+            firstSequenceImages.push(`${`helo_0${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 100; i <= 110; i++) {//126
+            firstSequenceImages.push(`${`helo_${i}`.slice(-8)}.jpg`);
+        }
+
+        function scroll_secuence_initialize(){
+            if(window.matchMedia("(max-width: 767px)").matches && is_loaded[1]==false){
+                const firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/movil_test1/',
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+                is_loaded=[false,true];
+            }else if(is_loaded[0]==false){
+                const firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/desktop_test1/',
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+                is_loaded[0]=[true,false];
+            }
+        }
+
+        $(document).ready(function(){
+            scroll_secuence_initialize();      
+            mobile_functions();      
+        });
+
+        $( window ).resize(function() {
+            scroll_secuence_initialize();
+            mobile_functions();
+        });
+        
+        // END SCROLL_SEQUENCE CODE
+        AOS.init();
+    </script>       
+    <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
+    <script>
+        function rep_mov1(){ 
+            document.getElementById('video1').muted = true; 
+            $('#video-holder1').addClass('add-video');
+            $('#video1').trigger('play');
+        }
+        function pause_mov1(){ 
+            $('#video-holder1').removeClass('add-video');
+            $('#video1').trigger('pause');
+        }
+        function rep_mov2(){ 
+            document.getElementById('video2').muted = true; 
+            $('#video-holder2').addClass('add-video');
+            $('#video2').trigger('play');
+        }
+        function pause_mov2(){ 
+            $('#video-holder2').removeClass('add-video');
+            $('#video2').trigger('pause');
+        }
+        function rep_mov3(){ 
+            document.getElementById('video3').muted = true; 
+            $('#video-holder3').addClass('add-video');
+            $('#video3').trigger('play');
+        }
+        function pause_mov3(){ 
+            $('#video-holder3').removeClass('add-video');
+            $('#video3').trigger('pause');
+        }
+        function rep_mov4(){ 
+            document.getElementById('video4').muted = true; 
+            $('#video-holder4').addClass('add-video');
+            $('#video4').trigger('play');
+        }
+        function pause_mov4(){ 
+            $('#video-holder4').removeClass('add-video');
+            $('#video4').trigger('pause');
+        }
+        function rep_mov5(){ 
+            document.getElementById('video5').muted = true; 
+            $('#video-holder5').addClass('add-video');
+            $('#video5').trigger('play');
+        }
+        function pause_mov5(){ 
+            $('#video-holder5').removeClass('add-video');
+            $('#video5').trigger('pause');
+        }
+        $('.one_img').hover( rep_mov1 , pause_mov1);
+        $('.two_img').hover( rep_mov2 , pause_mov2);
+        $('.three_img').hover( rep_mov3 , pause_mov3);
+        $('.four_img').hover( rep_mov4 , pause_mov4);
+        $('.five_img').hover( rep_mov5 , pause_mov5);
+    </script>
+    <script>
+        document.addEventListener("mousemove", function(event) {
+        const x = event.pageX - 10;
+        const y = event.pageY - 10;
+        const cursor = document.querySelector("#cursor");
+        cursor.style.left = x + "px";
+        cursor.style.top = y + "px";
+        });
+        $('a').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('a').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        $('span').on("mouseover", function(){
+        $('#cursor').css({'transform': 'scale(2)'});
+        });
+        $('span').on("mouseleave", function(){
+        $('#cursor').css({'transform': 'scale(1)'});
+        });
+        // sayHello
+        var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
+        window.console.log.apply(console, Helo);
+    </script>
+    <script>
+        function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function cycle(value, total) {
+          return (value % total + total) % total;
+        }
+    </script>
+    <script src="{{ const.BASE_URL }}assets/js/effect_waves-compile.js"></script>
+    <script>
+        $( document ).ready(function() {
+            const second_menu = $('nav.menu-nav2');
+            const first_menu = $('nav#menu_home');
+            const YpositionPrincipal=second_menu.offset().top;
+            $(window).scroll(function (event) {
+                var scroll = $(window).scrollTop();
+                console.log('YpositionPrincipal: '+YpositionPrincipal);
+                console.log('scroll: '+scroll);
+                if ((YpositionPrincipal-300)<=scroll) {
+                    first_menu.addClass('hide_');
+                }else{
+                    first_menu.removeClass('hide_');
+                }
+                if (YpositionPrincipal<=scroll) {
+                    second_menu.addClass('fixed_menu');
+                }else{
+                    second_menu.removeClass('fixed_menu');
+                }
+            });
+        });
+    </script>   
+{% endblock %}
+
+{% block content %}
+
+{% include 'modules/menu_home.html' %}
+
+<div class="container-fluid p-0 m-0 scroll-container">
+    <div class="row m-0">
+        <section class="scroll-sequence__container first-container">
+            <div class="scroll-sequence first-sequence"></div>
+            <div class="scroll-sequence__content container">
+                <div class="speak row" data-aos="fade-right">
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title">Insight Inspired, Story Led, Design Driven</h1>
+                    </div>
+                </div>
+                <div class="speak row justify-content-end" data-aos="fade-left">
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title right-text hollow-text">Moving ExperiencesTM</h1>
+                    </div>
+                </div>
+                <div class="speak row" data-aos="fade-right">
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title">That Grow Business Value</h1>
+                    </div>
+                </div>
+                <div class="speak row justify-content-end" data-aos="fade-left">
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title right-text hollow-text">Special. Projects</h1>
+                    </div>
+                </div>
+                <div class="speak row col-12 col-md-6" data-aos="fade-right">   
+                    <p class="scroll-sequence-text">We aren’t right for every (even most) projects but</p>
+                    <h1 class="scroll-sequence-title-tiny">When you have to deliver something that is exceptional, call us.</h1>
+                </div>
+                <div class="speak row col-12 col-md-7" data-aos="fade-right">
+                    <h1 class="scroll-sequence-title-tiny">We are not an experiential agency or a traditional production company.</h1>
+                </div>
+                <div class="speak row justify-content-end" data-aos="fade-left">
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title right-text hollow-text">We are different. How?</h1>
+                    </div>
+                </div>
+                <div class="speak row col-12 col-md-7" data-aos="fade-right">
+                    <h1 class="scroll-sequence-title-tiny">We are a creative problem solving studio</h1>
+                </div>
+                <div class="speak row justify-content-end" data-aos="fade-left">
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title-tiny right-text">Built by an eclectic group of entertainment, technology, design, and marketing professionals.</h1>  
+                    </div>
+                </div>
+                <div class="speak row justify-content-end" data-aos="fade-left">
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title-tiny right-text">Our creators diverse portfolios and points of view range from narrative storytelling to immersive experience</h1>  
+                    </div>
+                </div>
+                <div class="speak row col-12 col-md-7" data-aos="fade-right">
+                    <h1 class="scroll-sequence-title-tiny">From designing some of the most iconic worlds in film to designing and building real buildings in the real world.</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+
+
+<!-- MENU  -->
+<div class="fixSpaceEffect block_ctrl">
+{% include 'modules/menu_secciones.html' %}
+</div>
+<!--We make Section-->    
+<div class="container-fluid bg-white" id="experiences">
+        <div class="row py-5">
+            <div class="col-12 text-center py-5">
+                <h1 class="title mb-5 mt-1">We make work that is</h1>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 one_img background_default">
+                <div class="container-experience" >
+                    <div class="image one text-center">
+                        <div id="video-holder1">
+                            <video id="video1" loop preload="1">
+                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                            </video>
+                        </div>
+                        <!--img src="{{ const.BASE_URL }}assets/img/experience/1.jpg"/ class="img-fluid"-->
+                        <div class="details-window up yellow_cover">
+                        </div>
+                        <div class="details-window up">
+                            <h3>Original</h3>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 two_img background_default">
+                <div class="container-experience">
+                    <div class="image one text-center">
+                        <div id="video-holder2">
+                            <video id="video2" loop preload="1">
+                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                            </video>
+                        </div>
+                        <!--img src="{{ const.BASE_URL }}assets/img/experience/2.jpg"/ class="img-fluid"-->
+                        <div class="details-window-cover up orange_cover"></div>
+                        <div class="details-window up">
+                            <h3>At Scale</h3>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 three_img background_default">
+                <div class="container-experience">
+                    <div class="image one text-center">
+                        <div id="video-holder3">
+                            <video id="video3" loop preload="1">
+                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                            </video>
+                        </div>
+                        <!--img src="{{ const.BASE_URL }}assets/img/experience/3.jpg"/ class="img-fluid"-->
+                        <div class="details-window-cover up red_cover"></div>
+                        <div class="details-window up">
+                            <h3>Complex</h3>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-5-12 p-0 four_img background_default">
+                <div class="container-experience">
+                    <div class="image one text-center">
+                        <div id="video-holder4">
+                            <video id="video4" loop preload="1">
+                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                            </video>
+                        </div>
+                        <!--img src="{{ const.BASE_URL }}assets/img/experience/4.jpg"/ class="img-fluid"-->
+                        <div class="details-window-cover up purple_cover"></div>
+                        <div class="details-window up">
+                            <h3>Multi-Platform</h3>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-5-12 p-0 five_img background_default">
+                <div class="container-experience">
+                    <div class="image one text-center">
+                        <div id="video-holder5">
+                            <video id="video5" loop preload="1">
+                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                            </video>
+                        </div>
+                        <!--img src="{{ const.BASE_URL }}assets/img/experience/5.jpg"/ class="img-fluid"-->
+                        <div class="details-window-cover up blue_cover"></div>
+                        <div class="details-window up">
+                            <h3>Extensible</h3>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+{% set NoColors = 5 %}
+{% include 'modules/line_colors.html' %}
+
+{% include 'modules/contact_us.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}

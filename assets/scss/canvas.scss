@@ -3,13 +3,15 @@ div#canvas_{
 	>div{
 		@include block_ctrl();
     	overflow: hidden;
-    	height: 350px;
+    	//height: 350px;
+    	height: 18vw;
     	>div{
     		&:before,&:after{
     			content: '';
     		}
     		@include block_ctrl();
-    		margin: -300px 0px;
+    		//margin: -300px 0px;
+   		    margin: -15vw 0vw;
     		>canvas{
 
     		}
