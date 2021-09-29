@@ -134,7 +134,8 @@ body {
       .scroll-sequence-title {
         font-family: "Montserrat", sans-serif;
         font-weight: 600;
-        font-size: 3.209em;
+        font-size: 3em;
+        overflow-wrap: break-word;
         letter-spacing: 0.6px;
         text-transform: capitalize;
       }
@@ -143,13 +144,15 @@ body {
         font-family: "Montserrat", sans-serif;
         font-weight: 600;
         font-size: 2.157em;
+        overflow-wrap: break-word;
         letter-spacing: 0.5px;
       }
   
       .scroll-sequence-text {
         font-family: "Montserrat", sans-serif;
         font-weight: 400;
-        font-size: 0.777em;
+        font-size: 1em;
+        overflow-wrap: break-word;
         letter-spacing: 0.25px;
       }
     }
