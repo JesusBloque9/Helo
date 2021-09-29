@@ -27,44 +27,51 @@
 </head>
 <body>
 
-    <div class="full nav menu-interior"> 
-        <img class="logo-home" src="{{ const.BASE_URL }}assets/img/logob-helo.svg" alt="">                 
-        <div class="menu crossed closeNav" id="closeNav"></div> 
-        <div class="principal-menu row"> 
-            <div class="col"> 
-                <div class="subrayado"> 
-                    <ul class="list"> 
-                        <li class="hollow-text-black menu-tex1"><a id="atext-menu" href="{{ const.BASE_URL }}home" data-src="{{ const.BASE_URL }}assets/img/menu/menu-img1.jpg" value="Home">Home</a></li>
-                        <div class="change-text textchange-1"><h3>Home</h3></div>                                 
-                        <li id="menu-text" class="hollow-text-black menu-tex2"><a id="atext-menu" href="{{ const.BASE_URL }}approach" data-src="{{ const.BASE_URL }}assets/img/menu/menu-img3.jpg" value="Approach">Approach</a></li>
-                        <div class="change-text textchange-2"><h3>Approach</h3></div>
-                        <li class="hollow-text-black menu-tex3"><a id="atext-menu" href="{{ const.BASE_URL }}sustainability" data-src="{{ const.BASE_URL }}assets/img/menu/menu-img4.jpg">Sustainability</a></li>
-                        <div class="change-text textchange-3"><h3>Sustainability</h3></div> 
-                        <li class="hollow-text-black menu-tex4"><a id="atext-menu" href="{{ const.BASE_URL }}works" data-src="{{ const.BASE_URL }}assets/img/menu/menu-img5.jpg">Work</a></li>
-                        <div class="change-text textchange-4"><h3>Work</h3></div>
-                        <li class="hollow-text-black menu-tex4 creators-movil"><a id="atext-menu" href="{{ const.BASE_URL }}creators" data-src="{{ const.BASE_URL }}assets/img/menu/menu-img5.jpg">Creators</a></li>
-                        <li class="hollow-text-black menu-tex5"><a id="atext-menu" href="{{ const.BASE_URL }}news" data-src="{{ const.BASE_URL }}assets/img/menu/menu-img6.jpg">News</a></li>
-                        <div class="change-text textchange-5 "><h3>News</h3></div> 
-                        <li class="hollow-text-black menu-tex6"><a id="atext-menu" href="{{ const.BASE_URL }}contact" data-src="{{ const.BASE_URL }}assets/img/menu/menu-img7.jpg">Contact</a></li>
-                        <div class="change-text textchange-6"><h3>Contact</h3></div>
-                    </ul>                          
-                </div> 
-                <hr>
-                <div class="social-media"> 
-                    <a href=""><img src="{{ const.BASE_URL }}assets/img/footer/s-linkedin.svg" alt=""></a>
-                    <a href=""><img src="{{ const.BASE_URL }}assets/img/footer/s-instagram.svg" alt=""></a> 
-                </div> 
-                <p>justin@helo.tv</p>                         
-            </div> 
-            <div class="col imagen-menu"> 
-                <img class="elipse-fondo" src="{{ const.BASE_URL }}assets/img/menu/menu-fondo.svg" alt=""> 
-                <div class="image-holder"> 
-                    <img class="imagen-fondo" src="{{ const.BASE_URL }}assets/img/menu/menu-img2.jpg" alt=""> 
-                </div>                        
-            </div>                         
-        </div>  
-    </div> 
-
+    <div class="menu_content py-4 px-5">
+        <div class="row h-100 ">
+            <div class="head_">
+                <div>
+                    <img src="{{ const.BASE_URL }}assets/img/logob-helo.svg" alt="">
+                    <div class="close" onclick="toggleMenu();"></div>
+                </div>
+            </div>
+            <div class="col-12">
+                <ul class="menu_">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Approach</a>
+                    </li>
+                    <li>
+                        <a href="#">Sustainability</a>
+                    </li>
+                    <li>
+                        <a href="#">Work</a>
+                    </li>
+                    <li>
+                        <a href="#">News</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <img src="{{ const.BASE_URL }}assets/img/footer/s-linkedin.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="{{ const.BASE_URL }}assets/img/footer/s-instagram.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <a href="mailto:justin@helo.tv">justin@helo.tv</a>
+            </div>
+        </div>
+    </div>
 
     <div id="cursor"></div>
     <section id="loader_container">
@@ -95,16 +102,6 @@
         </div>
       </div>
     </div>
-    <svg style="position:fixed; top:100vh;">
-      <defs>
-        <filter id="blob">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
-          <feComposite in="SourceGraphic" in2="blob" operator="atop"></feComposite>
-        </filter>
-      </defs>
-    </svg>
-
 
 </body>
     <script>
@@ -113,6 +110,11 @@
     </script>
     <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
+    <script>
+        function toggleMenu(){
+            $( 'div.menu_content' ).toggleClass( "show" );
+        }
+    </script>
     <script>
         document.addEventListener("mousemove", function(event) {
         const x = event.pageX - 10;
