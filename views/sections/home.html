@@ -25,7 +25,7 @@ HELO
                  -o-transition: all .25s ease;
                     transition: all .25s ease;
         }
-        nav#menu_home.hide_{
+        nav#principal.hide_{
             opacity: 0;
             pointer-events: none;
         }
@@ -265,11 +265,10 @@ HELO
           return (value % total + total) % total;
         }
     </script>
-    <script src="{{ const.BASE_URL }}assets/js/effect_waves-compile.js"></script>
     <script>
         $( document ).ready(function() {
             const second_menu = $('nav.menu-nav2');
-            const first_menu = $('nav#menu_home');
+            const first_menu = $('nav#principal');
             const YpositionPrincipal=second_menu.offset().top;
             $(window).scroll(function (event) {
                 var scroll = $(window).scrollTop();
@@ -393,8 +392,10 @@ HELO
 
 
 <!-- MENU  -->
+<div>
 <div class="fixSpaceEffect block_ctrl">
 {% include 'modules/menu_secciones.html' %}
+</div>
 </div>
 <!--We make Section-->    
 <div class="container-fluid bg-white" id="experiences">

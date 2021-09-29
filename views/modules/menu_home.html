@@ -1,5 +1,5 @@
 <!-- MENU  -->  
-<nav id="menu_home">
+<!-- <nav id="menu_home">
     <div class="page-msecciones"> 
         <img class="logo-home" src="{{ const.BASE_URL }}assets/img/logo-helo.svg" alt="">
         <div class="menu-home2">
@@ -9,4 +9,30 @@
         </div>    
         <div class="menu openNav" id="openNav"></div> 
     </div> 
+</nav> -->
+
+<nav class="menu_helo" id="principal">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12">
+				<a href="#">
+					<img src="{{ const.BASE_URL }}assets/img/logo-helo.svg" alt="">
+				</a>
+				<ul>
+					<li>
+						<a class="yellow" href="{{ const.BASE_URL }}works">WORK</a>
+					</li>
+					<li>
+						<a class="primary" href="{{ const.BASE_URL }}creators">CREATORS</a>
+					</li>
+					<li>
+						<a class="blue" href="{{ const.BASE_URL }}contact">CONTACT</a>
+					</li>
+					<li>
+						<div onclick="toggleMenu();"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </nav>
