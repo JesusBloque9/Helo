@@ -58,13 +58,14 @@ HELO
 {% endblock %}
 
 {% block extraJS %}
-    <script src="{{ const.BASE_URL }}node_modules/aos/dist/aos.js" ></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
     <script>
         function mobile_functions() {
 
             if(window.matchMedia("(max-width: 767px)").matches){
                 $(".container-experience").addClass('moblie_experiences');  
+            }else{
+                $(".container-experience").removeClass('moblie_experiences');
             }
         }
     </script>
@@ -72,17 +73,19 @@ HELO
         const firstSequenceImages = [];
         var is_loaded = [false, false];
         
- 
-        /*for (let i = 1; i <= 90; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }*/
-        
-        for (let i = 1; i <= 815; i=i+6) {//126
+    /* for (let i = 1; i <= 70; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-/*
-        for (let i = 159; i <= 210; i++) {//126
+        for (let i = 71; i <= 158; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 158; i <= 140; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 141; i <= 210; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
@@ -106,55 +109,73 @@ HELO
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-        for (let i = 641; i <= 683; i++) {//126
+        for (let i = 641; i <= 710; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-        for (let i = 684; i <= 800; i=i+2) {//126
+        for (let i = 711; i <= 780; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
-        for (let i = 801; i <= 815; i++) {//126
+
+        for (let i = 781; i <= 830; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }*/
-      
-        function scroll_secuence_initialize(){
-            if(window.matchMedia("(max-width: 767px)").matches && is_loaded[1]==false){
-                const firstSequence = new ScrollSequence({
-                    container: '.first-sequence',
-                    scrollWith: '.first-container',
-                    images: firstSequenceImages,
-                    imagesRoot: 'assets/img/secuencia/movil/',
-                    cover: true,
-                    starts: 'out',
-                    ends: 'in'
-                });
-                is_loaded=[false,true];
-            }else if(is_loaded[0]==false){
-                const firstSequence = new ScrollSequence({
-                    container: '.first-sequence',
-                    scrollWith: '.first-container',
-                    images: firstSequenceImages,
-                    imagesRoot: 'https://helotv.s3.us-west-2.amazonaws.com/high/',
-                    cover: true,
-                    starts: 'out',
-                    ends: 'in'
-                });
-                is_loaded[0]=[true,false];
-            }
+
+        for (let i = 0; i <= 9; i++) {//126
+            firstSequenceImages.push(`${`helo00${i}`.slice(-8)}.jpg`);
         }
 
+        for (let i = 10; i <= 99; i++) {//126
+            firstSequenceImages.push(`${`helo0${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 100; i <= 200; i++) {//126
+            firstSequenceImages.push(`${`helo${i}`.slice(-8)}.jpg`);
+        }
+
+        var firstSequence=null;
+
+        
+        /*function scroll_secuence_initialize(){
+            if(window.matchMedia("(max-width: 767px)").matches && is_loaded[1]==false){
+                $(".scroll-sequence").empty();
+                firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/movil_test1/',
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+
+                is_loaded=[false,true];
+            }else if(is_loaded[0]==false){
+                $(".scroll-sequence").empty();*/
+                firstSequence = new ScrollSequence({
+                    container: '.first-sequence',
+                    scrollWith: '.first-container',
+                    images: firstSequenceImages,
+                    imagesRoot: 'assets/img/secuencia/desktop_test1/',
+                    cover: true,
+                    starts: 'out',
+                    ends: 'in'
+                });
+                /*is_loaded[0]=[true,false];
+            }
+        }*/
+        
         $(document).ready(function(){
-            scroll_secuence_initialize();      
+            /*scroll_secuence_initialize(); */     
             mobile_functions();      
         });
-
+        
         $( window ).resize(function() {
-            scroll_secuence_initialize();
+            /*scroll_secuence_initialize();*/
             mobile_functions();
         });
         
         // END SCROLL_SEQUENCE CODE
-        AOS.init();
     </script>       
     <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
     <script>
@@ -266,6 +287,36 @@ HELO
             });
         });
     </script>   
+    <script src="{{ const.BASE_URL }}node_modules/gsap/dist/gsap.js" ></script>
+    <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollTrigger.js" ></script>
+    
+    <script>
+        const containers = gsap.utils.toArray(".speak");
+        containers.forEach((container) => {
+        let tl = gsap.timeline({
+            scrollTrigger: {
+            trigger: container,
+            pin: true,
+            pinSpacing: true,
+            scrub: true,
+            markers: false,
+            
+            }
+        });
+
+        tl.to(container, {
+            autoAlpha: 1
+        }).to(
+            container,
+            {
+            autoAlpha: 0
+            },
+            0.5
+        );
+        });
+        
+
+    </script>
 {% endblock %}
 
 {% block content %}
@@ -277,59 +328,66 @@ HELO
         <section class="scroll-sequence__container first-container">
             <div class="scroll-sequence first-sequence"></div>
             <div class="scroll-sequence__content container">
-                <div class="speak row" data-aos="fade-right">
+                <div class="speak row" >
                     <div class="col-12 col-md-7">
                         <h1 class="scroll-sequence-title">Insight Inspired, Story Led, Design Driven</h1>
                     </div>
                 </div>
-                <div class="speak row justify-content-end" data-aos="fade-left">
-                    <div class="col-12 col-md-7">
-                        <h1 class="scroll-sequence-title right-text hollow-text">Moving ExperiencesTM</h1>
+
+                <div class="speak row justify-content-end" >
+                    <div class="col-12 col-md-12">
+                        <h1 class="scroll-sequence-title right-text hollow-text">Moving Experiences<sup><small>TM</small></sup></h1>
                     </div>
                 </div>
-                <div class="speak row" data-aos="fade-right">
+                <div class="speak row" >
                     <div class="col-12 col-md-7">
                         <h1 class="scroll-sequence-title">That Grow Business Value</h1>
                     </div>
                 </div>
-                <div class="speak row justify-content-end" data-aos="fade-left">
+                <div class="speak row justify-content-end" >
                     <div class="col-12 col-md-7">
                         <h1 class="scroll-sequence-title right-text hollow-text">Special. Projects</h1>
                     </div>
                 </div>
-                <div class="speak row col-12 col-md-6" data-aos="fade-right">   
-                    <p class="scroll-sequence-text">We aren’t right for every (even most) projects but</p>
-                    <h1 class="scroll-sequence-title-tiny">When you have to deliver something that is exceptional, call us.</h1>
+                <div class="speak row col-12 col-md-6"  >
+                    <div>
+                        <p class="scroll-sequence-text">We aren’t right for every (even most) projects but</p>
+                        <h1 class="scroll-sequence-title-tiny">When you have to deliver something that is exceptional, call us.</h1>
+                    </div>
                 </div>
-                <div class="speak row col-12 col-md-7" data-aos="fade-right">
-                    <h1 class="scroll-sequence-title-tiny">We are not an experiential agency or a traditional production company.</h1>
+                <div class="speak row " >
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title-tiny">We are not an experiential agency or a traditional production company.</h1>
+                    </div>
                 </div>
-                <div class="speak row justify-content-end" data-aos="fade-left">
+                <div class="speak row justify-content-end" >
                     <div class="col-12 col-md-7">
                         <h1 class="scroll-sequence-title right-text hollow-text">We are different. How?</h1>
                     </div>
                 </div>
-                <div class="speak row col-12 col-md-7" data-aos="fade-right">
-                    <h1 class="scroll-sequence-title-tiny">We are a creative problem solving studio</h1>
+                <div class="speak row " >
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title-tiny">We are a creative problem solving studio</h1>
+                    </div>
                 </div>
-                <div class="speak row justify-content-end" data-aos="fade-left">
+                <div class="speak row justify-content-end" >
                     <div class="col-12 col-md-7">
                         <h1 class="scroll-sequence-title-tiny right-text">Built by an eclectic group of entertainment, technology, design, and marketing professionals.</h1>  
                     </div>
                 </div>
-                <div class="speak row justify-content-end" data-aos="fade-left">
+                <div class="speak row justify-content-end" >
                     <div class="col-12 col-md-7">
                         <h1 class="scroll-sequence-title-tiny right-text">Our creators diverse portfolios and points of view range from narrative storytelling to immersive experience</h1>  
                     </div>
                 </div>
-                <div class="speak row col-12 col-md-7" data-aos="fade-right">
-                    <h1 class="scroll-sequence-title-tiny">From designing some of the most iconic worlds in film to designing and building real buildings in the real world.</h1>
+                <div class="speak row " >
+                    <div class="col-12 col-md-7">
+                        <h1 class="scroll-sequence-title-tiny">From designing some of the most iconic worlds in film to designing and building real buildings in the real world.</h1>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
-</div>
-
 </div>
 
 
