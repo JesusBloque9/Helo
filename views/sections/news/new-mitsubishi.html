@@ -12,6 +12,7 @@ HELO
 {% endblock %}
 
 {% block extraJS %}
+<script src="{{ const.BASE_URL }}assets/js/share.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -101,7 +102,27 @@ HELO
             </div>
         </section>
         <section class="share">
-            <a href="">SHARE<img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/icon-share.svg" alt=""></a>
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="">SHARE<img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/icon-share.svg" alt=""></a>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-body">
+            <div class="shared-panel">                
+                <a target="_blank" class="shared fb" title="Facebook"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/facebook.svg" alt=""></a>
+                <a target="_blank" class="shared tt" title="Twitter"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/twitter.svg" alt=""></a>
+                <a target="_blank" class="shared gp" title="Google+"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/google.svg" alt=""></a>
+                <a  data-action='share/whatsapp/share' class="shared wa" title="WhatsApp"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/whatsapp.svg" alt=""></a>
+                <a target="_blank" class="shared ce" id="sml" title="Email"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/email.svg" alt=""></a>
+            </div>           
+        </div>
+      </div>
+    </div>
+  </div>        
+    
         </section>
         <section class="row cambiar-noticia">
             <div class="col-6 past-arrow">
