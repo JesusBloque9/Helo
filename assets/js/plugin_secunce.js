@@ -183,7 +183,7 @@ class ImgLoader extends EventEmitter {
     this.loadNextImage();
   }
   
-  loadImage(e) {
+  async loadImage(e) {
     if (this.images[e]) {
       return this.loadNextImage();
     }
@@ -201,7 +201,7 @@ class ImgLoader extends EventEmitter {
     img.src = (this.imagesRoot ? this.imagesRoot : '') + this.imageNames[e];
   }
   
-  loadNextImage() {
+  async loadNextImage() {
     if (this.priorityQueue.length) {
       this.loadImage(this.priorityQueue.shift());
       if (!this.priorityQueue.length) {
