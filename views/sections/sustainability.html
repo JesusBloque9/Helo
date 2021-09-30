@@ -54,7 +54,10 @@ HELO
 {% endblock %}
 
 {% block content %}
-{% include 'modules/menu_secciones.html' %}
+
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
+
       <main class="title-">
           <section class="sustainability-section">
             <section class="container sustainability-title">

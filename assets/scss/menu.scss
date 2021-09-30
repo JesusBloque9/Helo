@@ -1,3 +1,30 @@
+$cubicBeizer: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+@keyframes scale-to-right {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-to-left {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
 nav.menu_helo{
     display: inline-block;
     position: fixed;
@@ -6,6 +33,12 @@ nav.menu_helo{
     right: 0px;
     width: 100%;
     z-index: 10;
+    background-color: rgba(255, 255, 255, .0);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, .0), 0 0px 0px rgba(0, 0, 0, .0);
+   	-webkit-transform-origin: 0 0;
+   	transform-origin: 0 0;
+   	animation: scale-to-right 0.5s $cubicBeizer both;
+    @include ease(.25s);
 	div.col-12{
 		position: relative;
 		text-align: right;
@@ -17,10 +50,22 @@ nav.menu_helo{
 			bottom: 0px;
 			margin: auto 0px;
 			height: 40px;
+			@include ease(.25s);
 			img{
 				@include block_ctrl();
 				width: auto;
 				height: 100%;
+				opacity: 1;
+				pointer-events: auto;
+				@include ease(.25s);
+				&.full_{
+					
+				}
+				&.small_{
+					opacity: 0;
+					pointer-events: none;
+					position: absolute;
+				}
 			}
 		}
 		>ul{
@@ -34,6 +79,7 @@ nav.menu_helo{
     		margin-inline-start: 0px;
     		margin-inline-end: 0px;
     		padding-inline-start: 0px;
+    		@include ease(.25s);
 			>li{
 				display: inline-block;
 				position: relative;
@@ -91,14 +137,14 @@ nav.menu_helo{
 				}
 				&:last-child{
 					display: inline-flex;
-					padding-left: 60px;
+					margin-left: 45px;
+					cursor: pointer;
 					>div{
     					position: relative;
     					width: 25px;
     					height: 12px;
     					margin: auto 0px;
     					bottom: 2px;
-    					cursor: pointer;
 						&:after,&:before{
 							content: '';
 							display: inline-block;
@@ -122,34 +168,83 @@ nav.menu_helo{
 			}
 		}
 	}
-}
-
-$cubicBeizer: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-
-@keyframes scale-to-right {
-  0% {
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-
-@keyframes scale-to-left {
-  0% {
-    -webkit-transform: scaleX(2);
-    transform: scaleX(2);
-    opacity: 2;
-  }
-  100% {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    opacity: 1;
-  }
+	&.transitioned{
+    	background-color: rgba(255, 255, 255, 1);
+    	box-shadow: 0 1px 3px rgba(0, 0, 0, .05), 0 1px 2px rgba(0, 0, 0, .03);
+		div.col-12{
+			>a{
+				height: 50px;
+				>img{
+					&.full_{
+						opacity: 0;
+						pointer-events: none;
+						position: absolute;
+					}
+					&.small_{
+						opacity: 1;
+						pointer-events: auto;
+						position: relative;
+					}
+				}
+			}
+			>ul{
+				margin-block-start: 30px;
+    			margin-block-end: 30px;
+				>li{
+					>a{
+						color: $grey_dark;
+					}
+					&:last-child{
+						>div{
+							&:after,&:before{
+								background-color: $grey_dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.positioned{
+		position: relative;
+    	background-color: rgba(255, 255, 255, 1);
+		div.col-12{
+			>a{
+				height: 50px;
+				>img{
+					&.full_{
+						opacity: 0;
+						pointer-events: none;
+						position: absolute;
+					}
+					&.small_{
+						opacity: 1;
+						pointer-events: auto;
+						position: relative;
+					}
+				}
+			}
+			>ul{
+				>li{
+					>a{
+						color: $grey_dark;
+					}
+					&:last-child{
+						>div{
+							&:after,&:before{
+								background-color: $grey_dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.hide_{
+    	-webkit-transform-origin: 0 0;
+    	transform-origin: 0 0;
+    	animation: scale-to-left 0.5s $cubicBeizer both;
+	}
 }
 
 div.menu_content{
@@ -162,6 +257,7 @@ div.menu_content{
     width: 450px;
     background-color: #FFFFFF;
     z-index: 9999;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
     @include ease(.25s);
 	>div{
 		>div.head_{
@@ -265,8 +361,11 @@ div.menu_content{
 					width: auto;
 	    			padding: 5px;
 					>a{
+						text-decoration: none;
 						>img{
-
+							display: inline-block;
+							position: relative;
+							width: 38px;
 						}
 					}
 				}
@@ -287,17 +386,9 @@ div.menu_content{
 		>div{
 			>div.head_{
 				>div{
-					>img{
-					}
 					>div.close{
 						opacity: 1;
 						pointer-events: auto;
-						&:before,&:after{
-						}
-						&:before{
-						}
-						&:after{
-						}
 					}
 				}
 			}
@@ -331,21 +422,19 @@ div.menu_content{
 			}
 		}
 	}
-
 }
+
 
 @for $i from 1 through 10 {
   ul.menu_>li:nth-child(#{$i}n) {
-    animation-delay: #{$i * 0.20}s !important;
+    animation-delay: #{$i * 0.15}s !important;
   }
 }
 @for $i from 1 through 10 {
   ul.social>li:nth-child(#{$i}n) {
-    animation-delay: #{$i * 0.20}s !important;
+    animation-delay: #{$i * 0.15}s !important;
   }
 }
-
-
 
 @include media-breakpoint-down(xl) {
 }
@@ -372,8 +461,10 @@ div.menu_content{
 	    width: 100vw;
 		>div{
 			>div.head_{
+				padding: 0px;
 				>div{
 					>img{
+					    height: 40px;
 					}
 					>div.close{
 						left: 0px;
@@ -387,54 +478,20 @@ div.menu_content{
 				}
 			}
 			>div.col-12{
-				>ul{
-				}
+				text-align: center;
 				>ul.menu_{
 					>li{
 						justify-content: center;
-						>a{
-						}
-					}
-					&:after{
 					}
 				}
 				>ul.social{
+					text-align: center;
 					>li{
+						float: none;
 					}
 				}
 				>a{
-				}
-			}
-		}
-		&.show{
-			>div{
-				>div.head_{
-					>div{
-						>img{
-						}
-						>div.close{
-							&:before,&:after{
-							}
-							&:before{
-							}
-							&:after{
-							}
-						}
-					}
-				}
-				>div.col-12{
-					>ul.menu_{
-						>li{
-						}
-						&:after{
-						}
-					}
-					>ul.social{
-						>li{
-						}
-					}
-					>a{
-					}
+					float: none;
 				}
 			}
 		}

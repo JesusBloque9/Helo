@@ -17,16 +17,17 @@ HELO
 
 {% block content %}
 
-    {% include 'modules/menu_secciones.html' %}
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
+
     <main>
         <div class="py-5" id="title">
-            <div class="container-fluid px-md-5">
-                <div class="row px-md-5">
-                    <div class="col-12 col-sm-9 col-md-6 col-xl-3 pb-2">
-                        <p class="title_p">News</p>
-                        <h1 class="title_h1">Driveway. Mitsubishi</h1>
-                        <div class="color green"></div>
-                        <p class="title_p">SEPTEMBER 15, 2021</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-9 col-md-6 pb-2">
+                        <p class="block_ctrl title_p">News</p>
+                        <h3 class="title_section green pb-0">Driveway. Mitsubishi</h3>
+                        <p class="block_ctrl title_p pt-2">SEPTEMBER 15, 2021</p>
                     </div>
                     <div class="col" id="search-box">
                         <div class="p_auto">

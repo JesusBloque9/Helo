@@ -101,11 +101,12 @@ HELO
 
 {% block content %}
 
-{% include 'modules/menu_secciones.html' %}
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
 
 <div class="py-5">
     <div class="container">
-        <div class="row px-md-5">
+        <div class="row">
             <div class="col-12 col-sm-9 col-md-6 col-lg-4 pb-2">
                 <h3 class="title_section green h1">News <small>when you have to deliver something that is exceptional, call us.</small></h3>
             </div>

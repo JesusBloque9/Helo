@@ -9,51 +9,6 @@ HELO
 {% endblock %}
 
 {% block extraCSS %}
-    <style>
-        nav#menu_home{
-            display: inline-block;
-            position: fixed;
-            width: 100%;
-            left: 0px;
-            top: 0px;
-            z-index: 999;
-            opacity: 1;
-            pointer-events: auto;
-            -webkit-transition: all .25s ease;
-               -moz-transition: all .25s ease;
-                -ms-transition: all .25s ease;
-                 -o-transition: all .25s ease;
-                    transition: all .25s ease;
-        }
-        nav#principal.hide_{
-            opacity: 0;
-            pointer-events: none;
-        }
-        nav.menu-nav2{
-            display: inline-block;
-            position: relative;
-            float: left;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0);
-            left: 0px;
-            top: 0px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, 0);
-            -webkit-transition: all .25s ease;
-               -moz-transition: all .25s ease;
-                -ms-transition: all .25s ease;
-                 -o-transition: all .25s ease;
-                    transition: all .25s ease;
-        }
-        nav.menu-nav2.fixed_menu{
-            position: fixed;
-            z-index: 999;
-            background-color: rgba(255, 255, 255, .89);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-        }
-        .fixSpaceEffect{
-            height: 78.5px;
-        }
-    </style>
     <link href="{{ const.BASE_URL }}node_modules/aos/dist/aos.css" rel="stylesheet">
 {% endblock %}
 
@@ -246,26 +201,44 @@ HELO
     </script>
     <script>
         $( document ).ready(function() {
-            const second_menu = $('nav.menu-nav2');
-            const first_menu = $('nav#principal');
-            const YpositionPrincipal=second_menu.offset().top;
+            menuEffect();
+            scrollEffect();
+        });
+        function menuEffect(){
+            const menu = $('nav#principal');
+            const py_section_wemake = $('#experiences').offset().top;
             $(window).scroll(function (event) {
-                var scroll = $(window).scrollTop();
-                console.log('YpositionPrincipal: '+YpositionPrincipal);
-                console.log('scroll: '+scroll);
-                if ((YpositionPrincipal-300)<=scroll) {
-                    first_menu.addClass('hide_');
+                var py_menu = menu.offset().top;
+                if (py_menu>=py_section_wemake-102) {
+                    menu.addClass('transitioned');
                 }else{
-                    first_menu.removeClass('hide_');
-                }
-                if (YpositionPrincipal<=scroll) {
-                    second_menu.addClass('fixed_menu');
-                }else{
-                    second_menu.removeClass('fixed_menu');
+                    menu.removeClass('transitioned');
                 }
             });
-        });
-    </script>   
+        }
+
+        window.scrolled=false;
+        function scrollEffect(){
+            const py_section_wemake = $('#experiences').offset().top;
+            const height_vp = $(window).height();
+            const hideON = py_section_wemake-height_vp;
+            $(window).scroll(function (event) {
+                var scroll = $(window).scrollTop();
+                if (!window.scrolled && scroll>=hideON) {
+                    window.scrolled=true;
+                    console.log('scroll effect executed');
+                    $('html, body').animate({
+                        scrollTop: $('#experiences').offset().top-92
+                    });
+                }
+                if (window.scrolled && scroll<hideON) {
+                    console.log('restart var');
+                    window.scrolled=false;
+                }
+            });
+        }
+
+    </script>
 {% endblock %}
 
 {% block content %}
@@ -332,13 +305,6 @@ HELO
 
 </div>
 
-
-<!-- MENU  -->
-<div>
-<div class="fixSpaceEffect block_ctrl">
-{% include 'modules/menu_secciones.html' %}
-</div>
-</div>
 <!--We make Section-->    
 <div class="container-fluid bg-white" id="experiences">
         <div class="row py-5">
