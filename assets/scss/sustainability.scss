@@ -16,7 +16,7 @@
         font-size: 2.7rem;
         margin-top: 15px;
         width: 620px;
-        line-height : 60px;
+        line-height : 55px;
         margin-right: auto;
         margin-left: auto;
         background: #62A00E;
@@ -84,14 +84,18 @@
     padding-bottom: 50vh;
     margin-right: auto;
     margin-left: auto;
+    div{
+        padding-right: 2vw;
+        padding-left: 2vw;
+    }
     h3{
         color: rgb(255, 210, 9);
-        font-size: 80px;
+        font-size: 70px;
         font-weight: bold;
     }
     p{
         color: #FFFFFF;
-        font-size: 29px;
+        font-size: 1.25rem;
         line-height: 32px;
     }
 }
@@ -110,7 +114,7 @@
     h3{
         color: rgb(255, 210, 9);
         text-align: left;
-        font-size: 29px;
+        font-size: 1.85rem;
         font-weight: 500;
     }
     iframe{
@@ -122,30 +126,20 @@
 .sustainability-reportd-cart{
     margin-top: 35vh;
      text-align: center;
-     h3{
-         font-size: 19px;
-         color: #008351;
-         font-weight: 500;
-     }
-     p{
-         font-size: 27px;
-         line-height: 32px;
-         font-weight: 700;
-         width: 600px;
-         margin-right: auto;
-         margin-left: auto;
+     .green-report{
+         width: 50%;
      }
      .metrics{
-        margin-top: 6vh;
+        margin-top: 4vh;
         margin-bottom: 15vh;         
         img{
-            margin-top: 7vh;
-            width: 150px;
+            margin-top: 5vh;
+            width: 140px;
         }
         h6{
             margin-top: 30px;
             text-align: center;
-            font-size: 21px;
+            font-size: 1.25rem;
             font-weight: 600;
         }
         .metrics-fila2{

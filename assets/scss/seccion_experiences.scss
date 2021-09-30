@@ -22,12 +22,12 @@ a:hover{cursor:pointer;}
 #video1, #video2, #video3, #video4, #video5{
     width: 100%;
     object-fit: cover;
-    height: 750px;
+    height: 580px;
 }
 
 #video-holder1, #video-holder2, #video-holder3, #video-holder4, #video-holder5{
     opacity: 0;
-    height: 750px;
+    height: 580px;
 
     &.add-video{
         opacity: 1
@@ -43,7 +43,7 @@ a:hover{cursor:pointer;}
         border-radius: 0%;
         overflow: hidden;
         transition: 1s ease;
-        height: 750px;
+        height: 580px;
         padding-top: 0%;
 
 
@@ -160,7 +160,7 @@ a:hover{cursor:pointer;}
 
 
     .background_default{
-        height: 750px;
+        height: 580px;
         background-repeat: no-repeat !important;
         background-size: cover !important;
         margin-top: 10px;
