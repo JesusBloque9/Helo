@@ -76,7 +76,10 @@
   .footer-yellow{
     color: #ffaa22;
   }
-  
+  .rights-footer{
+    font-size: 14px;
+    color: rgb(168, 168, 168);
+  }
   /*FOTTER*/
   footer{
     text-align: center;
@@ -156,7 +159,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 0rem;
-    padding: 2rem;
+    padding: 1rem;
     background: var(--footer-background);
   }
   body .footer .content a, body .footer .content p {
