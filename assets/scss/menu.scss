@@ -441,15 +441,41 @@ div.menu_content{
 @include media-breakpoint-down(lg) {
 }
 @include media-breakpoint-down(md) {
-
-}
-@include media-breakpoint-down(sm) {
 	nav.menu_helo{
 		div.col-12{
 			>ul{
 				>li{
 					&:nth-child(1),&:nth-child(2),&:nth-child(3){
 						display: none;
+					}
+				}
+			}
+		}
+		&.transitioned, &.positioned{
+			div.col-12{
+				>ul{
+					>li{
+						&:nth-child(1),&:nth-child(2),&:nth-child(3){
+							display: inline-block;
+						}
+						&:last-child{
+							margin-left: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-down(sm) {
+	nav.menu_helo{
+		&.transitioned, &.positioned{
+			div.col-12{
+				>ul{
+					>li{
+						&:nth-child(1),&:nth-child(2),&:nth-child(3){
+							display: none;
+						}
 					}
 				}
 			}

@@ -63,7 +63,7 @@
         text-transform: uppercase;
         position: relative;
         user-select: none;
-        letter-spacing: 6px;
+        letter-spacing: 7px;
     }
 
     .text::before {
@@ -117,10 +117,6 @@
         width: 100%;
         float: none;
         list-style: none;
-        padding: 0;
-        margin: 0;
-        margin-top: 75px;
-        margin-bottom: 75px;
     }
     .tabs:after {
         content: '';
@@ -149,15 +145,16 @@
         border-radius: 4px 5px 0px 0px;
     }
     .tabs label span {
-        font-size: 1.3123rem;
         letter-spacing: 1.26px;
         display: none;
-        
+        line-height: 1.25;
+        font-weight: 500;
+        font-size: 1.2rem;        
     }
     .tabs label i.icono {
-        padding: 5px;
-        margin-right: 0;
-        font-size: 74px;
+      font-size: 70px;
+      float: none;
+      margin: 0px -15px;
     }
     .tabs label:hover {
         color: #F6F6F6;
@@ -267,10 +264,6 @@
         .tabs label span {
             display: inline-block;
         }
-        .tabs {
-            max-width: 85%;
-            margin: 50px auto;
-        }
     }
 }
 
@@ -298,16 +291,6 @@
       text-transform: capitalize;
       margin-bottom: 20px;
     }
-    
-    p{
-      font-size: 1.25rem;
-      letter-spacing: 0.8px;
-      color: #6A6969;
-      text-transform: capitalize;
-      font-weight: normal;
-      text-align: center;
-      line-height:1.2;
-  }
 
   hr{
     width: 60%;
@@ -316,33 +299,6 @@
     opacity: 1;
     margin: auto
   }
-
-    @media (min-width: 768px) {
-        .col-sm-5-12 {
-          width: 20%;
-          float: left;
-        }
-      }
-      @media (min-width: 992px) {
-        .col-md-5-12 {
-          width: 20%;
-          float: left;
-        }
-        .details-window {
-          padding-top: 100%;
-        }
-      }
-      @media (min-width: 1200px) {
-        .col-lg-5-12 {
-          width: 20%;
-          float: left;
-        }
-      }
-      .realColumn {
-        height: 50px;
-        background: red;
-        margin: 15px;
-      }
 }
 
 .clients-logos{
@@ -351,4 +307,16 @@
 }
 .img-strategy{
   width: 80%;
+}
+
+@include media-breakpoint-down(xl) {
+}
+@include media-breakpoint-down(lg) {
+}
+@include media-breakpoint-down(md) {
+}
+@include media-breakpoint-down(sm) {
+  #strategy h2, #strategy .h2 {
+      font-size: 2.5rem;
+  }
 }

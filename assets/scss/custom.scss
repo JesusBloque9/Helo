@@ -289,21 +289,25 @@ a.back_{
     }
 }
 
-/*Mobile first*/
+
+
+
 @include media-breakpoint-down(xl) {
 }
 @include media-breakpoint-down(lg) {
 }
 @include media-breakpoint-down(md) {
+    #cursor{
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 @include media-breakpoint-down(sm) {
 
 }
-@include media-breakpoint-down(xs) {
 
-}
-
-/**/
+/*Mobile first*/
 @include media-breakpoint-up(sm) {
 }
 @include media-breakpoint-up(md) {
@@ -312,3 +316,4 @@ a.back_{
 }
 @include media-breakpoint-up(xl) {
 }
+
