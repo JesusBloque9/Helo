@@ -92,10 +92,10 @@ div.video_layout{
     			text-shadow: 0 0 8px rgba(255, 255, 255, .15);
    			    cursor: pointer;
 				>small{
-					-moz-text-stroke: 1px $grey_dark;
-    				-webkit-text-stroke: 1px $grey_dark;
-    				-moz-text-fill-color: $grey_dark;
-    				-webkit-text-fill-color: $grey_dark;
+					-moz-text-stroke: 1px #FFFFFF;
+    				-webkit-text-stroke: 1px #FFFFFF;
+    				-moz-text-fill-color: #FFFFFF;
+    				-webkit-text-fill-color: #FFFFFF;
     				text-shadow: none;
 				}
 			}
