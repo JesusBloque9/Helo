@@ -64,9 +64,19 @@ div.video_layout{
 			font-size: 4rem;
 			font-weight: 700;
 			line-height: 1.4;
+			-moz-text-stroke: 0px #FFFFFF;
+    		-webkit-text-stroke: 0px #FFFFFF;
+    		-moz-text-fill-color: #FFFFFF;
+    		-webkit-text-fill-color: #FFFFFF;
+    		text-shadow: 0 0 8px rgba(255, 255, 255, 0);
 			@include ease(.25s);
 			@include block_ctrl();
 			>small{
+				-moz-text-stroke: 1px #FFFFFF;
+    			-webkit-text-stroke: 1px #FFFFFF;
+    			-moz-text-fill-color: #FFFFFF;
+    			-webkit-text-fill-color: #FFFFFF;
+    			text-shadow: 0 0 8px rgba(255, 255, 255, 0);
 				font-size: 1.75rem;
 				font-weight: 400;
 				@include ease(.25s);
@@ -75,14 +85,18 @@ div.video_layout{
 		}
 		&:hover{
 			span{
-				-moz-text-stroke: 0.7px #FFFFFF;
-    			-webkit-text-stroke: 0.7px #FFFFFF;
-    			-webkit-text-fill-color: transparent;
+				-moz-text-stroke: 2px #FFFFFF;
+    			-webkit-text-stroke: 2px #FFFFFF;
+    			-moz-text-fill-color: transparent;
     			-webkit-text-fill-color: transparent;
     			text-shadow: 0 0 8px rgba(255, 255, 255, .15);
    			    cursor: pointer;
 				>small{
-
+					-moz-text-stroke: 1px $grey_dark;
+    				-webkit-text-stroke: 1px $grey_dark;
+    				-moz-text-fill-color: $grey_dark;
+    				-webkit-text-fill-color: $grey_dark;
+    				text-shadow: none;
 				}
 			}
 		}
