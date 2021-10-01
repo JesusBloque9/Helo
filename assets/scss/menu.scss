@@ -279,9 +279,10 @@ div.menu_content{
 		>div.head_{
 			>div{
 				@include block_ctrl();
+				text-align: center;
 				>img{
 					@include block_ctrl();
-					float: right;
+					float: none;
 					height: 50px;
 					width: auto;
 				}
@@ -491,6 +492,7 @@ div.menu_content{
 				>div{
 					>img{
 					    height: 40px;
+					    float: right;
 					}
 					>div.close{
 						left: 0px;
