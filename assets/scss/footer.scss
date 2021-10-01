@@ -256,6 +256,24 @@ div.footer{
   }
 }
 @include media-breakpoint-down(md) {
+  div.footer{
+      text-align: center;
+      span{
+        padding-bottom: 30px;
+        padding-right: 0px;
+        width: 100%;
+        &:after{
+          right: 0px;
+          left: 0px;
+          top: auto;
+          bottom: 15px;
+          margin: 0px auto;
+          height: 1px;
+          width: 65px;
+          background-color: $yellow;
+        }
+      }
+  }
 }
 @include media-breakpoint-down(sm) {
   div.callout{
