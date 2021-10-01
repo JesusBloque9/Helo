@@ -8,7 +8,7 @@ div.item_work{
     	font-size: 2.25rem;
     	font-weight: 700;
     	padding: 15px 0px;
-	    text-decoration: none;
+	    cursor: default;
 		-moz-text-stroke: 0.7px $grey_dark_04;
     	-webkit-text-stroke: 0.7px $grey_dark_04;
     	-webkit-text-fill-color: transparent;
@@ -92,10 +92,10 @@ div.video_layout{
     			text-shadow: 0 0 8px rgba(255, 255, 255, .15);
    			    cursor: pointer;
 				>small{
-					-moz-text-stroke: 1px $grey_dark;
-    				-webkit-text-stroke: 1px $grey_dark;
-    				-moz-text-fill-color: $grey_dark;
-    				-webkit-text-fill-color: $grey_dark;
+					-moz-text-stroke: 1px #FFFFFF;
+    				-webkit-text-stroke: 1px #FFFFFF;
+    				-moz-text-fill-color: #FFFFFF;
+    				-webkit-text-fill-color: #FFFFFF;
     				text-shadow: none;
 				}
 			}
