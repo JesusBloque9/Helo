@@ -5,7 +5,18 @@
 HELO
 {% endblock %}
 
-{% block preloads %}  	
+{% block preloads %}
+    <style>
+        @media (max-width: 576px) {
+            #works > div {
+                padding: 0px !important;
+            }
+            #works .up .text, #works .up .text_overlay {
+                left: 0px !important;
+                right: 0px !important;
+            }
+        }
+    </style>
 {% endblock %}
 
 {% block extraCSS %}
@@ -100,9 +111,9 @@ HELO
             </div>
             <div class="row mx-0" id="works">
 
-                <div class="col-12 yellow_cover up">
+                <div class="col-12 yellow p-0_cover up">
                     <div class="color"><div id="deloitte" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay" id="deloitte_overlay"></div>
+                    <div class="col px-5 py-5 text_overlay bg_yellow_ts" id="deloitte_overlay"></div>
                     <div class="row px-5 py-5 text" id="deloitte_text">
                         <p>Investor day</p>
                         <h1>Deloitte</h1>
@@ -110,9 +121,9 @@ HELO
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 orange_cover up">
+                <div class="col-12 col-md-6 orange p-0_cover up">
                     <div class="color"><div id="deloitte2" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay" id="deloitte2_overlay"></div>
+                    <div class="col px-5 py-5 text_overlay bg_orange_ts" id="deloitte2_overlay"></div>
                     <div class="row px-5 py-5 text" id="deloitte2_text">
                         <p>Investor day</p>
                         <h1>Deloitte</h1>
@@ -120,9 +131,9 @@ HELO
                     </div>
                 </div>
                 
-                <div class="col-12 col-md-6 red_cover up">
+                <div class="col-12 col-md-6 red p-0_cover up">
                     <div class="color"><div id="deloitte3" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay" id="deloitte3_overlay"></div>
+                    <div class="col px-5 py-5 text_overlay bg_red_ts" id="deloitte3_overlay"></div>
                     <div class="row px-5 py-5 text" id="deloitte3_text">
                         <p>Investor day</p>
                         <h1>Deloitte</h1>
@@ -131,9 +142,9 @@ HELO
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 purple_cover up">
+                <div class="col-12 col-md-6 purple p-0_cover up">
                     <div class="color"><div id="deloitte4" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay" id="deloitte4_overlay"></div>
+                    <div class="col px-5 py-5 text_overlay bg_blueOne_ts" id="deloitte4_overlay"></div>
                     <div class="row px-5 py-5 text" id="deloitte4_text">
                         <p>Investor day</p>
                         <h1>Deloitte</h1>
@@ -142,9 +153,9 @@ HELO
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 green_cover up">
+                <div class="col-12 col-md-6 green p-0_cover up">
                     <div class="color"><div id="deloitte5" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay" id="deloitte5_overlay"></div>
+                    <div class="col px-5 py-5 text_overlay bg_green_ts" id="deloitte5_overlay"></div>
                     <div class="row px-5 py-5 text" id="deloitte5_text">
                         <p>Investor day</p>
                         <h1>Deloitte</h1>

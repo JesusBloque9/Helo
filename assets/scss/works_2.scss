@@ -142,6 +142,13 @@ div.video_layout{
 @include media-breakpoint-down(md) {
 }
 @include media-breakpoint-down(sm) {
+	div.video_layout > div.bg span {
+	    line-height: 1;
+	    font-size: 2.9rem;
+	    >small{
+	    	margin-top: 15px;
+	    }
+	}
 	div.item_work > span {
 	    font-size: 1.4rem;
 	}

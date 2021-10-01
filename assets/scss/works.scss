@@ -363,6 +363,17 @@ video {
       height: 100%;
       position: absolute;
   }
+  #works .text h1 {
+      font-size: 2.75rem;
+      margin-bottom: 10px;
+  }
+  #works .text p {
+      margin-bottom: 0px;
+      line-height: 1;
+  }
+  #works .text img {
+      width: 60px;
+  }
 }
 @include media-breakpoint-down(md) {
 }
