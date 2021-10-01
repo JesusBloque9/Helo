@@ -265,7 +265,8 @@ div.menu_content{
 				@include block_ctrl();
 				>img{
 					@include block_ctrl();
-					float: right;
+					float: left;
+					left: 90px;
 					height: 50px;
 					width: auto;
 				}
