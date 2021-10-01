@@ -142,3 +142,77 @@
         
     }
 }
+/*Diseño responsivo*/
+
+@media( max-width: 700px){
+    .portada{
+        p{
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+            line-height: 35px;
+            width: 85%;
+            font-size: 1rem;
+        }
+    }
+    .informacion{
+        margin-bottom: 1vh;
+        img{
+            margin-bottom: 4vh;
+        }
+
+        .information-text{
+            margin-top: 2vh;
+    
+            h3{
+                font-size: 1.33rem;
+                font-weight: 500;
+            }
+            p{
+                font-size: 1rem;
+            }
+            .informacion-logo{
+                img{
+                    width: 170px; 
+                }   
+            }
+        } 
+    }
+
+
+    .informacion-card{
+        margin-left: 8vw;
+        margin-right: 8vw;  
+    
+        .informacion-internal-card{
+            height: 200px;
+        }
+        h5{
+    
+            font-size: 1.33rem;
+            line-height: 38px;
+            width: 85%;
+        }
+        h4{
+            font-size: 1rem;      
+        }
+    }
+
+    .informacion-imagen-principal{
+        margin-top: 5vh;
+    }
+
+    .informacion-secundaria{
+        margin-top: 5vh;
+        text-align: left;
+    
+        h3{
+            font-size: 1.33rem;
+            font-weight: 400;        
+        }
+        p{
+            font-size: 1rem;
+            line-height: 32px;
+        }
+    }   
+   
+}
