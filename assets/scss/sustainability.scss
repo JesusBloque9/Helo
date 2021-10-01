@@ -103,14 +103,12 @@
 /*Video*/
 .sustainability-video{
     background: #000000;    
-    height: 50vh;
+    height: 30vw;
     text-align: center;
-
     div{
         margin-left: auto;
         margin-right: auto;
     }
-    
     h3{
         color: rgb(255, 210, 9);
         text-align: left;
@@ -118,41 +116,46 @@
         font-weight: 500;
     }
     iframe{
-        height: 70vh;
-        width: 70vw;        
+        height: 40vw;
+        width: 70vw;       
     }
 }
 
 .sustainability-reportd-cart{
-    margin-top: 35vh;
-     text-align: center;
-     .green-report{
-         width: 50%;
-     }
-     .metrics{
-        margin-top: 4vh;
-        margin-bottom: 15vh;         
-        img{
-            margin-top: 5vh;
-            width: 140px;
-        }
-        h6{
-            margin-top: 30px;
-            text-align: center;
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-        .metrics-fila2{
-            margin-top: 8vh;
-        } 
-     }    
+    margin-top: 20vw;
+    text-align: center;
+    .green-report{
+        width: 50%;
+    }
+    .metrics{
+       margin-top: 4vh;
+       margin-bottom: 15vh;         
+       img{
+           margin-top: 5vh;
+           width: 140px;
+       }
+       h6{
+           margin-top: 30px;
+           text-align: center;
+           font-size: 1.25rem;
+           font-weight: 600;
+       }
+       .metrics-fila2{
+           margin-top: 8vh;
+       } 
+    }    
 }
 
-/*Diseño responsivo*/
-@media(max-width: 700px){
+
+
+@include media-breakpoint-down(xl) {
+}
+@include media-breakpoint-down(lg) {
+}
+@include media-breakpoint-down(md) {
     .sustainability-section{
         background-size: cover;
-        height: 170vh; 
+        height: auto; 
     }
     .sustainability-title {
         padding-top: 6vh
@@ -160,6 +163,7 @@
     .sustainability-title p{
         font-size: 1.7rem;
         width: 350px;
+        max-width: 100%;
         line-height: 32px;
     }
     .sustainability-steps{
@@ -173,15 +177,20 @@
         }
     }
     .sustainability-video{
-        height: 34vh;
+        height: auto;
+    }
+    .sustainability-video h3, .sustainability-video .h3 {
+        text-align: center;
     }
     .sustainability-video iframe{
-        height: 45vh;
-        width: 80vw;
+        height: 35vw;
+        width: 60vw;
+        max-width: 100%;
+        min-width: 280px;
+        min-height: 160px;
     }
     .sustainability-reportd-cart{
-        margin-top: 20vh;
-
+        margin-top: 60px;
         p{
             width: 350px;
             font-size: 22px;
@@ -192,5 +201,13 @@
         .metrics h6{
             font-size: 18px;
         }
-    }    
+    }
+    .sustainability-reportd-cart .green-report {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@include media-breakpoint-down(sm) {
+
 }
