@@ -22,12 +22,12 @@ a:hover{cursor:pointer;}
 #video1, #video2, #video3, #video4, #video5{
     width: 100%;
     object-fit: cover;
-    height: 580px;
+    height: 100%;
 }
 
 #video-holder1, #video-holder2, #video-holder3, #video-holder4, #video-holder5{
     opacity: 0;
-    height: 580px;
+    height: 100%;
 
     &.add-video{
         opacity: 1
@@ -43,49 +43,22 @@ a:hover{cursor:pointer;}
         border-radius: 0%;
         overflow: hidden;
         transition: 1s ease;
-        height: 580px;
+        height: 100%;
         padding-top: 0%;
-
-
-
         img{
             opacity: 0;
             width: 100vw;
         }
       }
       
-      
-      h3, p{
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        /* font-weight: bold; */
-        color: #FFF;
-        opacity: 1 !important;
-        padding-left: 10%;
-        padding-right: 10%;
-      }
-
-      h3{
-          font-size: 1.777rem;
-          font-weight: 600;
-          letter-spacing: 0;
-      }
-
-      p{
-        font-size: 1.333rem;
-        letter-spacing: 0;
-        font-weight: normal;
-      }
-
-
-      
       .details-window, .details-window-cover {
         height: 100%;
         width: 100%;
         opacity: 0;
-        padding-top: 145%;
         position: absolute;
+        display: inline-flex;
+        left: 0px;
+        right: 0px;
       }
 
       .details-window-cover{
@@ -110,13 +83,44 @@ a:hover{cursor:pointer;}
         margin-right: auto;
       }
 
-    .one:hover .up , .moblie_experiences .one .up{
+      .one:hover .up , .moblie_experiences .one .up{
         transform: translateY(-100%);
         opacity: 0.7;
         transition: 0.7s ease;
         animation: fade-in 0.7s ease;
         animation-fill-mode: forwards;
     
+      }
+
+      .details-window.up{
+        >div{
+          padding-bottom: clamp(75px, 7vw, 200px);
+          text-align: center;
+          h3{
+            @include block_ctrl();
+            float: none;
+            width: auto;
+            font-size: 1.777rem;
+            font-weight: 600;
+            letter-spacing: 0;
+            color: #FFF;
+            &:after{
+              content: '';
+              display: inline-block;
+              position: absolute;
+              bottom: -15px;
+              left: 0px;
+              right: 0px;
+              margin: 0px auto;
+              height: 2px;
+              color: #FFF;
+              width: 200px;
+              max-width: 50%;
+              min-width: 100px;
+              background-color: #FFFFFF;
+            }
+          }
+        }
       }
       
       @keyframes fade-in {
@@ -160,10 +164,21 @@ a:hover{cursor:pointer;}
 
 
     .background_default{
-        height: 580px;
+        height: 100vw;
+        max-height: 580px;
         background-repeat: no-repeat !important;
         background-size: cover !important;
-        margin-top: 10px;
+        background-position: 50% 50% !important;
+        >div.moblie_experiences,>div.container-experience{
+          display: inline-block;
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: 0px;
+          right: 0px;
+          height: 100%;
+          width: 100%;
+        }
     }
 
     .one_img{
@@ -200,12 +215,6 @@ a:hover{cursor:pointer;}
       float: left;
     }
 
-    @media (max-width: 525px) {
-      
-      .details-window {
-        padding-top: 100%;
-      }
-    }
     @media (min-width: 768px) {
       .col-sm-5-12 {
         width: 20%;
@@ -216,9 +225,6 @@ a:hover{cursor:pointer;}
       .col-md-5-12 {
         width: 20%;
         float: left;
-      }
-      .details-window {
-        padding-top: 100%;
       }
     }
     @media (min-width: 1200px) {
