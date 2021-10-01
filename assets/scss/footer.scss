@@ -73,161 +73,205 @@
       text-shadow: 0 0 0 #fff;
     }
   }
-  .footer-yellow{
-    color: #ffaa22;
-  }
-  .rights-footer{
-    font-size: 14px;
-    color: rgb(168, 168, 168);
-  }
-  /*FOTTER*/
-  footer{
-    text-align: center;
-  }
-  .footer-menu{
-    position: relative;
-  }
-  .logo-footer{
-    width: 220px;
-  }
-  .footer-social p{
-    margin-top: 10px;
-    font-size: 1rem;
-    margin-bottom: 50px;
-  }
-  .title-footer{    
-    font-weight: bold;
-    font-size: 1.45rem;
-    margin-bottom: 20px;  
-  }
-  .footer-contact h6{
-    margin-left: -5px;
-    text-align: left;
-    font-size: 1rem;
-    margin-bottom: 7px;
-    font-weight: bold;
-    margin-top: 30px;    
-  }
-  .footer-contact p{  
-    text-align: left;
-    font-size: .85rem;
-    margin: -5px;
-  }
-  .footer-contact hr{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: -5px; 
-    width: 50%;
-  }
-  .footer-social{
-    border-right: 1px solid #ABABAB;
-  }
-  .footer-contact{
-    padding-left: 35px;
-    border-right: 1px solid #ABABAB;
-  }
-  .footer-navmenu li{
-    list-style: none;
-    font-size: 1rem;
-    margin-bottom: 8px;  
-  }
-  .menu-footers{
-    margin: 0;
-    margin-top: 5vh;
-  }
-  .menu-footers a{
-    color:#6A6969 !important;
-  }
-  .contac-section1{
-    margin-left: 6vw;
-  }
-  .menu-footers a{
-    text-decoration: none;
-  }
-  
-   .footer {
-    z-index: 1;
-    --footer-background:#000000;
-    display: grid;
-    position: relative;
-    grid-area: footer;
-    color:#FFF
-  }
 
-  body .footer .content {
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-gap: 0rem;
-    padding: 1rem;
-    background: var(--footer-background);
-  }
-  body .footer .content a, body .footer .content p {
-    color: #F5F7FA;
-    text-decoration: none;
-  }
-  body .footer .content b {
-    color: white;
-  }
-  body .footer .content p {
-    margin: 0;
-    font-size: .75rem;
-  }
-  body .footer .content > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  body .footer .content > div > div {
-    margin: 0.25rem 0;
-  }
-  body .footer .content > div > div > * {
-    margin-right: .5rem;
-    opacity: .7;
-    font-size: .9rem;
-  }
-  body .footer .content > div .image {
-    align-self: center;
-    width: 8rem;
-    height: 110px;
-    margin: 0.25rem 0;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .image p{
-      display: inline-flex;
-      padding: 8px;
-      vertical-align: bottom;
-      margin-bottom: 0px;
-      font-size: 1rem!important;
-  }
 
-  /*Adaptacion movil*/
+div.callout{
+    >div.container-fluid{
+        >div{
+            >div{
+                text-align: center;
+                &:nth-child(1){
+                    >img{
+                      display: inline-block;
+                      position: relative;
+                      width: 200px;
+                      max-width: 100%;
+                      margin: 0px auto;
+                      float: none;
+                    }
+                    >span{
+                      display: block;
+                    }
+                    >ul.social{
+                        text-align: center;
+                        >li{
+                          float: none;
+                            >a{
+                                >img{
 
-@media (max-width: 700px) {
-
+                                }
+                            }
+                        }
+                    }
+                    >a{
+                      text-decoration: none;
+                      font-size: 1rem;
+                      font-weight: 600;
+                      letter-spacing: .25px;
+                      color: #000000;
+                    }
+                }
+                &:nth-child(2){
+                  .footer_sizes{
+                    text-align: left;
+                    >span{
+                      font-size: 1rem;
+                      line-height: 1.25;
+                    }
+                    >div{
+                      >span,>a{
+                        display: inline-block;
+                        position: relative;
+                        float: left;
+                        font-size: .9rem;
+                        font-weight: 400;
+                        text-decoration: none;
+                        color: #363636;
+                        line-height: 1.7;
+                      }
+                    }
+                    hr{
+                      display: inline-block;
+                      position: relative;
+                      float: left;
+                      width: 100%;
+                      margin: 5px 0px;
+                    }
+                  }
+                }
+                &:nth-child(3){
+                  >ul{
+                    @include block_ctrl();
+                    text-align: center;
+                    list-style-type: none;
+                    margin-block-start: 0px;
+                    margin-block-end: 0px;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                    padding-inline-start: 0px;
+                    >li{
+                      @include block_ctrl();
+                      float: none;
+                      margin: 0px auto;
+                      padding: 5px 0px;
+                      >a{
+                        display: inline-block;
+                        position: relative;
+                        color: #6A6969;
+                        text-decoration: none;
+                        &:after{
+                          content: '';
+                          display: inline-block;
+                          position: absolute;
+                          bottom: 0px;
+                          right: 0px;
+                          left: 0px;
+                          width: 0%;
+                          height: 2px;
+                          background-color: $yellow;
+                          margin: 0px auto;
+                          @include ease(.25s);
+                        }
+                        &:hover{
+                          &:after{
+                            width: 100%;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                &:nth-child(1),&:nth-child(3){
+                  &:after{
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    top: 0px;
+                    bottom: 0px;
+                    height: 100%;
+                    width: 1px;
+                    background-color: #ABABAB;
+                  }
+                }
+                &:nth-child(1){
+                  &:after{
+                    right: 0px;
+                  }
+                }
+                &:nth-child(3){
+                  &:after{
+                    left: 0px;
+                  }
+                }
+            }
+        }
+    }
 }
 
-@include media-breakpoint-down(lg) {
-    .footer-navmenu{
-      display: none;
+div.footer{
+    background-color: #000000;
+    color: #b5b5b5;
+    font-size: .9rem;
+    span{
+      display: inline-block;
+      position: relative;
+      float: left;
+      width: auto;
+      padding-right: 40px;
+      &:after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: 0px;
+        bottom: 0px;
+        margin: auto 0px;
+        height: 25px;
+        width: 1px;
+        background-color: $yellow;
+      }
     }
+    a{
+        color: #b5b5b5;
+        text-decoration: none;
+    }
+}
+
+
+@include media-breakpoint-down(xl) {
+}
+@include media-breakpoint-down(lg) {
+  div.callout{
+      >div.container-fluid{
+          >div{
+              >div{
+                  &:nth-child(3){
+                    &:after{
+                      display: none;
+                    }
+                  }
+              }
+          }
+      }
+  }
 }
 @include media-breakpoint-down(md) {
 }
 @include media-breakpoint-down(sm) {
-    .logo-footer{
-      width: 150px;
-    }
-    .footer-social p{
-      margin-bottom: 20px;
-    }
-    .contac-section2{
-      margin-left: 6vw;
-      margin-right: 6vw;
-    }
-    .contac-section1{
-      margin-right: 6vw;
-    }
+  div.callout{
+      >div.container-fluid{
+          >div{
+              >div{
+                  &:nth-child(1){
+                    &:after{
+                      display: none;
+                    }
+                  }
+              }
+          }
+      }
+  }
+  #contact-home h3, #contact-home .h3 {
+      font-size: 3rem;
+  }
 }

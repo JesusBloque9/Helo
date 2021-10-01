@@ -25,6 +25,22 @@ $cubicBeizer: cubic-bezier(0.250, 0.460, 0.450, 0.940);
   }
 }
 
+ul.social{
+	>li{
+		@include block_ctrl();
+			width: auto;
+	  		padding: 5px;
+		>a{
+			text-decoration: none;
+			>img{
+				display: inline-block;
+				position: relative;
+				width: 38px;
+			}
+		}
+	}
+}
+
 nav.menu_helo{
     display: inline-block;
     position: fixed;
@@ -355,21 +371,6 @@ div.menu_content{
 				    margin: 15px 0px;
 				}
 			}
-			>ul.social{
-				>li{
-					@include block_ctrl();
-					width: auto;
-	    			padding: 5px;
-					>a{
-						text-decoration: none;
-						>img{
-							display: inline-block;
-							position: relative;
-							width: 38px;
-						}
-					}
-				}
-			}
 			>a{
 				@include block_ctrl();
 				width: auto;
@@ -423,7 +424,6 @@ div.menu_content{
 		}
 	}
 }
-
 
 @for $i from 1 through 10 {
   ul.menu_>li:nth-child(#{$i}n) {

@@ -352,6 +352,8 @@ video {
 }
 
 
+@include media-breakpoint-down(xl) {
+}
 @include media-breakpoint-down(lg) {
   #works .up .text, #works .up .text_overlay {
       bottom: 0px;
@@ -360,5 +362,20 @@ video {
       right: 15px;
       height: 100%;
       position: absolute;
+  }
+}
+@include media-breakpoint-down(md) {
+}
+@include media-breakpoint-down(sm) {
+  #works .text h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+  }
+  #works .text p {
+      margin-bottom: 0px;
+      line-height: 1;
+  }
+  #works .text img {
+      width: 55px;
   }
 }
