@@ -17,13 +17,13 @@
   transform: translate(-50%, -50%);
 }
 #vimeo-pop-container .vimeo-close {
-    background-color: transparent;
-    border: 3px solid white;
+    background-color: $yellow;
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: 48px;
+    width: 48px;
     position: absolute;
     right: 15px;
+    border-radius: 50%;
     transition: 200ms background-color;
 }
 #vimeo-pop-container .vimeo-close:before, #vimeo-pop-container .vimeo-close:after {
@@ -49,17 +49,17 @@
   margin-top: -1px;
 }
 #vimeo-pop-container .vimeo-close:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: $primary;
 }
 #vimeo-pop-container .vimeo-close.closing:before {
   transform: rotate(450deg);
-  margin-left: -2px;
+  margin-left: -1px;
   margin-top: 0;
   animation: close-before 500ms ease 500ms 1 forwards;
 }
 #vimeo-pop-container .vimeo-close.closing:after {
   transform: rotate(540deg);
-  margin-left: -11px;
+  margin-left: -10px;
   margin-top: -10px;
   animation: close-after 500ms ease 500ms 1 forwards;
 }

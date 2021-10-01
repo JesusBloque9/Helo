@@ -117,7 +117,9 @@
     }
     iframe{
         height: 40vw;
-        width: 70vw;       
+        width: 70vw;
+        max-width: 1296px;
+        max-height: 725px;
     }
 }
 
