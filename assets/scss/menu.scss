@@ -282,8 +282,7 @@ div.menu_content{
 				text-align: center;
 				>img{
 					@include block_ctrl();
-					float: left;
-					left: 90px;
+					float: none;
 					height: 50px;
 					width: auto;
 				}
