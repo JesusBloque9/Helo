@@ -104,6 +104,7 @@
 .sustainability-video{
     background: #000000;    
     height: 30vw;
+    max-height: 500px;
     text-align: center;
     div{
         margin-left: auto;
@@ -180,6 +181,7 @@
     }
     .sustainability-video{
         height: auto;
+        max-height: inherit;
     }
     .sustainability-video h3, .sustainability-video .h3 {
         text-align: center;
