@@ -227,10 +227,6 @@ body
     position: absolute;
     right: 8vw;
 }
-.slide_h3:hover{
-    color: rgb(255, 255, 255);
-    font-weight: 500 !important;
-}
 
 .float {
     display: inline-block;
@@ -239,5 +235,7 @@ body
   
     &:hover {
       transform: translateY(-5px);
+      color: rgb(255, 255, 255);
+      font-weight: 500 !important;
     }
   }
