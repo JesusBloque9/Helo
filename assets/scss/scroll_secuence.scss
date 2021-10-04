@@ -36,7 +36,7 @@ body {
     .scroll-sequence-title {
       font-family: "Montserrat", sans-serif;
       font-weight: 600;
-      font-size: 4.209em;
+      font-size: calc(5.209em - 1vw);
       letter-spacing: 0.6px;
       text-transform: capitalize;
     }
@@ -44,14 +44,14 @@ body {
     .scroll-sequence-title-tiny {
       font-family: "Montserrat", sans-serif;
       font-weight: 600;
-      font-size: 3.157em;
+      font-size: calc(4.157em - 1vw);
       letter-spacing: 0.5px;
     }
 
     .scroll-sequence-text {
       font-family: "Montserrat", sans-serif;
       font-weight: 400;
-      font-size: 1.777em;
+      font-size: calc(2.777em - 1vw);
       letter-spacing: 0.25px;
     }
 
@@ -131,31 +131,53 @@ body {
         align-items: center;
       }
 
+      .scroll-sequence__content {
+        padding: 1rem;
+      }
+  
+
       .scroll-sequence-title {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 600;
-        font-size: 3em;
-        overflow-wrap: break-word;
-        letter-spacing: 0.6px;
-        text-transform: capitalize;
+        font-size: calc(3.209em - 1vw);
+        text-align: center;
       }
   
       .scroll-sequence-title-tiny {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 600;
-        font-size: 2.157em;
-        overflow-wrap: break-word;
-        letter-spacing: 0.5px;
+        font-size: calc(2.157em - 1vw);
+        text-align: center;
       }
   
       .scroll-sequence-text {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 400;
-        font-size: 1em;
-        overflow-wrap: break-word;
-        letter-spacing: 0.25px;
+        font-size: calc(1.5em - 1vw);
+        text-align: center;
       }
     }
+
+    @media screen and (max-width: 320px) {
+      .speak {
+        align-items: center;
+      }
+
+      .scroll-sequence__content {
+        padding: 1rem;
+      }
+  
+
+      .scroll-sequence-title {
+        font-size: calc(2.209em - 1vw);
+        text-align: center;
+      }
+  
+      .scroll-sequence-title-tiny {
+        font-size: calc(2.157em - 1vw);
+        text-align: center;
+      }
+  
+      .scroll-sequence-text {
+        font-size: calc(1.5em - 1vw);
+        text-align: center;
+      }
+    }
+
     @media screen and (max-width: 600px) {
       h1 {
         font-size: 1em;
