@@ -76,7 +76,7 @@
         </div>
     </div>
 
-    <!-- <div id="cursor"></div> -->
+    <div id="cursor"></div>
     <section id="loader_container">
         <div id="preloader">
             <div id="ctn-preloader" class="ctn-preloader">
@@ -116,6 +116,7 @@
     </script>
     <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
+    <script src="{{ const.BASE_URL }}assets/js/cursor.js" ></script>
     <script>
         function toggleMenu(){
             var element_menu = $( 'div.menu_content' );
@@ -129,25 +130,6 @@
         }
     </script>
     <script>
-        /*document.addEventListener("mousemove", function(event) {
-        const x = event.pageX - 10;
-        const y = event.pageY - 10;
-        const cursor = document.querySelector("#cursor");
-        cursor.style.left = x + "px";
-        cursor.style.top = y + "px";
-        });
-        $('a').on("mouseover", function(){
-        $('#cursor').css({'transform': 'scale(2)'});
-        });
-        $('a').on("mouseleave", function(){
-        $('#cursor').css({'transform': 'scale(1)'});
-        });
-        $('span').on("mouseover", function(){
-        $('#cursor').css({'transform': 'scale(2)'});
-        });
-        $('span').on("mouseleave", function(){
-        $('#cursor').css({'transform': 'scale(1)'});
-        });*/
         // sayHello
         var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
         window.console.log.apply(console, Helo);

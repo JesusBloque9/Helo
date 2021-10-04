@@ -11,7 +11,7 @@ $yellow: #FFCA30;
 $orange: #DE5307;
 $red: #FF2A1B;
 $blueOne: #6049F8;
-$blueTwo: #1994FF;
+$blueTwo: $blue;
 $blueThree: #007CB0;
 $green: #008351;
 
@@ -88,6 +88,7 @@ $form-floating-label-transform:   scale(.85) translateY(-1rem) translateX(.15rem
 html{
     max-width: 100vw;
     background: #FFF;
+    cursor: none;
 	body{
         font-family: 'Montserrat', sans-serif;
 	    font-size: 1rem;
@@ -101,6 +102,9 @@ html{
         position: relative;
         background: #FFF;
         overflow-x: hidden;
+        span,p{
+            color: #7A7A7A;
+        }
 	}
 }
 
@@ -127,15 +131,21 @@ html{
 
 #cursor {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-image: url('../img/logo-s-helo.svg');
-    background: white;
+    width: 25px;
+    height: 25px;
+    background-color: #FFFFFF;
+    background-image: url(../img/logo-s-helo.svg);
+    background-size: 17px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
     border-radius: 50%;
     mix-blend-mode: difference;
     pointer-events: none;
-    transition: transform .15s ease-in-out;
-    z-index: 10000
+    transition: transform .2s;
+    z-index: 10000;
+    &.no_icon{
+        background-image: none;
+    }
 }
 
 .title_section{
@@ -147,6 +157,14 @@ html{
     margin-bottom: 0px;
     line-height: 1.5;
     font-size: 1.85rem;
+    >span{
+        @include block_ctrl();
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 2;
+        margin: 10px 0px;
+        color: #7A7A7A;
+    }
     >small{
         display: block;
         position: relative;
@@ -173,6 +191,11 @@ html{
     &.primary{
         &:after{
             background-color: $primary;
+        }
+    }
+    &.blue{
+        &:after{
+            background-color: $blue;
         }
     }
     &.yellow{
