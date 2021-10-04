@@ -227,3 +227,15 @@ body
     position: absolute;
     right: 8vw;
 }
+
+.float {
+    display: inline-block;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  
+    &:hover {
+      transform: translateY(-5px);
+      color: rgb(255, 255, 255);
+      font-weight: 500 !important;
+    }
+  }

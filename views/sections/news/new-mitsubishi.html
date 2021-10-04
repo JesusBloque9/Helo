@@ -13,6 +13,24 @@ HELO
 
 {% block extraJS %}
 <script src="{{ const.BASE_URL }}assets/js/share.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#botonocultamuestra").click(function(){
+           $("#divocultamuestra").each(function() {
+             displaying = $(this).css("display");
+             if(displaying == "block") {
+               $(this).fadeOut('slow',function() {
+                $(this).css("display","none");
+               });
+             } else {
+               $(this).fadeIn('slow',function() {
+                 $(this).css("display","block");
+               });
+             }
+           });
+         });
+       });
+</script>
 {% endblock %}
 
 {% block content %}
@@ -21,7 +39,7 @@ HELO
     {% include 'modules/menu_home.html' %}
 
     <main>
-        <div class="py-5" id="title">
+        <div class="py-5 container" id="title">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-9 col-md-6 pb-2">
@@ -39,12 +57,12 @@ HELO
         </div>
         <section class="portada">
             <img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/portada.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            <p class="container">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </section>
 
-        <section class="informacion">
+        <section class="informacion container">
             <div class="row">
                 <div class="col-12 col-lg-6 informacion-imagen">
                     <img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/imagen1.jpg" alt="">
@@ -68,19 +86,20 @@ HELO
             </div>
         </section>
 
-        <section class="informacion-card">
+        <section class="informacion-card container">
             <div class="informacion-internal-card">
                 <h5>We are marketing minds with the hands of artists and builders</h5>
                 <h4>John Doe</h4>
+                <img class="informacion-twitter" src="{{ const.BASE_URL }}assets/img/news/mitsubishi/twitter.svg" alt="">
             </div>
         </section>
 
 
-        <div class="informacion-imagen-principal">
+        <div class="informacion-imagen-principal container">
             <img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/imagen3.jpg" alt="">
         </div>
 
-        <section class="informacion-secundaria">
+        <section class="informacion-secundaria container">
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <h3>Text paragraph 2</h3>
@@ -102,30 +121,23 @@ HELO
                 </div>
             </div>
         </section>
-        <section class="share">
-            <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="">SHARE<img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/icon-share.svg" alt=""></a>
+        <section class="share container">
+            <a id="botonocultamuestra" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">SHARE<img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/icon-share.svg" alt=""></a>
 
-  
+
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <div class="modal-body">
-            <div class="shared-panel">                
-                <a target="_blank" class="shared fb" title="Facebook"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/facebook.svg" alt=""></a>
-                <a target="_blank" class="shared tt" title="Twitter"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/twitter.svg" alt=""></a>
-                <a target="_blank" class="shared gp" title="Google+"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/google.svg" alt=""></a>
-                <a  data-action='share/whatsapp/share' class="shared wa" title="WhatsApp"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/whatsapp.svg" alt=""></a>
-                <a target="_blank" class="shared ce" id="sml" title="Email"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/email.svg" alt=""></a>
-            </div>           
-        </div>
-      </div>
-    </div>
+  <div id="divocultamuestra">
+    <div class="shared-panel">                
+        <a target="_blank" class="shared fb" title="Facebook"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/facebook.svg" alt=""></a>
+        <a target="_blank" class="shared tt" title="Twitter"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/twitter.svg" alt=""></a>
+        <a target="_blank" class="shared gp" title="Google+"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/google.svg" alt=""></a>
+        <a  data-action='share/whatsapp/share' class="shared wa" title="WhatsApp"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/whatsapp.svg" alt=""></a>
+        <a target="_blank" class="shared ce" id="sml" title="Email"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/email.svg" alt=""></a>
+    </div>     
   </div>        
     
         </section>
-        <section class="row cambiar-noticia">
+        <section class="row cambiar-noticia container">
             <div class="col-6 past-arrow">
                 <a href=""><img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/past-arrow.svg" alt="">PAST ARTICLE</a>                
             </div>

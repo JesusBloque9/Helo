@@ -19,8 +19,8 @@
 
 .informacion{
     background: #FFFFFF;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 12vh;
 
     img{
@@ -49,8 +49,8 @@
 
 .informacion-card{
     background: #FFFFFF;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;    
 
     .informacion-internal-card{
@@ -75,12 +75,17 @@
         font-size: 29px;
         color: #7A7A7A;        
     }
+    img{
+        float: right;
+        margin-top: 15px;
+        margin-right: 25px;
+    }
 }
 
 .informacion-imagen-principal{
     background: #FFFFFF;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 12vh;
     text-align: center;
 
@@ -91,8 +96,8 @@
 
 .informacion-secundaria{
     background: #FFFFFF;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 12vh;
     text-align: left;
 
@@ -110,7 +115,7 @@
     margin-top: 6vh;
     background: #FFFFFF;
     text-align: right;
-    margin-right: 8vw;
+    margin-right: 14vw;
 
     a{
         color: rgb(0, 0, 0);
@@ -123,8 +128,8 @@
 
 .cambiar-noticia{
     background: #FFFFFF;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 12vh;
     margin-bottom: 6vh;
     .past-arrow{
@@ -141,6 +146,10 @@
         }       
         
     }
+}
+
+#divocultamuestra{
+    display: none;
 }
 /*Diseño responsivo*/
 
@@ -180,8 +189,8 @@
 
 
     .informacion-card{
-        margin-left: 8vw;
-        margin-right: 8vw;  
+        margin-left: auto;
+        margin-right: auto;  
     
         .informacion-internal-card{
             height: 200px;
@@ -193,7 +202,7 @@
             width: 85%;
         }
         h4{
-            font-size: 1rem;      
+            font-size: 1rem;            
         }
     }
 
