@@ -26,66 +26,54 @@ HELO
     <script>
         const firstSequenceImages = [];
         var is_loaded = [false, false];
-        
-    /* for (let i = 1; i <= 70; i++) {//126
+
+        for (let i = 1; i <= 9; i=i+2) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-        for (let i = 71; i <= 158; i++) {//126
+        for (let i = 11; i <= 99; i=i+2) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-        for (let i = 158; i <= 140; i++) {//126
+        for (let i = 101; i <= 791; i=i+2) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
-        for (let i = 141; i <= 210; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        /*for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 211; i <= 290; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 291; i <= 360; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 430; i <= 500; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+
+        for (let i = 11; i <= 99; i=i+2) {//126
+            firstSequenceImages.push(`${`000${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 501; i <= 570; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
-
-        for (let i = 571; i <= 640; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
-
-        for (let i = 641; i <= 710; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
-
-        for (let i = 711; i <= 780; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
-
-        for (let i = 781; i <= 830; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        for (let i = 101; i <= 781; i=i+2) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }*/
-
-        for (let i = 0; i <= 9; i++) {//126
-            firstSequenceImages.push(`${`helo00${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 10; i <= 99; i++) {//126
-            firstSequenceImages.push(`${`helo0${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 100; i <= 200; i++) {//126
-            firstSequenceImages.push(`${`helo${i}`.slice(-8)}.jpg`);
-        }
 
         var firstSequence=null;
 
@@ -110,7 +98,7 @@ HELO
                     container: '.first-sequence',
                     scrollWith: '.first-container',
                     images: firstSequenceImages,
-                    imagesRoot: 'assets/img/secuencia/desktop_test1/',
+                    imagesRoot: 'assets/img/secuencia/desktop/',
                     cover: true,
                     starts: 'out',
                     ends: 'in'
@@ -241,11 +229,11 @@ HELO
              scrollTrigger: {
              trigger: container,
              pin: true,
-             pinSpacing: true,
+             pinSpacing: false,
              scrub: true,
-             markers: false,
-             end: "bottom -150vh",
-             start: "top +60vh",   
+             markers: true,
+             end: "bottom +100vh",
+             start: "top +100vh",   
              //start: "top",   
              toggleClass: "animate-text",
              }
@@ -272,64 +260,90 @@ HELO
     <div class="row m-0">
         <section class="scroll-sequence__container first-container">
             <div class="scroll-sequence first-sequence"></div>
-            <div class="scroll-sequence__content container">
-                <div class="speak row" >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title">Insight Inspired, Story Led, Design Driven</h3>
+            <div class="scroll-sequence__content container-fluid">
+                
+                <div class="speak  row justify-content-center align-items-start" >
+                    <div class="col-12 text-center">
+                        <h3 class="text-break text-wrap scroll-sequence-title"><span>INSIGHT INSPIRED</span></h3>
                     </div>
                 </div>
-
-                <div class="speak row justify-content-end" >
+                <div class="speak spacer min"></div>
+                <div class="speak l6m row justify-content-center align-items-center" >
                     <div class="col-12 col-md-12">
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text">Moving Experiences<sup><small>TM</small></sup></h3>
+                        <h3 class="text-break text-wrap scroll-sequence-title left-text"><span>STORY LED</span></h3>
                     </div>
                 </div>
-                <div class="speak row" >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title">That Grow Business Value</h3>
+                <div class="speak spacer min"></div>
+                <div class="speak l4m row justify-content-end" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><span>DESIGN DRIVEN</span></h3>
                     </div>
                 </div>
-                <div class="speak row justify-content-end" >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text">Special. Projects</h3>
+                <div class="speak spacer min"></div>
+                <div class="speak l2 bottom row justify-content-center" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title text-center"><span>Moving Experiences<sup><small>TM</small></sup></span></h3>
                     </div>
                 </div>
-                <div class="speak row col-12 col-md-6"  >
-                    <div>
-                        <p class="text-wrap text-break scroll-sequence-text">We aren’t right for every (even most) projects but</p>
-                        <h3 class="text-break text-wrap scroll-sequence-title-tiny">When you have to deliver something that is exceptional, call us.</h3>
+                <div class="speak spacer min"></div>
+                <div class="speak l25m bottom row justify-content-end align-items-end"  >
+                    <div class="col-12 col-md-12 ">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny right-text"><span>THAT GROW BUSINESS VALUE</span></h3>
                     </div>
                 </div>
-                <div class="speak row " >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title-tiny">We are not an experiential agency or a traditional production company.</h3>
+                <div class="speak spacer min"></div>
+                <div class="speak l6m row justify-content-end" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><span>SPECIAL.</span></h3>
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><span> </span></h3>
                     </div>
                 </div>
-                <div class="speak row justify-content-end" >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text">We are different. How?</h3>
+                <div class="speak spacer min"></div>
+                <div class="speak l25m row justify-content-end" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><span>SPECIAL.</span></h3>
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><span>PROJECTS.</span></h3>
                     </div>
                 </div>
-                <div class="speak row " >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title-tiny">We are a creative problem solving studio</h3>
+                <div class="speak min spacer"></div>
+                <div class="speak l2m row justify-content-start align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><span>WE ARE</span></h3>
                     </div>
                 </div>
-                <div class="speak row justify-content-end" >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title-tiny right-text">Built by an eclectic group of entertainment, technology, design, and marketing professionals.</h3>  
+                <div class="speak spacer min"></div>
+                <div class="speak l65m row justify-content-start align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><span>WE ARE A CREATIVE</span></h3>  
                     </div>
                 </div>
-                <div class="speak row justify-content-end" >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title-tiny right-text">Our creators diverse portfolios and points of view range from narrative storytelling to immersive experience</h3>  
+                <div class="speak spacer min"></div>
+                <div class="speak l65m row justify-content-start align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><span>WE ARE A CREATIVE</span><span>PROBLEM SOLVING</span></h3>  
                     </div>
                 </div>
-                <div class="speak row " >
-                    <div class="col-12 col-md-7">
-                        <h3 class="text-break text-wrap scroll-sequence-title-tiny">From designing some of the most iconic worlds in film to designing and building real buildings in the real world.</h3>
+                <div class="speak spacer min"></div>
+                <div class="speak l6m row justify-content-start align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"></span>WE ARE A CREATIVE</span><span>PROBLEM SOLVING</span><span>COMPANY.</span></h3>  
                     </div>
                 </div>
+                <div class="speak spacer min"></div>
+                <div class="speak l5 row justify-content-left align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><span>From narrative storytelling...</span></h3>
+                    </div>
+                </div>
+                <div class="speak spacer "></div>
+                <div class="speak l5 row justify-content-left align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><span>...to immersive experiences.</span></h3>
+                    </div>
+                </div>
+                <div class="speak spacer"></div>
+                <div class="speak spacer"></div>
+                <div class="speak spacer"></div>
             </div>
         </section>
     </div>
