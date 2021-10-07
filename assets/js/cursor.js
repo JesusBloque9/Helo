@@ -9,9 +9,7 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 //if (typeof screen.orientation !== 'undefined') {
 //if (window.mobileAndTabletCheck) {
     $('#cursor').css('display','none');
-    console.log('is mobile');
 }else{
-    console.log('is NOT mobile');
     document.addEventListener("mousemove", function(event) {
         const x = event.pageX - 10;
         const y = event.pageY - 10;

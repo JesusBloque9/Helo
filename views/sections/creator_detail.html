@@ -37,20 +37,19 @@ HELO
         });
     </script>
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script>        
+    <script>
+        window.firstLoad=true;
         function videos_vimeo(videoId="", divId="", overlayId="", textId=""){
             var options = {
                 id: videoId,
                 duration: 5,
             };
-            var videoPlayer = new Vimeo.Player(divId, options);
-            videoPlayer.pause();
+            var videoPlayer = new Vimeo.Player(divId, options);            
             videoPlayer.setCurrentTime(2);
-            if (divId==='deloitte') {
-                videoPlayer.play();
-            }
+            videoPlayer.play();
             $('#'+overlayId).on("mouseover", function(){
                 videoPlayer.play();
+                window.firstLoad=false;
             });
             $('#'+overlayId).on("mouseleave", function(){
                 videoPlayer.pause().then(function(){
@@ -65,13 +64,13 @@ HELO
                     videoPlayer.setCurrentTime(2);
                 });
             });
-            /*if (divId!=='deloitte') {
+            if (divId!=='deloitte') {
                 videoPlayer.on('timeupdate', function(data) {
-                    if (data.seconds > 6) {
-                        videoPlayer.setCurrentTime(2);
+                    if (data.seconds > 0 && window.firstLoad) {
+                        videoPlayer.pause();
                     }
                 });
-            }*/
+            }
             $('html')
                 .on('click', '#'+textId+' .vimeo-launch', function () {
                     var videoID = videoId,
@@ -87,6 +86,7 @@ HELO
                         $('#vimeo-pop-container').remove();
                     });
                 } );
+
         }
         videos_vimeo('543292157','deloitte','deloitte_overlay','deloitte_text');
         videos_vimeo('528105595','deloitte2','deloitte2_overlay','deloitte2_text');

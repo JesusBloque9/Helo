@@ -209,11 +209,9 @@ HELO
                 var scroll = $(window).scrollTop();
                 if (!window.scrolled && scroll>=hideON) {
                     window.scrolled=true;
-                    console.log('scroll effect executed');
                     $('html,body').animate({scrollTop:$('#experiences').offset().top-92},0);
                 }
                 if (window.scrolled && scroll<hideON) {
-                    console.log('restart var');
                     window.scrolled=false;
                 }
             });
