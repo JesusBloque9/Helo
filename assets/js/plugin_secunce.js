@@ -187,7 +187,7 @@ class ImgLoader extends EventEmitter {
     if (this.images[e]) {
       return this.loadNextImage();
     }
-    const onLoad = () => {
+    const onLoad = async () => {
       img.removeEventListener('load', onLoad);
       this.images[e] = img;
       
