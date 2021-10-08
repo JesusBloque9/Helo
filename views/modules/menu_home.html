@@ -2,7 +2,12 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12">
-				<a {% if positioned %} href="{{ const.BASE_URL }}"{% endif %}>
+					{% if positioned %}
+						<a href="{{ const.BASE_URL }}">
+					{% endif %}
+					{% if positioned==false %}
+						<a>
+					{% endif %}
 					<img class="full_" src="{{ const.BASE_URL }}assets/img/logo-helo.svg" alt="">
 					<img class="small_" src="{{ const.BASE_URL }}assets/img/logo-s-helo.svg" alt="">
 				</a>
