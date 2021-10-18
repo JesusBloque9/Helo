@@ -88,7 +88,6 @@ $form-floating-label-transform:   scale(.85) translateY(-1rem) translateX(.15rem
 html{
     max-width: 100vw;
     background: #FFF;
-    cursor: none;
 	body{
         font-family: 'Montserrat', sans-serif;
 	    font-size: 1rem;
@@ -129,24 +128,7 @@ html{
 @import "./new-scrollsquence";
 @import "./menu";
 
-#cursor {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background-color: #FFFFFF;
-    background-image: url(../img/logo-s-helo.svg);
-    background-size: 17px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    mix-blend-mode: difference;
-    pointer-events: none;
-    transition: transform .2s;
-    z-index: 10000;
-    &.no_icon{
-        background-image: none;
-    }
-}
+
 
 .title_section{
     display: inline-block;
@@ -320,11 +302,7 @@ a.back_{
 @include media-breakpoint-down(lg) {
 }
 @include media-breakpoint-down(md) {
-    #cursor{
-        display: none;
-        opacity: 0;
-        pointer-events: none;
-    }
+ 
 }
 @include media-breakpoint-down(sm) {
 

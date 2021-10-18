@@ -1,0 +1,196 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}
+    <style>
+        @media (max-width: 576px) {
+            #works > div {
+                padding: 0px !important;
+            }
+            #works .up .text, #works .up .text_overlay {
+                left: 0px !important;
+                right: 0px !important;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block extraCSS %}
+{% endblock %}
+
+{% block extraJS %}
+    <script>
+        function resize_withAspectRadio(){
+            $( "#works>div" ).each(function( index ) {
+                var width = $( this ).width();
+                var height = width/2;
+                $( this ).css("height", height);
+            });
+        }
+        resize_withAspectRadio();
+        $(window).on('resize', function(){
+            resize_withAspectRadio();
+        });
+    </script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        window.firstLoad=true;
+        function videos_vimeo(videoId="", divId="", overlayId="", textId=""){
+            var options = {
+                id: videoId,
+                duration: 5,
+            };
+            var videoPlayer = new Vimeo.Player(divId, options);            
+            videoPlayer.setCurrentTime(2);
+            videoPlayer.play();
+            $('#'+overlayId).on("mouseover", function(){
+                videoPlayer.play();
+                window.firstLoad=false;
+            });
+            $('#'+overlayId).on("mouseleave", function(){
+                videoPlayer.pause().then(function(){
+                    videoPlayer.setCurrentTime(2);
+                });
+            });
+            $('#'+textId).on("mouseover", function(){
+                videoPlayer.play();
+            });
+            $('#'+textId).on("mouseleave", function(){
+                videoPlayer.pause().then(function(){
+                    videoPlayer.setCurrentTime(2);
+                });
+            });
+            if (divId!=='deloitte') {
+                videoPlayer.on('timeupdate', function(data) {
+                    if (data.seconds > 0 && window.firstLoad) {
+                        videoPlayer.pause();
+                    }
+                });
+            }
+            $('html')
+                .on('click', '#'+textId+' .vimeo-launch', function () {
+                    var videoID = videoId,
+                        $video = '<div id="vimeo-pop-container"><div><span class="vimeo-close"></span><iframe src="https://player.vimeo.com/video/' + videoID + '/?autoplay=1&loop=1&autopause=0&controls=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>';
+                    $('html').append($video);
+                } )
+                .on('click', '.vimeo-close', function () {
+                    $(this).addClass('closing');
+                    $('#vimeo-pop-container').delay(700).animate({
+                        height: 0,
+                        top: '50%'
+                    }, 'fast', function () {
+                        $('#vimeo-pop-container').remove();
+                    });
+                } );
+
+        }
+        videos_vimeo('632003890','deloitte','deloitte_overlay','deloitte_text');
+        videos_vimeo('632004036','deloitte2','deloitte2_overlay','deloitte2_text');
+        videos_vimeo('632004825','deloitte3','deloitte3_overlay','deloitte3_text');
+        videos_vimeo('632006510','deloitte4','deloitte4_overlay','deloitte4_text');
+        videos_vimeo('632008543','deloitte5','deloitte5_overlay','deloitte5_text');
+    </script>
+
+{% endblock %}
+
+{% block content %}
+
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
+
+    <div class="py-6" id="creators" style="z-index: 10;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4 pb-4">
+                    <h3 class="title_leftline primary">CHRISTINE NG — DIRECTOR <small>Transforming light into emotion.</small></h3>
+                </div>
+            </div>
+            <div class="row mx-0" id="works">
+
+                <div class="col-12 yellow p-0_cover up">
+                    <div class="color"><div id="deloitte" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay bg_yellow_ts" id="deloitte_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte_text">
+                        <p>Showtime</p>
+                        <h1>Ziwe</h1>
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 orange p-0_cover up">
+                    <div class="color"><div id="deloitte2" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay bg_orange_ts" id="deloitte2_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte2_text">
+                        <p>Chanel</p>
+                        <h1>Gabrielle</h1>
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 red p-0_cover up">
+                    <div class="color"><div id="deloitte3" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay bg_red_ts" id="deloitte3_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte3_text">
+                        <p>Netflix</p>
+                        <h1>When They See Us</h1>
+                        <input type="checkbox">
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 purple p-0_cover up">
+                    <div class="color"><div id="deloitte4" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay bg_blueOne_ts" id="deloitte4_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte4_text">
+                        <p>HP</p>
+                        <h1>Proud Portraits</h1>
+                        <input type="checkbox">
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 green p-0_cover up">
+                    <div class="color"><div id="deloitte5" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay bg_green_ts" id="deloitte5_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte5_text">
+                        <p>Philips</p>
+                        <h1>The Wellingtons</h1>
+                        <input type="checkbox">
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 pt-3">
+                    <h3 class="fw_700">Biography</h3>
+                    <p>Christine Ng is a Hong Kong born, New York raised artist and a graduate from New York University’s Tisch School of the Arts.</p>
+                    <p>As a cinematographer, she has worked in a variety of genres ranging from narrative, commercials, music videos and documentary. The first commercial she shot, Honda’s “50 states” aired during Super Bowl XLVI. Since then she has shot for clients such as: Chanel, Dior, Google, Nike, Apple, Philips, Dove, Maybelline, HP, Sony, Bushmills, Land Rover, Ralph Lauren and many more. Her work for Cancerland x Refinery 29 won a Bronze Clio Award.</p>
+                    <p>The first feature-length documentary Christine shot was the Emmy nominated and Critic’s Choice winner “Everything is Copy: Nora Ephron Scripted and Unscripted”, for HBO.</p>
+                    <p>Christine has worked on long-form series such as Spike Lee’s “She’s Gotta Have It”, Ava DuVernay’s “When They See Us”, “Colin In Black and White” all for Netflix.</p>
+                    <p>Her work has screened at festivals worldwide including SXSW, Palm Springs, Outfest, LA Film Festival, TriBeCa Film Festival, NY Film Festival, IFF Boston, and many more.</p>
+                    <p>Most recently she shot the film adaptation of Ta–Nehisi Coates’s Critic’s Choice Nominated “Between the World and Me”, “Ziwe” for Showtime and an Untitled series about growing up with Executive Producer and creator Brie Larson for Disney+.</p>
+                    <p>Her artistry stems from community and love, harnessing the energy of others around her to create the most magically collaborative process possible.  While holding a camera and being able to encapsulate a feeling through imagery, she’s worked with trained actors and real people.</p>
+                    <p>Her ability to make others feel comfortable in front of the lens is pivotal to creating a safe space on set. She grew up in one of the most diverse neighborhoods in the world: Elmhurst, Queens, giving her the innate ability to relate to people from different backgrounds. There is always a feeling of kindred spirits cut from the same cloth. There is nothing more powerful than the ability to be seen through human connection.</p>
+                    <div class="row m-0 w-100">
+                        <div class="col-12 px-0 pt-2">
+                            <a href="{{ const.BASE_URL }}creators" class="back_">
+                                <img src="{{ const.BASE_URL }}assets/img/back.svg" alt="">
+                                BACK TO CREATORS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% include 'modules/line_colors.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}

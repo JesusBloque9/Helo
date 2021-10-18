@@ -28,6 +28,25 @@ class routes extends Controller
         /*CONSTANTS*/$const=$this->_const;
         echo $this->_twig->render('sections/creators.html', compact('const'));
     }
+
+    public function christine_ng()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/christine_ng.html', compact('const'));
+    }
+
+    public function jeff_tremaine()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/jeff_tremaine.html', compact('const'));
+    }
+
+    public function mike_marshall()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/mike_marshall.html', compact('const'));
+    }
+
     public function sustainability()
     {
         /*CONSTANTS*/$const=$this->_const;

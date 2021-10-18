@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
     font-family: 'icomoon';
     src:  url('../fonts/iconmoon/icomoon.eot?8zd708');
     src:  url('../fonts/iconmoon/icomoon.eot?8zd708#iefix') format('embedded-opentype'),
@@ -12,7 +12,7 @@
   
   [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
+    /*font-family: 'icomoon' !important;
     speak: never;
     font-style: normal;
     font-weight: normal;
@@ -21,7 +21,7 @@
     line-height: 1;
   
     /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
+  /*  -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   
@@ -33,7 +33,8 @@
   }
   .icon-design:before {
     content: "\de";
-  }
+  }*/
+
 
 
 
@@ -95,8 +96,8 @@
         right: 0;
         bottom: 0;
         background: radial-gradient(
-          circle, white, black 15%) center/25% 25%, 
-          radial-gradient(circle, white, black 0%) center/12.5% 12.5%;
+          circle, #bdbdbd, black 15%) center/25% 25%, 
+          radial-gradient(circle, #bdbdbd, black 0%) center/12.5% 12.5%;
         animation: light 5s linear infinite;
         mix-blend-mode: color-dodge;
     }
@@ -185,7 +186,7 @@
         background-color:#000;
 
         h3{
-            font-size:1.75rem;
+            font-size:2.55rem;
             letter-spacing: 2.22px;
             font-weight: 600;
 
@@ -206,10 +207,17 @@
         }
 
         p{
-            font-size: 1.25rem;
+            font-size: 2.05rem;
             letter-spacing: 0.14px;
             color: #ABABAB;
             font-weight: normal;
+        }
+
+        img{
+          display: inline-block;
+          position: relative;
+          float: left;
+          width: 80%;
         }
     }
     .tab-content * {

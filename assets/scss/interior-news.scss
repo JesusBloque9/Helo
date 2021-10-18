@@ -132,17 +132,33 @@
     margin-right: auto;
     margin-top: 12vh;
     margin-bottom: 6vh;
+
+    
     .past-arrow{
         a{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
             text-decoration: none;
             color: #000000;
+            img{
+                padding: 0px 8px 0px 0px;
+                height: 20px;
+            }
         }               
     }
     .next-arrow{
         text-align: right;
         a{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
             text-decoration: none;
             color: #000000;
+            img{
+                padding: 0px 0px 0px 8px;
+                height: 20px;
+            }
         }       
         
     }
