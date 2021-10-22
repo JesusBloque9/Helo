@@ -180,21 +180,27 @@ class ImgLoader extends EventEmitter {
     this.priorityQueue = this.createPriorityQueue();
     this.loadingQueue = this.createLoadingQueue();
     
-    this.loadNextImage();
+    this.loadNextImage().then(()=>{
+      this.loadNextImage();
+    });
   }
   
   async loadImage(e) {
     if (this.images[e]) {
-      return this.loadNextImage();
+      return this.loadNextImage().then(()=>{
+        this.loadNextImage();
+      });
     }
-    const onLoad = async () => {
+    const onLoad = () => {
       img.removeEventListener('load', onLoad);
       this.images[e] = img;
       
       if (e === 0) {
         this.emit('FIRST_IMAGE_LOADED');
       }
-      this.loadNextImage();
+      this.loadNextImage().then(()=>{
+        this.loadNextImage();
+      });
     }
     const img = new Image;
     img.addEventListener('load', onLoad);
@@ -203,12 +209,12 @@ class ImgLoader extends EventEmitter {
   
   async loadNextImage() {
     if (this.priorityQueue.length) {
-      this.loadImage(this.priorityQueue.shift());
+      this.loadImage(this.priorityQueue.shift()).then();
       if (!this.priorityQueue.length) {
         this.emit('PRIORITY_IMAGES_LOADED');
       }
     } else if (this.loadingQueue.length) {
-        this.loadImage(this.loadingQueue.shift())
+        this.loadImage(this.loadingQueue.shift()).then();
     } else {
       this.complete = true;
       this.emit('IMAGES_LOADED');
@@ -226,7 +232,9 @@ class ImgLoader extends EventEmitter {
   }
   
   createLoadingQueue() {
-    return this.imageNames.map((s, i) => i);
+    return this.imageNames.map((s, i) => i).sort((e, n) => {
+      return Math.abs(e - this.sequenceLength / 2) - Math.abs(n - this.sequenceLength / 2)
+   });
   }
 }
 class ScrollSequence {
