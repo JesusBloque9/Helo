@@ -101,6 +101,21 @@ class routes extends Controller
         echo $this->_twig->render('sections/works.html', compact('const'));
 
     }
+
+    public function privacy_terms()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/privacy_terms.html', compact('const'));
+
+    }
+    
+    public function terms_of_use()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/terms_of_use.html', compact('const'));
+
+    }
+
     public function home2()
     {
         /*CONSTANTS*/$const=$this->_const;

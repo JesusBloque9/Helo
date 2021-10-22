@@ -296,6 +296,20 @@ a.back_{
 
 
 
+#terms_use{
+    h3{
+        font-size: 1.333rem;
+        color: $orange;
+        padding-top: 20px;
+    }
+
+    p{
+        text-align: justify;
+    }
+}
+
+
+
 
 @include media-breakpoint-down(xl) {
 }

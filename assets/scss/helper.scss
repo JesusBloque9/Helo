@@ -15,6 +15,46 @@
 	pointer-events: none !important;
 }
 
+ol.list_multilevel {
+	counter-reset: item;
+	text-align: justify;
+  
+	li {
+	  display: block;
+
+	  &.title_list{
+		  span{
+			  font-weight: 700;
+			  color: $primary;
+		  }
+
+		  &::before {
+			color: $primary;
+		  }
+	  }
+  
+	  &::before {
+		content: counters(item, ".") ". ";
+		counter-increment: item;
+		font-weight: bold;
+	  }
+	}
+  
+	ol {
+	  counter-reset: item;
+  
+	  & > li {
+		display: block;
+  
+		&::before {
+		  content: counters(item, ".") " ";
+		  counter-increment: item;
+		  font-weight: bold;
+		}
+	  }
+	}
+  }
+
 @mixin block_ctrl() {
 	display: inline-block;
 	position: relative;

@@ -1,0 +1,81 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+Terms of use - HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+  <style>
+    footer.footer-menu{
+        margin-top: 0px;
+    }
+  </style>
+{% endblock %}
+
+{% block extraJS %}
+    
+{% endblock %}
+
+{% block content %}
+
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
+
+<div class="py-5" id="title">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <h3 class="title_section blueThree">Terms of Use.
+                    <small>Last updated: 22 October 2021</small></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="terms_use" class="pb-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10">
+                <h3 style="white-space:pre-wrap;"><strong>About these Terms of Use</strong></h3>
+                <p class="" style="white-space:pre-wrap;">We are HELO, LLC and HELO Productions UK Limited incorporated in Los Angeles, California, United States of America, England and Wales under company registration number 10119765. Our registered offices are 1046 Princeton Dr., Suite 115, Marina Del Rey, 90292 and 125-127 Mare Street, London, E8 3SJ. Our registered VAT number is 303 2799 14.These Terms of Use apply to the use of this website, regardless of how you access it. Please read these Terms of Use carefully before you proceed.We may, at any time and without notice, terminate your access to or use of this website. If we do so, you do not have the right to bring any claim or claims against us.</p>
+                
+                <h3 style="white-space:pre-wrap;"><strong>Consent to Terms of Use</strong></h3>
+                <p class="" style="white-space:pre-wrap;">By using this website you agree to these Terms of Use.<strong> </strong></p>
+                <p class="" style="white-space:pre-wrap;">If you do not agree to these Terms of Use, please do not use this website. These Terms of Use were last updated on the date shown at the top. We may change these Terms of Use at any time by posting an updated version on our website, so you may wish to check it before using this website. You may only use this website for lawful purposes.</p>
+                
+                <h3 style="white-space:pre-wrap;"><strong>Copyright notice</strong></h3>
+                <p class="" style="white-space:pre-wrap;">Unless we expressly state otherwise, the copyright and any other intellectual property rights, including but not limited to design rights, trademarks and patents appearing anywhere on this website remain our property, whether owned by or licensed to us.You may not use any of the material on this website without our prior written permission for your own commercial purposes, whether by reproducing, copying, downloading, printing, linking to, editing, broadcasting, distributing or otherwise.&nbsp; You may use it for your own personal non-commercial use.</p>
+                
+                <h3 style="white-space:pre-wrap;"><strong>Disclaimer</strong></h3>
+                <p class="" style="white-space:pre-wrap;">Accessing or using this website or its content in any way is done entirely at your own risk. You will be responsible for any loss or damage to any computer, device, software, systems or data resulting directly or indirectly from the use or inability to use this website or its content.&nbsp;&nbsp;We are under no obligation to provide uninterrupted access to this website. We reserve the right to restrict your access to this website at any time and for any reason.We do not guarantee that the contents of this website will be free of errors, bugs, worms, trojans or viruses or otherwise make any representations as to the quality or accuracy or completeness of the content available on the website including, but not limited to any price quotes, stock availability data or non-fraudulent representations. You are responsible for maintaining appropriate software on your computer or device to protect you from any such errors, bugs, worms, trojans or viruses.To the fullest extent permissible by law, we exclude any and all liability to you resulting from your use of the website or connected to these Terms of Use. This exclusion includes but is not limited to any type of damages, loss of data, income or profit or loss or damage to property belonging to you or third parties arising from the use of this website or its contents.Nothing in these Terms of Use is intended to limit our liability to you for death or personal injury resulting from our negligence or that of our employees or agents.</p>
+                
+                <h3 style="white-space:pre-wrap;"><strong>Links to third party websites</strong></h3>
+                <p class="" style="white-space:pre-wrap;">This website may provide links out to websites or other online resources under the control of third parties.&nbsp; Any such links are provided solely for your convenience.  We have no control over the contents of these third-party resources. We are not responsible for the contents of any linked websites and do not endorse them in any way.</p>
+                
+                <h3 style="white-space:pre-wrap;"><strong>Links from third party websites</strong></h3>
+                <p class="" style="white-space:pre-wrap;">You can only link to our website with prior written permission from us. We reserve the right to withdraw any such permission at any time.</p>
+                
+                <h3 style="white-space:pre-wrap;"><strong>Privacy policy</strong></h3>
+                <p class="" style="white-space:pre-wrap;">We take your privacy and the protection of your data very seriously. We may gather and/or use certain information about you in accordance with our privacy policy. Please see our separate privacy policy for more information.</p>
+                
+                <h3 style="white-space:pre-wrap;"><strong>Entire agreement</strong></h3>
+                <p class="" style="white-space:pre-wrap;">These Terms of Use are the entire agreement between us and you, and supersede any and all prior terms, conditions, warranties or representations to the fullest extent permitted by law.</p>
+                
+                <h3 style="white-space:pre-wrap;"><strong>Applicable law</strong></h3>
+                <p class="" style="white-space:pre-wrap;">This Agreement shall be governed by the law of the state of California and the courts of England and Wales in relation to these Terms of Use.</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+{% include 'modules/line_colors.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}

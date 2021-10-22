@@ -20,7 +20,7 @@
     <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
     <script src="{{ const.BASE_URL }}node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-	<title>{% block title %} {% endblock %}</title>
+	<title>{% block title %} HELO - Moving Experiences {% endblock %}</title>
 
 	{% block extraCSS %}{% endblock %}
 
@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col-12">
                     <span>© 2021 BY HELO, ALL RIGHTS RESERVED</span>
-                    <a href="#">PRIVACY TERMS</a>
+                    <a href="{{ const.BASE_URL }}privacy_terms">PRIVACY TERMS</a>
                 </div>
             </div>
         </div>
@@ -116,7 +116,6 @@
     </script>
     <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
-    <script src="{{ const.BASE_URL }}assets/js/cursor.js" ></script>
     <script>
         function toggleMenu(){
             var element_menu = $( 'div.menu_content' );
@@ -129,21 +128,7 @@
             element_menu.toggleClass( "show" );
         }
     </script>
-    <script>
-        // sayHello
-        var Helo = ["\n%c HELO +!" + " %c http://www.helo.com/ \n", "color: white; font-size: 14px; background: #000; padding:5px 0;", "background: #fff; padding:3px 0; margin-bottom: 4px;"];
-    </script>
-    <script>
-        function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
-          return Math.random() * (max - min) + min;
-        }
-        function getRandomInt(min, max) {
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        function cycle(value, total) {
-          return (value % total + total) % total;
-        }
-    </script>
+   
 	{% block extraJS %}{% endblock %}
     <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
 
