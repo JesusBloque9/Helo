@@ -1,0 +1,242 @@
+div.item_typeWork{
+	position: relative;
+    flex: 0 0 auto;
+    width: 20%;
+    height: 65vh;
+    min-height: 500px;
+    overflow: hidden;
+    background-size: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    @include ease(.45s);
+	&:before{
+		content: '';
+		display: inline-block;
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		width: 100%;
+		height: 100%;
+		margin: auto;
+		z-index: 1;
+		opacity: 1;
+		@include ease(.45s);
+	}
+	&:after{
+		content: '';
+		display: inline-block;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		width: 100%;
+		height: 4px;
+		margin: 0px auto;
+	}
+	>div.row{
+		@include ease(.45s);
+		z-index: 2;
+		position: relative;
+		>div{
+			>span{
+    			display: inline-block;
+    			position: relative;
+				font-size: 3rem;
+				font-weight: 600;
+				color: #FFFFFF;
+    			writing-mode: vertical-lr;
+				transform: rotate(180deg);
+	    		padding-top: 45px;
+	    		@include ease(.45s);
+			}
+		}
+	}
+	>video{
+		display: inline-block;
+    	position: absolute;
+    	top: 0px;
+    	bottom: 0px;
+    	left: -50%;
+    	right: -50%;
+    	margin: auto;
+    	opacity: 0;
+    	@include ease(.45s);
+	}
+	&:nth-child(1){
+		&:before{
+			background-color: rgba($yellow, .4);
+		}
+		&:after{
+			background-color: $yellow;
+		}
+	}
+	&:nth-child(2){
+		&:before{
+			background-color: rgba($orange, .4);
+		}
+		&:after{
+			background-color: $orange;
+		}
+	}
+	&:nth-child(3){
+		&:before{
+			background-color: rgba($red, .4);
+		}
+		&:after{
+			background-color: $red;
+		}
+	}
+	&:nth-child(4){
+		&:before{
+			background-color: rgba($blueOne, .4);
+		}
+		&:after{
+			background-color: $blueOne;
+		}
+	}
+	&:nth-child(5){
+		&:before{
+			background-color: rgba($blueTwo, .4);
+		}
+		&:after{
+			background-color: $blueTwo;
+		}
+	}
+	&.inactive{
+		width: 10%;
+	}
+	&.active{
+		width: 60%;
+		&:before{
+			opacity: .5;
+		}
+		div.row{
+			align-items: center !important;
+			>div{
+				>span{
+					writing-mode: horizontal-tb;
+    				transform: rotate( 0deg );
+    				padding-top: 0px;
+					font-size: 3.5rem;
+					font-weight: 800;
+				}
+			}
+		}
+		>video{
+			opacity: 1;
+		}
+	}
+}
+
+
+@include media-breakpoint-down(xl) {
+}
+@include media-breakpoint-down(lg) {
+	div.item_typeWork{
+		width: 100%;
+    	height: 65px;
+    	min-height: inherit;
+    	border-bottom-style: solid;
+    	border-bottom-width: 1px;
+    	&:nth-child(1){
+   		    border-color: $yellow;
+    	}
+    	&:nth-child(2){
+   		    border-color: $orange;
+    	}
+    	&:nth-child(3){
+   		    border-color: $red;
+    	}
+    	&:nth-child(4){
+   		    border-color: $blueOne;
+    	}
+    	&:nth-child(5){
+   		    border-color: $blueTwo;
+    	}
+		&:before{
+		    background-color: rgb(255 255 255) !important;
+		    @include ease(.25s);
+		}
+		&:after{
+			top: 0px;
+			height: 100%;
+			width: 5px;
+			margin: auto 0px;
+		    z-index: 2;
+		}
+		>div.row{
+		    align-items: center !important;
+			>div{
+				>span{
+					writing-mode: horizontal-tb;
+					transform: rotate(0deg);
+    				padding-top: 0px;
+    				color: #7A7A7A;
+    				font-size: 2rem;
+				}
+			}
+		}
+		>video{
+			display: none;
+		}
+		&.inactive{
+		}
+		&.active{
+			width: inherit;
+			&:before{
+			}
+			div.row{
+				>div{
+					>span{
+					}
+				}
+			}
+		}
+		&:hover{
+			height: 50vh;
+			min-height: 200px;
+			max-height: 750px;
+			&:nth-child(1){
+				&:before{
+					background-color: rgba($yellow, .4) !important;
+				}
+			}
+			&:nth-child(2){
+				&:before{
+					background-color: rgba($orange, .4) !important;
+				}
+			}
+			&:nth-child(3){
+				&:before{
+					background-color: rgba($red, .4) !important;
+				}
+			}
+			&:nth-child(4){
+				&:before{
+					background-color: rgba($blueOne, .4) !important;
+				}
+			}
+			&:nth-child(5){
+				&:before{
+					background-color: rgba($blueTwo, .4) !important;
+				}
+			}
+			div.row{
+				>div{
+					>span{
+						font-size: 3rem;
+    					font-weight: 600;
+    					color: #FFFFFF;
+					}
+				}
+			}
+
+		}
+	}	
+}
+@include media-breakpoint-down(md) {
+}
+@include media-breakpoint-down(sm) {
+}

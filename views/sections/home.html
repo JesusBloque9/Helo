@@ -232,6 +232,35 @@ HELO - Moving Experiences
              0.5
          );
          });
+
+        //$( ".item_typeWork" ).on( "click", function() {
+        //    let id_clicked = $( this ).attr('id');
+        //    console.log('id_clicked: '+id_clicked);
+        //    $( ".item_typeWork" ).each(function() {
+        //        let id = $( this ).attr('id');
+        //        
+        //        console.log('id: '+id);
+        //        if ( id === id_clicked) {
+        //            $( this ).addClass('expanded');
+        //        }else{
+        //            $( this ).removeClass('expanded');
+        //        }
+        //    });
+        //});
+
+
+        $('.item_typeWork').on("mouseover", function(){
+            $('.item_typeWork').addClass('inactive');
+            $(this).addClass('active');
+            $(this).children('video').trigger('play');
+        });
+        $('.item_typeWork').on("mouseleave", function(){
+            $('.item_typeWork').removeClass("inactive active");
+            $(this).children('video').trigger('pause');
+        });
+
+
+
      </script>
 {% endblock %}
 
@@ -335,119 +364,68 @@ HELO - Moving Experiences
 </div>
 
 <!--We make Section-->    
-<div class="container-fluid bg-white" id="experiences">
+
+<div id="experiences">
+    <div class="container-fluid">
         <div class="row py-5">
             <div class="col-12 text-center py-5">
                 <h1 class="title mb-1 mt-1">We make work that is</h1>
             </div>
         </div>
-        <div class="row" >
-            <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 one_img background_default">
-                <div class="container-experience" >
-                    <div class="image one text-center">
-                        <div id="video-holder1">
-                            <video id="video1" loop preload="1">
-                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
-                            </video>
-                        </div>
-                        <!--img src="{{ const.BASE_URL }}assets/img/experience/1.jpg"/ class="img-fluid"-->
-                        <div class="details-window up yellow_cover">
-                        </div>
-                        <div class="details-window up">
-                            <div class="row w-100 h-100 m-0 align-items-end">
-                                <div class="col-12 p-0 text-center">
-                                    <h3>Original</h3>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row">
+            <div class="col-12 item_typeWork" id="el_01" style="background-image: url({{ const.BASE_URL }}assets/img/experience/1.jpg);">
+                <video id="video__1" loop preload="1">
+                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                </video>
+                <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
+                    <div class="col-auto col-lg-12 p-0 text-left">
+                        <span>Original</span>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 two_img background_default">
-                <div class="container-experience">
-                    <div class="image one text-center">
-                        <div id="video-holder2">
-                            <video id="video2" loop preload="1">
-                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
-                            </video>
-                        </div>
-                        <!--img src="{{ const.BASE_URL }}assets/img/experience/2.jpg"/ class="img-fluid"-->
-                        <div class="details-window-cover up orange_cover"></div>
-                        <div class="details-window up">
-                            <div class="row w-100 h-100 m-0 align-items-end">
-                                <div class="col-12 p-0 text-center">
-                                    <h3>At Scale</h3>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-12 item_typeWork" id="el_02" style="background-image: url({{ const.BASE_URL }}assets/img/experience/2.jpg);">
+                <video id="video__2" loop preload="1">
+                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                </video>
+                <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
+                    <div class="col-auto col-lg-12 p-0 text-left">
+                        <span>At Scale</span>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-5-12 p-0 three_img background_default">
-                <div class="container-experience">
-                    <div class="image one text-center">
-                        <div id="video-holder3">
-                            <video id="video3" loop preload="1">
-                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
-                            </video>
-                        </div>
-                        <!--img src="{{ const.BASE_URL }}assets/img/experience/3.jpg"/ class="img-fluid"-->
-                        <div class="details-window-cover up red_cover"></div>
-                        <div class="details-window up">
-                            <div class="row w-100 h-100 m-0 align-items-end">
-                                <div class="col-12 p-0 text-center">
-                                    <h3>Complex</h3>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-12 item_typeWork" id="el_03" style="background-image: url({{ const.BASE_URL }}assets/img/experience/3.jpg);">
+                <video id="video__3" loop preload="1">
+                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                </video>
+                <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
+                    <div class="col-auto col-lg-12 p-0 text-left">
+                        <span>Complex</span>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-5-12 p-0 four_img background_default">
-                <div class="container-experience">
-                    <div class="image one text-center">
-                        <div id="video-holder4">
-                            <video id="video4" loop preload="1">
-                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
-                            </video>
-                        </div>
-                        <!--img src="{{ const.BASE_URL }}assets/img/experience/4.jpg"/ class="img-fluid"-->
-                        <div class="details-window-cover up purple_cover"></div>
-                        <div class="details-window up">
-                            <div class="row w-100 h-100 m-0 align-items-end">
-                                <div class="col-12 p-0 text-center">
-                                    <h3>Multi-Platform</h3>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-12 item_typeWork" id="el_04" style="background-image: url({{ const.BASE_URL }}assets/img/experience/4.jpg);">
+                <video id="video__4" loop preload="1">
+                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                </video>
+                <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
+                    <div class="col-auto col-lg-12 p-0 text-left">
+                        <span>Multi-platform</span>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-5-12 p-0 five_img background_default">
-                <div class="container-experience">
-                    <div class="image one text-center">
-                        <div id="video-holder5">
-                            <video id="video5" loop preload="1">
-                                <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
-                            </video>
-                        </div>
-                        <!--img src="{{ const.BASE_URL }}assets/img/experience/5.jpg"/ class="img-fluid"-->
-                        <div class="details-window-cover up blue_cover"></div>
-                        <div class="details-window up">
-                            <div class="row w-100 h-100 m-0 align-items-end">
-                                <div class="col-12 p-0 text-center">
-                                    <h3>Extensible</h3>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-12 item_typeWork" id="el_05" style="background-image: url({{ const.BASE_URL }}assets/img/experience/5.jpg);">
+                <video id="video__5" loop preload="1">
+                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                </video>
+                <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
+                    <div class="col-auto col-lg-12 p-0 text-left">
+                        <span>Extensible</span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </div>
-
-{% set NoColors = 5 %}
-{% include 'modules/line_colors.html' %}
 
 {% include 'modules/contact_us.html' %}
 
