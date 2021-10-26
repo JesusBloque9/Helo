@@ -1,0 +1,142 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}
+    <style>
+        @media (max-width: 576px) {
+            #works > div {
+                padding: 0px !important;
+            }
+            #works .up .text, #works .up .text_overlay {
+                left: 0px !important;
+                right: 0px !important;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block extraCSS %}
+{% endblock %}
+
+{% block extraJS %}
+    <script>
+        function resize_withAspectRadio(){
+            $( "#works>div" ).each(function( index ) {
+                var width = $( this ).width();
+                var height = width/2;
+                $( this ).css("height", height);
+            });
+        }
+        resize_withAspectRadio();
+        $(window).on('resize', function(){
+            resize_withAspectRadio();
+        });
+    </script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        window.firstLoad=true;
+        function videos_vimeo(videoId="", divId="", overlayId="", textId=""){
+            var options = {
+                id: videoId,
+                duration: 5,
+            };
+            var videoPlayer = new Vimeo.Player(divId, options);            
+            videoPlayer.setCurrentTime(2);
+            videoPlayer.play();
+            $('#'+overlayId).on("mouseover", function(){
+                videoPlayer.play();
+                window.firstLoad=false;
+            });
+            $('#'+overlayId).on("mouseleave", function(){
+                videoPlayer.pause().then(function(){
+                    videoPlayer.setCurrentTime(2);
+                });
+            });
+            $('#'+textId).on("mouseover", function(){
+                videoPlayer.play();
+            });
+            $('#'+textId).on("mouseleave", function(){
+                videoPlayer.pause().then(function(){
+                    videoPlayer.setCurrentTime(2);
+                });
+            });
+            if (divId!=='deloitte') {
+                videoPlayer.on('timeupdate', function(data) {
+                    if (data.seconds > 0 && window.firstLoad) {
+                        videoPlayer.pause();
+                    }
+                });
+            }
+            $('html')
+                .on('click', '#'+textId+' .vimeo-launch', function () {
+                    var videoID = videoId,
+                        $video = '<div id="vimeo-pop-container"><div><span class="vimeo-close"></span><iframe src="https://player.vimeo.com/video/' + videoID + '/?autoplay=1&loop=1&autopause=0&controls=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>';
+                    $('html').append($video);
+                } )
+                .on('click', '.vimeo-close', function () {
+                    $(this).addClass('closing');
+                    $('#vimeo-pop-container').delay(700).animate({
+                        height: 0,
+                        top: '50%'
+                    }, 'fast', function () {
+                        $('#vimeo-pop-container').remove();
+                    });
+                } );
+
+        }
+        videos_vimeo('543335401','deloitte','deloitte_overlay','deloitte_text');
+    </script>
+
+{% endblock %}
+
+{% block content %}
+
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
+
+    <div class="py-6" id="creators" style="z-index: 10;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4 pb-4">
+                    <h3 class="title_leftline primary">Nathan Crowley <small>Architecting Hollywood’s most breathtaking worlds.</small></h3>
+                </div>
+            </div>
+            <div class="row mx-0" id="works">
+
+                <div class="col-12 yellow p-0_cover up">
+                    <div class="color"><div id="deloitte" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
+                    <div class="col px-5 py-5 text_overlay bg_yellow_ts" id="deloitte_overlay"></div>
+                    <div class="row px-5 py-5 text" id="deloitte_text">
+                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 pt-3">
+                    <h3 class="fw_700">Biography</h3>
+                    <p>Nathan Crowley studied fine arts in London before attending Brighton Polytechnic with a focus on architecture. Crowley worked in the field in London, first for architect Thomas Saunders, then for Robin Moore-Eadd, before making the shift into film. Crowley's relentlessly original and meticulously crafted design have made him one of the most sought-after production and experience designers in the world. He has been nominated for an Academy Award for Best Production Design for The Prestige (2006), The Dark Knight (2008), and Interstellar (2014). With the Batman Franchise, he earned a 2005 BAFTA nomination for Batman Begins and an Art Directors Guild award for The Dark Knight. Other production design credits include The Dark Knight Rises, John Carter, Public Enemies and the WWII epic, Dunkirk.  He was also the conceptual designer of HBO's series Westworld. His commercial and experiential work includes recent projects for Captain Morgan’s, Amazon, Lady Gaga, the MOMA, and Prada.</p>
+                    <p>“Crowley is one of Hollywood’s most daring and sought-after production designers. Those in his profession are responsible for the overall look and feel of a film—helping producers and directors scout locations, designing sets and props, and determining what will be handled with effects in postproduction. Crowley is unique among his peers in that where others render, he prefers to build.”</p>
+                    <p>— Daniel Engber, Wired</p>
+                    <div class="row m-0 w-100">
+                        <div class="col-12 px-0 pt-2">
+                            <a href="{{ const.BASE_URL }}creators" class="back_">
+                                <img src="{{ const.BASE_URL }}assets/img/back.svg" alt="">
+                                BACK TO CREATORS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% include 'modules/line_colors.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}

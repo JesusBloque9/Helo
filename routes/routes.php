@@ -47,6 +47,43 @@ class routes extends Controller
         echo $this->_twig->render('sections/creators/mike_marshall.html', compact('const'));
     }
 
+    public function sara_nesson()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/sara_nesson.html', compact('const'));
+    }
+
+    public function kyle_ruddick()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/kyle_ruddick.html', compact('const'));
+    }
+
+    public function daniel_junge()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/daniel_junge.html', compact('const'));
+    }
+
+    public function william_maher()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/william_maher.html', compact('const'));
+    }
+
+    public function nathan_crowley()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/nathan_crowley.html', compact('const'));
+    }
+
+    public function glenn_kitson()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/glenn_kitson.html', compact('const'));
+    }
+
+
     public function sustainability()
     {
         /*CONSTANTS*/$const=$this->_const;
