@@ -128,7 +128,36 @@
         width: 100%;
         float: none;
         list-style: none;
+        position: relative;
+        &:before{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            bottom: 0px;
+            left: 0%;
+            width: 33.33%;
+            height: 3px;
+            @include ease(.25s);
+        }
+        &.tab-content1{
+          &:before{
+            background-color: #FF2A1B;
+          }
+        }
+        &.tab-content2{
+          &:before{
+            left: 33.33%;
+            background-color: #DE5307;
+          }
+        }
+        &.tab-content3{
+          &:before{
+            left: 66.66%;
+            background-color: #FFCA30;
+          }
+        }
     }
+
     .tabs:after {
         content: '';
         display: table;
@@ -152,15 +181,17 @@
         border-bottom: 3px solid #313131;
         font-size: 1.3123rem;
         letter-spacing: 1.26px;
-        padding: 30px;
+        padding: 20px 5px;
         border-radius: 4px 5px 0px 0px;
     }
     .tabs label span {
-        letter-spacing: 1.26px;
-        display: none;
-        line-height: 1.25;
+        letter-spacing: 1.2px;
+        line-height: 1.5;
+        position: relative;
+        display: inline-block;
+        font-size: 1.2rem;
         font-weight: 600;
-        font-size: 1.2rem;        
+        @include ease(.25s);
     }
     .tabs label i.icono {
       font-size: 70px;
@@ -169,11 +200,8 @@
     }
     .tabs label:hover {
         color: #F6F6F6;
-        
         span{
-            border-bottom: 2px solid #0D0D0D;
             font-size: 1.5rem;
-
             &.red{
                 border-color: #FF2A1B;
                 color: #FF2A1B;
@@ -221,17 +249,10 @@
         }
 
         p{
-            font-size: 2.05rem;
+            font-size: 1.15rem;
             letter-spacing: 0.14px;
             color: #ABABAB;
             font-weight: normal;
-        }
-
-        img{
-          display: inline-block;
-          position: relative;
-          float: left;
-          width: 80%;
         }
     }
     .tab-content * {
@@ -254,24 +275,18 @@
       }
     }
     .tabs [id^="tab"]:checked + label {
-        background: #313131;
         color: #F6F6F6;
-
         span{
-            border-bottom: 2px solid #0D0D0D;
             font-size: 1.5rem;
             &.red{
-                border-color: #FF2A1B;
                 color: #FF2A1B;
             }
 
             &.orange{
-                border-color: #DE5307;
                 color: #DE5307;
             }
 
             &.yellow{
-                border-color: #FFCA30;
                 color: #FFCA30;
             }
         }
@@ -341,7 +356,12 @@
 @include media-breakpoint-down(md) {
 }
 @include media-breakpoint-down(sm) {
+  #strategy .tabs label {
+      width: 100%;
+      padding: 20px 0px;
+  }
   #strategy h2, #strategy .h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      letter-spacing: 5px !important;
   }
 }

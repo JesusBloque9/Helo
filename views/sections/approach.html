@@ -32,6 +32,8 @@ Our approach - HELO
         $('input[type=radio][name=tabs]').change(function() {
           $('.tab-content').css('display', 'none');
           $('#'+this.value).css('display', 'block');
+          $('#tabHeader').removeClass("tab-content1 tab-content2 tab-content3");
+          $('#tabHeader').addClass(this.value);
         });
     </script>   
 {% endblock %}
@@ -55,7 +57,7 @@ Our approach - HELO
     <div class="container py-6">
         <div class="row justify-content-center">
             <div class="col-auto neon py-6">
-                <h2 class="text" data-text="Moving Experiences">Moving Experiences<sup>TM</sup></h2>
+                <h2 class="text" data-text="Moving Experiences">Moving Experiences<sup class="d-none d-lg-inline-block">TM</sup></h2>
                 <span class="gradient"></span>
                 <span class="spotlight"></span>
             </div>
@@ -64,7 +66,7 @@ Our approach - HELO
     <div class="container pb-3">
         <div class="row">
             <div class="col-12">
-              <div class="tabs row w-100 m-0">
+              <div class="tabs row w-100 m-0 tab-content1" id="tabHeader">
                 <input type="radio" value="tab-content1" name="tabs" id="tab1" checked>
                 <label for="tab1">
                     <!--i class="icono icon-insight"></-i>
@@ -88,40 +90,39 @@ Our approach - HELO
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-                <div class="tabs row w-100 m-0">
-                    <div id="tab-content1" class="tab-content" style="display: block;">
-                       <div class="row w-100 m-0">
-                           <div class="col-12 col-md-6 pt-4">
-                               <h3 class="red">Insight Inspired</h3>
-                               <p>We speak strategy. Our ability to understand business strategy across internal audiences, B2B, B2B2C, and consumer marketing communications allows us to work directly from insight to concept.</p>
-                           </div>
-                           
-                       </div>
-                    </div>
-                    <div id="tab-content2" class="tab-content">
-                       <div class="row w-100 m-0">
-                           <div class="col-12 col-md-6 pt-4">
-                               <h3 class="orange">Story Led</h3>
-                               <p>We are not only storytellers, but story makers. We know how to craft stories across multiple platforms - making sure we work to each platform’s opportunities and limitations - all the while maintaining an overall coherency of narrative.</p>
-                           </div>
-                           
-                       </div>
-                    </div> 
-                    <div id="tab-content3" class="tab-content">
-                       <div class="row w-100 m-0">
-                           <div class="col-12 col-md-6 pt-4">
-                               <h3 class="yellow">Design Driven</h3>
-                               <p>Design determines experience and experience drives outcome. We believe in the power of intentional design and we have the design know-how to deliver exceptional design across all elements of the project.</p>
-                           </div>
-                           
-                       </div>
-                    </div> 
-                </div> 
-            </div>
-        </div>
+    <div class="container pt-4">
+      <div class="tabs row w-100 m-0">
+          <div id="tab-content1" class="tab-content" style="display: block;">
+             <div class="row w-100 m-0 justify-content-center align-items-center">
+                 <div class="col-12 col-md-6">
+                     <p>We speak strategy. Our ability to understand business strategy across internal audiences, B2B, B2B2C, and consumer marketing communications allows us to work directly from insight to concept.</p>
+                 </div>
+                 <div class="col-12 col-md-6 px-2 px-md-5">
+                    <img src="{{ const.BASE_URL }}assets/img/approach/insight.png" alt="" class="block_ctrl">
+                 </div>
+             </div>
+          </div>
+          <div id="tab-content2" class="tab-content">
+             <div class="row w-100 m-0 justify-content-center align-items-center">
+                 <div class="col-12 col-md-6 pt-4">
+                     <p>We are not only storytellers, but story makers. We know how to craft stories across multiple platforms - making sure we work to each platform’s opportunities and limitations - all the while maintaining an overall coherency of narrative.</p>
+                 </div>
+                 <div class="col-12 col-md-6 px-2 px-md-5">
+                    <img src="{{ const.BASE_URL }}assets/img/approach/story.png" alt="" class="block_ctrl">
+                 </div>
+             </div>
+          </div> 
+          <div id="tab-content3" class="tab-content">
+             <div class="row w-100 m-0 justify-content-center align-items-center">
+                 <div class="col-12 col-md-6 pt-4">
+                     <p>Design determines experience and experience drives outcome. We believe in the power of intentional design and we have the design know-how to deliver exceptional design across all elements of the project.</p>
+                 </div>
+                 <div class="col-12 col-md-6 px-2 px-md-5">
+                    <img src="{{ const.BASE_URL }}assets/img/approach/design.png" alt="" class="block_ctrl">
+                 </div>
+             </div>
+          </div> 
+      </div> 
     </div>
 </div>
 
