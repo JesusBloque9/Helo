@@ -67,10 +67,11 @@
         letter-spacing: 7px;
 
         sup{
-          moz-text-stroke: 2px #FFF;
-          -webkit-text-stroke: 2px #FFF;
+          moz-text-stroke: 1px #FFF;
+          -webkit-text-stroke: 1px #FFF;
           -webkit-text-fill-color: transparent;
           -webkit-text-fill-color: transparent;
+          font-size: 2.75rem;
         }
     }
 
