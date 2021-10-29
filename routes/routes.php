@@ -23,6 +23,30 @@ class routes extends Controller
         echo $this->_twig->render('sections/home_test1.html', compact('const'));
     }
 
+    public function home_test2()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/home_test2.html', compact('const'));
+    }
+
+    public function home_test3()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/home_test3.html', compact('const'));
+    }
+
+    public function home_test4()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/home_test4.html', compact('const'));
+    }
+
+    public function home_test5()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/home_test5.html', compact('const'));
+    }
+
     public function creators()
     {
         /*CONSTANTS*/$const=$this->_const;
@@ -83,6 +107,23 @@ class routes extends Controller
         echo $this->_twig->render('sections/creators/glenn_kitson.html', compact('const'));
     }
 
+    public function sebastian_kite()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/sebastian_kite.html', compact('const'));
+    }
+
+    public function craig_winslow()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/craig_winslow.html', compact('const'));
+    }
+
+    public function bobbi_rich()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/bobbi_rich.html', compact('const'));
+    }
 
     public function sustainability()
     {
@@ -150,13 +191,6 @@ class routes extends Controller
     {
         /*CONSTANTS*/$const=$this->_const;
         echo $this->_twig->render('sections/terms_of_use.html', compact('const'));
-
-    }
-
-    public function home2()
-    {
-        /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/home_test2.html', compact('const'));
 
     }
 }
