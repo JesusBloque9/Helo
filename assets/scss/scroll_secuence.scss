@@ -77,6 +77,10 @@ body {
       height: 100vh;
       align-items: flex-end;
       visibility: hidden;
+
+      &.no_hidden{
+        opacity: 1 !important;
+      }
       
       &.l1m{
         height: 95vh;
@@ -124,6 +128,14 @@ body {
 
       &.l65m{
         height: 40vh;
+      }
+
+      &.l7m{
+        height: 35vh;
+      }
+
+      &.l75m{
+        height: 30vh;
       }
 
 
