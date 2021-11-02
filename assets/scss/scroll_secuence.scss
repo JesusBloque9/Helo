@@ -326,13 +326,19 @@ body {
           }
         }
         &.first_content{
-          height: 90vh !important;
+          height: 85vh !important;
         }
         &.second_content{
-          height: 75vh !important;
+          height: 70vh !important;
         }
         &.third_content{
-          height: 75vh !important;
+          height: 60vh !important;
+        }
+        &.double_content{
+          height: 200vh !important;
+        }
+        &.logo_content{
+          height:140vh !important;
         }
     }
 
