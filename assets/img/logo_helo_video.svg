@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Layer_1" transform="matrix(2.09794,0,0,2.09794,-1476.47,1.09424)">
+        <g id="HELO">
+            <path id="O" d="M822.6,227.25C762.859,227.25 713.7,178.091 713.7,118.35C713.7,58.609 762.859,9.45 822.6,9.45C882.341,9.45 931.5,58.609 931.5,118.35C931.445,178.07 882.32,227.195 822.6,227.25M822.6,0.45C757.922,0.45 704.7,53.672 704.7,118.35C704.7,183.028 757.922,236.25 822.6,236.25C887.278,236.25 940.5,183.028 940.5,118.35C940.445,53.693 887.257,0.505 822.6,0.45" style="fill:white;fill-rule:nonzero;"/>
+        </g>
+        <path id="_" d="M827.25,65.25L818.25,65.25L818.25,114L769.5,114L769.5,123L818.25,123L818.25,171.75L827.25,171.75L827.25,123L876,123L876,114L827.25,114L827.25,65.25Z" style="fill:rgb(250,202,48);fill-rule:nonzero;"/>
+    </g>
+</svg>
