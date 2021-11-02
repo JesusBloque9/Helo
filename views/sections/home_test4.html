@@ -1,0 +1,53 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO - Moving Experiences
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+{% endblock %}
+
+{% block extraJS %}
+    <script src="https://unpkg.com/karavai@latest/karavai.es5.js"></script>
+    <script>
+        const images = [];
+
+        for (var i = 1; i < 394; i++) {
+           images.push(`${`assets/img/secuencia/desktop_test3/00${i}`.slice(-5)}.jpg`);
+        }
+
+        console.log('images==>');
+        console.log(images);
+
+        const canvasRef = document.querySelector('#blockscrolld');
+        //const canvasRef = document.getElementById('blockscrolld');
+        //const canvasRef = $('#blockscrolld');
+         
+        const karavai_instance = new Karavai(images, canvasRef);
+
+        async function asyncCall() {
+            await karavai_instance.preloadImages()
+            karavai_instance.start()
+        }
+        asyncCall();
+
+    </script>   
+{% endblock %}
+
+{% block content %}
+
+{% include 'modules/menu_home.html' %}
+
+<div class="container-fluid" id="blockscrolld" style="height: 2500px;">
+
+</div>
+
+{% include 'modules/contact_us.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}
