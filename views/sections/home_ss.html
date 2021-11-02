@@ -5,10 +5,11 @@
 HELO - Moving Experiences
 {% endblock %}
 
-{% block preloads %}  	
+{% block preloads %}    
 {% endblock %}
 
 {% block extraCSS %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="{{ const.BASE_URL }}node_modules/aos/dist/aos.css" rel="stylesheet">
 {% endblock %}
 
@@ -27,15 +28,7 @@ HELO - Moving Experiences
         const firstSequenceImages = [];
         var is_loaded = [false, false];
 
-        for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
-
-        for (let i = 11; i <= 99; i=i+2) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
-
-        for (let i = 101; i <= 791; i=i+2) {//126
+        for (let i = 1; i <= 394; i++) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
         }
 
@@ -83,7 +76,7 @@ HELO - Moving Experiences
                     container: '.first-sequence',
                     scrollWith: '.first-container',
                     images: firstSequenceImages,
-                    imagesRoot: 'assets/img/secuencia/desktop/',
+                    imagesRoot: 'assets/img/secuencia/desktop_test3/',
                     cover: true,
                     starts: 'out',
                     ends: 'in'
@@ -206,32 +199,32 @@ HELO - Moving Experiences
      <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollTrigger.js" ></script>
      
      <script>
-         const containers = gsap.utils.toArray(".speak");
-         containers.forEach((container) => {
-         let tl = gsap.timeline({
-             scrollTrigger: {
-             trigger: container,
-             pin: true,
-             pinSpacing: false,
-             scrub: true,
-             markers: false,
-             end: "bottom +100vh",
-             start: "top +100vh",   
-             //start: "top",   
-             toggleClass: "animate-text",
-             }
-         });
- 
-         tl.to(container, {
-             autoAlpha: 1
-         }).to(
-             container,
-             {
-             autoAlpha: 0, delay: 40
-             },
-             0.5
-         );
-         });
+        const containers = gsap.utils.toArray(".speak");
+        containers.forEach((container) => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: container,
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                    markers: true,
+                    end: "bottom +100vh",
+                    start: "top +100vh",   
+                    onToggle: self => updateElement(self)
+                }
+            });
+            /*
+            tl.to(container, {
+                autoAlpha: 1
+            }).to(
+                container,
+                {
+                autoAlpha: 0, delay: 40
+                },
+                0.5
+            );
+            */
+        });
 
         //$( ".item_typeWork" ).on( "click", function() {
         //    let id_clicked = $( this ).attr('id');
@@ -248,6 +241,22 @@ HELO - Moving Experiences
         //    });
         //});
 
+        function updateElement(self){
+            console.log('self==>');
+            console.log(self);
+            var self_container = $(self.pin).children('div');
+            if (self.isActive) {
+                self_container.children('span').each(function () {
+                    $(this).removeClass("animate__fadeOut");
+                    $(this).addClass("animate__fadeIn");
+                });
+            }else{
+                self_container.children('span').each(function () {
+                    $(this).removeClass("animate__fadeIn");
+                    $(this).addClass("animate__fadeOut");
+                });
+            }
+        }
 
         $('.item_typeWork').on("mouseover", function(){
             $('.item_typeWork').addClass('inactive');
@@ -274,15 +283,17 @@ HELO - Moving Experiences
             <div class="scroll-sequence first-sequence"></div>
             <div class="scroll-sequence__content container-fluid">
                 
-                <div class="speak  row justify-content-center align-items-start" >
-                    <div class="col-12 text-center">
-                        <h3 class="text-break text-wrap scroll-sequence-title"><i><span>INSIGHT INSPIRED</span></i></h3>
+                <div class="speak row justify-content-start align-items-end p-5" id="001">
+                    <div class="col-auto">
+                        <span class="block_ctrl solid-text light animate__animated">INSIGHT</span>
+                        <span class="block_ctrl solid-text light animate__animated animate__delay-500ms">INSPIRED</span>
                     </div>
                 </div>
                 <div class="speak spacer min"></div>
-                <div class="speak l6m row justify-content-center align-items-center" >
-                    <div class="col-12 col-md-12">
-                        <h3 class="text-break text-wrap scroll-sequence-title left-text"><i><span>STORY LED</span></i></h3>
+                <div class="speak row justify-content-start align-items-start p-5" id="002">
+                    <div class="col-auto">
+                        <span class="block_ctrl solid-text light animate__animated">STORY</span>
+                        <span class="block_ctrl solid-text light animate__animated animate__delay-500ms">LED</span>
                     </div>
                 </div>
                 <div class="speak spacer min"></div>
@@ -295,6 +306,64 @@ HELO - Moving Experiences
                 <div class="speak l2 bottom row justify-content-center" >
                     <div class="col-12 col-md-12">
                         <h3 class="text-break text-wrap scroll-sequence-title text-center"><i><span>Moving Experiences<sup><small>TM</small></sup></span></i></h3>
+                    </div>
+                </div>
+                <div class="speak spacer min"></div>
+                <div class="speak l25m bottom row justify-content-end align-items-end"  >
+                    <div class="col-12 col-md-12 ">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny right-text"><i><span>THAT GROW BUSINESS VALUE</span></i></h3>
+                    </div>
+                </div>
+                <div class="speak spacer min"></div>
+                <div class="speak l6m row justify-content-end" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><i><span>SPECIAL.</span></i></h3>
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><span> <br></span></h3>
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><span> <br></span></h3>
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><span> <br></span></h3>
+                    </div>
+                </div>
+                <div class="speak spacer min"></div>
+                <div class="speak l25m row justify-content-end" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><i>SPECIAL. <br><span>PROJECTS.</span></i></h3>
+                        <h3 class="text-break text-wrap scroll-sequence-title right-text hollow-text"><span> <br></span></h3>
+                    </div>
+                </div>
+                <div class="speak min spacer"></div>
+                <div class="speak l2m row justify-content-start align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><i><span>WE ARE</span></i></h3>
+                    </div>
+                </div>
+                <div class="speak spacer min"></div>
+                <div class="speak l65m row justify-content-start align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><i>WE ARE <span>A CREATIVE</span></i></h3>  
+                    </div>
+                </div>
+                <div class="speak spacer min"></div>
+                <div class="speak l65m row justify-content-start align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><i>WE ARE <br> A CREATIVE<span>PROBLEM SOLVING</span></i></h3>  
+                    </div>
+                </div>
+                <div class="speak spacer min"></div>
+                <div class="speak l6m row justify-content-start align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><i>WE ARE <br> A CREATIVE <br> PROBLEM SOLVING<span>COMPANY.</span></i></h3>  
+                    </div>
+                </div>
+                <div class="speak spacer min"></div>
+                <div class="speak l5 row justify-content-left align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><i><span>From narrative storytelling...</span></i></h3>
+                    </div>
+                </div>
+                <div class="speak spacer "></div>
+                <div class="speak l5 row justify-content-left align-items-start" >
+                    <div class="col-12 col-md-12">
+                        <h3 class="text-break text-wrap scroll-sequence-title-tiny"><i><span>...to immersive experiences.</span></i></h3>
                     </div>
                 </div>
                 <div class="speak spacer"></div>

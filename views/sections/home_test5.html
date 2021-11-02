@@ -1,0 +1,96 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO - Moving Experiences
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %} 
+{% endblock %}
+
+{% block extraJS %}
+    <script>
+        const html = document.documentElement;
+        const canvas = document.getElementById("hero-lightpass");
+        const context = canvas.getContext("2d");
+        
+        const frameCount = 394;
+        const currentFrame = index => (
+          `assets/img/secuencia/desktop_test3/00${index.toString()}.jpg`
+        )
+        
+        const preloadImages = () => {
+          for (let i = 15; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+          }
+        };
+        
+        const img = new Image()
+        img.src = currentFrame(1);
+        canvas.width=window.innerWidth;;
+        canvas.height=window.innerHeight;;
+        img.onload=function(){
+          context.drawImage(img, 0, 0);
+        }
+        
+        const updateImage = index => {
+          img.src = currentFrame(index);
+          context.drawImage(img, 0, 0);
+        }
+        
+        window.addEventListener('scroll', () => {  
+          const scrollTop = html.scrollTop;
+          const maxScrollTop = html.scrollHeight - window.innerHeight;
+          const scrollFraction = scrollTop / maxScrollTop;
+          const frameIndex = Math.min(
+            frameCount - 1,
+            Math.ceil(scrollFraction * frameCount)
+          );
+          
+          requestAnimationFrame(() => updateImage(frameIndex + 1))
+        });
+        
+        preloadImages()
+    </script>   
+{% endblock %}
+
+{% block content %}
+
+{% include 'modules/menu_home.html' %}
+
+<div id="canvas_container">
+    <div class="container" id="container-info">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+                <h1 class="text-light">
+                    HELLO WORLD 1
+                </h1>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+                <h1 class="text-light">
+                    HELLO WORLD 2
+                </h1>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+                <h1 class="text-light">
+                    HELLO WORLD 3
+                </h1>
+            </div>
+        </div>
+    </div>
+    <canvas id="hero-lightpass"></canvas>
+</div>
+
+{% include 'modules/contact_us.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}

@@ -9,6 +9,7 @@ HELO - Moving Experiences
 {% endblock %}
 
 {% block extraCSS %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="{{ const.BASE_URL }}node_modules/aos/dist/aos.css" rel="stylesheet">
 {% endblock %}
 
@@ -27,42 +28,33 @@ HELO - Moving Experiences
         const firstSequenceImages = [];
         var is_loaded = [false, false];
 
-        for (let i = 11; i <= 20; i++) {//126
-            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
+        for (let i = 1; i <= 10; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 11; i <= 20; i++) {//126
-            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
+        for (let i = 1; i <= 10; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 11; i <= 20; i++) {//126
-            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
+        for (let i = 1; i <= 10; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 11; i <= 20; i++) {//126
-            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
+        for (let i = 1; i <= 10; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 11; i <= 20; i++) {//126
-            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
+        for (let i = 1; i <= 10; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 11; i <= 20; i++) {//126
-            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
+        for (let i = 1; i <= 10; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        
 
-        for (let i = 11; i <= 20; i++) {//126
-            firstSequenceImages.push(`${`helo_00${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 11; i <= 99; i++) {//126
-            firstSequenceImages.push(`${`helo_0${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 100; i <= 395; i++) {//126
-            firstSequenceImages.push(`${`helo_${i}`.slice(-8)}.jpg`);
+        for (let i = 1; i < 386; i++) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
        /* for (let i = 11; i <= 99; i=i+2) {//126
@@ -240,48 +232,74 @@ HELO - Moving Experiences
      <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollTrigger.js" ></script>
      
      <script>
-         const containers = gsap.utils.toArray(".speak");
-         containers.forEach((container) => {
-         let tl = gsap.timeline({
-             scrollTrigger: {
-             trigger: container,
-             pin: true,
-             pinSpacing: false,
-             scrub: true,
-             markers: false,
-             end: "bottom +100vh",
-             start: "top +100vh",   
-             //start: "top",   
-             toggleClass: "animate-text",
-             }
-         });
- 
-         tl.to(container, {
-             autoAlpha: 1
-         }).to(
-             container,
-             {
-             autoAlpha: 0, delay: 40
-             },
-             0.5
-         );
-         });
-
-        //$( ".item_typeWork" ).on( "click", function() {
-        //    let id_clicked = $( this ).attr('id');
-        //    console.log('id_clicked: '+id_clicked);
-        //    $( ".item_typeWork" ).each(function() {
-        //        let id = $( this ).attr('id');
-        //        
-        //        console.log('id: '+id);
-        //        if ( id === id_clicked) {
-        //            $( this ).addClass('expanded');
-        //        }else{
-        //            $( this ).removeClass('expanded');
-        //        }
-        //    });
-        //});
-
+        const containers = gsap.utils.toArray(".speak");
+        containers.forEach((container) => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                       trigger: container,
+                       pin: true,
+                       pinSpacing: false,
+                       scrub: true,
+                       markers: true,
+                       end: "bottom +100vh",
+                       start: "top +100vh",   
+                       onToggle: self => updateElement(self)
+                }
+            });
+            /*tl.to(container, {
+                autoAlpha: 1
+            }).to(
+                container,
+                {
+                autoAlpha: 0, delay: 40
+                },
+                0.5
+            );*/
+        });
+        function updateElement(self){
+            console.log('self==>');
+            console.log(self);
+            var self_container = $(self.pin).children('div').children('div').children('div');
+            if (self.isActive) {
+                self_container.children('span').each(function () {
+                    if ($(this).hasClass('just_fade')) {
+                        $(this).removeClass("animate__fadeOut");
+                        $(this).addClass("animate__fadeIn");
+                    }else if ($(this).hasClass('just_enter_left')) {
+                        $(this).removeClass("animate__bounceOutRight");
+                        $(this).addClass("animate__bounceInLeft");
+                        $(this).css("opacity",1);
+                    }else if ($(this).hasClass('just_enter_right')) {
+                        $(this).removeClass("animate__bounceOutLeft");
+                        $(this).addClass("animate__bounceInRight");
+                        $(this).css("opacity",1);
+                    }else if ($(this).hasClass('flip_y')) {
+                        $(this).removeClass("animate__flipOutY");
+                        $(this).addClass("animate__flipInY");
+                        $(this).css("opacity",1);
+                    }
+                });
+            }else{
+                self_container.children('span').each(function () {
+                    if ($(this).hasClass('just_fade')) {
+                        $(this).removeClass("animate__fadeIn");
+                        $(this).addClass("animate__fadeOut");
+                    }else if ($(this).hasClass('just_enter_left')) {
+                        $(this).removeClass("animate__bounceInLeft");
+                        $(this).addClass("animate__bounceOutRight");
+                        $(this).css("opacity",0);
+                    }else if ($(this).hasClass('just_enter_right')) {
+                        $(this).removeClass("animate__bounceInRight");
+                        $(this).addClass("animate__bounceOutLeft");
+                        $(this).css("opacity",0);
+                    }else if ($(this).hasClass('flip_y')) {
+                        $(this).removeClass("animate__flipInY");
+                        $(this).addClass("animate__flipOutY");
+                        $(this).css("opacity",0);
+                    }
+                });
+            }
+        }
 
         $('.item_typeWork').on("mouseover", function(){
             $('.item_typeWork').addClass('inactive');
@@ -308,70 +326,71 @@ HELO - Moving Experiences
             <div class="scroll-sequence first-sequence"></div>
             <div class="scroll-sequence__content container-fluid">
                 
-                <div class="speak l65m  row justify-content-center align-items-start" >
-                    <div class="col-12 text-center">
-                        <h3 class="text-break text-wrap scroll-sequence-title"><i><span>INSIGHT</span></i></h3>
-                        <h3 class="text-break text-wrap scroll-sequence-title"><i><span></span></i></h3>
+                <div class="speak first_content row justify-content-start align-items-start" id="001">
+                    <div class="col-12">
+                        <div class="row w-100 justify-content-start align-items-end p-5">
+                            <div class="col-auto">
+                                <span class="block_ctrl solid-text light animate__animated just_fade">INSIGHT</span>
+                                <span class="block_ctrl solid-text light animate__animated just_fade animate__delay-500ms">INSPIRED</span>  
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="speak spacer min"></div>
-                <div class="speak l65m  row justify-content-center align-items-start" >
-                    <div class="col-12 text-center">
-                        <h3 class="text-break text-wrap scroll-sequence-title"><i>INSIGHT</i></h3>
-                        <h3 class="text-break text-wrap scroll-sequence-title"><i><span>INSPIRED</span></i></h3>
-                    </div>
-                </div>
-                <div class="speak spacer min"></div>
-                <div class="speak l7m row justify-content-end" >
-                    <div class="col-12 col-md-12">
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><i><span>STORY</span></i></h3>
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><i><span></span></i></h3>
-                    </div>
-                </div>
-                <div class="speak spacer min"></div>
-                <div class="speak l7m row justify-content-end" >
-                    <div class="col-12 col-md-12">
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><i><span>STORY</span></i></h3>
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><i><span>LED</span></i></h3>
-                    </div>
-                </div>
-                <div class="speak spacer min"></div>
-                <div class="speak l75m row justify-content-end" >
-                    <div class="col-12 col-md-12">
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><i><span>DESIGN</span></i></h3>
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><i><span></span></i></h3>
-                    </div>
-                </div>
-                <div class="speak spacer min"></div>
-                <div class="speak l75m row justify-content-end" >
-                    <div class="col-12 col-md-12">
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><i><span>DESIGN</span></i></h3>
-                        <h3 class="text-break text-wrap scroll-sequence-title right-text"><i><span>DRIVEN</span></i></h3>
-                    </div>
-                </div>
-                <div class="speak spacer min"></div>
-                <div class="speak  bottom row justify-content-center" >
-                    <div class="col-12 col-md-12">
-                        <h3 class="text-break text-wrap scroll-sequence-title-tiny center-text"><i><span></span></i></h3>
-                        <h3 class="text-break text-wrap scroll-sequence-title text-center"><i><span>Moving Experiences<sup><small>TM</small></sup></span></i></h3>
-                    </div>
-                </div>
-                <div class="speak spacer min"></div>
-                <div class="speak  bottom row justify-content-center "  >
-                    <div class="col-12 col-md-12 ">
-                        <h3 class="text-break text-wrap scroll-sequence-title-tiny center-text"><i><span>INSIGHT  STORY  DESIGN</span></i></h3>
-                        <h3 class="text-break text-wrap scroll-sequence-title text-center"><i><span>Moving Experiences<sup><small>TM</small></sup></span></i></h3>
 
+                <div class="speak separate"></div>
+
+                <div class="speak first_content row justify-content-start align-items-start" id="002">
+                    <div class="col-12">
+                        <div class="row w-100 justify-content-start align-items-start p-5">
+                            <div class="col-auto">
+                                <span class="block_ctrl solid-text light animate__animated just_fade">STORY</span>
+                                <span class="block_ctrl solid-text light animate__animated just_fade animate__delay-500ms">LED</span>  
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="speak spacer min"></div>
-                <div class="speak l4 bottom row justify-content-center align-items-top"  >
-                    <div class="col-4 col-md-1 mt-6 pt-6">
-                       <img calass="img-fluid" src="{{ const.BASE_URL }}assets/img/play.svg" alt="helo logo">
+
+                <div class="speak separate"></div>
+
+                <div class="speak first_content row justify-content-start align-items-start" id="002">
+                    <div class="col-12">
+                        <div class="row w-100 justify-content-start align-items-end p-5">
+                            <div class="col-auto">
+                                <span class="block_ctrl solid-text light animate__animated just_fade">DESIGN</span>
+                                <span class="block_ctrl solid-text light animate__animated just_enter_left animate__delay-500ms">DRIVEN</span>  
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="speak spacer"></div>
-                <div class="speak spacer"></div>
+                
+                <div class="speak separate"></div>
+
+                <div class="speak first_content row justify-content-start align-items-start" id="002">
+                    <div class="col-12">
+                        <div class="row w-100 justify-content-center align-items-end p-5">
+                            <div class="col-auto">
+                                <span class="block_ctrl solid-text light animate__animated just_enter_right">MOVING EXPERIENCES<pre>TM</pre></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speak separate"></div>
+
+                <div class="speak first_content row justify-content-start align-items-start" id="002">
+                    <div class="col-12">
+                        <div class="row w-100 justify-content-center align-items-center p-5">
+                            <div class="col-auto">
+                                <span class="position-relative d-inline-block animate__animated flip_y">
+                                    <img src="{{ const.BASE_URL }}assets/img/logo-compress.svg" alt="" class="position-relative d-inline-block" style="width: 150px;">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speak separate end"></div>
+
             </div>
         </section>
     </div>

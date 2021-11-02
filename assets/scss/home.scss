@@ -101,6 +101,39 @@ div.item_typeWork{
 }
 
 
+/*TEST SCROLL SEQUENCE*/
+div#canvas_container{
+    overflow: hidden;
+    z-index: 1;
+	>canvas#hero-lightpass {
+	    position: fixed;
+	    left: 0px;
+	    right: 0px;
+	    top: 0px;
+	    bottom: 0px;
+	    min-width: 100vw;
+	    min-height: 100vh;
+	    padding: 0px;
+	    margin: 0px;
+	    z-index: 0;
+	}
+	>div#container-info{
+		z-index: 2;
+    	position: relative;
+		>div.row{
+			min-height: 500px;
+			height: 100vh;
+			&:nth-child(1){
+				height: 150vh;
+			}
+		}
+	}
+}
+
+
+
+
+
 @include media-breakpoint-down(xl) {
 }
 @include media-breakpoint-down(lg) {
