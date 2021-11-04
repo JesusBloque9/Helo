@@ -28,59 +28,91 @@ HELO - Moving Experiences
         const firstSequenceImages = [];
         var is_loaded = [false, false];
 
-        for (let i = 2; i <= 10; i++) {//126
+        for (let i = 1; i <= 10; i++) {
             firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 7; i <= 10; i++) {//126
+        for (let i = 1; i <= 10; i++) {
             firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-
-        for (let i = 1; i <= 10; i++) {//126
+        for (let i = 1; i <= 10; i++) {
             firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 1; i <= 10; i++) {//126
+        for (let i = 1; i <= 10; i++) {
             firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 1; i <= 10; i++) {//126
+        for (let i = 1; i <= 10; i++) {
             firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-        for (let i = 1; i <= 10; i++) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 1; i <= 10; i++) {//126
+        for (let i = 1; i <= 10; i++) {
             firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
 
-        for (let i = 1; i < 386; i++) {//126
+        for (let i = 1; i < 386; i++) {
             firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
 
-      
+       /* for (let i = 11; i <= 99; i=i+2) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }
+
+        for (let i = 101; i <= 791; i=i+2) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
+        }*/
+
+        /*for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 1; i <= 9; i=i+2) {//126
+            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
+        }
+
+
+        for (let i = 11; i <= 99; i=i+2) {//126
+            firstSequenceImages.push(`${`000${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 101; i <= 781; i=i+2) {//126
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+        }*/
 
         var firstSequence=null;
+        
+        firstSequence = new ScrollSequence({
+            container: '.first-sequence',
+            scrollWith: '.first-container',
+            images: firstSequenceImages,
+            imagesRoot: 'assets/img/secuencia/desktop/',
+            cover: true,
+            starts: 'out',
+            ends: 'in'
+        });
 
-        
-        
-                firstSequence = new ScrollSequence({
-                    container: '.first-sequence',
-                    scrollWith: '.first-container',
-                    images: firstSequenceImages,
-                    imagesRoot: 'assets/img/secuencia/desktop/',
-                    cover: true,
-                    starts: 'out',
-                    ends: 'in'
-                });
-                /*is_loaded[0]=[true,false];
-            }
-        }*/
-        
         $(document).ready(function(){
             /*scroll_secuence_initialize(); */     
             mobile_functions();      
@@ -203,7 +235,7 @@ HELO - Moving Experiences
                        pin: true,
                        pinSpacing: false,
                        scrub: true,
-                       markers: false,
+                       markers: true,
                        end: "bottom +100vh",
                        start: "top +100vh",   
                        onToggle: self => updateElement(self)
@@ -228,12 +260,13 @@ HELO - Moving Experiences
                     if ($(this).hasClass('just_fade')) {
                         $(this).removeClass("animate__fadeOut");
                         $(this).addClass("animate__fadeIn");
+                        $(this).css("opacity",1);
                     }else if ($(this).hasClass('just_enter_left')) {
-                        $(this).removeClass("animate__bounceOutRight");
+                        $(this).removeClass("animate__fadeOut");
                         $(this).addClass("animate__bounceInLeft");
                         $(this).css("opacity",1);
                     }else if ($(this).hasClass('just_enter_right')) {
-                        $(this).removeClass("animate__bounceOutLeft");
+                        $(this).removeClass("animate__fadeOut");
                         $(this).addClass("animate__bounceInRight");
                         $(this).css("opacity",1);
                     }else if ($(this).hasClass('flip_y')) {
@@ -247,13 +280,14 @@ HELO - Moving Experiences
                     if ($(this).hasClass('just_fade')) {
                         $(this).removeClass("animate__fadeIn");
                         $(this).addClass("animate__fadeOut");
+                        $(this).css("opacity",0);
                     }else if ($(this).hasClass('just_enter_left')) {
                         $(this).removeClass("animate__bounceInLeft");
-                        $(this).addClass("animate__bounceOutRight");
+                        $(this).addClass("animate__fadeOut");
                         $(this).css("opacity",0);
                     }else if ($(this).hasClass('just_enter_right')) {
                         $(this).removeClass("animate__bounceInRight");
-                        $(this).addClass("animate__bounceOutLeft");
+                        $(this).addClass("animate__fadeOut");
                         $(this).css("opacity",0);
                     }else if ($(this).hasClass('flip_y')) {
                         $(this).removeClass("animate__flipInY");
@@ -267,7 +301,13 @@ HELO - Moving Experiences
         $('.item_typeWork').on("mouseover", function(){
             $('.item_typeWork').addClass('inactive');
             $(this).addClass('active');
-            $(this).children('video').trigger('play');
+            var video = $(this).children('video');
+            if (video.attr('id')==='video__4') {
+                console.log('yes has ID');
+                video.trigger('pause');
+                video.currentTime = 10;
+            }
+            video.trigger('play');
         });
         $('.item_typeWork').on("mouseleave", function(){
             $('.item_typeWork').removeClass("inactive active");
@@ -289,6 +329,8 @@ HELO - Moving Experiences
             <div class="scroll-sequence first-sequence"></div>
             <div class="scroll-sequence__content container-fluid">
                 
+                <div class="speak separate start"></div>
+
                 <div class="speak first_content row justify-content-start align-items-start" id="001">
                     <div class="col-12">
                         <div class="row w-100 justify-content-start align-items-end p-5">
@@ -315,7 +357,7 @@ HELO - Moving Experiences
 
                 <div class="speak separate"></div>
 
-                <div class="speak third_content row justify-content-start align-items-start" id="002">
+                <div class="speak third_content row justify-content-start align-items-start" id="003">
                     <div class="col-12">
                         <div class="row w-100 justify-content-start align-items-end p-5">
                             <div class="col-auto">
@@ -328,9 +370,9 @@ HELO - Moving Experiences
                 
                 <div class="speak separate"></div>
 
-                <div class="speak double_content row justify-content-start align-items-start" id="002">
+                <div class="speak fourth_content row justify-content-start align-items-start" id="004">
                     <div class="col-12">
-                        <div class="row w-100 justify-content-center align-items-end p-5">
+                        <div class="row w-100 justify-content-center align-items-end pb-5">
                             <div class="col-auto">
                                 <span class="block_ctrl solid-text light animate__animated just_enter_right">MOVING EXPERIENCES<pre>TM</pre></span>
                             </div>
@@ -340,7 +382,7 @@ HELO - Moving Experiences
                 
                 <div class="speak separate"></div>
 
-                <div class="speak logo_content row justify-content-start align-items-start" id="002">
+                <div class="speak fifth_content row justify-content-start align-items-start" id="005">
                     <div class="col-12">
                         <div class="row w-100 justify-content-center align-items-center p-5">
                             <div class="col-auto">
@@ -352,8 +394,7 @@ HELO - Moving Experiences
                     </div>
                 </div>
 
-                <div class="speak spacer"></div>
-                <div class="speak spacer"></div>
+                <div class="speak separate end"></div>
 
             </div>
         </section>
@@ -372,7 +413,7 @@ HELO - Moving Experiences
         <div class="row">
             <div class="col-12 item_typeWork" id="el_01" style="background-image: url({{ const.BASE_URL }}assets/img/experience/1.jpg);">
                 <video id="video__1" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/395415629.hd.mp4?s=bbf77232e3d60c8c0c685a42b882044e59bd0baa&profile_id=175" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">
@@ -382,7 +423,7 @@ HELO - Moving Experiences
             </div>
             <div class="col-12 item_typeWork" id="el_02" style="background-image: url({{ const.BASE_URL }}assets/img/experience/2.jpg);">
                 <video id="video__2" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/389980088.hd.mp4?s=dbca24348ca2ebf00a1b4fb4b4e130fa86bfa1cb&profile_id=175" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">
@@ -392,7 +433,7 @@ HELO - Moving Experiences
             </div>
             <div class="col-12 item_typeWork" id="el_03" style="background-image: url({{ const.BASE_URL }}assets/img/experience/3.jpg);">
                 <video id="video__3" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/394201415.hd.mp4?s=63564b19176c13c7a3718b494671e0b4ab3a627b&profile_id=175" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">
@@ -402,7 +443,7 @@ HELO - Moving Experiences
             </div>
             <div class="col-12 item_typeWork" id="el_04" style="background-image: url({{ const.BASE_URL }}assets/img/experience/4.jpg);">
                 <video id="video__4" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/532407045.hd.mp4?s=434554360b32630fd6ba5a33be4588988eceaeee&profile_id=175?t=10" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">
@@ -412,7 +453,7 @@ HELO - Moving Experiences
             </div>
             <div class="col-12 item_typeWork" id="el_05" style="background-image: url({{ const.BASE_URL }}assets/img/experience/5.jpg);">
                 <video id="video__5" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/388637113.hd.mp4?s=f46785e5d1ba30be2f96728a8594d3d21ff2d53f&profile_id=174" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/394270170.hd.mp4?s=c73f615dc58e069805b43600f58f3d8b655bc743&profile_id=175" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">

@@ -285,6 +285,10 @@ body {
       animation-delay: 500ms;
     }
 
+
+    .scroll-sequence__content{
+      height: 5775px;
+    }
     .speak{
       top: 0px !important;
         >div{
@@ -320,27 +324,64 @@ body {
             }
         }
         &.separate{
-          height: 5vh !important;
+          height: 90px !important;
+          &.start{
+            height: 270px !important;
+          }
           &.end{
-            height: 20vh !important;
+            height: 60px !important;
           }
         }
         &.first_content{
-          height: 85vh !important;
+          height: 510px !important;
         }
         &.second_content{
-          height: 70vh !important;
+          height: 600px !important;
         }
         &.third_content{
-          height: 60vh !important;
+          height: 570px !important;
         }
-        &.double_content{
-          height: 200vh !important;
+        &.fourth_content{
+          height: 2055px !important;
         }
-        &.logo_content{
-          height:140vh !important;
+        &.fifth_content{
+          height: 1350px !important;
         }
     }
+
+    @media(min-height:600px) and (max-height:850px)
+      {
+      .scroll-sequence__content{
+        height: 3850px;
+      }
+      .speak{
+          &.separate{
+            height: 60px !important;
+            &.start{
+              height: 180px !important;
+            }
+            &.end{
+              height: 40px !important;
+            }
+          }
+          &.first_content{
+            height: 340px !important;
+          }
+          &.second_content{
+            height: 400px !important;
+          }
+          &.third_content{
+            height: 380px !important;
+          }
+          &.fourth_content{
+            height: 1370px !important;
+          }
+          &.fifth_content{
+            height: 900px !important;
+          }
+      }
+    }
+
 
     @keyframes titleAnimation {
       0% {
@@ -414,70 +455,27 @@ body {
         height: inherit !important;
       }
     }
-
-    
-    @media screen and (max-width: 786px) {
-      .speak {
-        align-items: center;
-      }
-
-      .scroll-sequence__content {
-        padding: 1rem;
-      }
-  
-
-      .scroll-sequence-title {
-        font-size: calc(3.209em - 1vw);
-        text-align: center;
-      }
-  
-      .scroll-sequence-title-tiny {
-        font-size: calc(2.157em - 1vw);
-        text-align: center;
-      }
-  
-      .scroll-sequence-text {
-        font-size: calc(1.5em - 1vw);
-        text-align: center;
-      }
-    }
-
-    @media screen and (max-width: 320px) {
-      .speak {
-        align-items: center;
-      }
-
-      .scroll-sequence__content {
-        padding: 1rem;
-      }
-  
-
-      .scroll-sequence-title {
-        font-size: calc(2.209em - 1vw);
-        text-align: center;
-      }
-  
-      .scroll-sequence-title-tiny {
-        font-size: calc(2.157em - 1vw);
-        text-align: center;
-      }
-  
-      .scroll-sequence-text {
-        font-size: calc(1.5em - 1vw);
-        text-align: center;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 1em;
-        width: 100%;
-      }
-    }
-    
-
-
-/*# sourceMappingURL=scroll_secuence.css.map */
-
+   
 }
 
+
+@include media-breakpoint-down(xl) {
+  .scroll-sequence__container .speak > div > div.row > div > span.solid-text {
+      font-size: 4rem;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .scroll-sequence__container .speak > div > div.row > div > span.solid-text {
+      font-size: 3.5rem;
+  }
+}
+@include media-breakpoint-down(md) {
+  .scroll-sequence__container .speak > div > div.row > div > span.solid-text {
+      font-size: 2.5rem;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .scroll-sequence__container .speak > div > div.row > div > span.solid-text {
+      font-size: 2rem;
+  }
+}
