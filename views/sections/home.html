@@ -235,7 +235,7 @@ HELO - Moving Experiences
                        pin: true,
                        pinSpacing: false,
                        scrub: true,
-                       markers: false,
+                       markers: true,
                        end: "bottom +100vh",
                        start: "top +100vh",   
                        onToggle: self => updateElement(self)
@@ -303,16 +303,11 @@ HELO - Moving Experiences
         var video_3=document.getElementById("video__3");
         var video_4=document.getElementById("video__4");
         var video_5=document.getElementById("video__5");
-        video_1.pause();
-        video_2.pause();
-        video_3.pause();
-        video_4.pause();
-        video_5.pause();
 
         $('.item_typeWork').on("mouseover", function(){
             $('.item_typeWork').addClass('inactive');
             $(this).addClass('active');
-            var video = $(this).children('video');
+            let video = $(this).children('video');
             if (video.attr('id')==='video__1') {
                 video_1.currentTime = 26;
                 video_1.play();
@@ -322,7 +317,7 @@ HELO - Moving Experiences
                 video_2.play();
             }
             if (video.attr('id')==='video__3') {
-                video_3.currentTime = 1;
+                video_3.currentTime = 2.5;
                 video_3.play();
             }
             if (video.attr('id')==='video__4') {
@@ -336,9 +331,7 @@ HELO - Moving Experiences
         });
         $('.item_typeWork').on("mouseleave", function(){
             $('.item_typeWork').removeClass("inactive active");
-            $(this).children('video').trigger('pause');
-
-            var video = $(this).children('video');
+            let video = $(this).children('video');
             if (video.attr('id')==='video__1') {
                 video_1.pause();
             }
@@ -354,7 +347,6 @@ HELO - Moving Experiences
             if (video.attr('id')==='video__5') {
                 video_5.pause();
             }
-
         });
 
 
