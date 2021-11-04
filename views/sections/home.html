@@ -298,20 +298,63 @@ HELO - Moving Experiences
             }
         }
 
+        var video_1=document.getElementById("video__1");
+        var video_2=document.getElementById("video__2");
+        var video_3=document.getElementById("video__3");
+        var video_4=document.getElementById("video__4");
+        var video_5=document.getElementById("video__5");
+        video_1.pause();
+        video_2.pause();
+        video_3.pause();
+        video_4.pause();
+        video_5.pause();
+
         $('.item_typeWork').on("mouseover", function(){
             $('.item_typeWork').addClass('inactive');
             $(this).addClass('active');
             var video = $(this).children('video');
-            if (video.attr('id')==='video__4') {
-                console.log('yes has ID');
-                video.trigger('pause');
-                video.currentTime = 10;
+            if (video.attr('id')==='video__1') {
+                video_1.currentTime = 26;
+                video_1.play();
             }
-            video.trigger('play');
+            if (video.attr('id')==='video__2') {
+                video_2.currentTime = 8;
+                video_2.play();
+            }
+            if (video.attr('id')==='video__3') {
+                video_3.currentTime = 1;
+                video_3.play();
+            }
+            if (video.attr('id')==='video__4') {
+                video_4.currentTime = 5.2;
+                video_4.play();
+            }
+            if (video.attr('id')==='video__5') {
+                video_5.currentTime = 7;
+                video_5.play();
+            }
         });
         $('.item_typeWork').on("mouseleave", function(){
             $('.item_typeWork').removeClass("inactive active");
             $(this).children('video').trigger('pause');
+
+            var video = $(this).children('video');
+            if (video.attr('id')==='video__1') {
+                video_1.pause();
+            }
+            if (video.attr('id')==='video__2') {
+                video_2.pause();
+            }
+            if (video.attr('id')==='video__3') {
+                video_3.pause();
+            }
+            if (video.attr('id')==='video__4') {
+                video_4.pause();
+            }
+            if (video.attr('id')==='video__5') {
+                video_5.pause();
+            }
+
         });
 
 
