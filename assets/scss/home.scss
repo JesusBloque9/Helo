@@ -8,6 +8,7 @@ div.item_typeWork{
     background-size: 100%;
     background-size: cover;
     background-position: 50% 50%;
+    pointer-events: auto;
     @include ease(.45s);
 	&:after{
 		content: '';
@@ -21,6 +22,7 @@ div.item_typeWork{
 		margin: 0px auto;
 	}
 	>div.row{
+		pointer-events: none;
 		@include ease(.45s);
 		z-index: 2;
 		position: relative;
@@ -39,6 +41,7 @@ div.item_typeWork{
 		}
 	}
 	>video{
+		pointer-events: none;
 		display: inline-block;
     	position: absolute;
     	top: -50%;

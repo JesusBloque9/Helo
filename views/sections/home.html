@@ -305,6 +305,7 @@ HELO - Moving Experiences
         var video_5=document.getElementById("video__5");
 
         $('.item_typeWork').on("mouseover", function(){
+            console.log('on mouseover');
             $('.item_typeWork').addClass('inactive');
             $(this).addClass('active');
             let video = $(this).children('video');
@@ -326,6 +327,7 @@ HELO - Moving Experiences
             }
         });
         $('.item_typeWork').on("mouseleave", function(){
+            console.log('on mouseleave');
             $('.item_typeWork').removeClass("inactive active");
             let video = $(this).children('video');
             if (video.attr('id')==='video__1') {
