@@ -26,7 +26,13 @@ Work - HELO
             };
             var videoPlayer = new Vimeo.Player(divId, options);
             videoPlayer.pause();
-            videoPlayer.setCurrentTime(2);
+
+            if(overlayId == 'sens_row_10'){
+                videoPlayer.setCurrentTime(10);
+            }else{
+                videoPlayer.setCurrentTime(2);
+            }
+            
             $('#'+overlayId).on("mouseover", function(){
                 $('span.hollow-text-black').removeClass('active');
                 $( this ).addClass('active');
@@ -84,6 +90,8 @@ Work - HELO
         videos_vimeo('437152079','container_video_06','sens_row_06','collapse_06');
         videos_vimeo('389980088','container_video_07','sens_row_07','collapse_07');
         videos_vimeo('394270170','container_video_08','sens_row_08','collapse_08');
+        videos_vimeo('642476368','container_video_09','sens_row_09','collapse_09');
+        videos_vimeo('642400612','container_video_10','sens_row_10','collapse_10');
     </script>
 {% endblock %}
 
@@ -97,6 +105,66 @@ Work - HELO
             <div class="row mb-5">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <h3 class="title_section blue text-grey_dark">Work <small class="text-grey_dark_03">We make work that is original, at scale, complex, multi-platform and extensible.</small></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 item_work">
+                <span class="hollow-text-black" id="sens_row_09">
+                    Nissan
+                </span>
+            </div>
+            <div class="col-6 item_work">
+                <span class="hollow-text-black" id="sens_row_10">
+                    Jack in the Box
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container-fluid p-0 m-0">
+            <div class="row m-0">
+                <div class="col-12 p-0">
+                    <div class="collapse_dev" style="display: none;" id="collapse_09">
+                        <div class="card card-body video_layout">
+                            <div class="bg bg_yellow">
+                                <div class="container h-100">
+                                    <div class="row h-100 mx-0 justify-content-center align-items-center">
+                                        <div class="col-12 text-left px-0">
+                                            <span>
+                                                Nissan
+                                                <small>Feel Electric</small>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video_container" id="container_video_09" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="fasle" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 p-0">
+                    <div class="collapse_dev" style="display: none;" id="collapse_10">
+                        <div class="card card-body video_layout">
+                            <div class="bg bg_orange">
+                                <div class="container h-100">
+                                    <div class="row h-100 mx-0 justify-content-center align-items-center">
+                                        <div class="col-12 text-left px-0">
+                                            <span>
+                                                Jack in the Box
+                                                <small>Monster Taco Feast</small>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video_container" id="container_video_10" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="fasle" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
