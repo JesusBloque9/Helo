@@ -325,24 +325,26 @@ HELO - Moving Experiences
         }
 
         $('.item_typeWork').on("mouseover", function(){
-            console.log('on mouseover');
-            $('.item_typeWork').addClass('inactive');
-            $(this).addClass('active');
-            let video = $(this).children('video');
-            if (video.attr('id')==='video__1') {
-                video_1.play();
-            }
-            if (video.attr('id')==='video__2') {
-                video_2.play();
-            }
-            if (video.attr('id')==='video__3') {
-                video_3.play();
-            }
-            if (video.attr('id')==='video__4') {
-                video_4.play();
-            }
-            if (video.attr('id')==='video__5') {
-                video_5.play();
+            if ($(window).width() > 991) {
+                console.log('on mouseover');
+                $('.item_typeWork').addClass('inactive');
+                $(this).addClass('active');
+                let video = $(this).children('video');
+                if (video.attr('id')==='video__1') {
+                    video_1.play();
+                }
+                if (video.attr('id')==='video__2') {
+                    video_2.play();
+                }
+                if (video.attr('id')==='video__3') {
+                    video_3.play();
+                }
+                if (video.attr('id')==='video__4') {
+                    video_4.play();
+                }
+                if (video.attr('id')==='video__5') {
+                    video_5.play();
+                }
             }
         });
         $('.item_typeWork').on("mouseleave", function(){
@@ -365,7 +367,16 @@ HELO - Moving Experiences
                 video_5.pause();
             }
         });
-
+        $(window).on('resize', function(){
+            if ($(window).width() < 992) {
+                $('.item_typeWork').removeClass("inactive active");
+                video_1.pause();
+                video_2.pause();
+                video_3.pause();
+                video_4.pause();
+                video_5.pause();
+            }
+        });
 
 
      </script>
