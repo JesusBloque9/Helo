@@ -53,9 +53,23 @@ HELO - Moving Experiences
         }
 
 
-        for (let i = 1; i < 386; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+
+
+
+        if ($(window).width() < 992) {
+            var dir_imgsequence='assets/img/secuencia/movil/';
+            for (let i = 1; i < 384; i++) {
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+            }
+        }else{
+            var dir_imgsequence='assets/img/secuencia/desktop/';
+            for (let i = 1; i < 386; i++) {
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+            }
         }
+
+
+
 
        /* for (let i = 11; i <= 99; i=i+2) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
@@ -102,12 +116,12 @@ HELO - Moving Experiences
         }*/
 
         var firstSequence=null;
-        
+
         firstSequence = new ScrollSequence({
             container: '.first-sequence',
             scrollWith: '.first-container',
             images: firstSequenceImages,
-            imagesRoot: 'assets/img/secuencia/desktop/',
+            imagesRoot: dir_imgsequence,
             cover: true,
             starts: 'out',
             ends: 'in'
@@ -396,7 +410,7 @@ HELO - Moving Experiences
 
                 <div class="speak first_content row m-0 justify-content-start align-items-start" id="001">
                     <div class="col-12 p-0">
-                        <div class="row w-100 m-0 justify-content-start align-items-end p-5">
+                        <div class="row w-100 m-0 justify-content-start align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
                                 <span class="block_ctrl solid-text light animate__animated just_fade">INSIGHT</span>
                                 <span class="block_ctrl solid-text light animate__animated just_fade animate__delay-500ms">INSPIRED</span>  
@@ -409,7 +423,7 @@ HELO - Moving Experiences
 
                 <div class="speak second_content row m-0 justify-content-start align-items-start" id="002">
                     <div class="col-12 p-0">
-                        <div class="row w-100 m-0 justify-content-start align-items-start p-5">
+                        <div class="row w-100 m-0 justify-content-start align-items-start py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
                                 <span class="block_ctrl solid-text light animate__animated just_fade">STORY</span>
                                 <span class="block_ctrl solid-text light animate__animated just_fade animate__delay-500ms">LED</span>  
@@ -422,7 +436,7 @@ HELO - Moving Experiences
 
                 <div class="speak third_content row m-0 justify-content-start align-items-start" id="003">
                     <div class="col-12 p-0">
-                        <div class="row w-100 m-0 justify-content-start align-items-end p-5">
+                        <div class="row w-100 m-0 justify-content-start align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
                                 <span class="block_ctrl solid-text light animate__animated just_fade">DESIGN</span>
                                 <span class="block_ctrl solid-text light animate__animated just_enter_left animate__delay-500ms">DRIVEN</span>  
@@ -435,7 +449,7 @@ HELO - Moving Experiences
 
                 <div class="speak fourth_content row m-0 justify-content-start align-items-start" id="004">
                     <div class="col-12 p-0">
-                        <div class="row w-100 m-0 justify-content-center align-items-end pb-5">
+                        <div class="row w-100 m-0 justify-content-center align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
                                 <span class="block_ctrl solid-text light animate__animated just_enter_right">MOVING EXPERIENCES<pre>TM</pre></span>
                             </div>
@@ -447,7 +461,7 @@ HELO - Moving Experiences
 
                 <div class="speak fifth_content row m-0 justify-content-start align-items-start" id="005">
                     <div class="col-12 p-0">
-                        <div class="row w-100 m-0 justify-content-center align-items-center p-5">
+                        <div class="row w-100 m-0 justify-content-center align-items-center py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
                                 <span class="position-relative d-inline-block animate__animated flip_y">
                                     <img src="{{ const.BASE_URL }}assets/img/logo_helo_video.svg" alt="" class="position-relative d-inline-block" style="width: 120px;">
