@@ -241,3 +241,23 @@
     }   
    
 }
+
+.new_detail{
+    span{
+        line-height: 1.1rem;
+        font-weight: 500;
+        &.summary{
+            font-weight: 600;
+            color: #505050;
+            line-height: 1.4;
+            font-size: 1.25rem;
+        }
+    }
+    a.item_galery_bg{
+        @include block_ctrl();
+        height: 375px;
+        background-position: 50% 50%;
+        background-size: 100%;
+        background-size: cover;
+    }
+}

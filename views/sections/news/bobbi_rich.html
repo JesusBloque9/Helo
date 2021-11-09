@@ -1,0 +1,159 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+    <link rel="stylesheet" href="{{ const.BASE_URL }}node_modules/@fancyapps/ui/dist/fancybox.css"/>
+{% endblock %}
+
+{% block extraJS %}
+    <script src="{{ const.BASE_URL }}assets/js/share.js"></script>
+    <script src="{{ const.BASE_URL }}node_modules/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#botonocultamuestra").click(function(){
+               $("#divocultamuestra").each(function() {
+                 displaying = $(this).css("display");
+                 if(displaying == "block") {
+                   $(this).fadeOut('slow',function() {
+                    $(this).css("display","none");
+                   });
+                 } else {
+                   $(this).fadeIn('slow',function() {
+                     $(this).css("display","block");
+                   });
+                 }
+               });
+             });
+           });
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
+
+    <main class="new_detail">
+        <div class="py-5 container" id="title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-9 col-md-6 pb-2">
+                        <p class="block_ctrl title_p">News</p>
+                        <h3 class="title_section green pb-0">Mama Hot Dog rocks out with Helo.</h3>
+                        <p class="block_ctrl title_p pt-2">SEPTEMBER 15, 2021</p>
+                    </div>
+                    <div class="col" id="search-box">
+                        <div class="p_auto">
+                            SEARCH <input><div class="div1"></div></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <div class="row w-100 m-0">
+                <div class="col-12 p-0">
+                    <img src="{{ const.BASE_URL }}assets/img/news/mama_hot_dog_rocks/portada.jpeg" alt="" class="block_ctrl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-6">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-7 text-center">
+                    <span class="summary">Bobbi <a href="https://www.mamahotdog.com" target="_blank">“mama hot dog”</a> Rich, the multi-faceted director/production designer/storyteller/ photographer will be joining forces with HELO to create a range of jaw dropping content.  A veteran music director for artists such as Brittany Howard, Enrique Iglesias, Elton John, Nathaniel Rateliff, Marg Price and The Pixies, Bobbi transforms space into bold, visceral experiences.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pb-6">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span>Rich started her career as a story and field producer for TV series that included American Pickers and Going Cambo. She was the art director for the Joe Berlinger Netflix series Crime Scene, and the production designer for the Vimeo Staff pick, Assholes. She spent 2020 on the creative direction & interior design of Nashville’s new experiential ‘70s inspired hotspot, The Dive Motel & Swim Club.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pb-6">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 pb-4 pb-md-0">
+                    <a 
+                        class="item_galery_bg" 
+                        style="background-image: url('{{ const.BASE_URL }}assets/img/news/mama_hot_dog_rocks/image01.jpg');"
+                        data-fancybox="gallery"
+                        data-src="{{ const.BASE_URL }}assets/img/news/mama_hot_dog_rocks/image01_lg.jpg"
+                    ></a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <a 
+                        class="item_galery_bg" 
+                        style="background-image: url('{{ const.BASE_URL }}assets/img/news/mama_hot_dog_rocks/image02.jpg');"
+                        data-fancybox="gallery"
+                        data-src="{{ const.BASE_URL }}assets/img/news/mama_hot_dog_rocks/image02_lg.jpg"
+                    ></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pb-6">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span>She is currently working on several projects, including a documentary about music industry legend Phil Kaufman, titled The Road Mangler, a documentary series titled Mother Truckers Convoy, and the series titled Swipe Left.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 pe-0 pe-md-5">
+                    <span>Out of everything Bobbi does, she truly loves creative direction roles. She’s worked with musicians, brands, networks, agencies, hotels and startups. She’s passionate about building worlds that tell stylized stories.  A master of interior design, production design, styling, lighting and staging Bobbi, well simply, Bobbi rocks! And HELO is thrilled to represent her.</span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/641998958?h=077576efc4&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <section class="share container">
+            <a id="botonocultamuestra" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">SHARE<img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/icon-share.svg" alt=""></a>
+            <div id="divocultamuestra">
+              <div class="shared-panel">                
+                  <a target="_blank" class="shared fb" title="Facebook"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/facebook.svg" alt=""></a>
+                  <a target="_blank" class="shared tt" title="Twitter"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/twitter.svg" alt=""></a>
+                  <a target="_blank" class="shared gp" title="Google+"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/google.svg" alt=""></a>
+                  <a  data-action='share/whatsapp/share' class="shared wa" title="WhatsApp"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/whatsapp.svg" alt=""></a>
+                  <a target="_blank" class="shared ce" id="sml" title="Email"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/email.svg" alt=""></a>
+              </div>     
+            </div>        
+        </section>
+        <section class="row cambiar-noticia container">
+            <div class="col-6 past-arrow">
+                <a href=""><img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/past-arrow.svg" alt=""> PAST ARTICLE</a>                
+            </div>
+            <div class="col-6 next-arrow">
+                <a href="">NEXT ARTICLE <img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/next-arrow.svg" alt=""></a>
+            </div>
+        </section>
+
+    </main>
+    <div class="container-fluid">
+        <div class="row multicolor">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+    {% include 'modules/footer.html' %}
+
+{% endblock %}
