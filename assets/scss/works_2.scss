@@ -204,6 +204,14 @@ div.video_layout{
 				    }
 				}
 			}
+			>div.bg:hover span {
+			    -moz-text-stroke: inherit;
+			    -webkit-text-stroke: inherit;
+			    -moz-text-fill-color: white;
+			    -webkit-text-fill-color: white;
+			    text-shadow: none;
+			    cursor: pointer;
+			}
 		}
 	}
 }
