@@ -4,12 +4,13 @@
   height: 45vh;
   max-height: 500px;
   min-height: 200px;
-  h3{
+  .h3,h3{
     color: #f1f1f1;
     font-weight: 600;
     font-size: 4rem;
     line-height: 90px;
     cursor: pointer;
+    text-decoration: none;
     &:hover{
       span{
         -webkit-animation: dubstep 1.2858s infinite ease;
