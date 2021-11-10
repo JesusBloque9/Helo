@@ -34,11 +34,11 @@ abstract class Controller
         if (strlen($url)>=3 && $url!='index') {
             $lan_string = substr($url, -3);
             switch ($lan_string) {
-                case '_es':
-                    $this->_const['LAN']='_es';
+                case '_es_':
+                    $this->_const['LAN']='_es_';
                     break;
-                case '_en':
-                    $this->_const['LAN']='_en';
+                case '_en_':
+                    $this->_const['LAN']='_en_';
                     break;
                 default:
                     $this->_const['LAN']='default';
@@ -47,7 +47,7 @@ abstract class Controller
         }else{
             $this->_const['LAN']='default';
         }
-        $searchVal = array('_es','_en');
+        $searchVal = array('_es_','_en_');
         $url_cleaned = str_replace($searchVal, '', $url);
 
         if ($url_cleaned==='admin' || $url_cleaned==='admin/') {

@@ -28,34 +28,48 @@ HELO - Moving Experiences
         const firstSequenceImages = [];
         var is_loaded = [false, false];
 
-        /*for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }*/
-
-        /*for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }*/
-
-        /*for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }*/
-
-        /*for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }*/
-
-        /*for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }*/
-
-        /*for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }*/
-
-
-        for (let i = 1; i < 386; i++) {
+        for (let i = 1; i <= 10; i++) {
             firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
         }
+
+        for (let i = 1; i <= 10; i++) {
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 1; i <= 10; i++) {
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 1; i <= 10; i++) {
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 1; i <= 10; i++) {
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+        }
+
+        for (let i = 1; i <= 10; i++) {
+            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+        }
+
+
+
+
+
+        if ($(window).width() < 992) {
+            var dir_imgsequence='assets/img/secuencia/movil/';
+            for (let i = 1; i < 384; i++) {
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+            }
+        }else{
+            var dir_imgsequence='assets/img/secuencia/desktop/';
+            for (let i = 1; i < 386; i++) {
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+            }
+        }
+
+
+
 
        /* for (let i = 11; i <= 99; i=i+2) {//126
             firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
@@ -102,14 +116,14 @@ HELO - Moving Experiences
         }*/
 
         var firstSequence=null;
-        
+
         firstSequence = new ScrollSequence({
             container: '.first-sequence',
             scrollWith: '.first-container',
             images: firstSequenceImages,
-            imagesRoot: 'assets/img/secuencia/desktop/',
+            imagesRoot: dir_imgsequence,
             cover: true,
-            starts: 'in',
+            starts: 'out',
             ends: 'in'
         });
 
@@ -132,7 +146,7 @@ HELO - Moving Experiences
             $('#video-holder1').addClass('add-video');
             $('#video1').trigger('play');
         }
-        function pause_mov1(){ 
+        function pause_mov1(){
             $('#video-holder1').removeClass('add-video');
             $('#video1').trigger('pause');
         }
@@ -168,7 +182,7 @@ HELO - Moving Experiences
             $('#video-holder5').addClass('add-video');
             $('#video5').trigger('play');
         }
-        function pause_mov5(){ 
+        function pause_mov5(){
             $('#video-holder5').removeClass('add-video');
             $('#video5').trigger('pause');
         }
@@ -235,7 +249,7 @@ HELO - Moving Experiences
                        pin: true,
                        pinSpacing: false,
                        scrub: true,
-                       markers: true,
+                       markers: false,
                        end: "bottom +100vh",
                        start: "top +100vh",   
                        onToggle: self => updateElement(self)
@@ -299,37 +313,56 @@ HELO - Moving Experiences
         }
 
         var video_1=document.getElementById("video__1");
+        var playPromise_1 = video_1.play();
+        function pause_prop(){
+            if (playPromise_1 !== undefined) {
+                playPromise_1.then(_ => {
+                    video_1.pause();
+                })
+                .catch(error => {
+                    console.log('error on pause');
+                });
+            }
+        }
+
         var video_2=document.getElementById("video__2");
         var video_3=document.getElementById("video__3");
         var video_4=document.getElementById("video__4");
+
         var video_5=document.getElementById("video__5");
+        var playPromise = video_5.play();
+        if (playPromise !== undefined) {
+          playPromise.then(_ => {
+            video_5.currentTime = 19;
+            video_5.pause();
+          });
+        }
 
         $('.item_typeWork').on("mouseover", function(){
-            $('.item_typeWork').addClass('inactive');
-            $(this).addClass('active');
-            let video = $(this).children('video');
-            if (video.attr('id')==='video__1') {
-                video_1.currentTime = 26;
-                video_1.play();
-            }
-            if (video.attr('id')==='video__2') {
-                video_2.currentTime = 8;
-                video_2.play();
-            }
-            if (video.attr('id')==='video__3') {
-                video_3.currentTime = 2.5;
-                video_3.play();
-            }
-            if (video.attr('id')==='video__4') {
-                video_4.currentTime = 5.2;
-                video_4.play();
-            }
-            if (video.attr('id')==='video__5') {
-                video_5.currentTime = 7;
-                video_5.play();
+            if ($(window).width() > 991) {
+                console.log('on mouseover');
+                $('.item_typeWork').addClass('inactive');
+                $(this).addClass('active');
+                let video = $(this).children('video');
+                if (video.attr('id')==='video__1') {
+                    video_1.play();
+                }
+                if (video.attr('id')==='video__2') {
+                    video_2.play();
+                }
+                if (video.attr('id')==='video__3') {
+                    video_3.play();
+                }
+                if (video.attr('id')==='video__4') {
+                    video_4.play();
+                }
+                if (video.attr('id')==='video__5') {
+                    video_5.play();
+                }
             }
         });
         $('.item_typeWork').on("mouseleave", function(){
+            console.log('on mouseleave');
             $('.item_typeWork').removeClass("inactive active");
             let video = $(this).children('video');
             if (video.attr('id')==='video__1') {
@@ -348,7 +381,16 @@ HELO - Moving Experiences
                 video_5.pause();
             }
         });
-
+        $(window).on('resize', function(){
+            if ($(window).width() < 992) {
+                $('.item_typeWork').removeClass("inactive active");
+                video_1.pause();
+                video_2.pause();
+                video_3.pause();
+                video_4.pause();
+                video_5.pause();
+            }
+        });
 
 
      </script>
@@ -366,10 +408,10 @@ HELO - Moving Experiences
                 
                 <div class="speak separate start"></div>
 
-                <div class="speak first_content row justify-content-start align-items-start" id="001">
-                    <div class="col-12">
-                        <div class="row w-100 justify-content-start align-items-end p-5">
-                            <div class="col-auto">
+                <div class="speak first_content row m-0 justify-content-start align-items-start" id="001">
+                    <div class="col-12 p-0">
+                        <div class="row w-100 m-0 justify-content-start align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
+                            <div class="col-auto p-0">
                                 <span class="block_ctrl solid-text light animate__animated just_fade">INSIGHT</span>
                                 <span class="block_ctrl solid-text light animate__animated just_fade animate__delay-500ms">INSPIRED</span>  
                             </div>
@@ -379,10 +421,10 @@ HELO - Moving Experiences
 
                 <div class="speak separate"></div>
 
-                <div class="speak second_content row justify-content-start align-items-start" id="002">
-                    <div class="col-12">
-                        <div class="row w-100 justify-content-start align-items-start p-5">
-                            <div class="col-auto">
+                <div class="speak second_content row m-0 justify-content-start align-items-start" id="002">
+                    <div class="col-12 p-0">
+                        <div class="row w-100 m-0 justify-content-start align-items-start py-5 px-0 px-md-3 px-lg-4 px-xl-6">
+                            <div class="col-auto p-0">
                                 <span class="block_ctrl solid-text light animate__animated just_fade">STORY</span>
                                 <span class="block_ctrl solid-text light animate__animated just_fade animate__delay-500ms">LED</span>  
                             </div>
@@ -392,10 +434,10 @@ HELO - Moving Experiences
 
                 <div class="speak separate"></div>
 
-                <div class="speak third_content row justify-content-start align-items-start" id="003">
-                    <div class="col-12">
-                        <div class="row w-100 justify-content-start align-items-end p-5">
-                            <div class="col-auto">
+                <div class="speak third_content row m-0 justify-content-start align-items-start" id="003">
+                    <div class="col-12 p-0">
+                        <div class="row w-100 m-0 justify-content-start align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
+                            <div class="col-auto p-0">
                                 <span class="block_ctrl solid-text light animate__animated just_fade">DESIGN</span>
                                 <span class="block_ctrl solid-text light animate__animated just_enter_left animate__delay-500ms">DRIVEN</span>  
                             </div>
@@ -405,10 +447,10 @@ HELO - Moving Experiences
                 
                 <div class="speak separate"></div>
 
-                <div class="speak fourth_content row justify-content-start align-items-start" id="004">
-                    <div class="col-12">
-                        <div class="row w-100 justify-content-center align-items-end pb-5">
-                            <div class="col-auto">
+                <div class="speak fourth_content row m-0 justify-content-start align-items-start" id="004">
+                    <div class="col-12 p-0">
+                        <div class="row w-100 m-0 justify-content-center align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
+                            <div class="col-auto p-0">
                                 <span class="block_ctrl solid-text light animate__animated just_enter_right">MOVING EXPERIENCES<pre>TM</pre></span>
                             </div>
                         </div>
@@ -417,10 +459,10 @@ HELO - Moving Experiences
                 
                 <div class="speak separate"></div>
 
-                <div class="speak fifth_content row justify-content-start align-items-start" id="005">
-                    <div class="col-12">
-                        <div class="row w-100 justify-content-center align-items-center p-5">
-                            <div class="col-auto">
+                <div class="speak fifth_content row m-0 justify-content-start align-items-start" id="005">
+                    <div class="col-12 p-0">
+                        <div class="row w-100 m-0 justify-content-center align-items-center py-5 px-0 px-md-3 px-lg-4 px-xl-6">
+                            <div class="col-auto p-0">
                                 <span class="position-relative d-inline-block animate__animated flip_y">
                                     <img src="{{ const.BASE_URL }}assets/img/logo_helo_video.svg" alt="" class="position-relative d-inline-block" style="width: 120px;">
                                 </span>
@@ -448,7 +490,7 @@ HELO - Moving Experiences
         <div class="row">
             <div class="col-12 item_typeWork" id="el_01" style="background-image: url({{ const.BASE_URL }}assets/img/experience/1.jpg);">
                 <video id="video__1" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/395415629.hd.mp4?s=bbf77232e3d60c8c0c685a42b882044e59bd0baa&profile_id=175" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/642747471.sd.mp4?s=3e61646c019c5213aa53b3ff4d3f02fb1d95716d&profile_id=165" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">
@@ -458,7 +500,7 @@ HELO - Moving Experiences
             </div>
             <div class="col-12 item_typeWork" id="el_02" style="background-image: url({{ const.BASE_URL }}assets/img/experience/2.jpg);">
                 <video id="video__2" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/389980088.hd.mp4?s=dbca24348ca2ebf00a1b4fb4b4e130fa86bfa1cb&profile_id=175" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/642746799.sd.mp4?s=6002166716560bed6eed570dfedc39a1fef7761a&profile_id=165" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">
@@ -468,7 +510,7 @@ HELO - Moving Experiences
             </div>
             <div class="col-12 item_typeWork" id="el_03" style="background-image: url({{ const.BASE_URL }}assets/img/experience/3.jpg);">
                 <video id="video__3" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/394201415.hd.mp4?s=63564b19176c13c7a3718b494671e0b4ab3a627b&profile_id=175" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/642747032.sd.mp4?s=f5266a697ad9143b598e980d0d722cbe6c02da83&profile_id=165" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">
@@ -478,7 +520,7 @@ HELO - Moving Experiences
             </div>
             <div class="col-12 item_typeWork" id="el_04" style="background-image: url({{ const.BASE_URL }}assets/img/experience/4.jpg);">
                 <video id="video__4" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/532407045.hd.mp4?s=434554360b32630fd6ba5a33be4588988eceaeee&profile_id=175?t=10" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/642754266.sd.mp4?s=14eaf2d47b2f1fa60926f6b1b70c45b71c700013&profile_id=165" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">
@@ -488,7 +530,7 @@ HELO - Moving Experiences
             </div>
             <div class="col-12 item_typeWork" id="el_05" style="background-image: url({{ const.BASE_URL }}assets/img/experience/5.jpg);">
                 <video id="video__5" loop preload="1" muted="muted">
-                    <source src="https://player.vimeo.com/external/394270170.hd.mp4?s=c73f615dc58e069805b43600f58f3d8b655bc743&profile_id=175" type="video/mp4">
+                    <source src="https://player.vimeo.com/external/394270170.sd.mp4?s=e73073369a007916757d6050a60ad0a2ae7f8886&profile_id=165" type="video/mp4">
                 </video>
                 <div class="row w-100 h-100 m-0 justify-content-center align-items-end">
                     <div class="col-auto col-lg-12 p-0 text-left">

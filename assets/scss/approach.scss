@@ -65,28 +65,33 @@
         position: relative;
         user-select: none;
         letter-spacing: 7px;
-
-        sup{
-          moz-text-stroke: 1px #FFF;
-          -webkit-text-stroke: 1px #FFF;
-          -webkit-text-fill-color: transparent;
-          -webkit-text-fill-color: transparent;
-          font-size: 1.75rem;
-          top: -.7em;
+        &:before {
+          content: attr(data-text);
+          position: absolute;
+          color: white;
+          mix-blend-mode: difference;
+          -webkit-text-stroke: 2px #FFF;
+          filter: blur(0.02em);
+          left:0;
+        }
+        &.__fix{
+          display: inline-block;
+          left: 14px;
+          right: 58px;
+          &:before{
+            left: 0px;
+            right: 58px;
+          }
+          sup{
+            moz-text-stroke: 1px #FFF;
+            -webkit-text-stroke: 1px #FFF;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.75rem;
+            top: -.7em;
+          }
         }
     }
-
-    .text::before {
-        content: attr(data-text);
-        position: absolute;
-        color: white;
-        mix-blend-mode: difference;
-        -webkit-text-stroke: 2px #FFF;
-        filter: blur(0.02em);
-        left:0;
-    }
-    
-    
     
     .gradient {
         position: absolute;
@@ -354,8 +359,31 @@
 @include media-breakpoint-down(xl) {
 }
 @include media-breakpoint-down(lg) {
+  #strategy{    
+      .neon {
+        display: block;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        .text {
+          @include block_ctrl();
+          text-align: center;
+          &:before {
+            left: 0px;
+            right: 0px;
+          }
+          &.__fix{
+            &:before{
+            }
+            sup{
+            }
+          }
+      }
+    }
+  }
 }
 @include media-breakpoint-down(md) {
+
 }
 @include media-breakpoint-down(sm) {
   #strategy .tabs label {
@@ -365,5 +393,49 @@
   #strategy h2, #strategy .h2 {
       font-size: 2rem;
       letter-spacing: 5px !important;
+  }
+  #strategy{    
+      .neon {
+        .text {
+          &:before {
+          }
+          &.__fix{
+            &:before{
+              right: 40px;
+            }
+            sup{
+              font-size: 1.2rem;
+            }
+          }
+      }
+    }
+  }
+}
+
+@media (max-width:380px){
+  #strategy .tabs label {
+      width: 100%;
+      padding: 20px 0px;
+  }
+  #strategy h2, #strategy .h2 {
+      font-size: 2rem;
+      letter-spacing: 5px !important;
+  }
+  #strategy{    
+      .neon {
+        .text {
+          font-size: 1.5rem;
+          &:before {
+          }
+          &.__fix{
+            &:before{
+              right: 35px;
+            }
+            sup{
+              font-size: 1rem;
+            }
+          }
+      }
+    }
   }
 }

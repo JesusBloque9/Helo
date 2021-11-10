@@ -8,6 +8,7 @@ div.item_typeWork{
     background-size: 100%;
     background-size: cover;
     background-position: 50% 50%;
+    pointer-events: auto;
     @include ease(.45s);
 	&:after{
 		content: '';
@@ -21,6 +22,7 @@ div.item_typeWork{
 		margin: 0px auto;
 	}
 	>div.row{
+		pointer-events: none;
 		@include ease(.45s);
 		z-index: 2;
 		position: relative;
@@ -39,6 +41,7 @@ div.item_typeWork{
 		}
 	}
 	>video{
+		pointer-events: none;
 		display: inline-block;
     	position: absolute;
     	top: -50%;
@@ -140,7 +143,7 @@ div#canvas_container{
 @include media-breakpoint-down(lg) {
 	div.item_typeWork{
 		width: 100%;
-    	height: 65px;
+    	height: 100px;
     	min-height: inherit;
     	border-bottom-style: solid;
     	border-bottom-width: 1px;
@@ -177,7 +180,7 @@ div#canvas_container{
 					writing-mode: horizontal-tb;
 					transform: rotate(0deg);
     				padding-top: 0px;
-    				color: #7A7A7A;
+    				color: #dcdcdc;
     				font-size: 2rem;
 				}
 			}

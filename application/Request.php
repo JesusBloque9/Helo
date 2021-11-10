@@ -12,7 +12,7 @@ class Request
             }else{
                 $url = 'index';
             }
-            $searchVal = array('_es','_en');
+            $searchVal = array('_es_','_en_');
             $url = str_replace($searchVal, '', $url);
             $this->_metodo = strtolower($url);
         $this->_controlador = 'routes';

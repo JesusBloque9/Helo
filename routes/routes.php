@@ -53,6 +53,94 @@ class routes extends Controller
         echo $this->_twig->render('sections/home_test5.html', compact('const'));
     }
 
+    public function sustainability()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/sustainability.html', compact('const'));
+    }
+
+    public function contact()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/contact.html', compact('const'));
+    }
+
+    public function thankyou()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/thankyou.html', compact('const'));
+    }
+
+    public function approach()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/approach.html', compact('const'));
+    }
+
+    public function e404()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/404.html', compact('const'));
+    }
+    public function works()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/works.html', compact('const'));
+
+    }
+
+    public function privacy_terms()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/privacy_terms.html', compact('const'));
+
+    }
+    
+    public function terms_of_use()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/terms_of_use.html', compact('const'));
+
+    }
+
+    /*NEWS*/
+    public function news()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news.html', compact('const'));
+    }
+    
+    public function creator_detail()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creator_detail.html', compact('const'));
+    }
+
+    public function new_mitsubishi()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/new-mitsubishi.html', compact('const'));
+    }
+
+    public function set_free_richardson()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/free-richardson.html', compact('const'));
+    }
+
+    public function mama_hotdog_rocks()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/bobbi_rich.html', compact('const'));
+    }
+
+    public function lola_tangos()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/lola_tangos.html', compact('const'));
+    }
+
+    /*CREADORES*/
     public function creators()
     {
         /*CONSTANTS*/$const=$this->_const;
@@ -119,11 +207,11 @@ class routes extends Controller
         echo $this->_twig->render('sections/creators/sebastian_kite.html', compact('const'));
     }
     
-    public function marissa_shrum()
-    {
-        /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/creators/marissa_shrum.html', compact('const'));
-    }
+    //public function marissa_shrum()
+    //{
+    //    /*CONSTANTS*/$const=$this->_const;
+    //    echo $this->_twig->render('sections/creators/marissa_shrum.html', compact('const'));
+    //}
 
     public function michael_young()
     {
@@ -155,73 +243,55 @@ class routes extends Controller
         echo $this->_twig->render('sections/creators/bobbi_rich.html', compact('const'));
     }
 
-    public function sustainability()
+    public function les_enfants_terribles()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/sustainability.html', compact('const'));
+        echo $this->_twig->render('sections/creators/les_enfants_terribles.html', compact('const'));
     }
 
-    public function creator_detail()
+    public function marissa_shrum()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/creator_detail.html', compact('const'));
+        echo $this->_twig->render('sections/creators/marissa_shrum_.html', compact('const'));
     }
 
-    public function contact()
+    public function joseph_bennett()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/contact.html', compact('const'));
+        echo $this->_twig->render('sections/creators/joseph_bennett.html', compact('const'));
     }
 
-    public function thankyou()
+    public function lola_tango()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/thankyou.html', compact('const'));
-    }
-    
-    public function news()
-    {
-        /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/news.html', compact('const'));
+        echo $this->_twig->render('sections/creators/lola_tango.html', compact('const'));
     }
 
-    
-    public function approach()
+    public function nepyru()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/approach.html', compact('const'));
+        echo $this->_twig->render('sections/creators/nepyru.html', compact('const'));
     }
 
-    public function new_mitsubishi()
+    public function anthony_nikolchev()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/news/new-mitsubishi.html', compact('const'));
+        echo $this->_twig->render('sections/creators/anthony_nikolchev.html', compact('const'));
     }
 
-    public function e404()
+    public function kk_barrett ()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/404.html', compact('const'));
+        echo $this->_twig->render('sections/creators/kk_barrett.html', compact('const'));
     }
-    public function works()
+
+    public function ethan_tobman ()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/works.html', compact('const'));
-
+        echo $this->_twig->render('sections/creators/ethan_tobman.html', compact('const'));
     }
 
-    public function privacy_terms()
-    {
-        /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/privacy_terms.html', compact('const'));
 
-    }
-    
-    public function terms_of_use()
-    {
-        /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/terms_of_use.html', compact('const'));
 
-    }
 }
 ?>

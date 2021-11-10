@@ -471,11 +471,17 @@ body {
 }
 @include media-breakpoint-down(md) {
   .scroll-sequence__container .speak > div > div.row > div > span.solid-text {
-      font-size: 2.5rem;
+      font-size: 3rem;
+  }
+  .scroll-sequence__container .scroll-sequence__content {
+      padding: 3em;
   }
 }
 @include media-breakpoint-down(sm) {
   .scroll-sequence__container .speak > div > div.row > div > span.solid-text {
       font-size: 2rem;
+  }
+  .scroll-sequence__container .scroll-sequence__content {
+      padding: 2em;
   }
 }
