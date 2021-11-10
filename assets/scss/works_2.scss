@@ -28,6 +28,10 @@ div.video_layout{
     position: relative;
     height: 50vh;
     overflow: hidden;
+    >div.play{
+    	display: none;
+    	pointer-events: none;
+    }
 	>div.bg{
 		display: inline-block;
 		position: absolute;
@@ -135,11 +139,73 @@ div.video_layout{
 	}
 }
 
+
+
 @include media-breakpoint-down(xl) {
 }
 @include media-breakpoint-down(lg) {
 }
 @include media-breakpoint-down(md) {
+	div.collapse_dev{
+		display: block !important;
+		div.video_layout{
+    		>div.play{
+    			display: inline-block;
+    			position: absolute;
+    			left: 0px;
+    			right: 0px;
+    			bottom: 0px;
+    			top: 0px;
+    			text-align: center;
+    			width: 100%;
+    			height: 100%;
+    			z-index: 99;
+    			>img{
+    				display: inline-block;
+    				position: absolute;
+    				left: 0px;
+    				right: 0px;
+    				bottom: 0px;
+    				top: 0px;
+    				margin: auto;
+    				height: 50px;
+    				width: 10%;
+    			}
+    		}
+			>div.video_container {
+				display: none;
+			}
+			>div.bg{
+				background-position: 50% 50%;
+				bakcground-size: cover;
+				bakcground-size: 100%;
+				span {
+				    width: auto;
+				    float: left;
+				    font-size: 2rem;
+				    >small{
+    					width: auto;
+    					float: none;
+    					padding-left: 15px;
+    					font-size: 1.75rem;
+    					font-weight: 300;
+				    	&:after{
+    						content: "";
+    						display: inline-block;
+    						position: absolute;
+    						left: 2px;
+    						width: 2px;
+    						height: 20px;
+    						top: 0px;
+    						bottom: 0px;
+    						margin: auto 0px;
+    						background-color: #FFFFFF;
+				    	}
+				    }
+				}
+			}
+		}
+	}
 }
 @include media-breakpoint-down(sm) {
 	div.video_layout > div.bg span {
@@ -156,4 +222,14 @@ div.video_layout{
 	    width: 100vh !important;
 	    height: 177vh !important;
 	}
+
+	div.collapse_dev{
+		div.video_layout > div.bg span {
+		    font-size: 1.5rem;
+		    >small{
+		    	font-size: 1.25rem;
+		    }
+		}
+	}
+
 }
