@@ -58,3 +58,19 @@
 .bg_green_ts{
     background-color: rgba($green, .4);
 }
+
+
+@include media-breakpoint-down(xl) {
+}
+@include media-breakpoint-down(lg) {
+	#creators{
+		.item_creator{
+			text-align: center;
+		}
+	}
+}
+@include media-breakpoint-down(md) {
+}
+@include media-breakpoint-down(sm) {
+    
+}

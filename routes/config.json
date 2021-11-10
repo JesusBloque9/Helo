@@ -1,5 +1,5 @@
 {
-	"BASE_URL": "https://helo.bloque9.us/",
-	"BASE_URL_": "http://localhost/helo/",
+	"BASE_URL_": "https://helo.bloque9.us/",
+	"BASE_URL": "http://localhost/helo/",
 	"BASE_URL__": "http://localhost:8188/"
 }

@@ -28,92 +28,18 @@ HELO - Moving Experiences
         const firstSequenceImages = [];
         var is_loaded = [false, false];
 
-        for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 1; i <= 10; i++) {
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }
-
-
-
-
 
         if ($(window).width() < 992) {
             var dir_imgsequence='assets/img/secuencia/movil/';
-            for (let i = 1; i < 384; i++) {
+            for (let i = 2; i < 384; i++) {
                 firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
             }
         }else{
             var dir_imgsequence='assets/img/secuencia/desktop/';
-            for (let i = 1; i < 386; i++) {
+            for (let i = 2; i < 386; i++) {
                 firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
             }
         }
-
-
-
-
-       /* for (let i = 11; i <= 99; i=i+2) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }
-
-        for (let i = 101; i <= 791; i=i+2) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-5)}.jpg`);
-        }*/
-
-        /*for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
-        }
-        for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
-        }
-        for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
-        }
-        for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
-        }
-        for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
-        }
-        for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 1; i <= 9; i=i+2) {//126
-            firstSequenceImages.push(`${`0000${i}`.slice(-8)}.jpg`);
-        }
-
-
-        for (let i = 11; i <= 99; i=i+2) {//126
-            firstSequenceImages.push(`${`000${i}`.slice(-8)}.jpg`);
-        }
-
-        for (let i = 101; i <= 781; i=i+2) {//126
-            firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        }*/
 
         var firstSequence=null;
 
@@ -123,7 +49,7 @@ HELO - Moving Experiences
             images: firstSequenceImages,
             imagesRoot: dir_imgsequence,
             cover: true,
-            starts: 'out',
+            starts: 'in',
             ends: 'in'
         });
 
