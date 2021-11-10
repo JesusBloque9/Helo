@@ -78,6 +78,8 @@
         border: 0;
         margin-bottom: 50px;
         margin-top: 15px;
+        .card-body{
+        }
         >a{
             @include block_ctrl();
             overflow: hidden;
@@ -166,15 +168,18 @@
     }
 
     a.card-title{
+        @include block_ctrl();
         font-size: 1.75rem;
         letter-spacing: 0px;
         color: #1D1D1D;
         font-weight: bold;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
         text-decoration: none;
+        line-height: 1.5;
     }
 
     p.date{
+        @include block_ctrl();
         font-size: 0.9375rem;
         letter-spacing: 0.75px;
         color: #7A7A7A;
@@ -183,10 +188,13 @@
     }
 
     p.card-text{
+        @include block_ctrl();
         font-size: 1rem;
         letter-spacing: 0px;
         color: #7A7A7A;
-        font-weight: 500;
+        font-weight: 400;
+        line-height: 1.75;
+        text-align: justify;
     }
 }
 

@@ -103,17 +103,14 @@ class routes extends Controller
 
     }
 
+
+
+
     /*NEWS*/
     public function news()
     {
         /*CONSTANTS*/$const=$this->_const;
         echo $this->_twig->render('sections/news.html', compact('const'));
-    }
-    
-    public function creator_detail()
-    {
-        /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/creator_detail.html', compact('const'));
     }
 
     public function new_mitsubishi()
@@ -140,11 +137,20 @@ class routes extends Controller
         echo $this->_twig->render('sections/news/lola_tangos.html', compact('const'));
     }
 
+
+
+
     /*CREADORES*/
     public function creators()
     {
         /*CONSTANTS*/$const=$this->_const;
         echo $this->_twig->render('sections/creators.html', compact('const'));
+    }
+
+    public function creator_detail()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creator_detail.html', compact('const'));
     }
 
     public function christine_ng()
