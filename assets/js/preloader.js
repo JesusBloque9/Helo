@@ -19,11 +19,11 @@ $(window).on('load', function () {
 });
 
 
-$(".openNav").click(function() {
+/*$(".openNav").click(function() {
   $(".page").addClass("swipe-lft");
   $(".nav").addClass("open");
 });
 $(".closeNav").click(function() {
   $(".page").removeClass("swipe-lft");
   $(".nav").removeClass("open");
-});
+});*/
