@@ -155,10 +155,10 @@ HELO - Moving Experiences
             const py_section_wemake = $('#experiences').offset().top;
             const height_vp = $(window).height();
             const hideON = py_section_wemake-height_vp;
+            var scroll = $(window).scrollTop();
             $(window).scroll(function (event) {
-                var scroll = $(window).scrollTop();
+                scroll = $(window).scrollTop();
                 console.log(scroll);
-
                 if (!window.scrolled && scroll>=hideON) {
                     window.scrolled=true;
                     $('html,body').animate({scrollTop:$('#experiences').offset().top-92},0);
@@ -177,8 +177,10 @@ HELO - Moving Experiences
                         $('div.scroll_').css('opacity',new_op);
                     }
                 }
-
             });
+            if (scroll>50) {
+                $('div.scroll_').hasClass('hide_')
+            }
         }
     </script>   
      <script src="{{ const.BASE_URL }}node_modules/gsap/dist/gsap.js" ></script>
@@ -347,10 +349,9 @@ HELO - Moving Experiences
 <div class="container-fluid p-0 m-0 scroll-container">
     <div class="row m-0">
         <div class="scroll_">
-            <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
-                <div class="col-auto">
+            <div class="row w-100 h-100 m-0 justify-content-center align-items-end pb-sm-1 pb-md-3 pb-lg-4 pb-xl-5">
+                <div class="col-auto pb-6">
                     <div class="mouse"></div>
-                    <p>Scroll Down</p>
                 </div>
             </div>
         </div>
