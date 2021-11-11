@@ -157,6 +157,8 @@ HELO - Moving Experiences
             const hideON = py_section_wemake-height_vp;
             $(window).scroll(function (event) {
                 var scroll = $(window).scrollTop();
+                console.log(scroll);
+
                 if (!window.scrolled && scroll>=hideON) {
                     window.scrolled=true;
                     $('html,body').animate({scrollTop:$('#experiences').offset().top-92},0);
@@ -164,6 +166,18 @@ HELO - Moving Experiences
                 if (window.scrolled && scroll<hideON) {
                     window.scrolled=false;
                 }
+
+                let new_op = 1-(scroll/3)/100;
+                if (!$('div.scroll_').hasClass('hide_')) {
+                    if (new_op<.5) {
+                        console.log('class hide_ added');
+                        $('div.scroll_').addClass('hide_');
+                    }else{
+                        console.log('opacity: '+new_op);
+                        $('div.scroll_').css('opacity',new_op);
+                    }
+                }
+
             });
         }
     </script>   
@@ -332,6 +346,14 @@ HELO - Moving Experiences
 
 <div class="container-fluid p-0 m-0 scroll-container">
     <div class="row m-0">
+        <div class="scroll_">
+            <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                <div class="col-auto">
+                    <div class="mouse"></div>
+                    <p>Scroll Down</p>
+                </div>
+            </div>
+        </div>
         <section class="scroll-sequence__container first-container">
             <div class="scroll-sequence first-sequence"></div>
             <div class="scroll-sequence__content container-fluid">
