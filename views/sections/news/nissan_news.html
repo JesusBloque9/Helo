@@ -1,0 +1,150 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+HELO
+{% endblock %}
+
+{% block preloads %}  	
+{% endblock %}
+
+{% block extraCSS %}
+    <link rel="stylesheet" href="{{ const.BASE_URL }}node_modules/@fancyapps/ui/dist/fancybox.css"/>
+{% endblock %}
+
+{% block extraJS %}
+    <script src="{{ const.BASE_URL }}assets/js/share.js"></script>
+    <script src="{{ const.BASE_URL }}node_modules/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#botonocultamuestra").click(function(){
+               $("#divocultamuestra").each(function() {
+                 displaying = $(this).css("display");
+                 if(displaying == "block") {
+                   $(this).fadeOut('slow',function() {
+                    $(this).css("display","none");
+                   });
+                 } else {
+                   $(this).fadeIn('slow',function() {
+                     $(this).css("display","block");
+                   });
+                 }
+               });
+             });
+           });
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
+
+    <main class="new_detail">
+        <div class="py-5 container" id="title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-9 col-md-6 pb-2">
+                        <p class="block_ctrl title_p">News</p>
+                        <h3 class="title_section green pb-0">Glenn Kitson directs pulse racing driving stunt for Nissan</h3>
+                        <p class="block_ctrl title_p pt-2 date">November 05, 2021</p>
+                    </div>
+                    <!--div-- class="col" id="search-box">
+                        <div class="p_auto">
+                            SEARCH <input><div class="div1"></div></input>
+                        </div>
+                    </div-->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-0">
+            <div class="row w-100 m-0">
+                <div class="col-12 p-0">
+                    <img src="{{ const.BASE_URL }}assets/img/news/nissan_news/portada.jpg" alt="" class="block_ctrl">
+                </div>
+                <div class="col-12 pt-4">
+                    <iframe src="https://player.vimeo.com/video/642476114?h=b9e9cb85ea" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen class="block_ctrl"></iframe>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-6">
+            <div class="row justify-content-center">
+                <div class="col-12 text-left">
+                    <span class="summary">To celebrate Nissan’s partnership with Formula E and Manchester City Football Club, Nissan wanted to create a driving stunt on the streets of Manchester with a real Nissan Formula E vehicle and the new Nissan Aryia, that used biometric data connected to the driver to create an electrifying visual display on the exterior of the car.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pb-4">
+            <div class="row">
+                <div class="col-12 text-left">
+                    <span>Nissan wanted to create a live stunt that embodies the spirit of their campaign ‘Feel Electric’. HELO was asked to research and develop a custom lighting system that could connect to this biometric driving experience. It was important that it was robust enough to be driven for real at night on the streets of Manchester, and also that it would be completely non-invasive to the real Nissan Formula E vehicle in the film.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pb-6">
+            <div class="row">
+                <div class="col-12 text-left">
+                    <span>Tomasso Volpe, Global Motorsports Director at Nissan says, “Every sensation you feel is electricity that flows through the body, the same electricity that flows through our cars. We wanted to produce a stunt that visualises this relationship.”</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pb-6">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 pe-0 pe-md-5">
+                    <span>The team saw that there were a number of tools they could have used to achieve the brief, all with different considerations, and they entered a process of research to identify which technology would best achieve the brief. In particular, being non-invasive to the vehicle was one of the most challenging aspects, most lighting systems required heavy support equipment to power the lighting display, and the team needed something very light that required minimal on board equipment.</span>
+                    <span>The solution HELO found was a custom integration of a biometric real time visualisation engine using touch designer and a newly developed electro luminescent paint built upon a custom designed wiring harness that would sit over the body of the FE vehicle, connected to a small on board battery pack and computer system.</span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="{{ const.BASE_URL }}assets/img/news/nissan_news/image01.jpg" alt="" class="block_ctrl">
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <img src="{{ const.BASE_URL }}assets/img/news/nissan_news/image01.jpg" alt="" class="block_ctrl">
+                </div>
+                <div class="col-12 col-md-6 pe-0 pe-md-5">
+                    <span>The Formula E racing drivers wear biometric gloves as part of their standard race kit, which tracks their biometric data including ; heart rate, blood oxygen and body temperature. Nissan felt this was an interesting opportunity to take a deeper look at what the body's biometric responses are to the exhilaration of driving. For the Formula E driver himself, this was clearly an experience of importance.</span>
+                    <span>“It was a lot of fun to be part of the Feel Electric stunt with my Formula E race car,” said Sebastien Buemi, Nissan Formula E driver. “When I race for Nissan around the world in the ABB FIA Formula E World Championship, I am of course experiencing very powerful emotions. However, away from the heat of the racing battle on the shoot I could focus more on how I was feeling as I drove on the city streets. To see my emotions and excitement light up the car was very cool.”</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="share container">
+            <a id="botonocultamuestra" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">SHARE<img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/icon-share.svg" alt=""></a>
+            <div id="divocultamuestra">
+              <div class="shared-panel">                
+                  <a target="_blank" class="shared fb" title="Facebook"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/facebook.svg" alt=""></a>
+                  <a target="_blank" class="shared tt" title="Twitter"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/twitter.svg" alt=""></a>
+                  <a target="_blank" class="shared ce" id="sml" title="Email"><img class="logo-share" src="{{ const.BASE_URL }}assets/img/news/email.svg" alt=""></a>
+              </div>     
+            </div>        
+        </section>
+        <section class="row cambiar-noticia container">
+            <div class="col-6 past-arrow">
+                <a href="{{ const.BASE_URL }}jack_in_the_box_news"><img src="{{ const.BASE_URL }}assets/img/news/mitsubishi/past-arrow.svg" alt=""> PAST ARTICLE</a>                
+            </div>
+        </section>
+
+    </main>
+    <div class="container-fluid">
+        <div class="row multicolor">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+    {% include 'modules/footer.html' %}
+
+{% endblock %}
