@@ -23,6 +23,7 @@ HELO
 {% endblock %}
 
 {% block extraJS %}
+    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
     <script>
         function resize_withAspectRadio(){
             $( "#works>div" ).each(function( index ) {
@@ -40,9 +41,24 @@ HELO
     <script>
         window.firstLoad=true;
         function videos_vimeo(videoId="", divId="", overlayId="", textId=""){
+
+            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            var qual = '720p';
+            if (isIOS) {
+                qual = '720p';
+            }else if ($(window).width() < 992) {
+                qual = '360p';
+            }else{
+                qual = '720p';
+                if (overlayId!=='deloitte_overlay') {
+                    qual = '360p';
+                }
+            }
+
             var options = {
                 id: videoId,
                 duration: 5,
+                quality: qual
             };
             var videoPlayer = new Vimeo.Player(divId, options);            
             videoPlayer.setCurrentTime(2);
@@ -109,15 +125,18 @@ HELO
                     <h3 class="title_leftline primary">CHRISTINE NG — DIRECTOR <small>Transforming light into emotion.</small></h3>
                 </div>
             </div>
-            <div class="row mx-0" id="works">
+            <div class="row mx-0">
 
-                <div class="col-12 yellow p-0_cover up">
-                    <div class="color"><div id="deloitte" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay bg_yellow_ts" id="deloitte_overlay"></div>
-                    <div class="row px-5 py-5 text" id="deloitte_text">
-                        <p>Showtime</p>
-                        <h1>Ziwe</h1>
-                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                <div class="col-12 item_work yellow">
+                    <div class="video_content" id="deloitte" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center" id="deloitte_text">
+                            <div class="col-auto">
+                                <p>Showtime</p>
+                                <h1>Ziwe</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
                     </div>
                 </div>
 

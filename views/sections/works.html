@@ -55,9 +55,20 @@ Work - HELO
         window.loaded_videos=false;
         function videos_vimeo(videoId="", divId="", overlayId="", collapseId=""){
 
+            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            var qual = '720p';
+            if (isIOS) {
+                qual = '720p';
+            }else if ($(window).width() < 992) {
+                qual = '360p';
+            }else{
+                qual = '1080p';
+            }
+
             var options = {
                 id: videoId,
                 duration: 5,
+                quality: qual
             };
             var videoPlayer = new Vimeo.Player(divId, options);
 
