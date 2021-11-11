@@ -137,6 +137,48 @@ class routes extends Controller
         echo $this->_twig->render('sections/news/lola_tangos.html', compact('const'));
     }
 
+    public function adidas()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/adidas.html', compact('const'));
+    }
+
+    public function santander()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/santander.html', compact('const'));
+    }
+    
+    public function christine_ng_news()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/christine_ng_news.html', compact('const'));
+    }
+    
+    public function jack_in_the_box_news()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/jack_in_the_box_news.html', compact('const'));
+    }
+
+    public function nissan_news()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/nissan_news.html', compact('const'));
+    }
+
+    public function nepyru_creative_company()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/nepyru.html', compact('const'));
+    }
+    
+    public function anthem()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/news/anthem.html', compact('const'));
+    }
+
 
 
 
