@@ -26,28 +26,19 @@ HELO - Moving Experiences
     </script>
     <script>
         const firstSequenceImages = [];
-        var is_loaded = [false, false];
 
         var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         if (isIOS) {
-            alert('isIOS');
-        }
-        //alert(navigator.userAgent.toLowerCase());
-        //if (navigator.userAgent.toLowerCase().indexOf("iphone") == 1){
-        //    alert('iphone');
-        //    var dir_imgsequence='assets/img/secuencia/iphone/';
-        //    for (let i = 2; i < 383; i++) {
-        //        firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
-        //    }
-        //}else 
-        if ($(window).width() < 992) {
-            alert('movil');
+            var dir_imgsequence='assets/img/secuencia/iphone/';
+            for (let i = 2; i < 383; i++) {
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+            }
+        }else if ($(window).width() < 992) {
             var dir_imgsequence='assets/img/secuencia/movil/';
             for (let i = 2; i < 384; i++) {
                 firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
             }
         }else{
-            alert('desktop');
             var dir_imgsequence='assets/img/secuencia/desktop/';
             for (let i = 2; i < 386; i++) {
                 firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
