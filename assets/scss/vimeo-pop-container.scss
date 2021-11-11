@@ -6,25 +6,45 @@
   left: 0;
   z-index: 9999999;
   background: rgba(0, 0, 0, 0.75);
-}
-#vimeo-pop-container div {
-  height: 100%;
-  width: 100%;
-  padding: 15px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-#vimeo-pop-container .vimeo-close {
-    background-color: $yellow;
-    cursor: pointer;
-    height: 48px;
-    width: 48px;
+  >div{
+    height: 100%;
+    width: 100%;
+    padding: 15px;
     position: absolute;
-    right: 15px;
-    border-radius: 50%;
-    transition: 200ms background-color;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    >div.modal_loader{
+      display: inline-block;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      top: 0px;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    >.vimeo-close {
+      background-color: $yellow;
+      cursor: pointer;
+      height: 48px;
+      width: 48px;
+      position: absolute;
+      right: 15px;
+      border-radius: 50%;
+      transition: 200ms background-color;
+      z-index: 3;
+    }
+    >iframe {
+      border: 0px solid #000;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+  }
 }
 #vimeo-pop-container .vimeo-close:before, #vimeo-pop-container .vimeo-close:after {
   content: "";
@@ -62,9 +82,4 @@
   margin-left: -10px;
   margin-top: -10px;
   animation: close-after 500ms ease 500ms 1 forwards;
-}
-#vimeo-pop-container iframe {
-  border: 0px solid #000;
-  height: 100%;
-  width: 100%;
 }

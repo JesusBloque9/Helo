@@ -14,6 +14,7 @@ HELO - Moving Experiences
 {% endblock %}
 
 {% block extraJS %}
+    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
     <script>
         function mobile_functions() {
@@ -26,10 +27,14 @@ HELO - Moving Experiences
     </script>
     <script>
         const firstSequenceImages = [];
-        var is_loaded = [false, false];
 
-
-        if ($(window).width() < 992) {
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIOS) {
+            var dir_imgsequence='assets/img/secuencia/iphone/';
+            for (let i = 2; i < 383; i++) {
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+            }
+        }else if ($(window).width() < 992) {
             var dir_imgsequence='assets/img/secuencia/movil/';
             for (let i = 2; i < 384; i++) {
                 firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
@@ -151,8 +156,10 @@ HELO - Moving Experiences
             const py_section_wemake = $('#experiences').offset().top;
             const height_vp = $(window).height();
             const hideON = py_section_wemake-height_vp;
+            var scroll = $(window).scrollTop();
             $(window).scroll(function (event) {
-                var scroll = $(window).scrollTop();
+                scroll = $(window).scrollTop();
+                console.log(scroll);
                 if (!window.scrolled && scroll>=hideON) {
                     window.scrolled=true;
                     $('html,body').animate({scrollTop:$('#experiences').offset().top-92},0);
@@ -160,7 +167,21 @@ HELO - Moving Experiences
                 if (window.scrolled && scroll<hideON) {
                     window.scrolled=false;
                 }
+
+                let new_op = 1-(scroll/3)/100;
+                if (!$('div.scroll_').hasClass('hide_')) {
+                    if (new_op<.5) {
+                        console.log('class hide_ added');
+                        $('div.scroll_').addClass('hide_');
+                    }else{
+                        console.log('opacity: '+new_op);
+                        $('div.scroll_').css('opacity',new_op);
+                    }
+                }
             });
+            if (scroll>50) {
+                $('div.scroll_').hasClass('hide_')
+            }
         }
     </script>   
      <script src="{{ const.BASE_URL }}node_modules/gsap/dist/gsap.js" ></script>
@@ -328,6 +349,13 @@ HELO - Moving Experiences
 
 <div class="container-fluid p-0 m-0 scroll-container">
     <div class="row m-0">
+        <div class="scroll_">
+            <div class="row w-100 h-100 m-0 justify-content-center align-items-end pb-sm-1 pb-md-3 pb-lg-4 pb-xl-5">
+                <div class="col-auto pb-6">
+                    <div class="mouse"></div>
+                </div>
+            </div>
+        </div>
         <section class="scroll-sequence__container first-container">
             <div class="scroll-sequence first-sequence"></div>
             <div class="scroll-sequence__content container-fluid">
@@ -338,8 +366,8 @@ HELO - Moving Experiences
                     <div class="col-12 p-0">
                         <div class="row w-100 m-0 justify-content-start align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
-                                <span class="block_ctrl solid-text light animate__animated just_fade">INSIGHT</span>
-                                <span class="block_ctrl solid-text light animate__animated just_fade animate__delay-500ms">INSPIRED</span>  
+                                <span class="block_ctrl solid-text light animate__animated animate__faster just_fade">INSIGHT</span>
+                                <span class="block_ctrl solid-text light animate__animated animate__faster just_fade animate__delay-300ms">INSPIRED</span>  
                             </div>
                         </div>
                     </div>
@@ -351,8 +379,8 @@ HELO - Moving Experiences
                     <div class="col-12 p-0">
                         <div class="row w-100 m-0 justify-content-start align-items-start py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
-                                <span class="block_ctrl solid-text light animate__animated just_fade">STORY</span>
-                                <span class="block_ctrl solid-text light animate__animated just_fade animate__delay-500ms">LED</span>  
+                                <span class="block_ctrl solid-text light animate__animated animate__faster just_fade">STORY</span>
+                                <span class="block_ctrl solid-text light animate__animated animate__faster just_fade animate__delay-300ms">LED</span>  
                             </div>
                         </div>
                     </div>
@@ -364,8 +392,8 @@ HELO - Moving Experiences
                     <div class="col-12 p-0">
                         <div class="row w-100 m-0 justify-content-start align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
-                                <span class="block_ctrl solid-text light animate__animated just_fade">DESIGN</span>
-                                <span class="block_ctrl solid-text light animate__animated just_enter_left animate__delay-500ms">DRIVEN</span>  
+                                <span class="block_ctrl solid-text light animate__animated animate__faster just_fade">DESIGN</span>
+                                <span class="block_ctrl solid-text light animate__animated animate__faster just_enter_left animate__delay-300ms">DRIVEN</span>  
                             </div>
                         </div>
                     </div>
@@ -377,7 +405,7 @@ HELO - Moving Experiences
                     <div class="col-12 p-0">
                         <div class="row w-100 m-0 justify-content-center align-items-end py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
-                                <span class="block_ctrl solid-text light animate__animated just_enter_right">MOVING EXPERIENCES<pre>TM</pre></span>
+                                <span class="block_ctrl solid-text light animate__animated animate__faster just_enter_right">MOVING EXPERIENCES<pre>TM</pre></span>
                             </div>
                         </div>
                     </div>
@@ -389,7 +417,7 @@ HELO - Moving Experiences
                     <div class="col-12 p-0">
                         <div class="row w-100 m-0 justify-content-center align-items-center py-5 px-0 px-md-3 px-lg-4 px-xl-6">
                             <div class="col-auto p-0">
-                                <span class="position-relative d-inline-block animate__animated flip_y">
+                                <span class="position-relative d-inline-block animate__animated animate__faster flip_y">
                                     <img src="{{ const.BASE_URL }}assets/img/logo_helo_video.svg" alt="" class="position-relative d-inline-block" style="width: 120px;">
                                 </span>
                             </div>
