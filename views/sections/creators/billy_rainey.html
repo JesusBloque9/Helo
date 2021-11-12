@@ -1,0 +1,124 @@
+{% extends "template.html" %}
+
+
+{% block title %}
+Billy Rainey - HELO
+{% endblock %}
+
+{% block preloads %}
+{% endblock %}
+
+{% block extraCSS %}
+{% endblock %}
+
+{% block extraJS %}
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="{{ const.BASE_URL }}assets/js/creator_detail.js" ></script>
+{% endblock %}
+
+{% block content %}
+
+    {% set positioned = true %}
+    {% include 'modules/menu_home.html' %}
+
+    <div class="py-6" id="creators" style="z-index: 10;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4 pb-4">
+                    <h3 class="title_leftline primary">Billy Rainey <small>Inventing and reinventing reality on film.</small></h3>
+                </div>
+            </div>
+            <div class="row mx-0 justify-content-center align-items-center"">
+
+                <div class="col-12 item_video_ yellow" id="540358749" start="4.5">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>Trash Talk</p>
+                                <h1>AFLAC</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_content"></div>
+                </div>
+
+                <div class="col-12 col-md-6 item_video_ orange" id="528594578" start="1">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>Anthem Investor Day</p>
+                                <h1>Deloitte</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_content"></div>
+
+                </div>
+
+                <div class="col-12 col-md-6 item_video_ red" id="417710801" start="5">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>Waiting with Huell</p>
+                                <h1>Netflix</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_content"></div>
+                </div>
+
+                <div class="col-12 col-md-6 item_video_ blue" id="278536693" start="3">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>Puppy</p>
+                                <h1>Buick</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_content"></div>
+
+                </div>
+
+                <div class="col-12 col-md-6 item_video_ purple" id="279151771" start="5">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>King Deals</p>
+                                <h1>Burger King</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_content"></div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 pt-3">
+                    <h3 class="fw_700">Biography</h3>
+                    <p>A film school graduate from Boston University, Rainey has become one of the most sought-out directors in his field by reviving the tired hidden-camera format and bringing a new perspective to comedy through the eyes of ‘real’ people in 'real' situations. With his show “Punk’d” he made Justin Timberlake cry, convinced Drake he was in an earthquake, and made Taylor Swift believe that she blew up a boat. As a commercial director, Billy put his unique set of skills to work, filming campaigns and creating experiential work for clients including Old Spice, Burger King, Vitamin Water, Exxon, Barclays, Buick and the NCAA. He continues to show run for major television networks, including Tru, Discovery, MTV and Comedy Central, working in both long and short forms, from traditional advertising to new media content.</p>
+                    <p>“Before “reality TV” (aka “alternative” television) even had a name, Billy was there on the ground floor of a revolution. He directed the first ‘reality’ television show, The Real World, and after helming several seasons, parlayed his talents into producing and directing his own shows, including MTV’s Making the Video, which spawned a multitude of spin-offs and gave him the opportunity to work with some of the world’s most recognized A-list talent including Beyonce, Janet Jackson, No Doubt and N’Sync, among others.”</p>
+                    <p class="block_ctrl text-end">— RealScreen Summit</p>
+                    <div class="row m-0 w-100">
+                        <div class="col-12 px-0 pt-2">
+                            <a href="{{ const.BASE_URL }}creators" class="back_">
+                                <img src="{{ const.BASE_URL }}assets/img/back.svg" alt="">
+                                BACK TO CREATORS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% include 'modules/line_colors.html' %}
+
+{% include 'modules/footer.html' %}
+
+{% endblock %}
