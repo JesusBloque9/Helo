@@ -339,7 +339,11 @@ class routes extends Controller
         echo $this->_twig->render('sections/creators/ethan_tobman.html', compact('const'));
     }
 
-
+    public function billy_rainey ()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/creators/billy_rainey.html', compact('const'));
+    }
 
 }
 ?>

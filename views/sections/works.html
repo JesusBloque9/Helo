@@ -52,52 +52,40 @@ Work - HELO
 {% block extraJS %}
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
-        window.loaded_videos=false;
-        function videos_vimeo(videoId="", divId="", overlayId="", collapseId=""){
+        const no_videos = $('.video_item').length;
+        window.load_videos=false;
+        function video_instance(videoId=""){
 
             var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            var qual = '720p';
+            var qual = '540p';
             if (isIOS) {
-                qual = '720p';
+                qual = '540p';
             }else if ($(window).width() < 992) {
                 qual = '360p';
             }else{
-                qual = '1080p';
+                qual = '540p';
             }
 
+            var start_at = parseInt($('#'+videoId).attr('start'));
+            var video_content = $('#'+videoId).children('.collapse_dev').children('.video_layout').children('.video_container');
+            var overlay = $('span#'+videoId+'_overlay');
+            var collapseId = $('#'+videoId).children('.collapse_dev').attr('id');
+            var button_playModal = $('#'+videoId).children('.collapse_dev');
             var options = {
                 id: videoId,
-                duration: 5,
-                quality: qual
+                quality: qual,
+                keyboard: false,
+                loop: true,
+                autoplay: false,
+                muted: true,
+                background: true,
+                controls: false,
+                responsive: true,
+                pip: true
             };
-            var videoPlayer = new Vimeo.Player(divId, options);
-
-            //<--loader//autoplay true
-            videoPlayer.on('play', function() {
-                console.log('Played the video'+divId);
-                if (window.loaded_videos===false) {
-                    videoPlayer.pause();
-                }
-                if (divId==='container_video_10') {
-                    $('#ctn-preloader').addClass('loaded');
-                    if ($('#ctn-preloader').hasClass('loaded')) {
-                      // Es para que una vez que se haya ido el preloader se elimine toda la seccion preloader
-                      $('#preloader').delay(1000).queue(function() {
-                        $(this).addClass('d-none');
-                      });
-                    }
-                    window.loaded_videos=true;
-                }
-            });
-            //loader-->
-
-            if(overlayId == 'sens_row_10'){
-                videoPlayer.setCurrentTime(10);
-            }else{
-                videoPlayer.setCurrentTime(2);
-            }
+            var videoPlayer = new Vimeo.Player(video_content, options);
             
-            $('#'+overlayId).on("mouseover", function(){
+            overlay.on("mouseover", function(){
                 $('span.hollow-text-black').removeClass('active');
                 $( this ).addClass('active');
                 $( ".collapse_dev" ).each(function() {
@@ -119,42 +107,49 @@ Work - HELO
                     }
                 });
             });
-            //$('#'+overlayId).on("mouseleave", function(){
-            //    videoPlayer.pause().then(function(){
-            //        videoPlayer.setCurrentTime(2);
-            //        bsCollapse.hide();
-            //    });
-            //});
-            //videoPlayer.on('timeupdate', function(data) {
-            //    if (data.seconds > 6) {
-            //        videoPlayer.setCurrentTime(2);
-            //    }
-            //});
-            $('html')
-                .on('click', '#'+collapseId+' .bg', function () {
-                        $video = '<div id="vimeo-pop-container"><div><div class="modal_loader"><div class="row w-100 h-100 m-0 justify-content-center align-items-center"><div class="col-auto"><div class="spinner-border text-light" role="status"><span class="visually-hidden">Loading...</span></div></div>    </div></div><span class="vimeo-close"></span><iframe src="https://player.vimeo.com/video/' + videoId + '/?autoplay=1&loop=1&autopause=0&controls=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>';
-                    $('html').append($video);
-                } )
-                .on('click', '.vimeo-close', function () {
-                    $(this).addClass('closing');
-                    $('#vimeo-pop-container').delay(700).animate({
-                        height: 0,
-                        top: '50%'
-                    }, 'fast', function () {
-                        $('#vimeo-pop-container').remove();
-                    });
-                } );
+
+            button_playModal.click(function(){
+                $video = '<div id="vimeo-pop-container"><div><div class="modal_loader"><div class="row w-100 h-100 m-0 justify-content-center align-items-center"><div class="col-auto"><div class="spinner-border text-light" role="status"><span class="visually-hidden">Loading...</span></div></div>    </div></div><span class="vimeo-close"></span><iframe src="https://player.vimeo.com/video/' + videoId + '/?autoplay=1&loop=1&autopause=0&controls=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>';
+                $('html').append($video);
+            });
+
+            $('html').on('click', '.vimeo-close', function () {
+                $(this).addClass('closing');
+                $('#vimeo-pop-container').delay(700).animate({
+                    height: 0,
+                    top: '50%'
+                }, 'fast', function () {
+                    $('#vimeo-pop-container').remove();
+                });
+            });
+
+            videoPlayer.ready().then(function() {
+                if (videoId==='543292157' || videoId==='528105595') {
+                    window.load_videos++;
+                }
+                videoPlayer.pause();
+                console.log('Video loaded: '+videoId);
+                console.log('window.load_videos: '+window.load_videos);
+                if (window.load_videos===2) {
+                    console.log('HIDE LOADER');
+                    $('#ctn-preloader').addClass('loaded');
+                    if ($('#ctn-preloader').hasClass('loaded')) {
+                      $('#preloader').delay(1000).queue(function() {
+                        $(this).addClass('d-none');
+                      });
+                    }
+                }
+                return true;
+            });
+
         }
-        videos_vimeo('543292157','container_video_01','sens_row_01','collapse_01');
-        videos_vimeo('528105595','container_video_02','sens_row_02','collapse_02');
-        videos_vimeo('532407045','container_video_03','sens_row_03','collapse_03');
-        videos_vimeo('395415629','container_video_04','sens_row_04','collapse_04');
-        videos_vimeo('394201415','container_video_05','sens_row_05','collapse_05');
-        videos_vimeo('437152079','container_video_06','sens_row_06','collapse_06');
-        videos_vimeo('389980088','container_video_07','sens_row_07','collapse_07');
-        videos_vimeo('394270170','container_video_08','sens_row_08','collapse_08');
-        videos_vimeo('642476368','container_video_09','sens_row_09','collapse_09');
-        videos_vimeo('642400612','container_video_10','sens_row_10','collapse_10');
+        function run_videos(){
+            $( ".video_item" ).each(function( index ) {
+                var videoId = $( this ).attr('id');
+                video_instance(videoId);
+            });
+        }
+        run_videos();
     </script>
 {% endblock %}
 
@@ -176,12 +171,12 @@ Work - HELO
     <div class="container d-none d-md-block">
         <div class="row">
             <div class="col-6 item_work">
-                <span class="hollow-text-black" id="sens_row_09">
+                <span class="hollow-text-black" id="543292157_overlay">
                     Nissan
                 </span>
             </div>
             <div class="col-6 item_work">
-                <span class="hollow-text-black" id="sens_row_10">
+                <span class="hollow-text-black" id="528105595_overlay">
                     Jack in the Box
                 </span>
             </div>
@@ -189,9 +184,9 @@ Work - HELO
     </div>
 
     <div>
-        <div class="container-fluid p-0 m-0">
+        <div class="container container-md-fluid p-md-0 m-md-0">
             <div class="row m-0">
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="543292157">
                     <div class="collapse_dev" style="display: none;" id="collapse_09">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -209,11 +204,11 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_09" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="528105595">
                     <div class="collapse_dev" style="display: none;" id="collapse_10">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -231,7 +226,7 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_10" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
@@ -243,12 +238,12 @@ Work - HELO
         <div class="container d-none d-md-block">
             <div class="row">
                 <div class="col-6 item_work">
-                    <span class="hollow-text-black" id="sens_row_01">
+                    <span class="hollow-text-black" id="532407045_overlay">
                         Deloitte
                     </span>
                 </div>
                 <div class="col-6 item_work">
-                    <span class="hollow-text-black" id="sens_row_02">
+                    <span class="hollow-text-black" id="395415629_overlay">
                         Mitsubishi
                     </span>
                 </div>
@@ -257,9 +252,9 @@ Work - HELO
     </div>
 
     <div>
-        <div class="container-fluid p-0 m-0">
+        <div class="container container-md-fluid p-md-0 m-md-0">
             <div class="row m-0">
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="532407045">
                     <div class="collapse_dev" style="display: none;" id="collapse_01">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -277,11 +272,11 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_01" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="395415629">
                     <div class="collapse_dev" style="display: none;" id="collapse_02">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -299,7 +294,7 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_02" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
@@ -310,12 +305,12 @@ Work - HELO
     <div class="container d-none d-md-block">
         <div class="row">
             <div class="col-6 item_work">
-                <span class="hollow-text-black" id="sens_row_03">
+                <span class="hollow-text-black" id="394201415_overlay">
                     Mini Cooper
                 </span>
             </div>
             <div class="col-6 item_work">
-                <span class="hollow-text-black" id="sens_row_04">
+                <span class="hollow-text-black" id="437152079_overlay">
                     Santander
                 </span>
             </div>
@@ -323,9 +318,9 @@ Work - HELO
     </div>
 
     <div>
-        <div class="container-fluid p-0 m-0">
+        <div class="container container-md-fluid p-md-0 m-md-0">
             <div class="row m-0">
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="394201415">
                     <div class="collapse_dev" style="display: none;" id="collapse_03">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -343,11 +338,11 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_03" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="437152079">
                     <div class="collapse_dev" style="display: none;" id="collapse_04">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -365,7 +360,7 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_04" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
@@ -376,12 +371,12 @@ Work - HELO
     <div class="container d-none d-md-block">
         <div class="row">
             <div class="col-6 item_work">
-                <span class="hollow-text-black" id="sens_row_05">
+                <span class="hollow-text-black" id="389980088_overlay">
                     Xfinity
                 </span>
             </div>
             <div class="col-6 item_work">
-                <span class="hollow-text-black" id="sens_row_06">
+                <span class="hollow-text-black" id="394270170_overlay">
                     Amazon
                 </span>
             </div>
@@ -389,9 +384,9 @@ Work - HELO
     </div>
 
     <div>
-        <div class="container-fluid p-0 m-0">
+        <div class="container container-md-fluid p-md-0 m-md-0">
             <div class="row m-0">
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="389980088">
                     <div class="collapse_dev" style="display: none;" id="collapse_05">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -409,11 +404,11 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_05" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="394270170">
                     <div class="collapse_dev" style="display: none;" id="collapse_06">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -431,7 +426,7 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_06" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
@@ -442,12 +437,12 @@ Work - HELO
     <div class="container d-none d-md-block">
         <div class="row">
             <div class="col-6 item_work">
-                <span class="hollow-text-black" id="sens_row_07">
+                <span class="hollow-text-black" id="642476368_overlay">
                     Headspace
                 </span>
             </div>
             <div class="col-6 item_work">
-                <span class="hollow-text-black" id="sens_row_08">
+                <span class="hollow-text-black" id="642400612_overlay">
                     Puma
                 </span>
             </div>
@@ -455,9 +450,9 @@ Work - HELO
     </div>
 
     <div class="pb-6">
-        <div class="container-fluid p-0 m-0">
+        <div class="container container-md-fluid p-md-0 m-md-0">
             <div class="row m-0">
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="642476368">
                     <div class="collapse_dev" style="display: none;" id="collapse_07">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -475,11 +470,11 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_07" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 p-0">
+                <div class="col-12 p-0 mb-4 mb-md-0 video_item" start="1" id="642400612">
                     <div class="collapse_dev" style="display: none;" id="collapse_08">
                         <div class="card card-body video_layout">
                             <div class="play">
@@ -497,7 +492,7 @@ Work - HELO
                                     </div>
                                 </div>
                             </div>
-                            <div class="video_container" id="container_video_08" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                            <div class="video_container"></div>
                         </div>
                     </div>
                 </div>
