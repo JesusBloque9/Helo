@@ -6,7 +6,8 @@
             margin: 0 10px;
             
             .content_slide{
-                cursor: pointer;
+                cursor: -webkit-grabbing;
+                cursor: grabbing;
                 color: #FFF;
                 opacity: 1;
                 height: 100%;

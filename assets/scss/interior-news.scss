@@ -232,7 +232,7 @@
     
         h3{
             font-size: 1.33rem;
-            font-weight: 400;        
+            font-weight: 400;
         }
         p{
             font-size: 1rem;
@@ -259,5 +259,41 @@
         background-position: 50% 50%;
         background-size: 100%;
         background-size: cover;
+    }
+
+    h3.title_section{
+        line-height: 1.2;
+    }
+
+}
+
+@include media-breakpoint-up(xl) {
+    iframe.iframe_principal{
+        height: 500px;
+    }
+}
+
+@include media-breakpoint-down(xl) {
+    iframe.iframe_principal{
+        height: 500px;
+    }
+}
+@include media-breakpoint-down(lg) {
+    h3.title_section{
+        line-height: 1;
+    }
+
+    iframe.iframe_principal{
+        height: 400px;
+    }
+}
+@include media-breakpoint-down(md) {
+    iframe.iframe_principal{
+        height: 300px;
+    }
+}
+@include media-breakpoint-down(sm) {
+    iframe.iframe_principal{
+        height: 200px;
     }
 }
