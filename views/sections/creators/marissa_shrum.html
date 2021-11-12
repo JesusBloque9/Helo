@@ -2,39 +2,16 @@
 
 
 {% block title %}
-HELO
+Marissa Shrum - HELO
 {% endblock %}
 
 {% block preloads %}
-    <style>
-        @media (max-width: 576px) {
-            #works > div {
-                padding: 0px !important;
-            }
-            #works .up .text, #works .up .text_overlay {
-                left: 0px !important;
-                right: 0px !important;
-            }
-        }
-    </style>
 {% endblock %}
 
 {% block extraCSS %}
 {% endblock %}
 
 {% block extraJS %}
-    <script>
-        function resize_withAspectRadio(){
-            $( "#works>div" ).each(function( index ) {
-                var width = $( this ).width();
-                var height = width/2;
-                $( this ).css("height", height);
-            });
-        }
-        resize_withAspectRadio();
-        $(window).on('resize', function(){
-            resize_withAspectRadio();
-        });
     </script>
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/creator_detail.js" ></script>

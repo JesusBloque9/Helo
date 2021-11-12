@@ -369,7 +369,7 @@ div.scroll_{
    		    border-color: $blueTwo;
     	}
 		&:before{
-		    background-color: rgb(255 255 255) !important;
+		    background-color: rgba(255, 255, 255, 1) !important;
 		    @include ease(.25s);
 		}
 		&:after{

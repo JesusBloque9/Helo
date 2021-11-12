@@ -3,24 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-  <meta name="description" content="">
-  <meta name="robots" content="index"/>
-  
-  <link rel="icon" href="{{ const.BASE_URL }}assets/img/icon.png" type="image/png">
+    <meta name="description" content="">
+    <meta name="robots" content="index"/>
+    <link rel="icon" href="{{ const.BASE_URL }}assets/img/icon.png" type="image/png">
+    <link rel="preload" href="{{ const.BASE_URL }}assets/css/custom.css" as="style">
+    <link rel="prefetch" href="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js" as="script">
+    <link rel="prefetch" href="{{ const.BASE_URL }}node_modules/bootstrap/dist/js/bootstrap.min.js" as="script">
 
-  <link rel="preload" href="{{ const.BASE_URL }}assets/css/custom.css" as="style">
-
-  <link rel="prefetch" href="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js" as="script">
-  <link rel="prefetch" href="{{ const.BASE_URL }}node_modules/bootstrap/dist/js/bootstrap.min.js" as="script">
-
-  {% block preloads %}{% endblock %}
+    {% block preloads %}{% endblock %}
 
 	<link href="{{ const.BASE_URL }}assets/css/custom.css" rel="stylesheet">
-    <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
     <script src="{{ const.BASE_URL }}node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-	<title>{% block title %} HELO - Moving Experiences {% endblock %}</title>
+	<title>{% block title %}{% endblock %}</title>
 
 	{% block extraCSS %}{% endblock %}
 
@@ -116,7 +110,6 @@
         window.base_url = "{{ const.BASE_URL }}";
     </script>
     <script src="{{ const.BASE_URL }}node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
     <script>
         function toggleMenu(){
             var element_menu = $( 'div.menu_content' );
@@ -129,7 +122,5 @@
             element_menu.toggleClass( "show" );
         }
     </script>
-   
 	{% block extraJS %}{% endblock %}
-
 </html>

@@ -286,7 +286,6 @@ class ScrollSequence {
       window.addEventListener('scroll', () => this.changeOnWindowScroll());
     })
     this.loader.once('IMAGES_LOADED', () => {
-      console.log('Sequence Loaded');
     })
   }
   

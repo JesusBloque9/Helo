@@ -17,17 +17,7 @@ HELO - Moving Experiences
     <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
     <script>
-        function mobile_functions() {
-            if(window.matchMedia("(max-width: 767px)").matches){
-                $(".container-experience").addClass('moblie_experiences');  
-            }else{
-                $(".container-experience").removeClass('moblie_experiences');
-            }
-        }
-    </script>
-    <script>
         const firstSequenceImages = [];
-
         var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         if (isIOS) {
             var dir_imgsequence='assets/img/secuencia/iphone/';
@@ -45,9 +35,7 @@ HELO - Moving Experiences
                 firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
             }
         }
-
         var firstSequence=null;
-
         firstSequence = new ScrollSequence({
             container: '.first-sequence',
             scrollWith: '.first-container',
@@ -57,71 +45,6 @@ HELO - Moving Experiences
             starts: 'in',
             ends: 'in'
         });
-
-        $(document).ready(function(){
-            /*scroll_secuence_initialize(); */     
-            mobile_functions();      
-        });
-        
-        $( window ).resize(function() {
-            /*scroll_secuence_initialize();*/
-            mobile_functions();
-        });
-        
-        // END SCROLL_SEQUENCE CODE
-    </script>       
-    <script src="{{ const.BASE_URL }}assets/js/change-img.js" ></script>
-    <script>
-        function rep_mov1(){ 
-            document.getElementById('video1').muted = true; 
-            $('#video-holder1').addClass('add-video');
-            $('#video1').trigger('play');
-        }
-        function pause_mov1(){
-            $('#video-holder1').removeClass('add-video');
-            $('#video1').trigger('pause');
-        }
-        function rep_mov2(){ 
-            document.getElementById('video2').muted = true; 
-            $('#video-holder2').addClass('add-video');
-            $('#video2').trigger('play');
-        }
-        function pause_mov2(){ 
-            $('#video-holder2').removeClass('add-video');
-            $('#video2').trigger('pause');
-        }
-        function rep_mov3(){ 
-            document.getElementById('video3').muted = true; 
-            $('#video-holder3').addClass('add-video');
-            $('#video3').trigger('play');
-        }
-        function pause_mov3(){ 
-            $('#video-holder3').removeClass('add-video');
-            $('#video3').trigger('pause');
-        }
-        function rep_mov4(){ 
-            document.getElementById('video4').muted = true; 
-            $('#video-holder4').addClass('add-video');
-            $('#video4').trigger('play');
-        }
-        function pause_mov4(){ 
-            $('#video-holder4').removeClass('add-video');
-            $('#video4').trigger('pause');
-        }
-        function rep_mov5(){ 
-            document.getElementById('video5').muted = true; 
-            $('#video-holder5').addClass('add-video');
-            $('#video5').trigger('play');
-        }
-        function pause_mov5(){
-            $('#video-holder5').removeClass('add-video');
-            $('#video5').trigger('pause');
-        }
-        $('.one_img').hover( rep_mov1 , pause_mov1);
-        $('.two_img').hover( rep_mov2 , pause_mov2);
-        $('.three_img').hover( rep_mov3 , pause_mov3);
-        $('.four_img').hover( rep_mov4 , pause_mov4);
-        $('.five_img').hover( rep_mov5 , pause_mov5);
     </script>
     <script>
         function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function getRandomFloat(min, max) {
@@ -159,7 +82,6 @@ HELO - Moving Experiences
             var scroll = $(window).scrollTop();
             $(window).scroll(function (event) {
                 scroll = $(window).scrollTop();
-                console.log(scroll);
                 if (!window.scrolled && scroll>=hideON) {
                     window.scrolled=true;
                     $('html,body').animate({scrollTop:$('#experiences').offset().top-92},0);
@@ -171,10 +93,8 @@ HELO - Moving Experiences
                 let new_op = 1-(scroll/3)/100;
                 if (!$('div.scroll_').hasClass('hide_')) {
                     if (new_op<.5) {
-                        console.log('class hide_ added');
                         $('div.scroll_').addClass('hide_');
                     }else{
-                        console.log('opacity: '+new_op);
                         $('div.scroll_').css('opacity',new_op);
                     }
                 }
@@ -184,10 +104,9 @@ HELO - Moving Experiences
             }
         }
     </script>   
-     <script src="{{ const.BASE_URL }}node_modules/gsap/dist/gsap.js" ></script>
-     <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollTrigger.js" ></script>
-     
-     <script>
+    <script src="{{ const.BASE_URL }}node_modules/gsap/dist/gsap.js" ></script>
+    <script src="{{ const.BASE_URL }}node_modules/gsap/dist/ScrollTrigger.js" ></script>
+    <script>
         const containers = gsap.utils.toArray(".speak");
         containers.forEach((container) => {
             let tl = gsap.timeline({
@@ -202,19 +121,8 @@ HELO - Moving Experiences
                        onToggle: self => updateElement(self)
                 }
             });
-            /*tl.to(container, {
-                autoAlpha: 1
-            }).to(
-                container,
-                {
-                autoAlpha: 0, delay: 40
-                },
-                0.5
-            );*/
         });
         function updateElement(self){
-            console.log('self==>');
-            console.log(self);
             var self_container = $(self.pin).children('div').children('div').children('div');
             if (self.isActive) {
                 self_container.children('span').each(function () {
@@ -267,7 +175,6 @@ HELO - Moving Experiences
                     video_1.pause();
                 })
                 .catch(error => {
-                    console.log('error on pause');
                 });
             }
         }
@@ -275,7 +182,6 @@ HELO - Moving Experiences
         var video_2=document.getElementById("video__2");
         var video_3=document.getElementById("video__3");
         var video_4=document.getElementById("video__4");
-
         var video_5=document.getElementById("video__5");
         var playPromise = video_5.play();
         if (playPromise !== undefined) {
@@ -287,7 +193,6 @@ HELO - Moving Experiences
 
         $('.item_typeWork').on("mouseover", function(){
             if ($(window).width() > 991) {
-                console.log('on mouseover');
                 $('.item_typeWork').addClass('inactive');
                 $(this).addClass('active');
                 let video = $(this).children('video');
@@ -309,7 +214,6 @@ HELO - Moving Experiences
             }
         });
         $('.item_typeWork').on("mouseleave", function(){
-            console.log('on mouseleave');
             $('.item_typeWork').removeClass("inactive active");
             let video = $(this).children('video');
             if (video.attr('id')==='video__1') {
@@ -338,9 +242,7 @@ HELO - Moving Experiences
                 video_5.pause();
             }
         });
-
-
-     </script>
+    </script>
 {% endblock %}
 
 {% block content %}
