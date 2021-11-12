@@ -14,6 +14,12 @@ Sara Nesson - HELO
 {% block extraJS %}
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="{{ const.BASE_URL }}assets/js/creator_detail.js" ></script>
+    <script src="{{ const.BASE_URL }}node_modules/masonry-layout/dist/masonry.pkgd.min.js" ></script>
+    <script>
+        $('.masonry_').masonry({
+          itemSelector: '.item_video_'
+        });
+    </script>
 {% endblock %}
 
 {% block content %}
@@ -28,7 +34,7 @@ Sara Nesson - HELO
                     <h3 class="title_leftline primary">Sara Nesson <small>Empathetic stories with an artistic sensibility.</small></h3>
                 </div>
             </div>
-            <div class="row mx-0 justify-content-center align-items-center"">
+            <div class="row mx-0 align-items-start" id="masonry_">
 
                 <div class="col-12 item_video_ yellow" id="405981499" start="1">
                     <div class="info_content">
