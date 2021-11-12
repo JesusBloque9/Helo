@@ -1,19 +1,18 @@
 
-div.item_work{
+div.item_video_{
     position: relative;
     overflow: hidden;
-    >div.video_content{
-
-    }
+    padding: 10px;
     >div.info_content{
         display: inline-block;
         position: absolute;
-        left: 0px;
-        right: 0px;
-        height: 100%;
-        width: 100%;
-        bottom: -100%;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        top: 10px;
         text-align: center;
+        margin-top: 100%;
+        z-index: 2;
         @include ease(.45s);
         p{
             @include block_ctrl();
@@ -42,9 +41,17 @@ div.item_work{
             }
         }
     }
+    >div.video_content{
+        pointer-events: none;
+    }
     &:hover{
         >div.info_content{
-            bottom: 0%;
+            margin-top: 0%;
+        }
+    }
+    &.active_{
+        >div.info_content{
+            margin-top: 0%;
         }
     }
     &.yellow{

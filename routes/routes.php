@@ -300,7 +300,7 @@ class routes extends Controller
     public function marissa_shrum()
     {
         /*CONSTANTS*/$const=$this->_const;
-        echo $this->_twig->render('sections/creators/marissa_shrum_.html', compact('const'));
+        echo $this->_twig->render('sections/creators/marissa_shrum.html', compact('const'));
     }
 
     public function joseph_bennett()

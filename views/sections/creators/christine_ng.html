@@ -23,7 +23,6 @@ HELO
 {% endblock %}
 
 {% block extraJS %}
-    <script src="{{ const.BASE_URL }}assets/js/preloader.js"></script>
     <script>
         function resize_withAspectRadio(){
             $( "#works>div" ).each(function( index ) {
@@ -38,79 +37,7 @@ HELO
         });
     </script>
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script>
-        window.firstLoad=true;
-        function videos_vimeo(videoId="", divId="", overlayId="", textId=""){
-
-            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            var qual = '720p';
-            if (isIOS) {
-                qual = '720p';
-            }else if ($(window).width() < 992) {
-                qual = '360p';
-            }else{
-                qual = '720p';
-                if (overlayId!=='deloitte_overlay') {
-                    qual = '360p';
-                }
-            }
-
-            var options = {
-                id: videoId,
-                duration: 5,
-                quality: qual
-            };
-            var videoPlayer = new Vimeo.Player(divId, options);            
-            videoPlayer.setCurrentTime(2);
-            videoPlayer.play();
-            $('#'+overlayId).on("mouseover", function(){
-                videoPlayer.play();
-                window.firstLoad=false;
-            });
-            $('#'+overlayId).on("mouseleave", function(){
-                videoPlayer.pause().then(function(){
-                    videoPlayer.setCurrentTime(2);
-                });
-            });
-            $('#'+textId).on("mouseover", function(){
-                videoPlayer.play();
-            });
-            $('#'+textId).on("mouseleave", function(){
-                videoPlayer.pause().then(function(){
-                    videoPlayer.setCurrentTime(2);
-                });
-            });
-            if (divId!=='deloitte') {
-                videoPlayer.on('timeupdate', function(data) {
-                    if (data.seconds > 0 && window.firstLoad) {
-                        videoPlayer.pause();
-                    }
-                });
-            }
-            $('html')
-                .on('click', '#'+textId+' .vimeo-launch', function () {
-                    var videoID = videoId,
-                        $video = '<div id="vimeo-pop-container"><div><span class="vimeo-close"></span><iframe src="https://player.vimeo.com/video/' + videoID + '/?autoplay=1&loop=1&autopause=0&controls=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>';
-                    $('html').append($video);
-                } )
-                .on('click', '.vimeo-close', function () {
-                    $(this).addClass('closing');
-                    $('#vimeo-pop-container').delay(700).animate({
-                        height: 0,
-                        top: '50%'
-                    }, 'fast', function () {
-                        $('#vimeo-pop-container').remove();
-                    });
-                } );
-
-        }
-        videos_vimeo('632003890','deloitte','deloitte_overlay','deloitte_text');
-        videos_vimeo('632004036','deloitte2','deloitte2_overlay','deloitte2_text');
-        videos_vimeo('632004825','deloitte3','deloitte3_overlay','deloitte3_text');
-        videos_vimeo('632006510','deloitte4','deloitte4_overlay','deloitte4_text');
-        videos_vimeo('632008543','deloitte5','deloitte5_overlay','deloitte5_text');
-    </script>
-
+    <script src="{{ const.BASE_URL }}assets/js/creator_detail.js" ></script>
 {% endblock %}
 
 {% block content %}
@@ -125,12 +52,11 @@ HELO
                     <h3 class="title_leftline primary">CHRISTINE NG — DIRECTOR <small>Transforming light into emotion.</small></h3>
                 </div>
             </div>
-            <div class="row mx-0">
+            <div class="row mx-0 justify-content-center align-items-center"">
 
-                <div class="col-12 item_work yellow">
-                    <div class="video_content" id="deloitte" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div>
+                <div class="col-12 item_video_ yellow" id="632003890" start="1">
                     <div class="info_content">
-                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center" id="deloitte_text">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
                             <div class="col-auto">
                                 <p>Showtime</p>
                                 <h1>Ziwe</h1>
@@ -138,49 +64,61 @@ HELO
                             </div>
                         </div>
                     </div>
+                    <div class="video_content"></div>
                 </div>
 
-                <div class="col-12 col-md-6 orange p-0_cover up">
-                    <div class="color"><div id="deloitte2" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay bg_orange_ts" id="deloitte2_overlay"></div>
-                    <div class="row px-5 py-5 text" id="deloitte2_text">
-                        <p>Chanel</p>
-                        <h1>Gabrielle</h1>
-                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                <div class="col-12 col-md-6 item_video_ orange" id="632004036" start="1">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>Chanel</p>
+                                <h1>Gabrielle</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="col-12 col-md-6 red p-0_cover up">
-                    <div class="color"><div id="deloitte3" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay bg_red_ts" id="deloitte3_overlay"></div>
-                    <div class="row px-5 py-5 text" id="deloitte3_text">
-                        <p>Netflix</p>
-                        <h1>When They See Us</h1>
-                        <input type="checkbox">
-                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
-                    </div>
+                    <div class="video_content"></div>
+
                 </div>
 
-                <div class="col-12 col-md-6 purple p-0_cover up">
-                    <div class="color"><div id="deloitte4" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay bg_blueOne_ts" id="deloitte4_overlay"></div>
-                    <div class="row px-5 py-5 text" id="deloitte4_text">
-                        <p>HP</p>
-                        <h1>Proud Portraits</h1>
-                        <input type="checkbox">
-                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                <div class="col-12 col-md-6 item_video_ red" id="632004825" start="3">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>Netflix</p>
+                                <h1>When They See Us</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
                     </div>
+                    <div class="video_content"></div>
                 </div>
 
-                <div class="col-12 col-md-6 green p-0_cover up">
-                    <div class="color"><div id="deloitte5" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="false" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay bg_green_ts" id="deloitte5_overlay"></div>
-                    <div class="row px-5 py-5 text" id="deloitte5_text">
-                        <p>Philips</p>
-                        <h1>The Wellingtons</h1>
-                        <input type="checkbox">
-                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                <div class="col-12 col-md-6 item_video_ blue" id="632006510" start="1">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>HP</p>
+                                <h1>Proud Portraits</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
                     </div>
+                    <div class="video_content"></div>
+
+                </div>
+
+                <div class="col-12 col-md-6 item_video_ purple" id="632008543" start="1">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <p>Philips</p>
+                                <h1>The Wellingtons</h1>
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video_content"></div>
                 </div>
 
             </div>

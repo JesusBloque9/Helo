@@ -37,60 +37,7 @@ HELO
         });
     </script>
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script>
-        window.firstLoad=true;
-        function videos_vimeo(videoId="", divId="", overlayId="", textId=""){
-            var options = {
-                id: videoId,
-                duration: 5,
-            };
-            var videoPlayer = new Vimeo.Player(divId, options);            
-            videoPlayer.setCurrentTime(2);
-            videoPlayer.play();
-            $('#'+overlayId).on("mouseover", function(){
-                videoPlayer.play();
-                window.firstLoad=false;
-            });
-            $('#'+overlayId).on("mouseleave", function(){
-                videoPlayer.pause().then(function(){
-                    videoPlayer.setCurrentTime(2);
-                });
-            });
-            $('#'+textId).on("mouseover", function(){
-                videoPlayer.play();
-            });
-            $('#'+textId).on("mouseleave", function(){
-                videoPlayer.pause().then(function(){
-                    videoPlayer.setCurrentTime(2);
-                });
-            });
-            if (divId!=='deloitte') {
-                videoPlayer.on('timeupdate', function(data) {
-                    if (data.seconds > 0 && window.firstLoad) {
-                        videoPlayer.pause();
-                    }
-                });
-            }
-            $('html')
-                .on('click', '#'+textId+' .vimeo-launch', function () {
-                    var videoID = videoId,
-                        $video = '<div id="vimeo-pop-container"><div><span class="vimeo-close"></span><iframe src="https://player.vimeo.com/video/' + videoID + '/?autoplay=1&loop=1&autopause=0&controls=1" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>';
-                    $('html').append($video);
-                } )
-                .on('click', '.vimeo-close', function () {
-                    $(this).addClass('closing');
-                    $('#vimeo-pop-container').delay(700).animate({
-                        height: 0,
-                        top: '50%'
-                    }, 'fast', function () {
-                        $('#vimeo-pop-container').remove();
-                    });
-                } );
-
-        }
-        videos_vimeo('644158272','deloitte','deloitte_overlay','deloitte_text');
-    </script>
-
+    <script src="{{ const.BASE_URL }}assets/js/creator_detail.js" ></script>
 {% endblock %}
 
 {% block content %}
@@ -105,14 +52,17 @@ HELO
                     <h3 class="title_leftline primary">Ethan Tobman <small>Creating the world’s iconic moments through production design and narrative.</small></h3>
                 </div>
             </div>
-            <div class="row mx-0" id="works">
+            <div class="row mx-0 justify-content-center align-items-center"">
 
-                <div class="col-12 yellow p-0_cover up">
-                    <div class="color"><div id="deloitte" data-vimeo-playsinline="true" data-vimeo-responsive="true" data-vimeo-maxheight="100vh" data-vimeo-autoplay="true" data-vimeo-loop="true" data-vimeo-muted="true" data-vimeo-background="true" data-vimeo-controls="false" data-vimeo-keyboard="false" data-vimeo-pip="true"></div></div>
-                    <div class="col px-5 py-5 text_overlay bg_yellow_ts" id="deloitte_overlay"></div>
-                    <div class="row px-5 py-5 text" id="deloitte_text">
-                        <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play" class="img-fluid">
+                <div class="col-12 item_video_ yellow" id="644158272" start="1">
+                    <div class="info_content">
+                        <div class="row w-100 h-100 m-0 justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <img class="vimeo-launch" src="{{ const.BASE_URL }}assets/img/play.svg" alt="play">
+                            </div>
+                        </div>
                     </div>
+                    <div class="video_content"></div>
                 </div>
 
             </div>
