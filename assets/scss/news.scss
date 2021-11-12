@@ -85,36 +85,34 @@
         margin-bottom: 50px;
         margin-top: 15px;
         .card-body{
-            &:hover{
-                &.yellow{
-                    >a{
-                        color: $yellow;
-                    }
+            &.yellow{
+                >a:hover{
+                    color: $yellow;
                 }
-                &.orange{
-                    >a{
-                        color: $orange;
-                    }
+            }
+            &.orange{
+                >a:hover{
+                    color: $orange;
                 }
-                &.red{
-                    >a{
-                        color: $red;
-                    }
+            }
+            &.red{
+                >a:hover{
+                    color: $red;
                 }
-                &.purple{
-                    >a{
-                        color: $blueOne;
-                    }
+            }
+            &.purple{
+                >a:hover{
+                    color: $blueOne;
                 }
-                &.blue{
-                    >a{
-                        color: $blueTwo;
-                    }
-                }    
-                &.green{
-                    >a{
-                        color: $green;
-                    }
+            }
+            &.blue{
+                >a:hover{
+                    color: $blueTwo;
+                }
+            }    
+            &.green{
+                >a:hover{
+                    color: $green;
                 }
             }
         }
@@ -207,6 +205,7 @@
 
     a.card-title{
         @include block_ctrl();
+        @include ease(.25s);
         font-size: 1.75rem;
         letter-spacing: 0px;
         color: #1D1D1D;

@@ -20,7 +20,6 @@ div.item_work{
     	}
 	}
 	>div.video_container{
-		
 	}
 }
 
@@ -28,6 +27,7 @@ div.video_layout{
     position: relative;
     height: 50vh;
     overflow: hidden;
+    background-color: #313131;
     >div.play{
     	display: none;
     	pointer-events: none;
