@@ -345,5 +345,23 @@ class routes extends Controller
         echo $this->_twig->render('sections/creators/billy_rainey.html', compact('const'));
     }
 
+    /*TEST*/
+    public function loader_1 ()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/alternative_loader_1.html', compact('const'));
+    }
+    public function loader_2 ()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/alternative_loader_2.html', compact('const'));
+    }
+    public function loader_3 ()
+    {
+        /*CONSTANTS*/$const=$this->_const;
+        echo $this->_twig->render('sections/alternative_loader_3.html', compact('const'));
+    }
+
+
 }
 ?>
