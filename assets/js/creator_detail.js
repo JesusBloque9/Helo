@@ -1,5 +1,30 @@
-        window.loaded_videos=0;
-        window.start_time=2;
+
+        //Forced loader after 10sec
+        window.hidden_loader = false;
+        window.onload = updateClock;
+        var totalTime = 5;
+        function updateClock() {
+            if(!window.hidden_loader && totalTime==0){
+                $('#ctn-preloader').addClass('loaded');
+                if ($('#ctn-preloader').hasClass('loaded')) {
+                  $('#preloader').delay(1000).queue(function() {
+                    $(this).addClass('d-none');
+                  });
+                }
+                console.log('foced hide load');
+            }else{
+                if (totalTime>=0) {
+                    totalTime-=1;
+                    setTimeout("updateClock()",1000);
+                }
+                
+            }
+        }
+        /**/
+
+        window.loaded_videos = 0;
+        window.start_time = 2;
+
         function run_videos(){
             $( ".item_video_" ).each(function( index ) {
                 var videoId = $( this ).attr('id');
@@ -100,6 +125,7 @@
                     $(this).addClass('d-none');
                   });
                 }
+                window.hidden_loader = true;
                 window.loaded_videos++;
                 if (window.loaded_videos<no_videos+1) {
                     if (videoId!==first_video_id) {
