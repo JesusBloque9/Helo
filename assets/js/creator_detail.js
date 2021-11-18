@@ -2,7 +2,7 @@
         //Forced loader after 10sec
         window.hidden_loader = false;
         window.onload = updateClock;
-        var totalTime = 5;
+        var totalTime = 4;
         function updateClock() {
             if(!window.hidden_loader && totalTime==0){
                 $('#ctn-preloader').addClass('loaded');
