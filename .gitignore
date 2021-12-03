@@ -2,3 +2,6 @@ node_modules/
 assets/.sass-cache/
 assets/css/
 routes/config.json
+ftpsync.settings__
+ftpsync.settings
+ftpsync.settings__
