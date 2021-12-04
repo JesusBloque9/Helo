@@ -28,8 +28,8 @@
           <tr>
             <td>
             <table border="0" cellspacing="0" cellpadding="0" width="600" align="center">
-          <tr style="background:#FF2A1B; height:21px;">
-            <td colspan="5" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight: 500; color: #FF2A1B;"></td>
+          <tr style="background:#1994ff; height:21px;">
+            <td colspan="5" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight: 500; color: #1994ff;"></td>
           </tr>
               <tr>
                 <td width="17"></td>
@@ -41,7 +41,7 @@
                   </td>
                 <td width="14"></td>
               </tr>
-          <tr style="background:#FF2A1B; height:21px;">
+          <tr style="background:#1994ff; height:21px;">
             <td colspan="5"></td>
           </tr>
         </table></td>
@@ -52,8 +52,10 @@
     ';
     $url = 'https://bloque9.email/v1/send/';
     $post = array(
-        'id'      => 'rhpjv5wejb40ywmw',//test
-        'key'     => 'jvfhku3tdfzjyg3r',//test
+        //'id'      => 'rhpjv5wejb40ywmw',//test
+        //'key'     => 'jvfhku3tdfzjyg3r',//test
+        'id'      => 'eckocojlaxxnsrxc',//produccion
+        'key'     => 'qhq2uzbi4r74wezg',//produccion
         'subject' => 'Contact Form',
         'message' => $html
     );
