@@ -18,23 +18,47 @@ HELO - Moving Experiences
     <script src="{{ const.BASE_URL }}assets/js/plugin_secunce.js" ></script>
     <script>
         const firstSequenceImages = [];
+
+        function support_format_webp(){
+            var elem = document.createElement('canvas');
+            if (!!(elem.getContext && elem.getContext('2d'))){
+                return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+            }else{
+                return false;
+            }
+        }
+
+        var extension;
+        if (support_format_webp()) {
+            extension='webp';
+        }else{
+            extension='jpg';
+        }
+
         var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         if (isIOS) {
             var dir_imgsequence='assets/img/secuencia/iphone/';
             for (let i = 2; i < 383; i++) {
-                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.`+extension);
             }
         }else if ($(window).width() < 992) {
             var dir_imgsequence='assets/img/secuencia/movil/';
             for (let i = 2; i < 384; i++) {
-                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.`+extension);
             }
         }else{
             var dir_imgsequence='assets/img/secuencia/desktop/';
             for (let i = 2; i < 386; i++) {
-                firstSequenceImages.push(`${`00${i}`.slice(-8)}.jpg`);
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.`+extension);
             }
         }
+
+            var dir_imgsequence='assets/img/secuencia/desktop/';
+            for (let i = 2; i < 386; i++) {
+                firstSequenceImages.push(`${`00${i}`.slice(-8)}.`+extension);
+            }
+
+
         var firstSequence=null;
         firstSequence = new ScrollSequence({
             container: '.first-sequence',
