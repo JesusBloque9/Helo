@@ -1,3 +1,6 @@
+div.container_typeworks{
+	height: 65vh;
+}
 div.item_typeWork{
 	position: relative;
     flex: 0 0 auto;
@@ -5,9 +8,6 @@ div.item_typeWork{
     height: 65vh;
     min-height: 500px;
     overflow: hidden;
-    background-size: 100%;
-    background-size: cover;
-    background-position: 50% 50%;
     pointer-events: auto;
     @include ease(.45s);
 	&:after{
@@ -20,6 +20,28 @@ div.item_typeWork{
 		width: 100%;
 		height: 4px;
 		margin: 0px auto;
+	}
+	>picture{
+    	display: inline-block;
+    	position: absolute;
+    	min-height: 100%;
+    	min-width: 100%;
+    	top: 0px;
+    	bottom: 0px;
+    	left: 0px;
+    	right: 0px;
+    	overflow: hidden;
+		>source,>img{
+    		display: inline-block;
+    		position: absolute;
+    		min-height: 100%;
+    		min-width: 100%;
+    		top: -50%;
+    		bottom: -50%;
+    		left: -50%;
+    		right: -50%;
+    		margin: auto;
+		}
 	}
 	>div.row{
 		pointer-events: none;
@@ -347,6 +369,9 @@ div.scroll_{
 @include media-breakpoint-down(xl) {
 }
 @include media-breakpoint-down(lg) {
+	div.container_typeworks{
+		height: auto;
+	}
 	div.item_typeWork{
 		width: 100%;
     	height: 100px;
